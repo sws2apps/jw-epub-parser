@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "node index"
-  }
+  },
   "author": "sws2apps",
   "license": "ISC",
   "dependencies": {
