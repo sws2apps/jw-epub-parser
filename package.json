@@ -2,6 +2,9 @@
   "name": "jw-epub-parser",
   "version": "1.0.1",
   "description": "",
+  "scripts": {
+    "test": "node index"
+  }
   "author": "sws2apps",
   "license": "ISC",
   "dependencies": {
