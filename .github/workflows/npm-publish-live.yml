@@ -10,7 +10,6 @@ name: Release JW EPUB Parser to production
 
 jobs:
   publish-npm:
-    if: ${{ github.event.label.name == 'live' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
