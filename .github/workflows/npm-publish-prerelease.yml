@@ -10,7 +10,7 @@ name: Prerelease JW EPUB Parser
 
 jobs:
   publish-npm:
-    if: ${{ github.event.label.name == 'prerelease' }}
+    if: ${{ github.event.pull_request.label.name == 'prerelease' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
