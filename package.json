@@ -1,19 +1,25 @@
 {
   "name": "jw-epub-parser",
-  "version": "1.0.3",
+  "version": "1.0.4-beta.2",
   "description": "",
   "author": "sws2apps",
   "license": "ISC",
   "scripts": {
-    "prepatch": "npm version patch --no-git-tag-version",
-    "patch": "git add . && git commit -m",
-    "postpatch": "git push origin deploy",
-    "preminor": "npm version minor --no-git-tag-version",
-    "minor": "git add . && git commit -m",
-    "postminor": "git push origin deploy",
-    "premajor": "npm version major --no-git-tag-version",
-    "major": "git add . && git commit -m",
-    "postmajor": "git push origin deploy"
+    "betapatch": "npm version prepatch --preid beta --no-git-tag-version",
+    "betaminor": "npm version preminor --preid beta --no-git-tag-version",
+    "betamajor": "npm version preminor --preid beta --no-git-tag-version",
+    "prevprerelease": "npm version prerelease --no-git-tag-version",
+    "vprerelease": "git add . && git commit -m",
+    "postvprerelease": "git push origin deploy",
+    "prevpatch": "npm version patch --no-git-tag-version",
+    "vpatch": "git add . && git commit -m",
+    "postvpatch": "git push origin deploy",
+    "prevminor": "npm version minor --no-git-tag-version",
+    "vminor": "git add . && git commit -m",
+    "postvminor": "git push origin deploy",
+    "prevmajor": "npm version major --no-git-tag-version",
+    "vmajor": "git add . && git commit -m",
+    "postvmajor": "git push origin deploy"
   },
   "dependencies": {
     "@gxl/epub-parser": "^2.0.4"
