@@ -1,6 +1,6 @@
 {
   "name": "jw-epub-parser",
-  "version": "1.0.4-beta.9",
+  "version": "1.0.4-beta.10",
   "description": "",
   "author": "sws2apps",
   "license": "ISC",
@@ -10,7 +10,7 @@
     "betamajor": "npm version preminor --preid beta --no-git-tag-version",
     "prevprerelease": "npm version prerelease --no-git-tag-version",
     "vprerelease": "git add . && git commit -m",
-    "postvprerelease": "git push origin deploy",
+    "postvprerelease": "git push origin prerelease",
     "prevpatch": "npm version patch --no-git-tag-version",
     "vpatch": "git add . && git commit -m",
     "postvpatch": "git push origin deploy",
