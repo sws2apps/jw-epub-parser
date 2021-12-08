@@ -5,7 +5,7 @@ This tool is created to complement the Scheduling Workbox System (SWS) utilities
 ## Install
 
 ```bash
-npm install jw-epub-parser
+npm i jw-epub-parser
 ```
 
 
