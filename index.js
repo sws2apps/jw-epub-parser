@@ -2,12 +2,12 @@ const { parseEpub } = require('@gxl/epub-parser');
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
-module.exports = loadEPUB = async (epubData, monthNames) => {
+module.exports = loadEPUB = async (epubData) => {
     // epubData could be a FileObject from file select dialog, a file path or ArrayBuffer
 
     // check parameters
-    if (!epubData || !monthNames) {
-        throw new Error('The required parameters are missing. Please provide file object, or file path, or ArrayBuffer to begin. Also, make sure that you have included the month names array as second parameters.')
+    if (!epubData) {
+        throw new Error('The required parameter is missing. Please provide file object, or file path, or ArrayBuffer to begin.')
     }
     
     // Assign variable to hold the final ArrayBuffer
@@ -117,10 +117,56 @@ module.exports = loadEPUB = async (epubData, monthNames) => {
 
         weekItem.weekDate = weekDate;
 
+        let src = "";
+        let cnAYF = 1;
+
+        MeetingSection = div.getElementsByTagName("div");
+        for(let a=0; a < MeetingSection.length; a++) {
+            for(let b=1; b <= 4; b++) {
+                var idSection = "section" + b;
+                if (MeetingSection[a].getAttribute("id") === idSection) {
+                    var MeetingPart = MeetingSection[a].children;
+                    for(let c=0; c < MeetingPart.length; c++) {
+                        if (MeetingPart.item(c).className === "pGroup") {
+                            var part1 = MeetingPart.item(c).children;
+                            for(let d=0; d < part1.length; d++) {
+                                var part2 = part1.item(d).children;
+                                for(let e=0; e < part2.length; e++) {
+                                    var part3 = part2.item(e).children;
+                                    for(let f=0; f < part3.length; f++) {
+                                        if (part3.item(f).nodeName.toLocaleLowerCase() === "p") {
+                                            src+= "|" + part3.item(f).textContent.replace(" ", " ");
+                                        };
+                                    }
+                                }
+                            }
+                            break;
+                        }
+                    }
+
+                    if (b === 3) {
+                        cnAYF = 0;
+                        for(let c=0; c < MeetingPart.length; c++) {
+                            if (MeetingPart.item(c).className === "pGroup") {
+                                part1 = MeetingPart.item(c).children;
+                                for(let d=0; d < part1.length; d++) {
+                                    part2 = part1.item(d).children;
+                                    cnAYF = part2.length;
+                                }
+                                break;
+                            }
+                        }
+                    }
+                    break;
+                }
+            }
+        }
+
+        weekItem.src = src;
+        weekItem.cnAYF = cnAYF;
+
         weeksData.push(weekItem);
     }
 
-    console.log(weeksData)
-
-    return { weeksCount };
+    return { weeksCount, weeksData };
 }
