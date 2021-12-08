@@ -55,7 +55,11 @@ module.exports = loadEPUB = async (epubData) => {
 
     // check if epub data is valid
     let validFiles = [];
+    let mwbYear;
+
     if (parsedEPUB.info.author || parsedEPUB.info.author === "WATCHTOWER") {
+        mwbYear = parsedEPUB.info.title.match(/(\d+)/)[0];
+
         let epubSections = parsedEPUB.sections;
         let pgCount = epubSections.length;
         for(let i=0; i < pgCount; i++) {
@@ -115,11 +119,14 @@ module.exports = loadEPUB = async (epubData) => {
         div = validFiles[a].html;
         let wdHtml = div.getElementsByTagName("h1");
         let weekDate = wdHtml[0].textContent;
-
         weekItem.weekDate = weekDate;
 
+        let wbHtml = div.getElementsByTagName("h2").item(0);
+        weekItem.weeklyBibleReading = wbHtml.textContent;
+
         let src = "";
-        let cnAYF = 1;
+        let cnAYF = 0;
+        let cnLC = 0;
 
         MeetingSection = div.getElementsByTagName("div");
         for(let a=0; a < MeetingSection.length; a++) {
@@ -158,93 +165,87 @@ module.exports = loadEPUB = async (epubData) => {
                             }
                         }
                     }
+
+                    if (b === 4) {
+                        cnLC = 0;
+                        for(let c=0; c < MeetingPart.length; c++) {
+                            if (MeetingPart.item(c).className === "pGroup") {
+                                part1 = MeetingPart.item(c).children;
+                                for(let d=0; d < part1.length; d++) {
+                                    part2 = part1.item(d).children;
+                                    cnLC = part2.length === 5 ? 1 : 2;
+                                }
+                                break;
+                            }
+                        }
+                    }
                     break;
                 }
             }
         }
 
-        weekItem.cnAYF = cnAYF;
+        src.replace(/[\n\r]/g, ' '); // remove carriage/hard return
 
         let toSplit = src.split("|");
-        let toSplit1;
-        let assType = "";
 
-        //WeekOf Source
-        toSplit1 = toSplit[0];
-        weekItem.weekOf = toSplit1;
+        // First song
+        weekItem.songFirst = toSplit[1].match(/(\d+)/)[0];
+
+        // 10min TGW Source
+        weekItem.tgw10Talk = toSplit[3].trim();
 
         //Bible Reading Source
-        toSplit1 = toSplit[5].split(".)");
-        weekItem.bibleReadingSrc = toSplit1[1].trim();
+        weekItem.tgwBRead = toSplit[5].trim();
 
-        //AYF1 Assignment Type
-        toSplit1 = toSplit[6].split(": (");
-        assType = toSplit1[0];
-        assType = assType.trim();
-        weekItem.ass1Type = assType;
+        // AYF Part Count
+        weekItem.ayfCount = cnAYF;
 
-        //AYF1 Assignment Time
-        toSplit1 = toSplit[6].split(".)");
-        weekItem.ass1Time = toSplit1[0].match(/(\d+)/)[0];
-
-        //AYF1 Assignment Source
-        toSplit1 = toSplit[6].split("min.) ");
-        assSource = toSplit1[1];
-        weekItem.ass1Src = assSource;
+        //AYF1 Source
+        weekItem.ayfPart1 = toSplit[6].trim();
 
         if (cnAYF > 1) {
-            //AYF2 Assignment Type
-            toSplit1 = toSplit[7].split(": (");
-            assType = toSplit1[0];
-            assType = assType.trim();
-            weekItem.ass2Type = assType;
-    
-            //AYF2 Assignment Time
-            toSplit1 = toSplit[7].split(".)");
-            weekItem.ass2Time = toSplit1[0].match(/(\d+)/)[0];
-    
-            //AYF2 Assignment Source
-            toSplit1 = toSplit[7].split("min.) ");
-            assSource = toSplit1[1];
-            weekItem.ass2Src = assSource;
+            //AYF2 Source
+            weekItem.ayfPart2 = toSplit[7].trim();
         }
     
         if (cnAYF > 2) {
-            //AYF3 Assignment Type
-            toSplit1 = toSplit[8].split(": (");
-            assType = toSplit1[0];
-            assType = assType.trim();
-            weekItem.ass3Type = assType;
-    
-            //AYF3 Assignment Time
-            toSplit1 = toSplit[8].split(".)");
-            weekItem.ass3Time = toSplit1[0].match(/(\d+)/)[0];
-    
-            //AYF3 Assignment Source
-            toSplit1 = toSplit[8].split("min.) ");
-            assSource = toSplit1[1];
-            weekItem.ass3Src = assSource;
+            //AYF3 Source
+            weekItem.ayfPart3 = toSplit[8].trim();
         }
     
         if (cnAYF > 3) {
-            //AYF4 Assignment Type
-            toSplit1 = toSplit[9].split(": (");
-            assType = toSplit1[0];
-            assType = assType.trim();
-            weekItem.ass4Type = assType;
-    
-            //AYF4 Assignment Time
-            toSplit1 = toSplit[9].split(".)");
-            weekItem.ass4Time = toSplit1[0].match(/(\d+)/)[0];
-    
-            //AYF4 Assignment Source
-            toSplit1 = toSplit[9].split("min.) ");
-            assSource = toSplit1[1];
-            weekItem.ass4Src = assSource;
+            //AYF4 Source
+            weekItem.ayfPart3 = toSplit[9].trim();
         }
+
+        // Middle song
+        let nextIndex = cnAYF > 3 ? 10 : cnAYF > 2 ? 9 : cnAYF > 1 ? 8 : 7;
+        weekItem.songMiddle = toSplit[nextIndex].match(/(\d+)/)[0];
+
+        // LC Part Count
+        weekItem.lcCount = cnLC;
+
+        // 1st LC part
+        nextIndex++;
+        weekItem.lcPart1 = toSplit[nextIndex].trim();
+
+        if (cnLC === 2) {
+            // 1st LC part
+            nextIndex++;
+            weekItem.lcPart2 = toSplit[nextIndex].trim();
+        }
+
+        // CBS Source
+        nextIndex++;
+        weekItem.lcCBS = toSplit[nextIndex].trim();
+
+        // Concluding Song
+        nextIndex++;
+        nextIndex++;
+        weekItem.songConclude = toSplit[nextIndex].match(/(\d+)/)[0];
 
         weeksData.push(weekItem);
     }
 
-    return { weeksCount, weeksData };
+    return { mwbYear, weeksCount, weeksData };
 }
