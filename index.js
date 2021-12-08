@@ -55,7 +55,11 @@ module.exports = loadEPUB = async (epubData) => {
 
     // check if epub data is valid
     let validFiles = [];
+    let mwbYear;
+
     if (parsedEPUB.info.author || parsedEPUB.info.author === "WATCHTOWER") {
+        mwbYear = parsedEPUB.info.title.match(/(\d+)/)[0];
+
         let epubSections = parsedEPUB.sections;
         let pgCount = epubSections.length;
         for(let i=0; i < pgCount; i++) {
@@ -243,5 +247,5 @@ module.exports = loadEPUB = async (epubData) => {
         weeksData.push(weekItem);
     }
 
-    return { weeksCount, weeksData };
+    return { mwbYear, weeksCount, weeksData };
 }
