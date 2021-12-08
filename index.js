@@ -3,17 +3,17 @@ const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
 module.exports = loadEPUB = async (epubData) => {
-    // epubData could be a FileObject from file select dialog, a file path or ArrayBuffer
+    // epubData could be a FileObject, a file path or ArrayBuffer
 
-    // check parameters
+    // check parameter
     if (!epubData) {
         throw new Error('The required parameter is missing. Please provide file object, or file path, or ArrayBuffer to begin.')
     }
     
-    // Assign variable to hold the final ArrayBuffer
+    // Assign letiable to hold the final ArrayBuffer
     let epubBuffer;
 
-    // Check if we got a FileObject
+    // Check if we got a FileObject with name property, otherwise it is path or ArrayBuffer
     if (epubData.name) {
         const getDataEPUB = () => {
             return new Promise((resolve, reject) => {
@@ -56,23 +56,23 @@ module.exports = loadEPUB = async (epubData) => {
     // check if epub data is valid
     let validFiles = [];
     if (parsedEPUB.info.author || parsedEPUB.info.author === "WATCHTOWER") {
-        var epubSections = parsedEPUB.sections;
-        var pgCount = epubSections.length;
+        let epubSections = parsedEPUB.sections;
+        let pgCount = epubSections.length;
         for(let i=0; i < pgCount; i++) {
-            var section = epubSections[i];
+            let section = epubSections[i];
             const dom = new JSDOM(section.htmlString);
             let div = dom.window.document;
-            var MeetingSection = div.getElementsByTagName("h2");
+            let MeetingSection = div.getElementsByTagName("h2");
             if (MeetingSection.length === 4) {
-                var isValidTGW = false;
-                var T = div.getElementsByTagName("h2").item(1).parentNode;
+                let isValidTGW = false;
+                let T = div.getElementsByTagName("h2").item(1).parentNode;
                 if (T.hasAttribute("class") === true) {
                     if (T.getAttribute("class").includes("treasures") === true) {
                         isValidTGW = true;
                     }
                 }
                 
-                var isValidAYF = false;
+                let isValidAYF = false;
                 T = div.getElementsByTagName("h2").item(2).parentNode;
                 if (T.hasAttribute("class") === true) {
                     if (T.getAttribute("class").includes("ministry") === true) {
@@ -80,7 +80,7 @@ module.exports = loadEPUB = async (epubData) => {
                     }
                 }
                 
-                var isValidLC = false;
+                let isValidLC = false;
                 T = div.getElementsByTagName("h2").item(3).parentNode;
                 if (T.hasAttribute("class") === true) {
                     if (T.getAttribute("class").includes("christianLiving") === true) {
@@ -105,15 +105,16 @@ module.exports = loadEPUB = async (epubData) => {
 
     // epub validated, start extract
     let weeksCount;
-    weeksCount = validFiles.length;
     let weeksData = [];
+
+    weeksCount = validFiles.length;    
 
     for(let a=0; a < weeksCount; a++) {
         let weekItem = {};
 
         div = validFiles[a].html;
         let wdHtml = div.getElementsByTagName("h1");
-        var weekDate = wdHtml[0].textContent;
+        let weekDate = wdHtml[0].textContent;
 
         weekItem.weekDate = weekDate;
 
@@ -123,16 +124,16 @@ module.exports = loadEPUB = async (epubData) => {
         MeetingSection = div.getElementsByTagName("div");
         for(let a=0; a < MeetingSection.length; a++) {
             for(let b=1; b <= 4; b++) {
-                var idSection = "section" + b;
+                let idSection = "section" + b;
                 if (MeetingSection[a].getAttribute("id") === idSection) {
-                    var MeetingPart = MeetingSection[a].children;
+                    let MeetingPart = MeetingSection[a].children;
                     for(let c=0; c < MeetingPart.length; c++) {
                         if (MeetingPart.item(c).className === "pGroup") {
-                            var part1 = MeetingPart.item(c).children;
+                            let part1 = MeetingPart.item(c).children;
                             for(let d=0; d < part1.length; d++) {
-                                var part2 = part1.item(d).children;
+                                let part2 = part1.item(d).children;
                                 for(let e=0; e < part2.length; e++) {
-                                    var part3 = part2.item(e).children;
+                                    let part3 = part2.item(e).children;
                                     for(let f=0; f < part3.length; f++) {
                                         if (part3.item(f).nodeName.toLocaleLowerCase() === "p") {
                                             src+= "|" + part3.item(f).textContent.replace(" ", " ");
@@ -162,8 +163,85 @@ module.exports = loadEPUB = async (epubData) => {
             }
         }
 
-        weekItem.src = src;
         weekItem.cnAYF = cnAYF;
+
+        let toSplit = src.split("|");
+        let toSplit1;
+        let assType = "";
+
+        //WeekOf Source
+        toSplit1 = toSplit[0];
+        weekItem.weekOf = toSplit1;
+
+        //Bible Reading Source
+        toSplit1 = toSplit[5].split(".)");
+        weekItem.bibleReadingSrc = toSplit1[1].trim();
+
+        //AYF1 Assignment Type
+        toSplit1 = toSplit[6].split(": (");
+        assType = toSplit1[0];
+        assType = assType.trim();
+        weekItem.ass1Type = assType;
+
+        //AYF1 Assignment Time
+        toSplit1 = toSplit[6].split(".)");
+        weekItem.ass1Time = toSplit1[0].match(/(\d+)/)[0];
+
+        //AYF1 Assignment Source
+        toSplit1 = toSplit[6].split("min.) ");
+        assSource = toSplit1[1];
+        weekItem.ass1Src = assSource;
+
+        if (cnAYF > 1) {
+            //AYF2 Assignment Type
+            toSplit1 = toSplit[7].split(": (");
+            assType = toSplit1[0];
+            assType = assType.trim();
+            weekItem.ass2Type = assType;
+    
+            //AYF2 Assignment Time
+            toSplit1 = toSplit[7].split(".)");
+            weekItem.ass2Time = toSplit1[0].match(/(\d+)/)[0];
+    
+            //AYF2 Assignment Source
+            toSplit1 = toSplit[7].split("min.) ");
+            assSource = toSplit1[1];
+            weekItem.ass2Src = assSource;
+        }
+    
+        if (cnAYF > 2) {
+            //AYF3 Assignment Type
+            toSplit1 = toSplit[8].split(": (");
+            assType = toSplit1[0];
+            assType = assType.trim();
+            weekItem.ass3Type = assType;
+    
+            //AYF3 Assignment Time
+            toSplit1 = toSplit[8].split(".)");
+            weekItem.ass3Time = toSplit1[0].match(/(\d+)/)[0];
+    
+            //AYF3 Assignment Source
+            toSplit1 = toSplit[8].split("min.) ");
+            assSource = toSplit1[1];
+            weekItem.ass3Src = assSource;
+        }
+    
+        if (cnAYF > 3) {
+            //AYF4 Assignment Type
+            toSplit1 = toSplit[9].split(": (");
+            assType = toSplit1[0];
+            assType = assType.trim();
+            weekItem.ass4Type = assType;
+    
+            //AYF4 Assignment Time
+            toSplit1 = toSplit[9].split(".)");
+            weekItem.ass4Time = toSplit1[0].match(/(\d+)/)[0];
+    
+            //AYF4 Assignment Source
+            toSplit1 = toSplit[9].split("min.) ");
+            assSource = toSplit1[1];
+            weekItem.ass4Src = assSource;
+        }
 
         weeksData.push(weekItem);
     }
