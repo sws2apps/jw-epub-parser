@@ -8,9 +8,7 @@
     "alphapatch": "npm version prepatch --preid alpha --no-git-tag-version",
     "alphaminor": "npm version preminor --preid alpha --no-git-tag-version",
     "alphamajor": "npm version preminor --preid alpha --no-git-tag-version",
-    "betapatch": "npm version prepatch --preid beta --no-git-tag-version",
-    "betaminor": "npm version preminor --preid beta --no-git-tag-version",
-    "betamajor": "npm version preminor --preid beta --no-git-tag-version",
+    "rc": "npm version prerelease --preid beta --no-git-tag-version",
     "vprerelease": "npm version prerelease --no-git-tag-version"
   },
   "dependencies": {
