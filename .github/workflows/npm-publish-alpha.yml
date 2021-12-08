@@ -7,6 +7,8 @@ name: Create Alpha Release of JW EPUB Parser
   push:
     branches:
       - develop
+    tags-ignore:
+      - release-candidate
 
 jobs:
   publish-npm:
