@@ -1,21 +1,18 @@
 {
   "name": "jw-epub-parser",
-  "version": "1.0.3",
+  "version": "1.0.4-beta.16",
   "description": "",
   "author": "sws2apps",
   "license": "ISC",
   "scripts": {
-    "prepatch": "npm version patch --no-git-tag-version",
-    "patch": "git add . && git commit -m",
-    "postpatch": "git push origin deploy",
-    "preminor": "npm version minor --no-git-tag-version",
-    "minor": "git add . && git commit -m",
-    "postminor": "git push origin deploy",
-    "premajor": "npm version major --no-git-tag-version",
-    "major": "git add . && git commit -m",
-    "postmajor": "git push origin deploy"
+    "alphapatch": "npm version prepatch --preid alpha --no-git-tag-version",
+    "alphaminor": "npm version preminor --preid alpha --no-git-tag-version",
+    "alphamajor": "npm version preminor --preid alpha --no-git-tag-version",
+    "rc": "npm version prerelease --preid beta --no-git-tag-version",
+    "vprerelease": "npm version prerelease --no-git-tag-version"
   },
   "dependencies": {
-    "@gxl/epub-parser": "^2.0.4"
+    "@gxl/epub-parser": "^2.0.4",
+    "jsdom": "^15.2.1"
   }
 }
