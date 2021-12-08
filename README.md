@@ -45,23 +45,25 @@ Here are the list of all available properties in each object in the `weeksData` 
 | weekDate           | string  | Week date |
 | weeklyBibleReading | string  | Weekly Bible Reading |
 | songFirst          | string  | First song |
-| tgw10Talk          | string  | 10 min talk title of the Treasures from God’s Word part |
+| tgw10Talk          | string  | 10 min talk title of the Treasures from God’s Word |
 | tgwBRead           | string  | Bible Reading for student |
 | ayfCount           | integer | Number of Apply Yourself to the Field Ministry parts |
 | ayfPart1           | string  | Part 1 in Apply Yourself to the Field Ministry |
-| ayfPart2           | string  | Part 2 in Apply Yourself to the Field Ministry. This property will be `undefined` if the `ayfCount` is 1 |
-| ayfPart3           | string  | Part 3 in Apply Yourself to the Field Ministry. This property will be `undefined` if the `ayfCount` is less than 3 |
-| ayfPart4           | string  | Part 4 in Apply Yourself to the Field Ministry. This property will be `undefined` if the `ayfCount` is less than 4 |
+| ayfPart2           | string  | Part 2 in Apply Yourself to the Field Ministry. This property will not be available if the `ayfCount` is 1 |
+| ayfPart3           | string  | Part 3 in Apply Yourself to the Field Ministry. This property will not be available if the `ayfCount` is less than 3 |
+| ayfPart4           | string  | Part 4 in Apply Yourself to the Field Ministry. This property will not be available if the `ayfCount` is less than 4 |
 | songMiddle         | string  | Middle song |
 | lcCount            | integer | Number of Living as Christians parts |
 | lcPart1            | string  | Part 1 in Living as Christians |
-| lcPart2            | string  | Part 2 in Living as Christians |
+| lcPart2            | string  | Part 2 in Living as Christians. This property will not be available if the `lcCount` is 1 |
 | lcCBS              | string  | Congregation Bible Study source material |
 | songConclude       | string  | Concluding song |
 
+You may then use your own method to take those outputs and convert them according to your needs: for example, you may add additional parsing to get the timing of the students parts, the type of the assignments, ...
+
 ## Sample Output
 
-```javascript
+```js
 {
   mwbYear: '2021',
   weeksCount: 9,
@@ -76,11 +78,11 @@ Here are the list of all available properties in each object in the `weeksData` 
       ayfPart1: 'Video Fitoriana: (5 min.) Fiaraha-midinika. Alefaso ilay video hoe Fitoriana: Vaovao Tsara—Sl 37:10, 11. Ajanòny ilay video isaky ny misy fiatoana, ary iaraho midinika ny fanontaniana mipoitra eo.',
       ayfPart2: 'Fitoriana: (4 min.) Atombohy amin’ilay hevitra azo resahina. Atolory Ny Tilikambo Fiambenana No. 2 2021. (th lesona 1)',
       ayfPart3: 'Fitoriana: (4 min.) Atombohy amin’ilay hevitra azo resahina. Miezaha mamaly fanoherana fahita eny amin’ny faritany. (th lesona 11)',
-      songMiddle: '4',
+      songMiddle: '76',
       lcCount: 1,
-      lcPart1: 'Hira 76',
-      lcCBS: '“Misaotra An’i Jehovah Izahay Noho ny Fitiavanareo”: (15 min.) Fiaraha-midinika ataon’ny anti-panahy. Alefaso ilay video hoe “Misaotra An’Andriamanitra Mandrakariva Noho ny Aminareo Izahay.” Miresaha hevitra mahaliana iray na roa ao amin’ilay andian-dahatsoratra ao amin’ny jw.org hoe “Fomba Ampiasana ny Fanomezanao.”',
-      songConclude: '3'
+      lcPart1: '“Misaotra An’i Jehovah Izahay Noho ny Fitiavanareo”: (15 min.) Fiaraha-midinika ataon’ny anti-panahy. Alefaso ilay video hoe “Misaotra An’Andriamanitra Mandrakariva Noho ny Aminareo Izahay.” Miresaha hevitra mahaliana iray na roa ao amin’ilay andian-dahatsoratra ao amin’ny jw.org hoe “Fomba Ampiasana ny Fanomezanao.”',
+      lcCBS: 'Fianarana Baiboly: (30 min.) lv toko 16 § 15-22, efajoro “Tena Herin’ny Maizina ve Izany”',
+      songConclude: '36'
     },
     {
       weekDate: '8-14 Novambra',
@@ -92,11 +94,11 @@ Here are the list of all available properties in each object in the `weeksData` 
       ayfPart1: 'Video Fiverenana Mitsidika: (5 min.) Fiaraha-midinika. Alefaso ilay video hoe Fiverenana Mitsidika: Baiboly—Ap 21:3, 4. Ajanòny ilay video isaky ny misy fiatoana, ary iaraho midinika ny fanontaniana mipoitra eo.',
       ayfPart2: 'Fiverenana Mitsidika: (3 min.) Ampiasao ilay hevitra azo resahina. (th lesona 12)',
       ayfPart3: 'Fiverenana Mitsidika: (5 min.) Atombohy amin’ilay hevitra azo resahina. Atolory ilay bokikely hoe Ankafizo Mandrakizay ny Fiainana! (th lesona 14)',
-      songMiddle: '5',
+      songMiddle: '119',
       lcCount: 1,
-      lcPart1: 'Hira 119',
-      lcCBS: 'Zavatra Ilain’ny Fiangonana: (15 min.)',
-      songConclude: '3'
+      lcPart1: 'Zavatra Ilain’ny Fiangonana: (15 min.)',
+      lcCBS: 'Fianarana Baiboly: (30 min.) lv toko 17 § 1-10',
+      songConclude: '118'
     },
     ...
   ]
