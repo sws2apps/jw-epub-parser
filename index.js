@@ -115,8 +115,10 @@ module.exports = loadEPUB = async (epubData) => {
         div = validFiles[a].html;
         let wdHtml = div.getElementsByTagName("h1");
         let weekDate = wdHtml[0].textContent;
-
         weekItem.weekDate = weekDate;
+
+        let wbHtml = div.getElementsByTagName("h2").item(0);
+        weekItem.weeklyBibleReading = wbHtml.textContent;
 
         let src = "";
         let cnAYF = 1;
@@ -169,9 +171,8 @@ module.exports = loadEPUB = async (epubData) => {
         let toSplit1;
         let assType = "";
 
-        //WeekOf Source
-        toSplit1 = toSplit[0];
-        weekItem.weekOf = toSplit1;
+        // First song
+        weekItem.firstSong = toSplit[1].match(/(\d+)/)[0];
 
         //Bible Reading Source
         toSplit1 = toSplit[5].split(".)");
@@ -242,6 +243,11 @@ module.exports = loadEPUB = async (epubData) => {
             assSource = toSplit1[1];
             weekItem.ass4Src = assSource;
         }
+
+        let nextIndex = cnAYF > 1 ? 8 : cnAYF > 2 ? 9 : cnAYF > 3 ? 10 : 7;        
+
+        // Middle song
+        weekItem.middleSong = toSplit[nextIndex].match(/(\d+)/)[0];
 
         weeksData.push(weekItem);
     }
