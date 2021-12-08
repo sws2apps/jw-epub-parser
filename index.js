@@ -219,7 +219,7 @@ module.exports = loadEPUB = async (epubData) => {
         }
 
         // Middle song
-        let nextIndex = cnAYF > 1 ? 8 : cnAYF > 2 ? 9 : cnAYF > 3 ? 10 : 7;
+        let nextIndex = cnAYF > 3 ? 10 : cnAYF > 2 ? 9 : cnAYF > 1 ? 8 : 7;
         weekItem.songMiddle = toSplit[nextIndex].match(/(\d+)/)[0];
 
         // LC Part Count
