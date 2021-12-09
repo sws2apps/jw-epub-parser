@@ -11,7 +11,11 @@ npm i jw-epub-parser
 ## Usage
 
 ```js
+// import
 import loadEPUB from 'jw-epub-parser';
+
+// require
+const loadEPUB = require('jw-epub-parser');
 
 const epubJW = await loadEPUB('/path/to/file.epub');
 
