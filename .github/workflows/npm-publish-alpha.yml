@@ -10,7 +10,7 @@ name: Create Alpha Release of JW EPUB Parser
 
 jobs:
   publish-alpha-npm:
-    if: startWith(github.head_ref, 'alpha/') = true
+    if: startsWith(github.head_ref, 'alpha/') = true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
