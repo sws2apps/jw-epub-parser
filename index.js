@@ -67,9 +67,9 @@ module.exports = loadEPUB = async (epubData) => {
             const dom = new JSDOM(section.htmlString);
 
             const htmlDoc = dom.window.document;
-            const isValidTGW = htmlDoc.querySelector("treasures") ? true : false;
-            const isValidAYF = htmlDoc.querySelector("ministry") ? true : false;
-            const isValidLC = htmlDoc.querySelector("christianLiving") ? true : false;
+            const isValidTGW = htmlDoc.querySelector(".treasures") ? true : false;
+            const isValidAYF = htmlDoc.querySelector(".ministry") ? true : false;
+            const isValidLC = htmlDoc.querySelector(".christianLiving") ? true : false;
 
 
             if (isValidTGW === true && isValidAYF === true && isValidLC === true) {
