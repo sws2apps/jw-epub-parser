@@ -4,12 +4,13 @@
 name: Create Alpha Release of JW EPUB Parser
 
 'on':
-  push:
+  pull_request:
     branches:
       - develop
 
 jobs:
-  publish-npm:
+  publish-alpha-npm:
+    if: startsWith(github.head_ref, 'alpha/') == true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
