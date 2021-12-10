@@ -67,6 +67,8 @@ Here are the list of all available properties in each object in the `weeksData` 
 
 You may then use your own method to take those outputs and convert them according to your needs: for example, add additional parsing to get the timing of the students parts, the type of the assignments, ...
 
+We still have a plan to do the parsing automatically for some languages. It will be annouced when it is ready.
+
 ## Sample Output
 
 ```js
