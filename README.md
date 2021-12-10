@@ -65,7 +65,7 @@ Here are the list of all available properties in each object in the `weeksData` 
 | songConclude       | string  | Concluding song |
 
 
-You may then use your own method to take those outputs and convert them according to your needs: for example, you may add additional parsing to get the timing of the students parts, the type of the assignments, ...
+You may then use your own method to take those outputs and convert them according to your needs: for example, add additional parsing to get the timing of the students parts, the type of the assignments, ...
 
 ## Sample Output
 
