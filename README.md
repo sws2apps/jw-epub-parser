@@ -71,6 +71,8 @@ We still have a plan to do the parsing automatically for some languages. It will
 
 ## Sample Output
 
+Here's an example on how the result of the method looks like:
+
 ```js
 {
   mwbYear: '2021',
