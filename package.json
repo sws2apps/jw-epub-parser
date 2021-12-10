@@ -20,13 +20,23 @@
     "url": "https://github.com/sws2apps/jw-epub-parser.git"
   },
   "scripts": {
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "commit": "git-cz"
   },
   "dependencies": {
     "@gxl/epub-parser": "^2.0.4",
     "jsdom": "^15.2.1"
   },
   "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0",
     "semantic-release": "^18.0.1"
+  },
+  "release": {
+    "branches": ["master", "next"]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
