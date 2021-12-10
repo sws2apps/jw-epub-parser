@@ -32,7 +32,17 @@
     "semantic-release": "^18.0.1"
   },
   "release": {
-    "branches": ["master", "next"]
+    "branches": [
+      "master",
+      {
+        "name": "beta",
+        "prerelease": true
+      },
+      {
+        "name": "alpha",
+        "prerelease": true
+      }
+    ]
   },
   "config": {
     "commitizen": {
