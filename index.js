@@ -33,7 +33,7 @@ module.exports = loadEPUB = async (epubData) => {
         epubInput = epubData;
     }
 
-    // use the ArrayBuffer data
+    // use the ArrayBuffer data or epub file path
     let parsedEPUB;
     const getParsedEPUB = async () => {
         return new Promise((resolve, reject) => {
