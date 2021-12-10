@@ -1,5 +1,5 @@
 module.exports = {
-    "branches" : [
+    branches : [
         "master",
         {
             name: "beta",
