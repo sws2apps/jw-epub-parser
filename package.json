@@ -31,19 +31,6 @@
     "cz-conventional-changelog": "^3.3.0",
     "semantic-release": "^18.0.1"
   },
-  "release": {
-    "branches": [
-      "master",
-      {
-        "name": "beta",
-        "prerelease": true
-      },
-      {
-        "name": "alpha",
-        "prerelease": true
-      }
-    ]
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
