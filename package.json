@@ -1,12 +1,11 @@
 {
   "name": "jw-epub-parser",
-  "version": "1.0.6",
+  "version": "0.0.0-development",
   "description": "This tool will help you to parse and extract the needed source materials from Meeting Workbook EPUB file. Support for parsing Watchtower Study will be added in future release.",
   "keywords": [
     "epub parse",
     "jw",
     "jw.org",
-    "jehovah’s witnesses",
     "epub"
   ],
   "homepage": "https://github.com/sws2apps/jw-epub-parser#readme",
@@ -21,14 +20,13 @@
     "url": "https://github.com/sws2apps/jw-epub-parser.git"
   },
   "scripts": {
-    "alphapatch": "npm version prepatch --preid alpha --no-git-tag-version",
-    "alphaminor": "npm version preminor --preid alpha --no-git-tag-version",
-    "alphamajor": "npm version preminor --preid alpha --no-git-tag-version",
-    "rc": "npm version prerelease --preid beta --no-git-tag-version",
-    "vprerelease": "npm version prerelease --no-git-tag-version"
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@gxl/epub-parser": "^2.0.4",
     "jsdom": "^15.2.1"
+  },
+  "devDependencies": {
+    "semantic-release": "^18.0.1"
   }
 }
