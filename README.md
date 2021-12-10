@@ -42,6 +42,7 @@ By invoking the `loadEPUB` function, it will return an object which contains thr
 | weeksCount | integer | The number of weeks available in the EPUB file |
 | weeksData  | array   | Array containing the weekly source material. Each property available for each object is available below |
 
+
 Here are the list of all available properties in each object in the `weeksData` array:
 
 | Name               |  Type   | Description |
@@ -51,17 +52,18 @@ Here are the list of all available properties in each object in the `weeksData` 
 | songFirst          | string  | First song |
 | tgw10Talk          | string  | 10 min talk title of the Treasures from God’s Word |
 | tgwBRead           | string  | Bible Reading for student |
-| ayfCount           | integer | Number of Apply Yourself to the Field Ministry parts |
+| ayfCount           | integer | Number of parts in Apply Yourself to the Field Ministry |
 | ayfPart1           | string  | Part 1 in Apply Yourself to the Field Ministry |
-| ayfPart2           | string  | Part 2 in Apply Yourself to the Field Ministry. This property will not be available if the `ayfCount` is 1 |
-| ayfPart3           | string  | Part 3 in Apply Yourself to the Field Ministry. This property will not be available if the `ayfCount` is less than 3 |
-| ayfPart4           | string  | Part 4 in Apply Yourself to the Field Ministry. This property will not be available if the `ayfCount` is less than 4 |
+| ayfPart2           | string  | Part 2 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is 1 |
+| ayfPart3           | string  | Part 3 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 3 |
+| ayfPart4           | string  | Part 4 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 4 |
 | songMiddle         | string  | Middle song |
-| lcCount            | integer | Number of Living as Christians parts |
+| lcCount            | integer | Number of parts in Living as Christians |
 | lcPart1            | string  | Part 1 in Living as Christians |
-| lcPart2            | string  | Part 2 in Living as Christians. This property will not be available if the `lcCount` is 1 |
+| lcPart2            | string  | Part 2 in Living as Christians. This property will not be available if `lcCount` is 1 |
 | lcCBS              | string  | Congregation Bible Study source material |
 | songConclude       | string  | Concluding song |
+
 
 You may then use your own method to take those outputs and convert them according to your needs: for example, you may add additional parsing to get the timing of the students parts, the type of the assignments, ...
 
