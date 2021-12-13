@@ -23,7 +23,8 @@
     "semantic-release": "semantic-release",
     "preghpush": "git add .",
     "ghpush": "git-cz",
-    "postghpush": "git push"
+    "postghpush": "git push",
+    "test": "node test/test"
   },
   "dependencies": {
     "@gxl/epub-parser": "^2.0.4",
