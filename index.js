@@ -11,7 +11,8 @@ module.exports = loadEPUB = async (epubData) => {
     // Assign varibale to hold the final input
     let epubInput;
 
-    // Check if we got a FileObject with name property (using inBrowser FileReader), otherwise it is path or ArrayBuffer directly
+    // Check if we got a FileObject with name property (using inBrowser FileReader)
+    // Otherwise it is path or ArrayBuffer directly
     if (epubData.name) {
         const getDataEPUB = () => {
             return new Promise((resolve, reject) => {
@@ -31,9 +32,8 @@ module.exports = loadEPUB = async (epubData) => {
         epubInput = epubData;
     }
 
-    // use the ArrayBuffer data or epub file path
+    // Use parseEPUB from @gxl/epub-parser and store value
     let parsedEPUB;
-
     const getParsedEPUB = async () => {
         return new Promise((resolve, reject) => {
             parseEpub(epubInput)
@@ -57,6 +57,8 @@ module.exports = loadEPUB = async (epubData) => {
     let mwbYear;
 
     if (parsedEPUB.info.author || parsedEPUB.info.author === "WATCHTOWER") {
+
+        // Get mwb year value from epub title
         mwbYear = parsedEPUB.info.title.match(/(\d+)/)[0];
 
         const epubSections = parsedEPUB.sections;
@@ -67,6 +69,7 @@ module.exports = loadEPUB = async (epubData) => {
 
             const htmlDoc = dom.window.document;
 
+            // validate epub using specific jw class :-)
             const isValidTGW = htmlDoc.querySelector(`[class*=treasures]`) ? true : false;
             const isValidAYF = htmlDoc.querySelector(`[class*=ministry]`) ? true : false;
             const isValidLC = htmlDoc.querySelector(`[class*=christianLiving]`) ? true : false;
@@ -97,21 +100,26 @@ module.exports = loadEPUB = async (epubData) => {
 
         const htmlItem = validFiles[a].html;
 
+        // get week date
         const wdHtml = htmlItem.getElementsByTagName("h1").item(0);
         const weekDate = wdHtml.textContent;
         weekItem.weekDate = weekDate;
 
+        // get weekly Bible Reading
         const wbHtml = htmlItem.getElementsByTagName("h2").item(0);
         weekItem.weeklyBibleReading = wbHtml.textContent;
 
         let src = "";
         let cnLC = 0;
 
+        // get number of assignments in Apply Yourself Parts
         const cnAYF = htmlItem.querySelector("#section3").querySelectorAll("li").length;
-        const lcLiLength = htmlItem.querySelector("#section4").querySelectorAll("li").length;
 
+        // get number of assignments in Living as Christians Parts
+        const lcLiLength = htmlItem.querySelector("#section4").querySelectorAll("li").length;
         cnLC = lcLiLength === 6 ? 2 : 1;
 
+        // get elements with meeting schedule data: pGroup
         const pGroupData = htmlItem.querySelectorAll(".pGroup");
         pGroupData.forEach(pGroup => {
             pgData = pGroup.querySelectorAll("p");
