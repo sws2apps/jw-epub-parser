@@ -1,30 +1,66 @@
-# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: JW EPUB Parser Publish to NPM
+name: JW EPUB Parser Analyze & Publish to NPM
 
 on:
   push:
-    branches: [ master, beta, alpha ]
+    branches: [ main, beta, alpha ]
+    paths:
+      - '**.js'
+  pull_request:
+    branches: [ main, beta, alpha ]
+    paths:
+      - '**.js'
 
 jobs:
-  publish:
-
+  analyze:
+    name: Code QL Analysis
     runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'javascript' ]
+
+    steps:
+    - name: Checkout repository for code analysis
+      uses: actions/checkout@v2
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v1
+      with:
+        languages: ${{ matrix.language }}
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1
+    
+  publish:
+    name: Module versioning & Publish to npm
+    if: ${{ github.repository == 'sws2apps/jw-epub-parser' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta' || github.ref == 'refs/heads/alpha') }}
+    runs-on: ubuntu-latest
+    needs: [analyze]
 
     strategy:
       matrix:
         node-version: [16.x]
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repository for npm publish
+      uses: actions/checkout@v2
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm run semantic-release
-      env:
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Install dependency
+      run: npm ci
+
+    - name: Semantic release & Publish to npm
+      run: npm run semantic-release
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

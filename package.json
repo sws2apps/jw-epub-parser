@@ -9,19 +9,21 @@
     "epub"
   ],
   "homepage": "https://github.com/sws2apps/jw-epub-parser#readme",
-  "author": "sws2apps",
+  "author": "Scheduling Workbox System <sws2apps@gmail.com>",
   "bugs": {
     "url": "https://github.com/sws2apps/jw-epub-parser/issues",
     "email": "sws2apps@gmail.com"
   },
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/sws2apps/jw-epub-parser.git"
   },
   "scripts": {
     "semantic-release": "semantic-release",
-    "commit": "git-cz"
+    "preghpush": "git add .",
+    "ghpush": "git-cz",
+    "postghpush": "git push"
   },
   "dependencies": {
     "@gxl/epub-parser": "^2.0.4",

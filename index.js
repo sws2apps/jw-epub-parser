@@ -3,11 +3,9 @@ const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
 module.exports = loadEPUB = async (epubData) => {
-    // epubData could be a FileObject, a file path or ArrayBuffer
-
     // check parameter
     if (!epubData) {
-        throw new Error('The required parameter is missing. Please provide file object, or file path, or ArrayBuffer to begin.')
+        throw new Error('The required parameter is missing. Please provide file object, or file path, or ArrayBuffer.')
     }
     
     // Assign varibale to hold the final input
@@ -35,6 +33,7 @@ module.exports = loadEPUB = async (epubData) => {
 
     // use the ArrayBuffer data or epub file path
     let parsedEPUB;
+
     const getParsedEPUB = async () => {
         return new Promise((resolve, reject) => {
             parseEpub(epubInput)
@@ -53,7 +52,7 @@ module.exports = loadEPUB = async (epubData) => {
         throw new Error('There is an issue when reading and parsing the EPUB file you provide. Make sure that the file is correct.')
     }
 
-    // check if epub data is valid
+    // check if epub data is valid JW EPUB file
     let validFiles = [];
     let mwbYear;
 
@@ -81,10 +80,10 @@ module.exports = loadEPUB = async (epubData) => {
         };
 
         if (validFiles.length === 0 ) {
-            throw new Error('The file you provided is not a valid Meeting Workbook or Watchtower Study EPUB file. Please make sure that the file is correct.')
+            throw new Error('The file you provided is not a valid Meeting Workbook EPUB file. Please make sure that the file is correct.')
         }
     } else {
-        throw new Error('The file you provided is not a valid Meeting Workbook or Watchtower Study EPUB file. Please make sure that the file is correct.')
+        throw new Error('The file you provided is not a valid Meeting Workbook EPUB file. Please make sure that the file is correct.')
     }
 
     // epub validated, start extract
