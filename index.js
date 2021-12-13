@@ -11,7 +11,7 @@ module.exports = loadEPUB = async (epubData) => {
     // Assign varibale to hold the final input
     let epubInput;
 
-    // Check if we got a FileObject with name property, otherwise it is path or ArrayBuffer
+    // Check if we got a FileObject with name property (using inBrowser FileReader), otherwise it is path or ArrayBuffer directly
     if (epubData.name) {
         const getDataEPUB = () => {
             return new Promise((resolve, reject) => {
