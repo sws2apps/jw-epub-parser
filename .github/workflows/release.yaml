@@ -55,7 +55,7 @@ jobs:
     - name: Install dependency
       run: npm ci
 
-    - name: Test code
+    - name: Run testing
       run: npm run test
 
     - name: Semantic release & Publish to npm

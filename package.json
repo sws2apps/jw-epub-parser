@@ -24,7 +24,7 @@
     "preghpush": "git add .",
     "ghpush": "git-cz",
     "postghpush": "git push",
-    "test": "node test/test"
+    "test": "jest"
   },
   "dependencies": {
     "@gxl/epub-parser": "^2.0.4",
@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "cz-conventional-changelog": "^3.3.0",
+    "jest": "^27.4.5",
     "semantic-release": "^18.0.1"
   },
   "config": {
