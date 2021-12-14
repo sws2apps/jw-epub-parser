@@ -3,12 +3,8 @@ name: JW EPUB Parser Analyze & Publish to NPM
 on:
   push:
     branches: [ main, beta, alpha ]
-    paths:
-      - '**.js'
   pull_request:
     branches: [ main, beta, alpha ]
-    paths:
-      - '**.js'
 
 jobs:
   analyze:
