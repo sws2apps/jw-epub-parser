@@ -1,0 +1,30 @@
+name: production-to-staging
+
+on:
+  workflow_dispatch:
+
+permissions: read-all
+
+jobs:
+  prod_to_dev:
+    name: Rebase from production to staging
+    environment:
+      name: Staging
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout for rebase preparation
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
+        with:
+          ref: beta
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Do git rebase
+        run: |
+          git fetch origin
+
+          git checkout beta
+
+          git rebase origin/main
+
+          git push -f origin beta

@@ -1,12 +1,25 @@
 {
   "name": "jw-epub-parser",
   "version": "0.0.0-development",
+  "type": "module",
   "description": "This tool will help you to parse and extract the needed source materials from Meeting Workbook EPUB file. Support for parsing Watchtower Study will be added in future release.",
   "keywords": [
     "epub parse",
     "jw",
     "jw.org",
     "epub"
+  ],
+  "source": "src/index.js",
+  "exports": {
+    "require": "./dist/epubParserJW.cjs",
+    "default": "./dist/epubParserJW.modern.js"
+  },
+  "main": "./dist/epubParserJW.cjs",
+  "module": "./dist/epubParserJW.module.js",
+  "unpkg": "./dist/epubParserJW.umd.js",
+  "files": [
+    "dist/*.js",
+    "dist/*.cjs"
   ],
   "homepage": "https://github.com/sws2apps/jw-epub-parser#readme",
   "author": "Scheduling Workbox System <sws2apps@gmail.com>",
@@ -21,19 +34,21 @@
   },
   "scripts": {
     "semantic-release": "semantic-release",
-    "preghpush": "git add .",
-    "ghpush": "git-cz",
-    "postghpush": "git push",
-    "test": "jest"
+    "preghcommit": "git add .",
+    "ghcommit": "git-cz",
+    "test": "mocha",
+    "build": "microbundle --no-sourcemaps"
   },
   "dependencies": {
     "@gxl/epub-parser": "^2.0.4",
-    "jsdom": "^15.2.1"
+    "jsdom": "^19.0.0"
   },
   "devDependencies": {
+    "chai": "^4.3.6",
     "cz-conventional-changelog": "^3.3.0",
-    "jest": "^27.4.5",
-    "semantic-release": "^18.0.1"
+    "microbundle": "^0.14.2",
+    "mocha": "^9.2.0",
+    "semantic-release": "^19.0.2"
   },
   "config": {
     "commitizen": {
