@@ -1,0 +1,60 @@
+name: code-quality
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [beta, alpha]
+  pull_request:
+    branches: [beta, alpha]
+
+permissions: read-all
+
+jobs:
+  codeql:
+    name: Code QL
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ['javascript']
+
+    steps:
+      - name: Checkout repository for code analysis
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@474bbf07f9247ffe1856c6a0f94aeeb10e7afee6
+        with:
+          languages: ${{ matrix.language }}
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@474bbf07f9247ffe1856c6a0f94aeeb10e7afee6
+
+  test_unit:
+    name: Run Test Units
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - name: 'Checkout code'
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@1f8c6b94b26d0feae1e387ca63ccbdc44d27b561
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install dependency
+        run: npm ci
+
+      - name: Run Test Units
+        run: npm run test
