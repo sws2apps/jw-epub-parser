@@ -1,6 +1,10 @@
 # JW EPUB Parser
 
-This tool is created to complement the Scheduling Workbox System (SWS) utilities. It will help to parse and extract the needed source materials from Meeting Workbook EPUB file. Support for parsing Watchtower Study will be added in future release.
+[![CI](https://github.com/sws2apps/jw-epub-parser/actions/workflows/ci.yml/badge.svg)](https://github.com/sws2apps/jw-epub-parser/actions/workflows/ci.yml)
+[![production](https://github.com/sws2apps/jw-epub-parser/actions/workflows/deploy-production.yml/badge.svg)](https://github.com/sws2apps/jw-epub-parser/actions/workflows/deploy-production.yml)
+![npm](https://img.shields.io/npm/v/jw-epub-parser?style=plastic)
+
+An EPUB Parser to extract the needed source materials from Meeting Workbook EPUB file. Support for parsing Watchtower Study will be added in future release. This tool was originally created to complement the Scheduling Workbox System (SWS) utilities.
 
 ## Install
 
