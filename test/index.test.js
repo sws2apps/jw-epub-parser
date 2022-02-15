@@ -22,9 +22,7 @@ describe('Test loadEPUB function', () => {
 
 	before(async function () {
 		this.timeout(0);
-		data = await loadEPUB('./test/mwb_MG_202111.epub', {
-			type: 'path',
-		});
+		data = await loadEPUB('./test/mwb_MG_202111.epub');
 	});
 
 	it(`mwbYear should return ${expData.mwbYear}`, async () => {

@@ -1,11 +1,8 @@
 import { parseEpub } from '@gxl/epub-parser';
 import { JSDOM } from 'jsdom';
 
-const loadEPUB = async (epubData, options) => {
+const loadEPUB = async (epubData) => {
 	// check parameter
-	if (!options) {
-		options = {};
-	}
 
 	if (!epubData) {
 		throw new Error(
@@ -43,12 +40,11 @@ const loadEPUB = async (epubData, options) => {
 	let parsedEPUB;
 	const getParsedEPUB = async () => {
 		return new Promise((resolve, reject) => {
-			parseEpub(epubInput, options)
+			parseEpub(epubInput)
 				.then((data) => {
 					resolve(data);
 				})
 				.catch((err) => {
-					console.log(err);
 					reject();
 				});
 		});
@@ -57,7 +53,6 @@ const loadEPUB = async (epubData, options) => {
 	try {
 		parsedEPUB = await getParsedEPUB();
 	} catch (error) {
-		console.log(error);
 		throw new Error(
 			'There is an issue when reading and parsing the EPUB file you provide. Make sure that the file is correct.'
 		);
