@@ -13,6 +13,7 @@ jobs:
   codeql:
     name: Code QL
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' }}
     permissions:
       actions: read
       contents: read
@@ -20,8 +21,6 @@ jobs:
 
     strategy:
       fail-fast: false
-      matrix:
-        language: ['javascript']
 
     steps:
       - name: Checkout repository for code analysis
@@ -30,7 +29,7 @@ jobs:
       - name: Initialize CodeQL
         uses: github/codeql-action/init@d39d5d5c9707b926d517b1b292905ef4c03aa777
         with:
-          languages: ${{ matrix.language }}
+          languages: ['javascript']
           queries: security-extended
 
       - name: Perform CodeQL Analysis
@@ -39,6 +38,7 @@ jobs:
   scorecards:
     name: Scorecards Analysis
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' }}
     permissions:
       security-events: write
       actions: read
@@ -66,6 +66,7 @@ jobs:
   test_unit:
     name: Run Test Units
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' }}
 
     strategy:
       matrix:
