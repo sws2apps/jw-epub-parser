@@ -1,4 +1,4 @@
-name: development-to-production
+name: DEV-to-PROD
 
 on:
   workflow_dispatch:

@@ -1,4 +1,4 @@
-name: production-to-staging
+name: PROD-to-STG
 
 on:
   workflow_dispatch:

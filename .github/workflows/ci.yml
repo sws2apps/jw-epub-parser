@@ -2,71 +2,15 @@ name: CI
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
   pull_request:
-    branches: [main]
+    branches: [main, beta, alpha]
 
 permissions: read-all
 
 jobs:
-  codeql:
-    name: Code QL
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'push' }}
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
-
-    strategy:
-      fail-fast: false
-
-    steps:
-      - name: Checkout repository for code analysis
-        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
-
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@d39d5d5c9707b926d517b1b292905ef4c03aa777
-        with:
-          languages: javascript
-          queries: security-extended
-
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@d39d5d5c9707b926d517b1b292905ef4c03aa777
-
-  scorecards:
-    name: Scorecards Analysis
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'push' }}
-    permissions:
-      security-events: write
-      actions: read
-      contents: read
-
-    steps:
-      - name: 'Checkout code'
-        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
-        with:
-          persist-credentials: false
-
-      - name: 'Run analysis'
-        uses: ossf/scorecard-action@c1aec4ac820532bab364f02a81873c555a0ba3a1
-        with:
-          results_file: results.sarif
-          results_format: sarif
-          repo_token: ${{ secrets.SCORECARD_READ_TOKEN }}
-          publish_results: true
-
-      - name: 'Upload to code-scanning'
-        uses: github/codeql-action/upload-sarif@d39d5d5c9707b926d517b1b292905ef4c03aa777
-        with:
-          sarif_file: results.sarif
-
   test_unit:
     name: Run Test Units
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'push' }}
 
     strategy:
       matrix:
