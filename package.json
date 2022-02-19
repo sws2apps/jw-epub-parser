@@ -11,12 +11,12 @@
   ],
   "source": "src/index.js",
   "exports": {
-    "require": "./dist/epubParserJW.cjs",
-    "default": "./dist/epubParserJW.modern.js"
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.modern.js"
   },
-  "main": "./dist/epubParserJW.cjs",
-  "module": "./dist/epubParserJW.module.js",
-  "unpkg": "./dist/epubParserJW.umd.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.module.js",
+  "unpkg": "./dist/index.umd.js",
   "files": [
     "dist/*.js",
     "dist/*.cjs"
