@@ -1,4 +1,4 @@
-name: development
+name: CD-DEV
 
 on:
   workflow_dispatch:

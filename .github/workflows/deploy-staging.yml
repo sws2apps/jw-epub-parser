@@ -1,4 +1,4 @@
-name: staging
+name: CD-STG
 
 on:
   workflow_dispatch:

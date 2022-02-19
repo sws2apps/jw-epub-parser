@@ -1,7 +1,6 @@
-name: code-quality
+name: CodeQL
 
 on:
-  workflow_dispatch:
   push:
     branches: [main, beta, alpha]
   pull_request:
@@ -13,7 +12,6 @@ jobs:
   codeql:
     name: Code QL
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'pull_request' }}
     permissions:
       actions: read
       contents: read
@@ -34,28 +32,3 @@ jobs:
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@d39d5d5c9707b926d517b1b292905ef4c03aa777
-
-  test_unit:
-    name: Run Test Units
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'pull_request' }}
-
-    strategy:
-      matrix:
-        node-version: [16.x]
-
-    steps:
-      - name: 'Checkout code'
-        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@1f8c6b94b26d0feae1e387ca63ccbdc44d27b561
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-
-      - name: Install dependency
-        run: npm ci
-
-      - name: Run Test Units
-        run: npm run test
