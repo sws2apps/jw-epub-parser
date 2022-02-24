@@ -8,6 +8,7 @@ permissions: read-all
 jobs:
   prod_to_dev:
     name: Rebase from production to development
+    if: ${{ github.repository == 'sws2apps/jw-epub-parser' && github.ref == 'refs/heads/main' }}
     environment:
       name: Development
     runs-on: ubuntu-latest
@@ -16,15 +17,11 @@ jobs:
       - name: Checkout for rebase preparation
         uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
         with:
-          ref: alpha
           token: ${{ secrets.GH_TOKEN }}
 
       - name: Do git rebase
         run: |
-          git fetch origin
-
+          git fetch --all
           git checkout alpha
-
-          git rebase origin/main
-
+          git rebase --onto origin/main alpha
           git push -f origin alpha

@@ -33,9 +33,6 @@
     "url": "https://github.com/sws2apps/jw-epub-parser.git"
   },
   "scripts": {
-    "semantic-release": "semantic-release",
-    "preghcommit": "git add .",
-    "ghcommit": "git-cz",
     "test": "mocha",
     "build": "microbundle --no-sourcemaps"
   },
@@ -48,7 +45,6 @@
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "chai": "^4.3.6",
-    "cz-conventional-changelog": "^3.3.0",
     "microbundle": "^0.14.2",
     "mocha": "^9.2.0",
     "semantic-release": "^19.0.2"
