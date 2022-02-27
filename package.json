@@ -9,18 +9,7 @@
     "jw.org",
     "epub"
   ],
-  "source": "src/index.js",
-  "exports": {
-    "require": "./dist/index.cjs",
-    "default": "./dist/index.modern.js"
-  },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.module.js",
-  "unpkg": "./dist/index.umd.js",
-  "files": [
-    "dist/*.js",
-    "dist/*.cjs"
-  ],
+  "main": "./index.js",
   "homepage": "https://github.com/sws2apps/jw-epub-parser#readme",
   "author": "Scheduling Workbox System <sws2apps@gmail.com>",
   "bugs": {
