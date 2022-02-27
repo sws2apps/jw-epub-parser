@@ -1,3 +1,10 @@
+# [1.4.0-beta.3](https://github.com/sws2apps/jw-epub-parser/compare/v1.4.0-beta.2...v1.4.0-beta.3) (2022-02-27)
+
+
+### Bug Fixes
+
+* **module:** code refactor to cjs ([d4fc7db](https://github.com/sws2apps/jw-epub-parser/commit/d4fc7db457cb2fee4e3de023bda0d6243b063e94))
+
 # [1.4.0-beta.2](https://github.com/sws2apps/jw-epub-parser/compare/v1.4.0-beta.1...v1.4.0-beta.2) (2022-02-27)
 
 
