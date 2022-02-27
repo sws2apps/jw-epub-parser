@@ -22,8 +22,7 @@
     "url": "https://github.com/sws2apps/jw-epub-parser.git"
   },
   "scripts": {
-    "test": "mocha",
-    "build": "microbundle --no-sourcemaps"
+    "test": "mocha"
   },
   "dependencies": {
     "@gxl/epub-parser": "^2.0.4",
@@ -31,12 +30,9 @@
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.1",
-    "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "chai": "^4.3.6",
-    "microbundle": "^0.14.2",
-    "mocha": "^9.2.0",
-    "semantic-release": "^19.0.2"
+    "mocha": "^9.2.0"
   },
   "config": {
     "commitizen": {
