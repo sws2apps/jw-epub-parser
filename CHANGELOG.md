@@ -1,3 +1,10 @@
+# [1.4.0-beta.2](https://github.com/sws2apps/jw-epub-parser/compare/v1.4.0-beta.1...v1.4.0-beta.2) (2022-02-27)
+
+
+### Bug Fixes
+
+* **module:** use single file for module ([218fa09](https://github.com/sws2apps/jw-epub-parser/commit/218fa09ff6341c07b727e5466e9f5fb9c15e90fb))
+
 # [1.4.0-beta.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.3.1...v1.4.0-beta.1) (2022-02-27)
 
 
