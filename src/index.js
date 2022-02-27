@@ -1,7 +1,7 @@
 import { parseEpub } from '@gxl/epub-parser';
 import { JSDOM } from 'jsdom';
 
-const loadEPUB = async (epubData) => {
+export async function loadEPUB(epubData) {
 	// check parameter
 
 	if (!epubData) {
@@ -209,6 +209,4 @@ const loadEPUB = async (epubData) => {
 	}
 
 	return { mwbYear, weeksCount, weeksData };
-};
-
-export default loadEPUB;
+}
