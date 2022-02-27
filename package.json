@@ -1,7 +1,7 @@
 {
   "name": "jw-epub-parser",
   "version": "1.4.0-beta.2",
-  "type": "module",
+  "type": "commonjs",
   "description": "This tool will help you to parse and extract the needed source materials from Meeting Workbook EPUB file. Support for parsing Watchtower Study will be added in future release.",
   "keywords": [
     "epub parse",
@@ -9,7 +9,6 @@
     "jw.org",
     "epub"
   ],
-  "main": "./index.js",
   "homepage": "https://github.com/sws2apps/jw-epub-parser#readme",
   "author": "Scheduling Workbox System <sws2apps@gmail.com>",
   "bugs": {
