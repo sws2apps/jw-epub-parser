@@ -1,9 +1,9 @@
-import { parseEpub } from '@gxl/epub-parser';
-import { JSDOM } from 'jsdom';
+const { parseEpub } = require('@gxl/epub-parser');
+const jsdom = require('jsdom');
+const { JSDOM } = jsdom;
 
-const loadEPUB = async (epubData) => {
+module.exports = loadEPUB = async (epubData) => {
 	// check parameter
-
 	if (!epubData) {
 		throw new Error(
 			'The required parameter is missing. Please provide file object, or file path, or ArrayBuffer.'
@@ -44,7 +44,7 @@ const loadEPUB = async (epubData) => {
 				.then((data) => {
 					resolve(data);
 				})
-				.catch((err) => {
+				.catch(() => {
 					reject();
 				});
 		});
@@ -140,7 +140,7 @@ const loadEPUB = async (epubData) => {
 		// get elements with meeting schedule data: pGroup
 		const pGroupData = htmlItem.querySelectorAll('.pGroup');
 		pGroupData.forEach((pGroup) => {
-			let pgData = pGroup.querySelectorAll('p');
+			pgData = pGroup.querySelectorAll('p');
 			pgData.forEach((p) => {
 				src += '|' + p.textContent;
 			});
@@ -210,5 +210,3 @@ const loadEPUB = async (epubData) => {
 
 	return { mwbYear, weeksCount, weeksData };
 };
-
-export default loadEPUB;
