@@ -1,13 +1,20 @@
 {
   "name": "jw-epub-parser",
   "version": "1.4.0-beta.3",
-  "type": "commonjs",
+  "type": "module",
   "description": "This tool will help you to parse and extract the needed source materials from Meeting Workbook EPUB file. Support for parsing Watchtower Study will be added in future release.",
   "keywords": [
     "epub parse",
     "jw",
     "jw.org",
     "epub"
+  ],
+  "source": "src/index.js",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.js",
+  "files": [
+    "dist/*.js",
+    "dist/*.cjs"
   ],
   "homepage": "https://github.com/sws2apps/jw-epub-parser#readme",
   "author": "Scheduling Workbox System <sws2apps@gmail.com>",
@@ -21,17 +28,22 @@
     "url": "https://github.com/sws2apps/jw-epub-parser.git"
   },
   "scripts": {
-    "test": "mocha"
-  },
-  "dependencies": {
-    "@gxl/epub-parser": "^2.0.4",
-    "jsdom": "^19.0.0"
+    "test": "mocha",
+    "build": "npx rollup -c"
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@gxl/epub-parser": "^2.0.4",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-json": "^4.1.0",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "chai": "^4.3.6",
-    "mocha": "^9.2.0"
+    "cz-conventional-changelog": "^3.3.0",
+    "jsdom": "^19.0.0",
+    "mocha": "^9.2.0",
+    "rollup": "^2.69.0"
   },
   "config": {
     "commitizen": {

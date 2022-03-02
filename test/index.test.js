@@ -1,5 +1,5 @@
-const { expect } = require('chai');
-const loadEPUB = require('../index');
+import { expect } from 'chai';
+import loadEPUB from '../dist/index.js';
 
 const expData = {
 	mwbYear: '2021',
