@@ -1,3 +1,10 @@
+# [1.4.0-beta.5](https://github.com/sws2apps/jw-epub-parser/compare/v1.4.0-beta.4...v1.4.0-beta.5) (2022-03-02)
+
+
+### Bug Fixes
+
+* **release:** run build before npm publish ([d044eba](https://github.com/sws2apps/jw-epub-parser/commit/d044eba76428ff7181f5cad32b84774963448aed))
+
 # [1.4.0-beta.4](https://github.com/sws2apps/jw-epub-parser/compare/v1.4.0-beta.3...v1.4.0-beta.4) (2022-03-02)
 
 
