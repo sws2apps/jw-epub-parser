@@ -1,3 +1,10 @@
+# [1.4.0-beta.4](https://github.com/sws2apps/jw-epub-parser/compare/v1.4.0-beta.3...v1.4.0-beta.4) (2022-03-02)
+
+
+### Features
+
+* **app:** module output improvement ([21c9502](https://github.com/sws2apps/jw-epub-parser/commit/21c95026ae419f2cecdcf358806ffe67ffaae68e))
+
 # [1.4.0-beta.3](https://github.com/sws2apps/jw-epub-parser/compare/v1.4.0-beta.2...v1.4.0-beta.3) (2022-02-27)
 
 
