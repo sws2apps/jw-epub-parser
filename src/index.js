@@ -79,7 +79,7 @@ const initEpub = async (zip) => {
 			while (validMwbFiles.length > 0) {
 				validMwbFiles.pop();
 			}
-			throw 'Reached max. number of files';
+			throw new Error('Reached max. number of files');
 		}
 
 		// Prevent ZipSlip path traversal (S6096)
@@ -88,7 +88,7 @@ const initEpub = async (zip) => {
 			while (validMwbFiles.length > 0) {
 				validMwbFiles.pop();
 			}
-			throw 'Path traversal detected';
+			throw new Error('Path traversal detected');
 		}
 
 		const contentSize = await zip.file(file).async('nodebuffer');
@@ -97,7 +97,7 @@ const initEpub = async (zip) => {
 			while (validMwbFiles.length > 0) {
 				validMwbFiles.pop();
 			}
-			throw 'Reached max. size';
+			throw new Error('Reached max. size');
 		}
 
 		if (isValidFilename(file)) {
