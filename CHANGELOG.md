@@ -1,3 +1,10 @@
+# [1.4.0-beta.6](https://github.com/sws2apps/jw-epub-parser/compare/v1.4.0-beta.5...v1.4.0-beta.6) (2022-03-04)
+
+
+### Features
+
+* **module:** use jszip to read and parse epub ([ab70322](https://github.com/sws2apps/jw-epub-parser/commit/ab70322fe22c1b6114f9630b15b9300f0d07a9f3))
+
 # [1.4.0-beta.5](https://github.com/sws2apps/jw-epub-parser/compare/v1.4.0-beta.4...v1.4.0-beta.5) (2022-03-02)
 
 
