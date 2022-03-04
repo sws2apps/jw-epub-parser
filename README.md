@@ -15,11 +15,7 @@ npm i jw-epub-parser
 ## Usage
 
 ```js
-// import
-import loadEPUB from 'jw-epub-parser';
-
-// require
-const loadEPUB = require('jw-epub-parser');
+import { loadEPUB } from 'jw-epub-parser';
 
 const epubJW = await loadEPUB('/path/to/file.epub');
 
@@ -32,42 +28,40 @@ function: asynchronous
 
 #### epubData
 
-type: `string` or `buffer`
+type: `string` or `blob`
 
-It can be the path to the EPUB file or EPUB file's binary string or buffer
+It can be the path to the EPUB file or EPUB file's blob
 
 ## Return
 
 By invoking the `loadEPUB` function, it will return an object which contains three properties:
 
-| Return     |   Type  | Description |
-| ---------- | :-----: | ----------- |
-| mwbYear    | string  | The current year of the Meeting Workbook that is being parsed |
-| weeksCount | integer | The number of weeks available in the EPUB file |
-| weeksData  | array   | Array containing the weekly source material. Each property available for each object is available below |
-
+| Return     |  Type   | Description                                                                                             |
+| ---------- | :-----: | ------------------------------------------------------------------------------------------------------- |
+| mwbYear    | string  | The current year of the Meeting Workbook that is being parsed                                           |
+| weeksCount | integer | The number of weeks available in the EPUB file                                                          |
+| weeksData  |  array  | Array containing the weekly source material. Each property available for each object is available below |
 
 Here are the list of all available properties in each object in the `weeksData` array:
 
-| Name               |  Type   | Description |
-| ------------------ | :-----: | ----------- |
-| weekDate           | string  | Week date |
-| weeklyBibleReading | string  | Weekly Bible Reading |
-| songFirst          | string  | First song |
-| tgw10Talk          | string  | 10 min talk title of the Treasures from God’s Word |
-| tgwBRead           | string  | Bible Reading for student |
-| ayfCount           | integer | Number of parts in Apply Yourself to the Field Ministry |
-| ayfPart1           | string  | Part 1 in Apply Yourself to the Field Ministry |
-| ayfPart2           | string  | Part 2 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is 1 |
+| Name               |  Type   | Description                                                                                                      |
+| ------------------ | :-----: | ---------------------------------------------------------------------------------------------------------------- |
+| weekDate           | string  | Week date                                                                                                        |
+| weeklyBibleReading | string  | Weekly Bible Reading                                                                                             |
+| songFirst          | string  | First song                                                                                                       |
+| tgw10Talk          | string  | 10 min talk title of the Treasures from God’s Word                                                               |
+| tgwBRead           | string  | Bible Reading for student                                                                                        |
+| ayfCount           | integer | Number of parts in Apply Yourself to the Field Ministry                                                          |
+| ayfPart1           | string  | Part 1 in Apply Yourself to the Field Ministry                                                                   |
+| ayfPart2           | string  | Part 2 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is 1           |
 | ayfPart3           | string  | Part 3 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 3 |
 | ayfPart4           | string  | Part 4 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 4 |
-| songMiddle         | string  | Middle song |
-| lcCount            | integer | Number of parts in Living as Christians |
-| lcPart1            | string  | Part 1 in Living as Christians |
-| lcPart2            | string  | Part 2 in Living as Christians. This property will not be available if `lcCount` is 1 |
-| lcCBS              | string  | Congregation Bible Study source material |
-| songConclude       | string  | Concluding song |
-
+| songMiddle         | string  | Middle song                                                                                                      |
+| lcCount            | integer | Number of parts in Living as Christians                                                                          |
+| lcPart1            | string  | Part 1 in Living as Christians                                                                                   |
+| lcPart2            | string  | Part 2 in Living as Christians. This property will not be available if `lcCount` is 1                            |
+| lcCBS              | string  | Congregation Bible Study source material                                                                         |
+| songConclude       | string  | Concluding song                                                                                                  |
 
 You may then use your own method to take those outputs and convert them according to your needs: for example, add additional parsing to get the timing of the students parts, the type of the assignments, ...
 

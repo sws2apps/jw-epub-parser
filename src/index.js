@@ -1,122 +1,170 @@
-import { parseEpub } from '@gxl/epub-parser';
-import { JSDOM } from 'jsdom';
+import JSZip from 'jszip';
+import * as fs from 'fs';
+import * as path from 'path';
 
-const loadEPUB = async (epubData) => {
-	// check parameter
+let validMwbFiles = [];
+let mwbYear;
 
-	if (!epubData) {
-		throw new Error(
-			'The required parameter is missing. Please provide file object, or file path, or ArrayBuffer.'
-		);
-	}
+const loadEPUB = async (epubInput) => {
+	// check if we receive path or blob
+	let data;
+	if (epubInput.name) {
+		if (isValidEpubNaming(epubInput.name)) {
+			mwbYear = epubInput.name.split('_')[2].substring(0, 4);
+			data = epubInput; // blob
+		} else {
+			throw new Error('The selected epub file has an incorrect naming.');
+		}
+	} else {
+		const file = path.basename(epubInput);
 
-	// Assign varibale to hold the final input
-	let epubInput;
+		if (isValidEpubNaming(file)) {
+			data = epubInput; // blob
+			mwbYear = file.split('_')[2].substring(0, 4);
+		} else {
+			throw new Error('The selected epub file has an incorrect naming.');
+		}
 
-	// Check if we got a FileObject with name property (using inBrowser FileReader)
-	// Otherwise it is path or ArrayBuffer directly
-	if (epubData.name) {
-		const getDataEPUB = () => {
+		const getDataFromPath = () => {
 			return new Promise((resolve, reject) => {
-				let reader = new FileReader();
-				reader.readAsArrayBuffer(epubData);
-				reader.onload = () => resolve(reader.result);
-				reader.onerror = (error) => reject(error);
+				fs.readFile(epubInput, (err, data) => {
+					if (err) {
+						reject(err);
+					} else {
+						resolve(data);
+					}
+				});
 			});
 		};
 
-		try {
-			epubInput = await getDataEPUB();
-		} catch {
-			throw new Error(
-				'There is an issue when loading the file you have provided. Please make sure that file is correct.'
-			);
-		}
-	} else {
-		epubInput = epubData;
+		data = await getDataFromPath(); // path
 	}
 
-	// Use parseEPUB from @gxl/epub-parser and store value
-	let parsedEPUB;
-	const getParsedEPUB = async () => {
+	const doParsing = () => {
 		return new Promise((resolve, reject) => {
-			parseEpub(epubInput)
-				.then((data) => {
-					resolve(data);
-				})
-				.catch((err) => {
-					reject();
-				});
+			JSZip.loadAsync(data).then(async (zip) => {
+				await initEpub(zip);
+
+				if (validMwbFiles.length === 0) {
+					reject(
+						'The file you provided is not a valid Meeting Workbook EPUB file. Please make sure that the file is correct.'
+					);
+				} else {
+					resolve(parseEpub(validMwbFiles));
+				}
+			});
 		});
 	};
 
-	try {
-		parsedEPUB = await getParsedEPUB();
-	} catch (error) {
-		throw new Error(
-			'There is an issue when reading and parsing the EPUB file you provide. Make sure that the file is correct.'
-		);
-	}
+	const result = await doParsing();
+	return result;
+};
 
-	// check if epub data is valid JW EPUB file
-	let validFiles = [];
-	let mwbYear;
+const isValidEpubNaming = (name) => {
+	let regex = /^mwb_[A-Z][A-Z]?[A-Z]?_202\d(0[1-9]|1[0-2])\.epub$/i;
+	return regex.test(name);
+};
 
-	if (parsedEPUB.info.author || parsedEPUB.info.author === 'WATCHTOWER') {
-		// Get mwb year value from epub title
-		mwbYear = parsedEPUB.info.title.match(/(\d+)/)[0];
+const initEpub = async (zip) => {
+	const MAX_FILES = 300;
+	const MAX_SIZE = 20000000; // 20 MO
 
-		const epubSections = parsedEPUB.sections;
-		const pgCount = epubSections.length;
-		for (let i = 0; i < pgCount; i++) {
-			const section = epubSections[i];
-			const dom = new JSDOM(section.htmlString);
+	let fileCount = 0;
+	let totalSize = 0;
+	let targetDirectory = __dirname + '/archive_tmp';
 
-			const htmlDoc = dom.window.document;
+	for (const file in zip.files) {
+		fileCount++;
+		if (fileCount > MAX_FILES) {
+			while (validMwbFiles.length > 0) {
+				validMwbFiles.pop();
+			}
+			throw new Error('Reached max. number of files');
+		}
 
-			// validate epub using specific jw class :-)
-			const isValidTGW = htmlDoc.querySelector(`[class*=treasures]`)
-				? true
-				: false;
-			const isValidAYF = htmlDoc.querySelector(`[class*=ministry]`)
-				? true
-				: false;
-			const isValidLC = htmlDoc.querySelector(`[class*=christianLiving]`)
-				? true
-				: false;
+		// Prevent ZipSlip path traversal (S6096)
+		const resolvedPath = path.join(targetDirectory, file);
+		if (!resolvedPath.startsWith(targetDirectory)) {
+			while (validMwbFiles.length > 0) {
+				validMwbFiles.pop();
+			}
+			throw new Error('Path traversal detected');
+		}
 
-			if (isValidTGW === true && isValidAYF === true && isValidLC === true) {
-				let obj = {};
-				obj.html = htmlDoc;
-				validFiles.push(obj);
+		const contentSize = await zip.file(file).async('nodebuffer');
+		totalSize += contentSize.length;
+		if (totalSize > MAX_SIZE) {
+			while (validMwbFiles.length > 0) {
+				validMwbFiles.pop();
+			}
+			throw new Error('Reached max. size');
+		}
+
+		if (isValidFilename(file)) {
+			const content = await getHtmlRawString(zip, file);
+
+			const parser = new window.DOMParser();
+			const htmlDoc = parser.parseFromString(content, 'text/html');
+
+			if (isValidMwbSched(htmlDoc)) {
+				validMwbFiles.push(htmlDoc);
 			}
 		}
+	}
+};
 
-		if (validFiles.length === 0) {
-			throw new Error(
-				'The file you provided is not a valid Meeting Workbook EPUB file. Please make sure that the file is correct.'
-			);
+const isValidFilename = (name) => {
+	if (name.startsWith('OEBPS') && name.endsWith('.xhtml')) {
+		const fileName = name.split('/')[1].split('.')[0];
+		if (!isNaN(fileName)) {
+			return true;
+		} else {
+			return false;
 		}
 	} else {
-		throw new Error(
-			'The file you provided is not a valid Meeting Workbook EPUB file. Please make sure that the file is correct.'
-		);
+		return false;
 	}
+};
 
-	// epub validated, start extract
-	let weeksCount;
+const getHtmlRawString = async (zip, filename) => {
+	const content = await zip.file(filename).async('string');
+
+	return content;
+};
+
+const isValidMwbSched = (htmlDoc) => {
+	const isValidTGW = htmlDoc.querySelector(`[class*=treasures]`) ? true : false;
+	const isValidAYF = htmlDoc.querySelector(`[class*=ministry]`) ? true : false;
+	const isValidLC = htmlDoc.querySelector(`[class*=christianLiving]`)
+		? true
+		: false;
+
+	if (isValidTGW === true && isValidAYF === true && isValidLC === true) {
+		return true;
+	} else {
+		return false;
+	}
+};
+
+const parseEpub = (htmlDocs) => {
+	let obj = {};
 	let weeksData = [];
+	let weeksCount;
 
-	weeksCount = validFiles.length;
+	weeksCount = htmlDocs.length;
+
+	obj.weeksCount = weeksCount;
+	obj.mwbYear = mwbYear;
 
 	for (let a = 0; a < weeksCount; a++) {
 		let weekItem = {};
 
-		const htmlItem = validFiles[a].html;
+		const htmlItem = htmlDocs[a];
 
 		// get week date
 		const wdHtml = htmlItem.getElementsByTagName('h1').item(0);
 		const weekDate = wdHtml.textContent;
+
 		weekItem.weekDate = weekDate;
 
 		// get weekly Bible Reading
@@ -208,7 +256,9 @@ const loadEPUB = async (epubData) => {
 		weeksData.push(weekItem);
 	}
 
-	return { mwbYear, weeksCount, weeksData };
+	obj.weeksData = weeksData;
+
+	return obj;
 };
 
-export default loadEPUB;
+export { loadEPUB };
