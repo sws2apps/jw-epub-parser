@@ -3,5 +3,5 @@ test
 
 .github
 
-release.config.js
+release.config.cjs
 rollup.config.js
