@@ -1,3 +1,10 @@
+# [1.4.0-beta.7](https://github.com/sws2apps/jw-epub-parser/compare/v1.4.0-beta.6...v1.4.0-beta.7) (2022-03-04)
+
+
+### Features
+
+* **module:** use domparser to parse epub content ([6cae90b](https://github.com/sws2apps/jw-epub-parser/commit/6cae90b70838cebbc27f22b01cabb92337cc4929))
+
 # [1.4.0-beta.6](https://github.com/sws2apps/jw-epub-parser/compare/v1.4.0-beta.5...v1.4.0-beta.6) (2022-03-04)
 
 
