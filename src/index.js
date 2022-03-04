@@ -71,7 +71,7 @@ const initEpub = async (zip) => {
 
 	let fileCount = 0;
 	let totalSize = 0;
-	let targetDirectory = __dirname + '/archive_tmp';
+	let targetDirectory = 'archive_tmp';
 
 	for (const file in zip.files) {
 		fileCount++;
