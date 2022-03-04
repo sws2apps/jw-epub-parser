@@ -1,5 +1,8 @@
-import { expect } from 'chai';
-import { loadEPUB } from '../dist/index.js';
+require('jsdom-global')();
+global.DOMParser = window.DOMParser;
+
+const { expect } = require('chai');
+const { loadEPUB } = require('../dist/index.cjs');
 
 const expData = {
 	mwbYear: '2021',
