@@ -66,7 +66,40 @@ const isValidEpubNaming = (name) => {
 };
 
 const initEpub = async (zip) => {
+	const MAX_FILES = 300;
+	const MAX_SIZE = 20000000; // 20 MO
+
+	let fileCount = 0;
+	let totalSize = 0;
+	let targetDirectory = __dirname + '/archive_tmp';
+
 	for (const file in zip.files) {
+		fileCount++;
+		if (fileCount > MAX_FILES) {
+			while (validMwbFiles.length > 0) {
+				validMwbFiles.pop();
+			}
+			throw 'Reached max. number of files';
+		}
+
+		// Prevent ZipSlip path traversal (S6096)
+		const resolvedPath = path.join(targetDirectory, file);
+		if (!resolvedPath.startsWith(targetDirectory)) {
+			while (validMwbFiles.length > 0) {
+				validMwbFiles.pop();
+			}
+			throw 'Path traversal detected';
+		}
+
+		const contentSize = await zip.file(file).async('nodebuffer');
+		totalSize += contentSize.length;
+		if (totalSize > MAX_SIZE) {
+			while (validMwbFiles.length > 0) {
+				validMwbFiles.pop();
+			}
+			throw 'Reached max. size';
+		}
+
 		if (isValidFilename(file)) {
 			const content = await getHtmlRawString(zip, file);
 
