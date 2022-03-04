@@ -1,5 +1,5 @@
-import babel from '@rollup/plugin-babel';
-import json from '@rollup/plugin-json';
+import commonjs from '@rollup/plugin-commonjs';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
 
 const config = {
 	input: 'src/index.js',
@@ -11,25 +11,11 @@ const config = {
 		{
 			file: 'dist/index.cjs.js',
 			format: 'cjs',
-			exports: 'default',
+			exports: 'named',
 		},
 	],
-	plugins: [
-		json(),
-		babel({ babelHelpers: 'runtime' }),
-		[
-			'@babel/plugin-transform-runtime',
-			{
-				regenerator: true,
-			},
-		],
-	],
-	external: [
-		'@gxl/epub-parser',
-		'jsdom',
-		'@babel/runtime/helpers/asyncToGenerator',
-		'@babel/runtime/regenerator',
-	],
+	plugins: [nodeResolve(), commonjs()],
+	external: ['jszip', 'jsdom'],
 };
 
 export default config;
