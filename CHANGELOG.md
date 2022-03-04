@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.3.1...v1.4.0) (2022-03-04)
+
+
+### Features
+
+* **module:** dependency update ([ac790df](https://github.com/sws2apps/jw-epub-parser/commit/ac790dff325e4cac6de26bb82b0828e21561c790))
+
 # [1.4.0-beta.7](https://github.com/sws2apps/jw-epub-parser/compare/v1.4.0-beta.6...v1.4.0-beta.7) (2022-03-04)
 
 
