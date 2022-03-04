@@ -1,9 +1,6 @@
 import JSZip from 'jszip';
 import * as fs from 'fs';
 import * as path from 'path';
-import jsdom from 'jsdom';
-
-const { JSDOM } = jsdom;
 
 let validMwbFiles = [];
 let mwbYear;
@@ -73,8 +70,8 @@ const initEpub = async (zip) => {
 		if (isValidFilename(file)) {
 			const content = await getHtmlRawString(zip, file);
 
-			const dom = new JSDOM(content);
-			const htmlDoc = dom.window.document;
+			const parser = new window.DOMParser();
+			const htmlDoc = parser.parseFromString(content, 'text/html');
 
 			if (isValidMwbSched(htmlDoc)) {
 				validMwbFiles.push(htmlDoc);

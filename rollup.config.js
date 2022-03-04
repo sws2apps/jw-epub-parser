@@ -9,7 +9,7 @@ const config = {
 			format: 'es',
 		},
 		{
-			file: 'dist/index.cjs.js',
+			file: 'dist/index.cjs',
 			format: 'cjs',
 			exports: 'named',
 		},
