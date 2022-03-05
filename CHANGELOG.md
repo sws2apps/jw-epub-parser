@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/sws2apps/jw-epub-parser/compare/v1.4.1...v1.4.2) (2022-03-05)
+
+
+### Bug Fixes
+
+* **module:** fix forth assignment not being populated ([66db7d8](https://github.com/sws2apps/jw-epub-parser/commit/66db7d8774eef576a5a0deaf798bb83ef6d8b460))
+
 ## [1.4.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.4.0...v1.4.1) (2022-03-04)
 
 
