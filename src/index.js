@@ -224,7 +224,7 @@ const parseEpub = (htmlDocs) => {
 
 		if (cnAYF > 3) {
 			//AYF4 Source
-			weekItem.ayfPart3 = toSplit[11].trim();
+			weekItem.ayfPart4 = toSplit[11].trim();
 		}
 
 		// Middle song
