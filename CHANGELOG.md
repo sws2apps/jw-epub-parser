@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.4.0...v1.4.1) (2022-03-04)
+
+
+### Bug Fixes
+
+* **jszip:** path traversal detection update ([a097318](https://github.com/sws2apps/jw-epub-parser/commit/a097318b3d6098b289edaf4cee761d0b0b48862e))
+
 # [1.4.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.3.1...v1.4.0) (2022-03-04)
 
 
