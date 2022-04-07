@@ -1,8 +1,6 @@
-require('jsdom-global')();
-global.DOMParser = window.DOMParser;
-
-const { expect } = require('chai');
-const { loadEPUB } = require('../dist/index.cjs');
+import 'global-jsdom/register';
+import { expect } from 'chai';
+import { loadEPUB } from '../dist/index.cjs';
 
 const expData = {
 	mwbYear: '2021',
