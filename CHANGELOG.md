@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.6.0...v1.7.0) (2022-04-07)
+
+
+### Features
+
+* **deps:** bump jszip from 3.9.0 to 3.9.1 ([e290529](https://github.com/sws2apps/jw-epub-parser/commit/e290529a48210c4cbdd39e6cc5ed83f8454c5c83))
+
 # [1.6.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.5.0...v1.6.0) (2022-04-05)
 
 
