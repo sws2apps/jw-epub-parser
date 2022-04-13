@@ -46,6 +46,7 @@
     "rollup": "^2.69.0"
   },
   "dependencies": {
-    "jszip": "^3.9.1"
+    "jszip": "^3.9.1",
+    "path-browserify": "^1.0.1"
   }
 }
