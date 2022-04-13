@@ -1,3 +1,4 @@
+import 'global-jsdom/register';
 import JSZip from 'jszip';
 import * as fs from 'fs';
 import * as path from 'path';
