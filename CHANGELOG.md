@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.7.1...v1.8.0) (2022-04-13)
+
+
+### Features
+
+* **module:** update dist to use new format ([8e9af02](https://github.com/sws2apps/jw-epub-parser/commit/8e9af0283530720d2f071ef29c2986c2b34c0565))
+
 ## [1.7.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.7.0...v1.7.1) (2022-04-07)
 
 
