@@ -20,20 +20,6 @@ import { loadEPUB } from 'jw-epub-parser';
 const epubJW = await loadEPUB('/path/to/file.epub');
 ```
 
-If you want to use this module in a node apps, first do the following:
-
-- Install jsdom and global-jsdom
-
-```js
-npm i jsdom global-jsdom
-```
-
-- Enables DOM in Node.js using global-jsdom
-
-```js
-import 'global-jsdom/register';
-```
-
 ### loadEPUB(epubData)
 
 function: asynchronous
