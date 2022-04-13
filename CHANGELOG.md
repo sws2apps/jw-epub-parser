@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.7.0...v1.7.1) (2022-04-07)
+
+
+### Bug Fixes
+
+* **module:** force version bumping ([76c6efa](https://github.com/sws2apps/jw-epub-parser/commit/76c6efabbb6092b86f8603d9eda073ba6e406b4e))
+
 # [1.7.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.6.0...v1.7.0) (2022-04-07)
 
 
