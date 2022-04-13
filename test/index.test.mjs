@@ -1,6 +1,5 @@
-import 'global-jsdom/register';
 import { expect } from 'chai';
-import { loadEPUB } from '../dist/index.cjs';
+import { loadEPUB } from '../dist/index.node.js';
 
 const expData = {
 	mwbYear: '2021',
