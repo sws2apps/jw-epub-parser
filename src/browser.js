@@ -71,8 +71,8 @@ const initEpub = async (zip) => {
 			throw new Error('Path traversal detected');
 		}
 
-		const contentSize = await zip.file(file).async('nodebuffer');
-		totalSize += contentSize.length;
+		const contentSize = await zip.file(file).async('ArrayBuffer');
+		totalSize += contentSize.byteLength;
 		if (totalSize > MAX_SIZE) {
 			while (validMwbFiles.length > 0) {
 				validMwbFiles.pop();
