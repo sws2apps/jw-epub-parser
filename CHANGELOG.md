@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.9.0...v1.10.0) (2022-05-10)
+
+
+### Features
+
+* **deps:** update deps location ([f5313c5](https://github.com/sws2apps/jw-epub-parser/commit/f5313c57037d62981765494f639bac1f8879737a))
+
 # [1.9.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.8.0...v1.9.0) (2022-05-10)
 
 
