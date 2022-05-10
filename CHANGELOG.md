@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.8.0...v1.9.0) (2022-05-10)
+
+
+### Features
+
+* **deps:** update dependencies location ([8923c37](https://github.com/sws2apps/jw-epub-parser/commit/8923c37ed1dd6008e9b182ecc07d1cb4179779c6))
+
 # [1.8.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.7.1...v1.8.0) (2022-04-13)
 
 
