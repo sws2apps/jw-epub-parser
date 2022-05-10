@@ -1,3 +1,10 @@
+## [1.10.2](https://github.com/sws2apps/jw-epub-parser/compare/v1.10.1...v1.10.2) (2022-05-10)
+
+
+### Bug Fixes
+
+* **jszip:** change from nodebuffer to arraybuffer ([72955c1](https://github.com/sws2apps/jw-epub-parser/commit/72955c194d81fd5ae8e663cf21b29ac517949dc7))
+
 ## [1.10.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.10.0...v1.10.1) (2022-05-10)
 
 
