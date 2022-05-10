@@ -11,7 +11,7 @@ const config = [
 			},
 		],
 		plugins: [nodeResolve(), commonjs()],
-		external: ['jszip', 'path-browserify'],
+		external: ['jszip'],
 	},
 	{
 		input: 'src/node.js',
