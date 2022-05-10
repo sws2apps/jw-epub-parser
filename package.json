@@ -17,10 +17,10 @@
     "dist/*.cjs"
   ],
   "homepage": "https://github.com/sws2apps/jw-epub-parser#readme",
-  "author": "Scheduling Workbox System <sws2apps@gmail.com>",
+  "author": "Scheduling Workbox System <sws2apps.notification@gmail.com>",
   "bugs": {
     "url": "https://github.com/sws2apps/jw-epub-parser/issues",
-    "email": "sws2apps@gmail.com"
+    "email": "sws2apps.notification@gmail.com"
   },
   "license": "MIT",
   "repository": {
@@ -43,10 +43,10 @@
     "global-jsdom": "^8.4.0",
     "jsdom": "^19.0.0",
     "mocha": "^10.0.0",
-    "rollup": "^2.69.0"
+    "path-browserify": "^1.0.1",
+    "rollup": "^2.72.1"
   },
   "dependencies": {
-    "jszip": "^3.9.1",
-    "path-browserify": "^1.0.1"
+    "jszip": "^3.9.1"
   }
 }
