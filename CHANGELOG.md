@@ -1,3 +1,11 @@
+# [1.12.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.11.0...v1.12.0) (2022-06-04)
+
+
+### Features
+
+* **deps:** bump npm from 8.6.0 to 8.12.0 ([804aadb](https://github.com/sws2apps/jw-epub-parser/commit/804aadb10956d4c151c7a9b8ff235ade41ce9d1a))
+* **deps:** bump semver-regex from 3.1.3 to 3.1.4 ([0d3a856](https://github.com/sws2apps/jw-epub-parser/commit/0d3a856840f4c970c4082da58cc8d8380d63c1c2))
+
 # [1.11.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.10.2...v1.11.0) (2022-05-23)
 
 
