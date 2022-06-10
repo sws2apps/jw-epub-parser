@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.12.0...v1.13.0) (2022-06-10)
+
+
+### Features
+
+* **deps:** bump semantic-release from 19.0.2 to 19.0.3 ([a6bf4e0](https://github.com/sws2apps/jw-epub-parser/commit/a6bf4e02260256641f998a024bd256746cccfb99))
+
 # [1.12.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.11.0...v1.12.0) (2022-06-04)
 
 
