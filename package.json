@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "global-jsdom": "^8.4.0",
-    "jsdom": "^19.0.0",
+    "jsdom": "^20.0.0",
     "jszip": "^3.9.1",
     "path-browserify": "^1.0.1"
   }
