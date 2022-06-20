@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.13.0...v1.14.0) (2022-06-20)
+
+
+### Features
+
+* **deps:** bump jsdom from 19.0.0 to 20.0.0 ([7914e00](https://github.com/sws2apps/jw-epub-parser/commit/7914e00fe43fb3523e924d173f47d6939bda573b))
+
 # [1.13.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.12.0...v1.13.0) (2022-06-10)
 
 
