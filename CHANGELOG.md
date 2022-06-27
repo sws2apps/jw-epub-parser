@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.14.0...v1.15.0) (2022-06-27)
+
+
+### Features
+
+* **deps:** bump global-jsdom from 8.4.0 to 8.5.0 ([cd578df](https://github.com/sws2apps/jw-epub-parser/commit/cd578dfc0b3cfc134d56f7a1c0d23d78c71f7eeb))
+
 # [1.14.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.13.0...v1.14.0) (2022-06-20)
 
 
