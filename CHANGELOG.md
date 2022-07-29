@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.15.0...v1.16.0) (2022-07-29)
+
+
+### Features
+
+* **github:** change dependabot prefix for all dependencies ([20ca04c](https://github.com/sws2apps/jw-epub-parser/commit/20ca04cf2f8a98fb5281bf57d0362279fa712b87))
+
 # [1.15.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.14.0...v1.15.0) (2022-06-27)
 
 
