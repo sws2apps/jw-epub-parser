@@ -2,9 +2,9 @@
 
 [![CI](https://github.com/sws2apps/jw-epub-parser/actions/workflows/ci.yml/badge.svg)](https://github.com/sws2apps/jw-epub-parser/actions/workflows/ci.yml)
 [![CD](https://github.com/sws2apps/jw-epub-parser/actions/workflows/deploy.yml/badge.svg)](https://github.com/sws2apps/jw-epub-parser/actions/workflows/deploy.yml)
-![npm](https://img.shields.io/npm/v/jw-epub-parser?style=plastic)
+[![jw-epub-parser](https://snyk.io/advisor/npm-package/jw-epub-parser/badge.svg)](https://snyk.io/advisor/npm-package/jw-epub-parser)
 
-An EPUB Parser to extract the needed source materials from Meeting Workbook EPUB file. Support for parsing Watchtower Study will be added in future release. This tool was originally created to complement the Scheduling Workbox System (SWS) utilities.
+An EPUB Parser to extract the needed source materials from Meeting Workbook EPUB file. Support for parsing Watchtower Study will be added in future release. This tool was originally created to complement the Scheduling Workbox System (SWS) utilities. But why parsing EPUB file? Should it not be easy to get data directly from the website? Well, we want to do our best to be faithful in what is least, in order to be faithful also in much. The [Terms of Use and License to Use Website](https://www.jw.org/en/terms-of-use/) on jw.org makes it clear that extracting, harvesting, or scraping data, HTML, or text from the website is not recommended.
 
 ## Install
 
