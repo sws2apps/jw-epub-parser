@@ -16,4 +16,3 @@ updates:
       - dependency-type: 'development'
     commit-message:
       prefix: 'feat(deps)'
-      prefix-development: 'build(deps)'
