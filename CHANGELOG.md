@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.18.0...v1.19.0) (2022-08-08)
+
+
+### Features
+
+* **deps:** bump @rollup/plugin-commonjs from 22.0.1 to 22.0.2 ([018b282](https://github.com/sws2apps/jw-epub-parser/commit/018b2822493a65165b02d4c1ca793e5fd078c8a0))
+
 # [1.18.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.17.0...v1.18.0) (2022-08-03)
 
 
