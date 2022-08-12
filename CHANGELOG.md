@@ -1,3 +1,10 @@
+# [1.20.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.19.0...v1.20.0) (2022-08-12)
+
+
+### Features
+
+* **deps:** bump rollup from 2.77.2 to 2.77.3 ([b56d280](https://github.com/sws2apps/jw-epub-parser/commit/b56d2800f8bd2ba2ed6b5e2c88a7ef0fc7c02876))
+
 # [1.19.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.18.0...v1.19.0) (2022-08-08)
 
 
