@@ -1,3 +1,13 @@
+# [1.21.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.20.0...v1.21.0) (2022-09-06)
+
+
+### Features
+
+* **deps:** bump @babel/preset-env from 7.18.10 to 7.19.0 ([8dc1562](https://github.com/sws2apps/jw-epub-parser/commit/8dc1562ab4548a5d95504254d2b00d1a53d19b05))
+* **deps:** bump rollup from 2.77.3 to 2.78.0 ([e793295](https://github.com/sws2apps/jw-epub-parser/commit/e7932959634e479694040da2903e485c227e22c9))
+* **deps:** bump rollup from 2.78.0 to 2.78.1 ([6ee57af](https://github.com/sws2apps/jw-epub-parser/commit/6ee57af9753568425745b6fec4c2d7111d684336))
+* **deps:** bump rollup from 2.78.1 to 2.79.0 ([935d0ea](https://github.com/sws2apps/jw-epub-parser/commit/935d0ea28ff3598a0665559361f7a6bb1705f28a))
+
 # [1.20.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.19.0...v1.20.0) (2022-08-12)
 
 
