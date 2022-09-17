@@ -1,5 +1,6 @@
 import 'global-jsdom/register';
 import JSZip from 'jszip';
+import fetch from 'node-fetch';
 import * as fs from 'fs';
 import * as path from 'path';
 import {
@@ -16,7 +17,7 @@ let mwbYear;
 const appZip = new JSZip();
 
 const loadEPUB = async (epubInput) => {
-	// check if we receive path or blob
+	// check if we receive path or blob or url
 	let data;
 	if (epubInput.name) {
 		if (isValidEpubNaming(epubInput.name)) {
@@ -26,28 +27,33 @@ const loadEPUB = async (epubInput) => {
 			throw new Error('The selected epub file has an incorrect naming.');
 		}
 	} else {
-		const file = path.basename(epubInput);
-
+		const file = path.basename(epubInput); // blob and url
 		if (isValidEpubNaming(file)) {
-			data = epubInput; // blob
 			mwbYear = file.split('_')[2].substring(0, 4);
 		} else {
 			throw new Error('The selected epub file has an incorrect naming.');
 		}
 
-		const getDataFromPath = () => {
-			return new Promise((resolve, reject) => {
-				fs.readFile(epubInput, (err, data) => {
-					if (err) {
-						reject(err);
-					} else {
-						resolve(data);
-					}
+		if (epubInput.url) {
+			const epubRes = await fetch(epubInput);
+			const epubData = await epubRes.blob();
+			data = await epubData.arrayBuffer();
+		} else {
+			data = epubInput; // blob
+			const getDataFromPath = () => {
+				return new Promise((resolve, reject) => {
+					fs.readFile(epubInput, (err, data) => {
+						if (err) {
+							reject(err);
+						} else {
+							resolve(data);
+						}
+					});
 				});
-			});
-		};
+			};
 
-		data = await getDataFromPath(); // path
+			data = await getDataFromPath(); // path
+		}
 	}
 
 	const doParsing = () => {
