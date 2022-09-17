@@ -11,7 +11,7 @@ import {
 	parseEpub,
 } from './common';
 
-let validMwbFiles = [];
+const validMwbFiles = [];
 let mwbYear;
 
 const appZip = new JSZip();
@@ -27,7 +27,7 @@ const loadEPUB = async (epubInput) => {
 			throw new Error('The selected epub file has an incorrect naming.');
 		}
 	} else {
-		const file = path.basename(epubInput); // blob and url
+		const file = path.basename(epubInput.url || epubInput); // blob and url
 		if (isValidEpubNaming(file)) {
 			mwbYear = file.split('_')[2].substring(0, 4);
 		} else {
@@ -35,7 +35,7 @@ const loadEPUB = async (epubInput) => {
 		}
 
 		if (epubInput.url) {
-			const epubRes = await fetch(epubInput);
+			const epubRes = await fetch(epubInput.url);
 			const epubData = await epubRes.blob();
 			data = await epubData.arrayBuffer();
 		} else {
@@ -73,6 +73,8 @@ const loadEPUB = async (epubInput) => {
 	};
 
 	const result = await doParsing();
+	validMwbFiles.length = 0;
+	mwbYear = undefined;
 	return result;
 };
 
