@@ -1,3 +1,10 @@
+## [1.23.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.23.0...v1.23.1) (2022-09-17)
+
+
+### Bug Fixes
+
+* **module:** update dist contents to include missing generated files ([a7add6a](https://github.com/sws2apps/jw-epub-parser/commit/a7add6af33099a3ee2b8140339c4f987ff165336))
+
 # [1.23.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.22.0...v1.23.0) (2022-09-17)
 
 
