@@ -37,8 +37,8 @@ export const isValidMwbSched = (htmlDoc) => {
 };
 
 export const parseEpub = (htmlDocs, mwbYear) => {
-	let obj = {};
-	let weeksData = [];
+	const obj = {};
+	const weeksData = [];
 	let weeksCount;
 
 	weeksCount = htmlDocs.length;
@@ -47,7 +47,7 @@ export const parseEpub = (htmlDocs, mwbYear) => {
 	obj.mwbYear = mwbYear;
 
 	for (let a = 0; a < weeksCount; a++) {
-		let weekItem = {};
+		const weekItem = {};
 
 		const htmlItem = htmlDocs[a];
 
