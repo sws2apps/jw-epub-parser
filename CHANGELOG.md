@@ -1,3 +1,10 @@
+## [1.23.2](https://github.com/sws2apps/jw-epub-parser/compare/v1.23.1...v1.23.2) (2022-09-17)
+
+
+### Bug Fixes
+
+* **node:** add variable reset ([6e935a2](https://github.com/sws2apps/jw-epub-parser/commit/6e935a22a32fbbcd5cc97e9b18b1e9b3896b2ab0))
+
 ## [1.23.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.23.0...v1.23.1) (2022-09-17)
 
 
