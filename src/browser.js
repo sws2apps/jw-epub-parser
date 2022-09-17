@@ -9,7 +9,7 @@ import {
 	parseEpub,
 } from './common';
 
-let validMwbFiles = [];
+const validMwbFiles = [];
 let mwbYear;
 
 const appZip = new JSZip();
