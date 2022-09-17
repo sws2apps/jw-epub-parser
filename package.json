@@ -12,10 +12,7 @@
   "source": "src/index.js",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
-  "files": [
-    "dist/*.js",
-    "dist/*.cjs"
-  ],
+  "files": ["dist/*"],
   "homepage": "https://github.com/sws2apps/jw-epub-parser#readme",
   "author": "Scheduling Workbox System <sws2apps.notification@gmail.com>",
   "bugs": {
