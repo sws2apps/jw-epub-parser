@@ -1,3 +1,10 @@
+# [1.23.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.22.0...v1.23.0) (2022-09-17)
+
+
+### Features
+
+* **node:** add support for loading epub file from url ([0d24d4f](https://github.com/sws2apps/jw-epub-parser/commit/0d24d4f89389b915e42ed522d5d5dd6066ed4853))
+
 # [1.22.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.21.0...v1.22.0) (2022-09-15)
 
 
