@@ -17,7 +17,7 @@ const config = [
 		input: 'src/node.js',
 		output: [
 			{
-				dir: 'dist/index.node.js',
+				dir: 'dist/node.es',
 				format: 'es',
 			},
 		],
@@ -28,7 +28,7 @@ const config = [
 		input: 'src/node.js',
 		output: [
 			{
-				dir: 'dist/index.node.cjs',
+				dir: 'dist/node.cjs',
 				format: 'cjs',
 				exports: 'named',
 			},
