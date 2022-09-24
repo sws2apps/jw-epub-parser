@@ -1,3 +1,10 @@
+## [1.23.3](https://github.com/sws2apps/jw-epub-parser/compare/v1.23.2...v1.23.3) (2022-09-17)
+
+
+### Bug Fixes
+
+* **node&browser:** initiate new instance of JSZip for each call ([b04825a](https://github.com/sws2apps/jw-epub-parser/commit/b04825a896f13c5f75cb59acb1fd8c69b1627c9b))
+
 ## [1.23.2](https://github.com/sws2apps/jw-epub-parser/compare/v1.23.1...v1.23.2) (2022-09-17)
 
 
