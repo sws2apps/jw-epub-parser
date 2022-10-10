@@ -1,3 +1,11 @@
+# [1.25.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.24.0...v1.25.0) (2022-10-10)
+
+
+### Features
+
+* **deps:** bump @rollup/plugin-babel from 5.3.1 to 6.0.0 ([6867292](https://github.com/sws2apps/jw-epub-parser/commit/68672922fe84954c5ac4a5c88ed1f3611321b4ef))
+* **deps:** bump @rollup/plugin-commonjs from 22.0.2 to 23.0.0 ([5c090c3](https://github.com/sws2apps/jw-epub-parser/commit/5c090c3cec70bff95faef0f7202df0b2a00c114c))
+
 # [1.24.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.23.3...v1.24.0) (2022-10-03)
 
 
