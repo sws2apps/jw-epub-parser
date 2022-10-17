@@ -9,7 +9,6 @@
     "jw.org",
     "epub"
   ],
-  "source": "src/index.js",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "files": [

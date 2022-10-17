@@ -3,7 +3,7 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 
 const config = [
 	{
-		input: 'src/browser.js',
+		input: 'src/browser/index.js',
 		output: [
 			{
 				file: 'dist/index.js',
@@ -14,28 +14,15 @@ const config = [
 		external: ['jszip', 'path-browserify'],
 	},
 	{
-		input: 'src/node.js',
+		input: 'src/node/index.js',
 		output: [
 			{
-				dir: 'dist/node.es',
+				file: 'dist/node/index.js',
 				format: 'es',
 			},
 		],
-		plugins: [nodeResolve(), commonjs()],
-		external: ['jszip', 'global-jsdom/register'],
-	},
-	{
-		input: 'src/node.js',
-		output: [
-			{
-				dir: 'dist/node.cjs',
-				format: 'cjs',
-				exports: 'named',
-			},
-		],
-		plugins: [nodeResolve(), commonjs()],
-		external: ['jszip', 'global-jsdom/register'],
-	},
+		external: ['jszip', 'global-jsdom/register', 'path', 'fs', 'node-fetch'],
+	}
 ];
 
 export default config;
