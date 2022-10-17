@@ -1,3 +1,16 @@
+# [1.26.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.25.0...v1.26.0) (2022-10-17)
+
+
+### Features
+
+* **deps:** bump @babel/preset-env from 7.19.3 to 7.19.4 ([6ae16db](https://github.com/sws2apps/jw-epub-parser/commit/6ae16db82e5e2553aff97a7503bd8570c054e124))
+* **deps:** bump @rollup/plugin-node-resolve from 14.1.0 to 15.0.0 ([e48d434](https://github.com/sws2apps/jw-epub-parser/commit/e48d434fa03639bc14fbb860344a821bbd2476bc))
+* **deps:** bump mocha from 10.0.0 to 10.1.0 ([b4c80af](https://github.com/sws2apps/jw-epub-parser/commit/b4c80af3c0b08040ba7173f83a30352a78f207bc))
+* **deps:** bump rollup from 2.79.1 to 3.0.0 ([9cd114d](https://github.com/sws2apps/jw-epub-parser/commit/9cd114dc3ec04f98ddbd755b41af46184aa16341))
+* **deps:** bump rollup from 3.0.0 to 3.1.0 ([6f60fae](https://github.com/sws2apps/jw-epub-parser/commit/6f60fae2177a8f79c8e53aa0d1524b0c52326322))
+* **deps:** bump rollup from 3.1.0 to 3.2.2 ([be48b49](https://github.com/sws2apps/jw-epub-parser/commit/be48b4928c54a435d14892dafdd6826d3a8b5f74))
+* **node:** cleanup output file ([de0b050](https://github.com/sws2apps/jw-epub-parser/commit/de0b05097c3de1a9823213898c5df675b5dc7714))
+
 # [1.25.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.24.0...v1.25.0) (2022-10-10)
 
 
