@@ -19,13 +19,13 @@ jobs:
 
     steps:
       - name: Checkout for release preparation
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8
         with:
           ref: alpha
           persist-credentials: false
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93
+        uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -54,13 +54,13 @@ jobs:
 
     steps:
       - name: Checkout for release preparation
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8
         with:
           ref: beta
           persist-credentials: false
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93
+        uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -89,13 +89,13 @@ jobs:
 
     steps:
       - name: Checkout for release preparation
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8
         with:
           ref: main
           persist-credentials: false
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93
+        uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516
         with:
           node-version: ${{ matrix.node-version }}
 
