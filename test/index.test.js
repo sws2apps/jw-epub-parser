@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { loadEPUB } from '../dist/node.es/node.js';
+import { loadEPUB } from '../dist/node/index.js';
 
 const expData = {
 	mwbYear: '2021',

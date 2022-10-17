@@ -7,7 +7,7 @@ import {
 	isValidFilename,
 	isValidMwbSched,
 	parseEpub,
-} from './common';
+} from '../common';
 
 const loadEPUB = async (epubInput) => {
 	const appZip = new JSZip();

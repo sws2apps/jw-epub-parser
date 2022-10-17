@@ -15,7 +15,11 @@ npm i jw-epub-parser
 ## Usage
 
 ```js
+// browser
 import { loadEPUB } from 'jw-epub-parser';
+
+// node
+import { loadEPUB } from 'jw-epub-parser/dist/node';
 
 const epubJW = await loadEPUB('/path/to/file.epub');
 ```
@@ -26,13 +30,13 @@ function: asynchronous
 
 #### epubData
 
-type: `string` or `blob`
+type: `string` or `blob` or `url`
 
-It can be the path to the EPUB file or EPUB file's blob
+It can be the path to the EPUB file or EPUB file's blob or url to download the EPUB file
 
 ## Return
 
-By invoking the `loadEPUB` function, it will return an object which contains three properties:
+By calling the `loadEPUB` function, it will return an object which contains three properties:
 
 | Return     |  Type   | Description                                                                                             |
 | ---------- | :-----: | ------------------------------------------------------------------------------------------------------- |
