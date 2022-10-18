@@ -19,7 +19,7 @@ npm i jw-epub-parser
 import { loadEPUB } from 'jw-epub-parser';
 
 // node
-import { loadEPUB } from 'jw-epub-parser/dist/node';
+import { loadEPUB } from 'jw-epub-parser/dist/node/index.js';
 
 const epubJW = await loadEPUB('/path/to/file.epub');
 ```
