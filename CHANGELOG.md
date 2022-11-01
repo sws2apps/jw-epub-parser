@@ -1,3 +1,16 @@
+# [1.27.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.26.0...v1.27.0) (2022-11-01)
+
+
+### Features
+
+* **deps:** bump @rollup/plugin-babel from 6.0.0 to 6.0.2 ([b1a745a](https://github.com/sws2apps/jw-epub-parser/commit/b1a745a680c2ac2a0c4b6a58d7b4f18af4f056a4))
+* **deps:** bump @rollup/plugin-commonjs from 23.0.0 to 23.0.1 ([495377e](https://github.com/sws2apps/jw-epub-parser/commit/495377e6b44f8157795eeb3709c104b5319c31dd))
+* **deps:** bump @rollup/plugin-commonjs from 23.0.1 to 23.0.2 ([ca20c43](https://github.com/sws2apps/jw-epub-parser/commit/ca20c43c9e39e0476033450fc71300ca892113db))
+* **deps:** bump @rollup/plugin-node-resolve from 15.0.0 to 15.0.1 ([d846333](https://github.com/sws2apps/jw-epub-parser/commit/d8463335b77c997857ba227593f64ce0be11018d))
+* **deps:** bump jsdom from 20.0.1 to 20.0.2 ([7adadec](https://github.com/sws2apps/jw-epub-parser/commit/7adadec6f0f1efd4879a829a961dda1d69acc9df))
+* **deps:** bump rollup from 3.2.2 to 3.2.3 ([ed06160](https://github.com/sws2apps/jw-epub-parser/commit/ed061604a185593b820fa3fa46f6781b751a020b))
+* **deps:** bump rollup from 3.2.3 to 3.2.4 ([1e2ce8f](https://github.com/sws2apps/jw-epub-parser/commit/1e2ce8feeadf5dc3e6d85a747a48a4eb0581bf62))
+
 # [1.26.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.25.0...v1.26.0) (2022-10-17)
 
 
