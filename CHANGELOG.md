@@ -1,3 +1,21 @@
+# [1.28.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.27.0...v1.28.0) (2022-11-25)
+
+
+### Bug Fixes
+
+* **common:** update replace to replaceAll when searching glue space ([d36975a](https://github.com/sws2apps/jw-epub-parser/commit/d36975ab83592d2becd3e24934a987230ed89a77))
+
+
+### Features
+
+* **deps:** bump @babel/preset-env from 7.19.4 to 7.20.2 ([5fdd93d](https://github.com/sws2apps/jw-epub-parser/commit/5fdd93daf4f506bfa47e0c164564cfd64ffbc3cd))
+* **deps:** bump chai from 4.3.6 to 4.3.7 ([1c8035f](https://github.com/sws2apps/jw-epub-parser/commit/1c8035f145554dd78d5a839e6b683dd67e0ddb2a))
+* **deps:** bump jsdom from 20.0.2 to 20.0.3 ([a7b1623](https://github.com/sws2apps/jw-epub-parser/commit/a7b162399cbb98e56f60d0066bd4519802478e25))
+* **deps:** bump node-fetch from 3.2.10 to 3.3.0 ([54dee42](https://github.com/sws2apps/jw-epub-parser/commit/54dee4260b53d4ae84d09ab3735a8e8ffa5866d9))
+* **deps:** bump rollup from 3.2.4 to 3.2.5 ([c4431af](https://github.com/sws2apps/jw-epub-parser/commit/c4431afe9223a10e035147d6e8a4e8793de56cba))
+* **deps:** bump rollup from 3.2.5 to 3.3.0 ([37c22f1](https://github.com/sws2apps/jw-epub-parser/commit/37c22f100b941e9bef74be1e70d0882279edda49))
+* **deps:** bump rollup from 3.3.0 to 3.4.0 ([2804d0e](https://github.com/sws2apps/jw-epub-parser/commit/2804d0e41ae8c807d212575195cd7314a84d4f7e))
+
 # [1.27.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.26.0...v1.27.0) (2022-11-01)
 
 
