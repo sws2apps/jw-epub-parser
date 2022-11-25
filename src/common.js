@@ -84,7 +84,7 @@ export const parseEpub = (htmlDocs, mwbYear) => {
 			});
 		});
 
-		src.replace(/\u00A0/g, ' '); // remove non-breaking space
+		src = src.replaceAll(/\u00A0/g, ' '); // remove non-breaking space
 		let toSplit = src.split('|');
 
 		// First song
