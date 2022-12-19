@@ -32,7 +32,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.16.11",
     "@rollup/plugin-babel": "^6.0.0",
-    "@rollup/plugin-commonjs": "^23.0.0",
+    "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-node-resolve": "^15.0.0",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/exec": "^6.0.3",
