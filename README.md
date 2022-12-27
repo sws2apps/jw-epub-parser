@@ -105,7 +105,7 @@ Here's an example on how the result of the method looks like:
   mwbYear: '2023',
   weeksData: [
     {
-      weekDate: 2023-03-05T21:00:00.000Z,
+      weekDate: '3/6/2023',
       weekDateLocale: '6-12 Martsa',
       weeklyBibleReading: '1 TANTARA 23-26',
       songFirst: 123,
@@ -137,7 +137,7 @@ tena alefa anefa ilay izy). Iaraho midinika ilay izy avy eo.',
       songConclude: 127
     },
     {
-      weekDate: 2023-03-12T21:00:00.000Z,
+      weekDate: '3/13/2023',
       weekDateLocale: '13-19 Martsa',
       weeklyBibleReading: '1 TANTARA 27-29',
       songFirst: 133,
