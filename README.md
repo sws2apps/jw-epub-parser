@@ -95,7 +95,7 @@ For the other languages, you may use your own method to convert these outputs ac
 
 ## Sample Output
 
-Here's an example on how the result of the method looks like:
+Here are how the results of this module look like:
 
 ### With enhanced parsing
 
@@ -116,8 +116,7 @@ Here's an example on how the result of the method looks like:
       ayfPart1: 'Fiaraha-midinika. Alefaso ilay video hoe Ezaka Manokana Hizarana Fanasana Fahatsiarovana. Ajanòny ilay video isaky ny misy fiatoana, ary iaraho midinika ny fanontaniana mipoitra eo.',
       ayfPart1Time: 5,
       ayfPart1Type: 'Video Fanasana Fahatsiarovana',
-      ayfPart2: 'Atombohy amin’ny foto-kevitra ao amin’ny hevitra azo resahina. Liana ilay olona, dia asehoy azy ilay video hoe Tsarovy ny Nahafatesan’i Jesosy (tsy
-tena alefa anefa ilay izy). Iaraho midinika ilay izy avy eo.',
+      ayfPart2: 'Atombohy amin’ny foto-kevitra ao amin’ny hevitra azo resahina. Liana ilay olona, dia asehoy azy ilay video hoe Tsarovy ny Nahafatesan’i Jesosy (tsy tena alefa anefa ilay izy). Iaraho midinika ilay izy avy eo.',
       ayfPart2Time: 3,
       ayfPart2Type: 'Fanasana Fahatsiarovana',
       ayfPart2Study: 1,
@@ -145,8 +144,7 @@ tena alefa anefa ilay izy). Iaraho midinika ilay izy avy eo.',
       tgwBRead: '1Ta 27:1-15',
       tgwBReadStudy: 1,
       ayfCount: 3,
-      ayfPart1: 'Fiaraha-midinika. Alefaso ilay video hoe Fiverenana Mitsidika: Jesosy​—Mt 20:28. Ajanòny ilay video isaky ny misy fiatoana, ary iaraho midinika ny f
-anontaniana mipoitra eo.',
+      ayfPart1: 'Fiaraha-midinika. Alefaso ilay video hoe Fiverenana Mitsidika: Jesosy​—Mt 20:28. Ajanòny ilay video isaky ny misy fiatoana, ary iaraho midinika ny fanontaniana mipoitra eo.',
       ayfPart1Time: 5,
       ayfPart1Type: 'Video Fiverenana Mitsidika',
       ayfPart2: 'Mitsidika olona liana sy nandray fanasana Fahatsiarovana ianao. Asehoy azy ilay video hoe Inona no Antony Nahafatesan’i Jesosy? (tsy tena alefa anefa ilay izy) Iaraho midinika ilay izy.',
@@ -192,8 +190,7 @@ anontaniana mipoitra eo.',
       songMiddle: 101,
       lcCount: 2,
       lcPart1: '“Te Hanampy ve Ianao Rehefa Misy Loza Mitranga?”: (10 min.) Fiaraha-midinika sy video.',
-      lcPart2: 'Ezaka Manokana Hizarana Fanasana Fahatsiarovana Manomboka ny Asabotsy 11 Martsa: (5 min.) Fiaraha-midinika. Resaho kely izay voalazan’ilay fanasana.
-Resaho koa ny fandaharana ataon’ny fiangonana momba ny lahateny manokana sy ny Fahatsiarovana ary ny fomba hamitana ny faritany.',
+      lcPart2: 'Ezaka Manokana Hizarana Fanasana Fahatsiarovana Manomboka ny Asabotsy 11 Martsa: (5 min.) Fiaraha-midinika. Resaho kely izay voalazan’ilay fanasana. Resaho koa ny fandaharana ataon’ny fiangonana momba ny lahateny manokana sy ny Fahatsiarovana ary ny fomba hamitana ny faritany.',
       lcCBS: 'Fianarana Baiboly: (30 min.) lff lesona 39 sy fanamarihana 3',
       songConclude: 127
     },
@@ -204,8 +201,7 @@ Resaho koa ny fandaharana ataon’ny fiangonana momba ny lahateny manokana sy ny
       tgw10Talk: '“Torohevitry ny Ray Be Fitiavana ho An-janany”: (10 min.)',
       tgwBRead: 'Famakiana Baiboly: (4 min.) 1Ta 27:1-15 (th lesona 10)',
       ayfCount: 3,
-      ayfPart1: 'Video Fiverenana Mitsidika: (5 min.) Fiaraha-midinika. Alefaso ilay video hoe Fiverenana Mitsidika: Jesosy​—Mt 20:28. Ajanòny ilay video isaky ny mi
-sy fiatoana, ary iaraho midinika ny fanontaniana mipoitra eo.',
+      ayfPart1: 'Video Fiverenana Mitsidika: (5 min.) Fiaraha-midinika. Alefaso ilay video hoe Fiverenana Mitsidika: Jesosy​—Mt 20:28. Ajanòny ilay video isaky ny misy fiatoana, ary iaraho midinika ny fanontaniana mipoitra eo.',
       ayfPart2: 'Fiverenana Mitsidika: (4 min.) Mitsidika olona liana sy nandray fanasana Fahatsiarovana ianao. Asehoy azy ilay video hoe Inona no Antony Nahafatesan’i Jesosy? (tsy tena alefa anefa ilay izy) Iaraho midinika ilay izy. (th lesona 9)',
       ayfPart3: 'Fiverenana Mitsidika: (4 min.) Mitsidika olona liana sy nandray fanasana Fahatsiarovana ianao. Manomboha fampianarana Baiboly amin’ilay bokikely hoe Ankafizo Mandrakizay ny Fiainana! (th lesona 6)',
       songMiddle: 4,
