@@ -3,19 +3,14 @@ import JSZip from 'jszip';
 import fetch from 'node-fetch';
 import * as fs from 'fs';
 import * as path from 'path';
-import {
-	getHtmlRawString,
-	isValidEpubNaming,
-	isValidFilename,
-	isValidMwbSched,
-	parseEpub,
-} from '../common';
+import { getHtmlRawString, isValidEpubNaming, isValidFilename, isValidMwbSched, parseEpub } from '../common.js';
 
 const loadEPUB = async (epubInput) => {
 	const appZip = new JSZip();
 
 	const validMwbFiles = [];
 	let mwbYear;
+	let lang;
 
 	const initEpub = async (zip) => {
 		const MAX_FILES = 300;
@@ -70,6 +65,7 @@ const loadEPUB = async (epubInput) => {
 	if (epubInput.name) {
 		if (isValidEpubNaming(epubInput.name)) {
 			mwbYear = epubInput.name.split('_')[2].substring(0, 4);
+			lang = epubInput.name.split('_')[1];
 			data = epubInput; // blob
 		} else {
 			throw new Error('The selected epub file has an incorrect naming.');
@@ -78,6 +74,7 @@ const loadEPUB = async (epubInput) => {
 		const file = path.basename(epubInput.url || epubInput); // blob and url
 		if (isValidEpubNaming(file)) {
 			mwbYear = file.split('_')[2].substring(0, 4);
+			lang = file.split('_')[1];
 		} else {
 			throw new Error('The selected epub file has an incorrect naming.');
 		}
@@ -110,11 +107,9 @@ const loadEPUB = async (epubInput) => {
 				await initEpub(zip);
 
 				if (validMwbFiles.length === 0) {
-					reject(
-						'The file you provided is not a valid Meeting Workbook EPUB file. Please make sure that the file is correct.'
-					);
+					reject('The file you provided is not a valid Meeting Workbook EPUB file. Please make sure that the file is correct.');
 				} else {
-					resolve(parseEpub(validMwbFiles, mwbYear));
+					resolve(parseEpub(validMwbFiles, mwbYear, lang));
 				}
 			});
 		});

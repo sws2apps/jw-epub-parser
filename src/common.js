@@ -1,3 +1,5 @@
+import { extractSourceAssignments, extractSourceTGWBibleReading, extractTitleTGW10, monthNames } from './rules/parsingRules.js';
+
 export const isValidEpubNaming = (name) => {
 	let regex = /^mwb_[A-Z][A-Z]?[A-Z]?_202\d(0[1-9]|1[0-2])\.epub$/i;
 	return regex.test(name);
@@ -25,9 +27,7 @@ export const getHtmlRawString = async (zip, filename) => {
 export const isValidMwbSched = (htmlDoc) => {
 	const isValidTGW = htmlDoc.querySelector(`[class*=treasures]`) ? true : false;
 	const isValidAYF = htmlDoc.querySelector(`[class*=ministry]`) ? true : false;
-	const isValidLC = htmlDoc.querySelector(`[class*=christianLiving]`)
-		? true
-		: false;
+	const isValidLC = htmlDoc.querySelector(`[class*=christianLiving]`) ? true : false;
 
 	if (isValidTGW === true && isValidAYF === true && isValidLC === true) {
 		return true;
@@ -36,7 +36,7 @@ export const isValidMwbSched = (htmlDoc) => {
 	}
 };
 
-export const parseEpub = (htmlDocs, mwbYear) => {
+export const parseEpub = (htmlDocs, mwbYear, lang) => {
 	const obj = {};
 	const weeksData = [];
 	let weeksCount;
@@ -55,7 +55,32 @@ export const parseEpub = (htmlDocs, mwbYear) => {
 		const wdHtml = htmlItem.getElementsByTagName('h1').item(0);
 		const weekDate = wdHtml.textContent;
 
-		weekItem.weekDate = weekDate;
+		const dayParse = weekDate.match(/(\w|\s)*\w(?=")|\w+/g);
+		let varDay;
+		let varMonthName;
+
+		for (let b = 0; b < dayParse.length; b++) {
+			if (!varDay) {
+				if (!isNaN(dayParse[b]) && dayParse[b].length < 4) {
+					varDay = +dayParse[b];
+				}
+			}
+			if (!varMonthName) {
+				if (isNaN(dayParse[b])) {
+					varMonthName = dayParse[b];
+				}
+			}
+
+			if (varDay && varMonthName) {
+				break;
+			}
+		}
+
+		const findMonth = monthNames.find((month) => month.names[lang] === varMonthName);
+		const schedDate = new Date(mwbYear, findMonth.index, varDay);
+
+		weekItem.weekDate = schedDate;
+		weekItem.weekDateLocale = weekDate;
 
 		// get weekly Bible Reading
 		const wbHtml = htmlItem.getElementsByTagName('h2').item(0);
@@ -65,14 +90,10 @@ export const parseEpub = (htmlDocs, mwbYear) => {
 		let cnLC = 0;
 
 		// get number of assignments in Apply Yourself Parts
-		const cnAYF = htmlItem
-			.querySelector('#section3')
-			.querySelectorAll('li').length;
+		const cnAYF = htmlItem.querySelector('#section3').querySelectorAll('li').length;
 
 		// get number of assignments in Living as Christians Parts
-		const lcLiLength = htmlItem
-			.querySelector('#section4')
-			.querySelectorAll('li').length;
+		const lcLiLength = htmlItem.querySelector('#section4').querySelectorAll('li').length;
 		cnLC = lcLiLength === 6 ? 2 : 1;
 
 		// get elements with meeting schedule data: pGroup
@@ -88,19 +109,22 @@ export const parseEpub = (htmlDocs, mwbYear) => {
 		let toSplit = src.split('|');
 
 		// First song
-		weekItem.songFirst = toSplit[1].match(/(\d+)/)[0];
+		weekItem.songFirst = +toSplit[1].match(/(\d+)/)[0];
 
 		// 10min TGW Source
-		weekItem.tgw10Talk = toSplit[3].trim();
+		weekItem.tgw10Talk = extractTitleTGW10(toSplit[3].trim(), lang);
 
 		//Bible Reading Source
-		weekItem.tgwBRead = toSplit[7].trim();
+		const dataTGWBRead = extractSourceTGWBibleReading(toSplit[7].trim(), lang);
+		weekItem.tgwBRead = dataTGWBRead.src;
+		weekItem.tgwBReadStudy = dataTGWBRead.study;
 
 		// AYF Part Count
 		weekItem.ayfCount = cnAYF;
 
 		//AYF1 Source
 		weekItem.ayfPart1 = toSplit[8].trim();
+		extractSourceAssignments(toSplit[8].trim(), lang);
 
 		if (cnAYF > 1) {
 			//AYF2 Source
