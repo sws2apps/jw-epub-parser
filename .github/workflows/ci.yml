@@ -12,19 +12,14 @@ jobs:
     name: Run Test Units
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [17.x]
-
     steps:
       - name: 'Checkout code'
         uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js current version
         uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          node-version: current
 
       - name: Install dependency
         run: npm ci

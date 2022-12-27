@@ -20,10 +20,10 @@ jobs:
           ref: alpha
           persist-credentials: false
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js current version
         uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: current
 
       - name: Install package dependencies
         run: npm ci
@@ -51,10 +51,10 @@ jobs:
           ref: beta
           persist-credentials: false
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js current version
         uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: current
 
       - name: Install package dependencies
         run: npm ci
@@ -82,10 +82,10 @@ jobs:
           ref: main
           persist-credentials: false
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js current version
         uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: current
 
       - name: Install package dependencies
         run: npm ci
