@@ -91,7 +91,7 @@ Currently, we only support enhanced parsing for the following languages:
 Cinyanja (CIN), Enlish (E), French (F), Malagasy (MG)
 ```
 
-For the other languages, you may use your own method to convert these outputs according to your needs to get the needed informations. If you want to contribute and add your language in the enhanced parsing list, please follow this guide.
+For the other languages, you may use your own method to convert these outputs according to your needs to get the needed informations. If you want to contribute and add your language in the enhanced parsing list, please follow [this guide](./ADD_LANGUAGE.md).
 
 ## Sample Output
 
@@ -161,7 +161,6 @@ anontaniana mipoitra eo.',
       lcCount: 2,
       lcPart1: 'Zavatra Ilain’ny Fiangonana',
       lcPart1Time: 5,
-      lcPart1Content: undefined,
       lcPart2: 'Zava-bitan’ny Fandaminana',
       lcPart2Time: 10,
       lcPart2Content: 'Alefaso ilay video hoe Zava-bitan’ny Fandaminana, izay tokony halefa amin’ity Martsa ity.',
