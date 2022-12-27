@@ -87,7 +87,7 @@ Here are the list of all available properties in each object in the `weeksData` 
 
 Currently, we only support enhanced parsing for the following languages:
 
-```json
+```bash
 Cinyanja (CIN), Enlish (E), French (F), Malagasy (MG)
 ```
 
