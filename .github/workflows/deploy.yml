@@ -13,10 +13,6 @@ jobs:
       name: Development
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [17.x]
-
     steps:
       - name: Checkout for release preparation
         uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b
@@ -48,10 +44,6 @@ jobs:
       name: Staging
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [17.x]
-
     steps:
       - name: Checkout for release preparation
         uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b
@@ -82,10 +74,6 @@ jobs:
     environment:
       name: Production
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [17.x]
 
     steps:
       - name: Checkout for release preparation

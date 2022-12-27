@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { expect } from 'chai';
+import dateFormat from 'dateformat';
 import { loadEPUB } from '../dist/node/index.js';
 
 const dir = await fs.promises.opendir('./test/enhancedParsing');
@@ -29,9 +30,9 @@ for (let i = 0; i < finalDir.length; i++) {
 			for (let [key, value] of Object.entries(week)) {
 				it(`${key} should exists and return the correct source`, () => {
 					if (key === 'weekDate') {
-						value = new Date(value).toLocaleDateString();
+						value = dateFormat(new Date(value), 'm/d/yyyy');
 						expect(data.weeksData[a]).to.have.property(key);
-						expect(data.weeksData[a].weekDate.toLocaleDateString()).equal(value);
+						expect(dateFormat(data.weeksData[a].weekDate, 'm/d/yyyy')).equal(value);
 					} else {
 						expect(data.weeksData[a]).to.have.property(key).equal(value);
 					}
