@@ -1,6 +1,5 @@
 import fs from 'fs';
 import { expect } from 'chai';
-import dateFormat from 'dateformat';
 import { loadEPUB } from '../dist/node/index.js';
 
 const dir = await fs.promises.opendir('./test/standardParsing');

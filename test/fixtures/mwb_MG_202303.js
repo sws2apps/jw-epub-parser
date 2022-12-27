@@ -3,7 +3,7 @@ export default {
 	mwbYear: '2023',
 	weeksData: [
 		{
-			weekDate: '2023-03-05T21:00:00.000Z',
+			weekDate: '3/6/2023',
 			weekDateLocale: '6-12 Martsa',
 			weeklyBibleReading: '1 TANTARA 23-26',
 			songFirst: 123,
@@ -37,7 +37,7 @@ export default {
 			songConclude: 127,
 		},
 		{
-			weekDate: '2023-03-12T21:00:00.000Z',
+			weekDate: '3/13/2023',
 			weekDateLocale: '13-19 Martsa',
 			weeklyBibleReading: '1 TANTARA 27-29',
 			songFirst: 133,
@@ -70,7 +70,7 @@ export default {
 			songConclude: 45,
 		},
 		{
-			weekDate: '2023-03-19T21:00:00.000Z',
+			weekDate: '3/20/2023',
 			weekDateLocale: '20-26 Martsa',
 			weeklyBibleReading: '2 TANTARA 1-4',
 			songFirst: 41,
@@ -101,7 +101,7 @@ export default {
 			songConclude: 135,
 		},
 		{
-			weekDate: '2023-03-26T21:00:00.000Z',
+			weekDate: '3/27/2023',
 			weekDateLocale: '27 Martsa–2 Aprily',
 			weeklyBibleReading: '2 Tantara 5-7',
 			songFirst: 129,
@@ -135,7 +135,7 @@ export default {
 			songConclude: 34,
 		},
 		{
-			weekDate: '2023-04-09T21:00:00.000Z',
+			weekDate: '4/10/2023',
 			weekDateLocale: '10-16 Aprily',
 			weeklyBibleReading: '2 TANTARA 8-9',
 			songFirst: 88,
@@ -165,7 +165,7 @@ export default {
 			songConclude: 131,
 		},
 		{
-			weekDate: '2023-04-16T21:00:00.000Z',
+			weekDate: '4/17/2023',
 			weekDateLocale: '17-23 Aprily',
 			weeklyBibleReading: '2 Tantara 10-12',
 			songFirst: 103,
@@ -198,7 +198,7 @@ export default {
 			songConclude: 121,
 		},
 		{
-			weekDate: '2023-04-23T21:00:00.000Z',
+			weekDate: '4/24/2023',
 			weekDateLocale: '24-30 Aprily',
 			weeklyBibleReading: '2 Tantara 13-16',
 			songFirst: 3,

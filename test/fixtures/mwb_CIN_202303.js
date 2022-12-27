@@ -3,7 +3,7 @@ export default {
 	mwbYear: '2023',
 	weeksData: [
 		{
-			weekDate: '2023-03-05T21:00:00.000Z',
+			weekDate: '3/6/2023',
 			weekDateLocale: 'March 6-12',
 			weeklyBibleReading: '1 MBIRI 23-26',
 			songFirst: 123,
@@ -37,7 +37,7 @@ export default {
 			songConclude: 127,
 		},
 		{
-			weekDate: '2023-03-12T21:00:00.000Z',
+			weekDate: '3/13/2023',
 			weekDateLocale: 'March 13-19',
 			weeklyBibleReading: '1 MBIRI 27-29',
 			songFirst: 133,
@@ -70,7 +70,7 @@ export default {
 			songConclude: 45,
 		},
 		{
-			weekDate: '2023-03-19T21:00:00.000Z',
+			weekDate: '3/20/2023',
 			weekDateLocale: 'March 20-26',
 			weeklyBibleReading: '2 MBIRI 1-4',
 			songFirst: 41,
@@ -101,7 +101,7 @@ export default {
 			songConclude: 135,
 		},
 		{
-			weekDate: '2023-03-26T21:00:00.000Z',
+			weekDate: '3/27/2023',
 			weekDateLocale: 'March 27–April 2',
 			weeklyBibleReading: '2 MBIRI 5-7',
 			songFirst: 129,
@@ -135,7 +135,7 @@ export default {
 			songConclude: 34,
 		},
 		{
-			weekDate: '2023-04-09T21:00:00.000Z',
+			weekDate: '4/10/2023',
 			weekDateLocale: 'April 10-16',
 			weeklyBibleReading: '2 MBIRI 8-9',
 			songFirst: 88,
@@ -165,7 +165,7 @@ export default {
 			songConclude: 131,
 		},
 		{
-			weekDate: '2023-04-16T21:00:00.000Z',
+			weekDate: '4/17/2023',
 			weekDateLocale: 'April 17-23',
 			weeklyBibleReading: '2 MBIRI 10-12',
 			songFirst: 103,
@@ -197,7 +197,7 @@ export default {
 			songConclude: 121,
 		},
 		{
-			weekDate: '2023-04-23T21:00:00.000Z',
+			weekDate: '4/24/2023',
 			weekDateLocale: 'April 24-30',
 			weeklyBibleReading: '2 MBIRI 13-16',
 			songFirst: 3,

@@ -11,7 +11,7 @@ const config = [
 			},
 		],
 		plugins: [nodeResolve(), commonjs()],
-		external: ['jszip', 'path-browserify'],
+		external: ['dateformat', 'jszip', 'path-browserify'],
 	},
 	{
 		input: 'src/node/index.js',
@@ -21,8 +21,8 @@ const config = [
 				format: 'es',
 			},
 		],
-		external: ['jszip', 'global-jsdom/register', 'path', 'fs', 'node-fetch'],
-	}
+		external: ['dateformat', 'jszip', 'global-jsdom/register', 'path', 'fs', 'node-fetch'],
+	},
 ];
 
 export default config;

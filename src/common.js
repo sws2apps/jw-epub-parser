@@ -1,3 +1,4 @@
+import dateFormat from 'dateformat';
 import { monthNames } from './rules/languageRules.js';
 import languages from './rules/languages.js';
 import {
@@ -89,8 +90,7 @@ export const parseEpub = (htmlDocs, mwbYear, lang) => {
 
 			const findMonth = monthNames.find((month) => month.names[lang] === varMonthName);
 			const schedDate = new Date(mwbYear, findMonth.index, varDay);
-
-			weekItem.weekDate = schedDate;
+			weekItem.weekDate = dateFormat(schedDate, 'm/d/yyyy');
 			weekItem.weekDateLocale = weekDate;
 		} else {
 			weekItem.weekDate = weekDate;
