@@ -33,17 +33,17 @@ for (let i = 0; i < list.length; i++) {
 
 	console.log(`Download completed!`);
 
-	describe(`Test loadEPUB function with enhanced parsing for ${epubName}`, () => {
-		it(`mwbYear should return ${fixture.mwbYear}`, () => {
-			expect(data.mwbYear).to.equal(fixture.mwbYear);
-		});
+  describe(`Test loadEPUB function with enhanced parsing for ${epubName}`, () => {
+    it(`mwbYear should return ${fixture.mwbYear}`, () => {
+      expect(data.mwbYear).to.equal(fixture.mwbYear);
+    });
 
-		it(`weeksCount should return ${fixture.weeksCount}`, () => {
-			expect(data.weeksCount).to.equal(fixture.weeksCount);
-		});
+    it(`weeksCount should return ${fixture.weeksCount}`, () => {
+      expect(data.weeksCount).to.equal(fixture.weeksCount);
+    });
 
-		for (let a = 0; a < fixture.weeksData.length; a++) {
-			const week = fixture.weeksData[a];
+    for (let a = 0; a < fixture.weeksData.length; a++) {
+      const week = fixture.weeksData[a];
 
 			it(`week no. ${a + 1} in weeksData should have and return the correct properties`, () => {
 				for (let [key, value] of Object.entries(week)) {
