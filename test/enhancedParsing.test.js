@@ -27,7 +27,7 @@ for (let i = 0; i < finalDir.length; i++) {
 			const week = fixture.weeksData[a];
 
 			for (let [key, value] of Object.entries(week)) {
-				it(`${key} should exists and return the correct source`, () => {
+				it(`${key} should exists and return ${value}`, () => {
 					expect(data.weeksData[a]).to.have.property(key).equal(value);
 				});
 			}
