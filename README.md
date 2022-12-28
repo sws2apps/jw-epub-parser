@@ -99,8 +99,6 @@ Here are how the results of this module look like:
 
 ### With enhanced parsing
 
-### With enhanced parsing
-
 ```js
 {
   weeksCount: 7,
