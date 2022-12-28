@@ -8,9 +8,9 @@ To enable your language for enhanced parsing, please do the following:
 
 - Open the `languages.js` file, and your language code. Make sure that your language is valid according to the naming of your EPUB file from jw.org.
 
-- Add a sample EPUB file for testing in `test/enhancedParsing` folder.
+- Add an entry for your language in `test/enhancedParsing/list.json` file.
 
-- Create fixture file to test the parsing in the `test/fixtures` directory.
+- Create fixture file for the issue you want to test in the `test/fixtures` directory.
 
 - Run `npm run test` and verify that all the tests passed.
 
