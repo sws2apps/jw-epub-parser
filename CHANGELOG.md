@@ -1,3 +1,10 @@
+# [1.30.0-alpha.2](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.0-alpha.1...v1.30.0-alpha.2) (2022-12-28)
+
+
+### Bug Fixes
+
+* handle concluding convention song ([ca7c312](https://github.com/sws2apps/jw-epub-parser/commit/ca7c3125ddfd16b69439de683e13f4efa6d7c3cc))
+
 # [1.30.0-alpha.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.29.0...v1.30.0-alpha.1) (2022-12-27)
 
 

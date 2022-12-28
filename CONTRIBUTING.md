@@ -48,7 +48,8 @@ We are monitoring for pull requests. We will review your pull request and either
 
 **Before submitting a PR**, please make sure the following is done:
 
-- Run `npm test` to make sure that your changes pass the test.
+- Run `npm build` to build the module first.
+- Then run `npm test` to make sure that your changes pass the test.
 
 **When commiting your changes**, we recommend the following commands to be run:
 

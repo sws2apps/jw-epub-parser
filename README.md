@@ -46,42 +46,42 @@ By calling the `loadEPUB` function, it will return an object which contains thre
 
 Here are the list of all available properties in each object in the `weeksData` array:
 
-| Name               |  Type   | Description                                                                                                                     |
-| ------------------ | :-----: | ------------------------------------------------------------------------------------------------------------------------------- |
-| weekDate           | string  | Week date. For enhanced parsing, it is formatted as `m/d/yyyy`                                                                  |
-| weekDateLocale\*   | string  | Week date                                                                                                                       |
-| weeklyBibleReading | string  | Weekly Bible Reading                                                                                                            |
-| songFirst          | integer | First song                                                                                                                      |
-| tgw10Talk          | string  | 10 min talk title of the Treasures from God’s Word                                                                              |
-| tgwBRead           | string  | Bible Reading for student                                                                                                       |
-| tgwBReadStudy\*    | integer | Study Point for Bible Reading part                                                                                              |
-| ayfCount           | integer | Number of parts in Apply Yourself to the Field Ministry                                                                         |
-| ayfPart1           | string  | Part 1 in Apply Yourself to the Field Ministry                                                                                  |
-| ayfPart1Time\*     | integer | Timing of Part 1 in Apply Yourself to the Field Ministry                                                                        |
-| ayfPart1Type\*     | string  | Type of Part 1 in Apply Yourself to the Field Ministry                                                                          |
-| ayfPart1Study\*    | integer | Study Point of Part 1 in Apply Yourself to the Field Ministry                                                                   |
-| ayfPart2           | string  | Part 2 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is 1                          |
-| ayfPart2Time\*     | integer | Timing of Part 2 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is 1                |
-| ayfPart2Type\*     | string  | Type of Part 2 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is 1                  |
-| ayfPart2Study\*    | integer | Study Point of Part 2 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is 1           |
-| ayfPart3           | string  | Part 3 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 3                |
-| ayfPart3Time\*     | integer | Timing of Part 3 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 3      |
-| ayfPart3Type\*     | string  | Type of Part 3 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 3        |
-| ayfPart3Study\*    | integer | Study Point of Part 3 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 3 |
-| ayfPart4           | string  | Part 4 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 4                |
-| ayfPart4Time\*     | integer | Timing of Part 4 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 4      |
-| ayfPart4Type\*     | string  | Type of Part 4 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 4        |
-| ayfPart4Study\*    | integer | Study Point of Part 4 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 4 |
-| songMiddle         | integer | Middle song                                                                                                                     |
-| lcCount            | integer | Number of parts in Living as Christians                                                                                         |
-| lcPart1            | string  | Part 1 in Living as Christians                                                                                                  |
-| lcPart1Time\*      | integer | Timing of Part 1 in Living as Christians                                                                                        |
-| lcPart1Content\*   | string  | Content of Part 1 in Living as Christians                                                                                       |
-| lcPart2            | string  | Part 2 in Living as Christians. This property will not be available if `lcCount` is 1                                           |
-| lcPart2Time\*      | integer | Timing of Part 2 in Living as Christians. This property will not be available if `lcCount` is 1                                 |
-| lcPart2Content\*   | string  | Content of Part 2 in Living as Christians. This property will not be available if `lcCount` is 1                                |
-| lcCBS              | string  | Congregation Bible Study source material                                                                                        |
-| songConclude       | integer | Concluding song                                                                                                                 |
+| Name               |       Type        | Description                                                                                                                     |
+| ------------------ | :---------------: | ------------------------------------------------------------------------------------------------------------------------------- |
+| weekDate           |      string       | Week date. For enhanced parsing, it is formatted as `m/d/yyyy`                                                                  |
+| weekDateLocale\*   |      string       | Week date                                                                                                                       |
+| weeklyBibleReading |      string       | Weekly Bible Reading                                                                                                            |
+| songFirst          |      integer      | First song                                                                                                                      |
+| tgw10Talk          |      string       | 10 min talk title of the Treasures from God’s Word                                                                              |
+| tgwBRead           |      string       | Bible Reading for student                                                                                                       |
+| tgwBReadStudy\*    |      integer      | Study Point for Bible Reading part                                                                                              |
+| ayfCount           |      integer      | Number of parts in Apply Yourself to the Field Ministry                                                                         |
+| ayfPart1           |      string       | Part 1 in Apply Yourself to the Field Ministry                                                                                  |
+| ayfPart1Time\*     |      integer      | Timing of Part 1 in Apply Yourself to the Field Ministry                                                                        |
+| ayfPart1Type\*     |      string       | Type of Part 1 in Apply Yourself to the Field Ministry                                                                          |
+| ayfPart1Study\*    |      integer      | Study Point of Part 1 in Apply Yourself to the Field Ministry                                                                   |
+| ayfPart2           |      string       | Part 2 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is 1                          |
+| ayfPart2Time\*     |      integer      | Timing of Part 2 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is 1                |
+| ayfPart2Type\*     |      string       | Type of Part 2 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is 1                  |
+| ayfPart2Study\*    |      integer      | Study Point of Part 2 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is 1           |
+| ayfPart3           |      string       | Part 3 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 3                |
+| ayfPart3Time\*     |      integer      | Timing of Part 3 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 3      |
+| ayfPart3Type\*     |      string       | Type of Part 3 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 3        |
+| ayfPart3Study\*    |      integer      | Study Point of Part 3 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 3 |
+| ayfPart4           |      string       | Part 4 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 4                |
+| ayfPart4Time\*     |      integer      | Timing of Part 4 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 4      |
+| ayfPart4Type\*     |      string       | Type of Part 4 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 4        |
+| ayfPart4Study\*    |      integer      | Study Point of Part 4 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 4 |
+| songMiddle         |      integer      | Middle song                                                                                                                     |
+| lcCount            |      integer      | Number of parts in Living as Christians                                                                                         |
+| lcPart1            |      string       | Part 1 in Living as Christians                                                                                                  |
+| lcPart1Time\*      |      integer      | Timing of Part 1 in Living as Christians                                                                                        |
+| lcPart1Content\*   |      string       | Content of Part 1 in Living as Christians                                                                                       |
+| lcPart2            |      string       | Part 2 in Living as Christians. This property will not be available if `lcCount` is 1                                           |
+| lcPart2Time\*      |      integer      | Timing of Part 2 in Living as Christians. This property will not be available if `lcCount` is 1                                 |
+| lcPart2Content\*   |      string       | Content of Part 2 in Living as Christians. This property will not be available if `lcCount` is 1                                |
+| lcCBS              |      string       | Congregation Bible Study source material                                                                                        |
+| songConclude       | integer or string | Concluding song. When the song number is out of range, it will be the default text from the Meeting Workbook.                   |
 
 \* These properties are only available when enhanced parsing is available for the language you want to parse.
 
