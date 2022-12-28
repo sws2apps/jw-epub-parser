@@ -69,3 +69,10 @@ export const cbsFormat = {
 	F: 'Étude biblique de l’assemblée (30 min) : <<Title>>',
 	MG: 'Fianarana Baiboly: (30 min.) <<Title>>',
 };
+
+export const concludingSongFormat = {
+	CIN: '<<Song>> na Pemphelo',
+	E: '<<Song>> and Prayer',
+	F: '<<Song>> et prière',
+	MG: '<<Song>> sy Vavaka',
+};

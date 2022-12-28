@@ -2,6 +2,7 @@ import dateFormat from 'dateformat';
 import { monthNames } from './rules/languageRules.js';
 import languages from './rules/languages.js';
 import {
+	extractConcludeSong,
 	extractSourceAssignments,
 	extractSourceCBS,
 	extractSourceLiving,
@@ -250,7 +251,16 @@ export const parseEpub = (htmlDocs, mwbYear, lang) => {
 		// Concluding Song
 		nextIndex++;
 		nextIndex++;
-		weekItem.songConclude = +toSplit[nextIndex].match(/(\d+)/)[0];
+
+		if (isEnhancedParsing) {
+			const dataSong = extractConcludeSong(toSplit[nextIndex], lang);
+			const temp = +dataSong.match(/(\d+)/)[0];
+			weekItem.songConclude = temp > 151 ? dataSong : temp;
+		} else {
+			const songText = toSplit[nextIndex];
+			const temp = +songText.match(/(\d+)/)[0];
+			weekItem.songConclude = temp > 151 ? songText : temp;
+		}
 
 		weeksData.push(weekItem);
 	}

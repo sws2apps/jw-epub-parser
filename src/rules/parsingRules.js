@@ -2,8 +2,8 @@ import {
 	assignmentsFormat,
 	assignmentsName,
 	cbsFormat,
+	concludingSongFormat,
 	livingPartsFormat,
-	monthNames,
 	tgw10Format,
 	tgwBibleReadingFormat,
 } from './languageRules.js';
@@ -100,4 +100,11 @@ export const extractSourceCBS = (src, lang) => {
 	const startDelimiter = cbsFormat[lang].indexOf('<<');
 	const textDelimiter = src.substring(0, startDelimiter);
 	return src.split(textDelimiter)[1];
+};
+
+export const extractConcludeSong = (src, lang) => {
+	const endDelimiter = concludingSongFormat[lang].indexOf('>>');
+	const textDelimiter = concludingSongFormat[lang].substring(endDelimiter + 2);
+	const endIndex = src.indexOf(textDelimiter);
+	return src.substring(0, endIndex).trim();
 };
