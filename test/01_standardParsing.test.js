@@ -14,8 +14,6 @@ for (let i = 0; i < list.length; i++) {
 	describe(`Test loadEPUB function with standard parsing for ${language} language`, () => {
 		it(`should have and return the correct properties`, async () => {
 			// download EPUB data
-			console.log(`Downloading EPUB file for ${language} language (issue date: ${issue})`);
-
 			const url =
 				JW_CDN +
 				new URLSearchParams({
@@ -33,8 +31,6 @@ for (let i = 0; i < list.length; i++) {
 			const epubName = path.basename(epubUrl);
 			const data = await loadEPUB({ url: epubUrl });
 			const fixture = (await import(`./fixtures/${epubName.replace('.epub', '.js')}`)).default;
-
-			console.log(`Download completed!`);
 
 			// start testing
 			expect(data.mwbYear).to.equal(fixture.mwbYear);
