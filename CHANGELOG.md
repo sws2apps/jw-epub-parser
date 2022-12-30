@@ -1,3 +1,10 @@
+# [1.30.0-alpha.3](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.0-alpha.2...v1.30.0-alpha.3) (2022-12-30)
+
+
+### Bug Fixes
+
+* handle parsing for roman diacritics ([5245b02](https://github.com/sws2apps/jw-epub-parser/commit/5245b023dfec3691683c4b21e3ffcbb0d7753d3a))
+
 # [1.30.0-alpha.2](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.0-alpha.1...v1.30.0-alpha.2) (2022-12-28)
 
 
