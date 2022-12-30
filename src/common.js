@@ -67,7 +67,7 @@ export const parseEpub = (htmlDocs, mwbYear, lang) => {
 		const wdHtml = htmlItem.getElementsByTagName('h1').item(0);
 		const weekDate = wdHtml.textContent.replaceAll(/\u00A0/g, ' ');
 
-		const dayParse = weekDate.match(/((\w|\s)*\w(?=")|\w|[A-zÀ-ž])+/g);
+		const dayParse = weekDate.match(/((\w|\s)*\w(?=")|\w|[À-ž])+/g);
 		let varDay;
 		let varMonthName;
 
