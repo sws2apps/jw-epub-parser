@@ -1,3 +1,10 @@
+# [1.30.0-alpha.4](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.0-alpha.3...v1.30.0-alpha.4) (2022-12-30)
+
+
+### Bug Fixes
+
+* **localization:** update month names for french ([e6e24de](https://github.com/sws2apps/jw-epub-parser/commit/e6e24dea217512b2c6b9328259d5b997bed414e0))
+
 # [1.30.0-alpha.3](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.0-alpha.2...v1.30.0-alpha.3) (2022-12-30)
 
 
