@@ -1,3 +1,10 @@
+# [1.30.0-alpha.5](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.0-alpha.4...v1.30.0-alpha.5) (2022-12-30)
+
+
+### Bug Fixes
+
+* **module:** update supported languages ([83b6832](https://github.com/sws2apps/jw-epub-parser/commit/83b6832fac885ef150b513242e127769384cb4c6))
+
 # [1.30.0-alpha.4](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.0-alpha.3...v1.30.0-alpha.4) (2022-12-30)
 
 
