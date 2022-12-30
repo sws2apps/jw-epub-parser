@@ -11,7 +11,7 @@ export const monthNames = [
 	{ index: 8, names: { CIN: 'September', E: 'September', F: 'septembre', MG: 'Septambra' } },
 	{ index: 9, names: { CIN: 'October', E: 'October', F: 'octobre', MG: 'Oktobra' } },
 	{ index: 10, names: { CIN: 'November', E: 'November', F: 'novembre', MG: 'Novambra' } },
-	{ index: 11, names: { CIN: 'December', E: 'December', F: 'decembre', MG: 'Desambra' } },
+	{ index: 11, names: { CIN: 'December', E: 'December', F: 'décembre', MG: 'Desambra' } },
 ];
 
 export const tgw10Format = {
@@ -46,7 +46,12 @@ export const assignmentsName = [
 	{ CIN: 'Ulendo Wobwelelako', E: 'Return Visit', F: 'Nouvelle visite', MG: 'Fiverenana Mitsidika' },
 	{ CIN: 'Phunzilo la Baibo', E: 'Bible Study', F: 'Cours biblique', MG: 'Fampianarana Baiboly' },
 	{ CIN: 'Nkhani', E: 'Talk', F: 'Discours', MG: 'Lahateny' },
-	{ CIN: 'Kuitanila Anthu ku Cikumbutso', E: 'Memorial Invitation', F: 'Invitation au Mémorial', MG: 'Fanasana Fahatsiarovana' },
+	{
+		CIN: 'Kuitanila Anthu ku Cikumbutso',
+		E: 'Memorial Invitation',
+		F: 'Invitation au Mémorial',
+		MG: 'Fanasana Fahatsiarovana',
+	},
 ];
 
 export const assignmentsFormat = {
