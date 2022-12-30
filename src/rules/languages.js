@@ -1,1 +1,1 @@
-export default ['CIN', 'E', 'F', 'MG'];
+export default ['E', 'F', 'MG', 'TND', 'TNK', 'VZ'];
