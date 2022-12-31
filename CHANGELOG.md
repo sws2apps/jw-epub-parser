@@ -1,3 +1,10 @@
+# [1.30.0-alpha.7](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.0-alpha.6...v1.30.0-alpha.7) (2022-12-31)
+
+
+### Bug Fixes
+
+* **parsing:** change week date formatting ([f47d715](https://github.com/sws2apps/jw-epub-parser/commit/f47d7150f3c3504fb62d6a667c5a0156a071bd79))
+
 # [1.30.0-alpha.6](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.0-alpha.5...v1.30.0-alpha.6) (2022-12-31)
 
 
