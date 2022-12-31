@@ -48,7 +48,7 @@ Here are the list of all available properties in each object in the `weeksData` 
 
 | Name               |       Type        | Description                                                                                                                     |
 | ------------------ | :---------------: | ------------------------------------------------------------------------------------------------------------------------------- |
-| weekDate           |      string       | Week date. For enhanced parsing, it is formatted as `m/d/yyyy`                                                                  |
+| weekDate           |      string       | Week date. For enhanced parsing, it is formatted as `mm/dd/yyyy`                                                                |
 | weekDateLocale\*   |      string       | Week date                                                                                                                       |
 | weeklyBibleReading |      string       | Weekly Bible Reading                                                                                                            |
 | songFirst          |      integer      | First song                                                                                                                      |
@@ -97,74 +97,78 @@ Here are how the results of this module look like:
 
 ### With enhanced parsing
 
-### With enhanced parsing
-
 ```js
 {
   weeksCount: 7,
   mwbYear: '2023',
   weeksData: [
     {
-      weekDate: '3/6/2023',
-      weekDateLocale: '6-12 Martsa',
-      weeklyBibleReading: '1 TANTARA 23-26',
-      songFirst: 123,
-      tgw10Talk: '“Lasa Voalamina Tsara ny Fanompoana tao Amin’ny Tempoly”',
-      tgwBRead: '1Ta 23:21-32',
-      tgwBReadStudy: 5,
-      ayfCount: 3,
-      ayfPart1: 'Fiaraha-midinika. Alefaso ilay video hoe Ezaka Manokana Hizarana Fanasana Fahatsiarovana. Ajanòny ilay video isaky ny misy fiatoana, ary iaraho midinika ny fanontaniana mipoitra eo.',
-      ayfPart1Time: 5,
-      ayfPart1Type: 'Video Fanasana Fahatsiarovana',
-      ayfPart2: 'Atombohy amin’ny foto-kevitra ao amin’ny hevitra azo resahina. Liana ilay olona, dia asehoy azy ilay video hoe Tsarovy ny Nahafatesan’i Jesosy (tsy tena alefa anefa ilay izy). Iaraho midinika ilay izy avy eo.',
-      ayfPart2Time: 3,
-      ayfPart2Type: 'Fanasana Fahatsiarovana',
-      ayfPart2Study: 1,
-      ayfPart3: 'w11 1/6 14-15: Foto-kevitra: Nahoana no Voalamina Tsara ny Kristianina?',
-      ayfPart3Time: 5,
-      ayfPart3Type: 'Lahateny',
-      ayfPart3Study: 1,
-      songMiddle: 101,
-      lcCount: 2,
-      lcPart1: '“Te Hanampy ve Ianao Rehefa Misy Loza Mitranga?”',
-      lcPart1Time: 10,
-      lcPart1Content: 'Fiaraha-midinika sy video.',
-      lcPart2: 'Ezaka Manokana Hizarana Fanasana Fahatsiarovana Manomboka ny Asabotsy 11 Martsa',
-      lcPart2Time: 5,
-      lcPart2Content: 'Fiaraha-midinika. Resaho kely izay voalazan’ilay fanasana. Resaho koa ny fandaharana ataon’ny fiangonana momba ny lahateny manokana sy ny Fahatsiarovana ary ny fomba hamitana ny faritany.',
-      lcCBS: 'lff lesona 39 sy fanamarihana 3',
-      songConclude: 127
-    },
-    {
-      weekDate: '3/13/2023',
-      weekDateLocale: '13-19 Martsa',
-      weeklyBibleReading: '1 TANTARA 27-29',
-      songFirst: 133,
-      tgw10Talk: '“Torohevitry ny Ray Be Fitiavana ho An-janany”',
-      tgwBRead: '1Ta 27:1-15',
-      tgwBReadStudy: 1,
-      ayfCount: 3,
-      ayfPart1: 'Fiaraha-midinika. Alefaso ilay video hoe Fiverenana Mitsidika: Jesosy​—Mt 20:28. Ajanòny ilay video isaky ny misy fiatoana, ary iaraho midinika ny fanontaniana mipoitra eo.',
-      ayfPart1Time: 5,
-      ayfPart1Type: 'Video Fiverenana Mitsidika',
-      ayfPart2: 'Mitsidika olona liana sy nandray fanasana Fahatsiarovana ianao. Asehoy azy ilay video hoe Inona no Antony Nahafatesan’i Jesosy? (tsy tena alefa anefa ilay izy) Iaraho midinika ilay izy.',
-      ayfPart2Time: 4,
-      ayfPart2Type: 'Fiverenana Mitsidika',
-      ayfPart2Study: 9,
-      ayfPart3: 'Mitsidika olona liana sy nandray fanasana Fahatsiarovana ianao. Manomboha fampianarana Baiboly amin’ilay bokikely hoe Ankafizo Mandrakizay ny Fiainana!',
-      ayfPart3Time: 4,
-      ayfPart3Type: 'Fiverenana Mitsidika',
-      ayfPart3Study: 6,
-      songMiddle: 4,
-      lcCount: 2,
-      lcPart1: 'Zavatra Ilain’ny Fiangonana',
-      lcPart1Time: 5,
-      lcPart2: 'Zava-bitan’ny Fandaminana',
-      lcPart2Time: 10,
-      lcPart2Content: 'Alefaso ilay video hoe Zava-bitan’ny Fandaminana, izay tokony halefa amin’ity Martsa ity.',
-      lcCBS: 'lff lesona 40',
-      songConclude: 45
-    },
+			weekDate: '03/06/2023',
+			weekDateLocale: 'March 6-12',
+			weeklyBibleReading: '1 CHRONICLES 23-26',
+			songFirst: 123,
+			tgw10Talk: '“Temple Worship Becomes Highly Organized”',
+			tgwBRead: '1Ch 23:21-32',
+			tgwBReadStudy: 5,
+			ayfCount: 3,
+			ayfPart1:
+				'Discussion. Play the video Memorial Invitation Campaign. Stop the video at each pause, and ask the audience the questions that appear in the video.',
+			ayfPart1Time: 5,
+			ayfPart1Type: 'Memorial Invitation Video',
+			ayfPart2:
+				'Begin with the sample conversation topic. After the householder expresses interest, introduce and discuss (but do not play) the video Remember Jesus’ Death.',
+			ayfPart2Time: 3,
+			ayfPart2Type: 'Memorial Invitation',
+			ayfPart2Study: 11,
+			ayfPart3: 'w11 6/1 14-15​—Theme: Why Are Christians Organized?',
+			ayfPart3Time: 5,
+			ayfPart3Type: 'Talk',
+			ayfPart3Study: 14,
+			songMiddle: 101,
+			lcCount: 2,
+			lcPart1: '“How to Help After a Disaster”',
+			lcPart1Time: 10,
+			lcPart1Content: 'Discussion and video.',
+			lcPart2: 'Memorial Campaign to Begin Saturday, March 11',
+			lcPart2Time: 5,
+			lcPart2Content:
+				'Discussion. Briefly review the invitation. Outline the local arrangements for the special talk and the Memorial and for covering the territory.',
+			lcCBS: 'lff lesson 39 and endnote 3',
+			songConclude: 127,
+		},
+		{
+			weekDate: '03/13/2023',
+			weekDateLocale: 'March 13-19',
+			weeklyBibleReading: '1 CHRONICLES 27-29',
+			songFirst: 133,
+			tgw10Talk: '“A Father’s Loving Admonition to His Son”',
+			tgwBRead: '1Ch 27:1-15',
+			tgwBReadStudy: 10,
+			ayfCount: 3,
+			ayfPart1:
+				'Discussion. Play the video Return Visit: Jesus​—Mt 20:28. Stop the video at each pause, and ask the audience the questions that appear in the video.',
+			ayfPart1Time: 5,
+			ayfPart1Type: 'Return Visit Video',
+			ayfPart2:
+				'Make a return visit on someone who accepted the Memorial invitation and showed interest. Introduce and discuss (but do not play) Why Did Jesus Die?',
+			ayfPart2Time: 4,
+			ayfPart2Type: 'Return Visit',
+			ayfPart2Study: 9,
+			ayfPart3:
+				'Make a return visit on someone who accepted the Memorial invitation and showed interest. Start a Bible study in the Enjoy Life Forever! brochure.',
+			ayfPart3Time: 4,
+			ayfPart3Type: 'Return Visit',
+			ayfPart3Study: 6,
+			songMiddle: 4,
+			lcCount: 2,
+			lcPart1: 'Local Needs',
+			lcPart1Time: 5,
+			lcPart2: 'Organizational Accomplishments',
+			lcPart2Time: 10,
+			lcPart2Content: 'Play the Organizational Accomplishments video for March.',
+			lcCBS: 'lff lesson 40',
+			songConclude: 45,
+		},
     ...
   ]
 }
@@ -178,39 +182,45 @@ Here are how the results of this module look like:
   mwbYear: '2023',
   weeksData: [
     {
-      weekDate: '6-12 Martsa',
-      weeklyBibleReading: '1 TANTARA 23-26',
-      songFirst: 123,
-      tgw10Talk: '“Lasa Voalamina Tsara ny Fanompoana tao Amin’ny Tempoly”: (10 min.)',
-      tgwBRead: 'Famakiana Baiboly: (4 min.) 1Ta 23:21-32 (th lesona 5)',
-      ayfCount: 3,
-      ayfPart1: 'Video Fanasana Fahatsiarovana: (5 min.) Fiaraha-midinika. Alefaso ilay video hoe Ezaka Manokana Hizarana Fanasana Fahatsiarovana. Ajanòny ilay video isaky ny misy fiatoana, ary iaraho midinika ny fanontaniana mipoitra eo.',
-      ayfPart2: 'Fanasana Fahatsiarovana: (3 min.) Atombohy amin’ny foto-kevitra ao amin’ny hevitra azo resahina. Liana ilay olona, dia asehoy azy ilay video hoe Tsarovy ny Nahafatesan’i Jesosy (tsy tena alefa anefa ilay izy). Iaraho midinika ilay izy avy eo. (th lesona 11)',
-      ayfPart3: 'Lahateny: (5 min.) w11 1/6 14-15: Foto-kevitra: Nahoana no Voalamina Tsara ny Kristianina? (th lesona 14)',
-      songMiddle: 101,
-      lcCount: 2,
-      lcPart1: '“Te Hanampy ve Ianao Rehefa Misy Loza Mitranga?”: (10 min.) Fiaraha-midinika sy video.',
-      lcPart2: 'Ezaka Manokana Hizarana Fanasana Fahatsiarovana Manomboka ny Asabotsy 11 Martsa: (5 min.) Fiaraha-midinika. Resaho kely izay voalazan’ilay fanasana. Resaho koa ny fandaharana ataon’ny fiangonana momba ny lahateny manokana sy ny Fahatsiarovana ary ny fomba hamitana ny faritany.',
-      lcCBS: 'Fianarana Baiboly: (30 min.) lff lesona 39 sy fanamarihana 3',
-      songConclude: 127
-    },
-    {
-      weekDate: '13-19 Martsa',
-      weeklyBibleReading: '1 TANTARA 27-29',
-      songFirst: 133,
-      tgw10Talk: '“Torohevitry ny Ray Be Fitiavana ho An-janany”: (10 min.)',
-      tgwBRead: 'Famakiana Baiboly: (4 min.) 1Ta 27:1-15 (th lesona 10)',
-      ayfCount: 3,
-      ayfPart1: 'Video Fiverenana Mitsidika: (5 min.) Fiaraha-midinika. Alefaso ilay video hoe Fiverenana Mitsidika: Jesosy​—Mt 20:28. Ajanòny ilay video isaky ny misy fiatoana, ary iaraho midinika ny fanontaniana mipoitra eo.',
-      ayfPart2: 'Fiverenana Mitsidika: (4 min.) Mitsidika olona liana sy nandray fanasana Fahatsiarovana ianao. Asehoy azy ilay video hoe Inona no Antony Nahafatesan’i Jesosy? (tsy tena alefa anefa ilay izy) Iaraho midinika ilay izy. (th lesona 9)',
-      ayfPart3: 'Fiverenana Mitsidika: (4 min.) Mitsidika olona liana sy nandray fanasana Fahatsiarovana ianao. Manomboha fampianarana Baiboly amin’ilay bokikely hoe Ankafizo Mandrakizay ny Fiainana! (th lesona 6)',
-      songMiddle: 4,
-      lcCount: 2,
-      lcPart1: 'Zavatra Ilain’ny Fiangonana: (5 min.)',
-      lcPart2: 'Zava-bitan’ny Fandaminana: (10 min.) Alefaso ilay video hoe Zava-bitan’ny Fandaminana, izay tokony halefa amin’ity Martsa ity.',
-      lcCBS: 'Fianarana Baiboly: (30 min.) lff lesona 40',
-      songConclude: 45
-    },
+			weekDate: '6-12 de marzo',
+			weeklyBibleReading: '1 CRÓNICAS 23-26',
+			songFirst: 123,
+			tgw10Talk: '“La adoración en el templo estaba bien organizada” (10 mins.)',
+			tgwBRead: 'Lectura de la Biblia (4 mins.): 1Cr 23:21-32 (th lec. 5).',
+			ayfCount: 3,
+			ayfPart1:
+				'Video de la invitación a la Conmemoración (5 mins.): Análisis con el auditorio. Ponga el video Campaña de la Conmemoración. Detenga el video en cada pausa y haga las preguntas que aparecen en él.',
+			ayfPart2:
+				'Invitación a la Conmemoración (3 mins.): Use el tema de las ideas para conversar. Luego, cuando la persona muestre interés, presente y analice el video Recordemos la muerte de Jesús, pero no lo ponga (th lec. 11).',
+			ayfPart3: 'Discurso (5 mins.): w11 1/6 14, 15. Título: ¿Por qué están los cristianos bien organizados? (th lec. 14).',
+			songMiddle: 101,
+			lcCount: 2,
+			lcPart1: '“Cómo podemos ayudar cuando ocurre un desastre” (10 mins.): Análisis con el auditorio y video.',
+			lcPart2:
+				'El 11 de marzo comienza la campaña de la Conmemoración (5 mins.): Análisis con el auditorio. Repase brevemente el contenido de la invitación. Explique los planes que se han hecho para el discurso especial, para celebrar la Conmemoración y para cubrir el territorio.',
+			lcCBS: 'Estudio bíblico de la congregación (30 mins.): lff lección 39 y nota 3.',
+			songConclude: 127,
+		},
+		{
+			weekDate: '13-19 de marzo',
+			weeklyBibleReading: '1 CRÓNICAS 27-29',
+			songFirst: 133,
+			tgw10Talk: '“Los buenos consejos de un padre que amaba a su hijo” (10 mins.)',
+			tgwBRead: 'Lectura de la Biblia (4 mins.): 1Cr 27:1-15 (th lec. 10).',
+			ayfCount: 3,
+			ayfPart1:
+				'Video de la revisita (5 mins.): Análisis con el auditorio. Ponga el video Revisita: Jesús (Mt 20:28). Detenga el video en cada pausa y haga las preguntas que aparecen en él.',
+			ayfPart2:
+				'Revisita (4 mins.): Vuelva a visitar a alguien que haya aceptado una invitación a la Conmemoración y que haya mostrado interés. Presente y analice el video ¿Por qué murió Jesús?, pero no lo ponga (th lec. 9).',
+			ayfPart3:
+				'Revisita (4 mins.): Vuelva a visitar a alguien que haya aceptado una invitación a la Conmemoración y que haya mostrado interés. Comience un curso bíblico utilizando el folleto Disfrute de la vida (th lec. 6).',
+			songMiddle: 4,
+			lcCount: 2,
+			lcPart1: 'Necesidades de la congregación (5 mins.)',
+			lcPart2: 'Logros de la organización (10 mins.): Ponga el video Logros de la organización para el mes de marzo.',
+			lcCBS: 'Estudio bíblico de la congregación (30 mins.): lff lección 40.',
+			songConclude: 45,
+		},
     ...
   ]
 }
