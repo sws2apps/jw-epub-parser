@@ -87,9 +87,7 @@ Here are the list of all available properties in each object in the `weeksData` 
 
 Currently, we only support enhanced parsing for the following languages:
 
-```bash
 Enlish (E), French (F), Malagasy (MG), Tandroy (TND), Tankarana (TND), Vezo (VZ)
-```
 
 For the other languages, you may use your own method to convert these outputs according to your needs to get the needed informations. If you want to contribute and add your language in the enhanced parsing list, please follow [this guide](./ADD_LANGUAGE.md).
 
