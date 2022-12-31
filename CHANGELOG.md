@@ -1,3 +1,10 @@
+# [1.30.0-alpha.6](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.0-alpha.5...v1.30.0-alpha.6) (2022-12-31)
+
+
+### Bug Fixes
+
+* **parsing:** issue when parsing student assignments th study point ([c39b186](https://github.com/sws2apps/jw-epub-parser/commit/c39b18608fc13c6790768f93e3e1bf50aec03bfa))
+
 # [1.30.0-alpha.5](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.0-alpha.4...v1.30.0-alpha.5) (2022-12-30)
 
 
