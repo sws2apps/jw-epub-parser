@@ -27,7 +27,7 @@ export const extractSourceTGWBibleReading = (src, lang) => {
 		const endDelimiter = textTest.indexOf('>>');
 		const endText = textTest.substring(endDelimiter + 2);
 
-		const value = endText.trim().replace('<n>', '\\d');
+		const value = endText.trim().replace('<n>', '\\d+');
 		const regex = new RegExp(value);
 		const array = regex.exec(src);
 
@@ -45,7 +45,7 @@ export const extractSourceAssignments = (src, lang) => {
 		const variation = variations[a];
 		const startDelimiter = variation.indexOf('<<');
 		let startSrc = variation.substring(0, startDelimiter);
-		startSrc = startSrc.replace('<n>', '\\d');
+		startSrc = startSrc.replace('<n>', '\\d+');
 		startSrc = startSrc.replace('(', '\\(');
 		startSrc = startSrc.replace(')', '\\)');
 		let assignmentsList = '';
@@ -90,7 +90,7 @@ export const extractSourceAssignments = (src, lang) => {
 
 			const endDelimiter = assignmentsFormat[lang].indexOf('>>');
 			const endText = assignmentsFormat[lang].substring(endDelimiter + 2);
-			const value = endText.trim().replace('<n>', '\\d');
+			const value = endText.trim().replace('<n>', '\\d+');
 			regex = new RegExp(value);
 			const array2 = regex.exec(src);
 			let endIndex = src.length;
