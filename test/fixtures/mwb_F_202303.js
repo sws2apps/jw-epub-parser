@@ -3,7 +3,7 @@ export default {
 	mwbYear: '2023',
 	weeksData: [
 		{
-			weekDate: '3/6/2023',
+			weekDate: '03/06/2023',
 			weekDateLocale: '6-12 mars',
 			weeklyBibleReading: '1 CHRONIQUES 23-26',
 			songFirst: 123,
@@ -37,7 +37,7 @@ export default {
 			songConclude: 127,
 		},
 		{
-			weekDate: '3/13/2023',
+			weekDate: '03/13/2023',
 			weekDateLocale: '13-19 mars',
 			weeklyBibleReading: '1 CHRONIQUES 27-29',
 			songFirst: 133,
@@ -70,7 +70,7 @@ export default {
 			songConclude: 45,
 		},
 		{
-			weekDate: '3/20/2023',
+			weekDate: '03/20/2023',
 			weekDateLocale: '20-26 mars',
 			weeklyBibleReading: '2 CHRONIQUES 1-4',
 			songFirst: 41,
@@ -101,7 +101,7 @@ export default {
 			songConclude: 135,
 		},
 		{
-			weekDate: '3/27/2023',
+			weekDate: '03/27/2023',
 			weekDateLocale: '27 mars – 2 avril',
 			weeklyBibleReading: '2 CHRONIQUES 5-7',
 			songFirst: 129,
@@ -134,7 +134,7 @@ export default {
 			songConclude: 34,
 		},
 		{
-			weekDate: '4/10/2023',
+			weekDate: '04/10/2023',
 			weekDateLocale: '10-16 avril',
 			weeklyBibleReading: '2 CHRONIQUES 8-9',
 			songFirst: 88,
@@ -164,7 +164,7 @@ export default {
 			songConclude: 131,
 		},
 		{
-			weekDate: '4/17/2023',
+			weekDate: '04/17/2023',
 			weekDateLocale: '17-23 avril',
 			weeklyBibleReading: '2 CHRONIQUES 10-12',
 			songFirst: 103,
@@ -197,7 +197,7 @@ export default {
 			songConclude: 121,
 		},
 		{
-			weekDate: '4/24/2023',
+			weekDate: '04/24/2023',
 			weekDateLocale: '24-30 avril',
 			weeklyBibleReading: '2 CHRONIQUES 13-16',
 			songFirst: 3,

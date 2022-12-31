@@ -67,11 +67,11 @@ export const parseEpub = (htmlDocs, mwbYear, lang) => {
 		const wdHtml = htmlItem.getElementsByTagName('h1').item(0);
 		const weekDate = wdHtml.textContent.replaceAll(/\u00A0/g, ' ');
 
-		const dayParse = weekDate.match(/((\w|\s)*\w(?=")|\w|[À-ž])+/g);
-		let varDay;
-		let varMonthName;
-
 		if (isEnhancedParsing) {
+			const dayParse = weekDate.match(/((\w|\s)*\w(?=")|\w|[À-ž])+/g);
+			let varDay;
+			let varMonthName;
+
 			for (let b = 0; b < dayParse.length; b++) {
 				if (!varDay) {
 					if (!isNaN(dayParse[b]) && dayParse[b].length < 4) {
@@ -91,7 +91,7 @@ export const parseEpub = (htmlDocs, mwbYear, lang) => {
 
 			const findMonth = monthNames.find((month) => month.names[lang] === varMonthName);
 			const schedDate = new Date(mwbYear, findMonth.index, varDay);
-			weekItem.weekDate = dateFormat(schedDate, 'm/d/yyyy');
+			weekItem.weekDate = dateFormat(schedDate, 'mm/dd/yyyy');
 			weekItem.weekDateLocale = weekDate;
 		} else {
 			weekItem.weekDate = weekDate;
