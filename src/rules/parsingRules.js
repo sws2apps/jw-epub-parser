@@ -1,21 +1,42 @@
 import {
 	assignmentsFormat,
 	assignmentsName,
-	assignmentsOverride,
 	cbsFormat,
 	concludingSongFormat,
 	livingPartsFormat,
+	monthNames,
 	tgw10Format,
 	tgwBibleReadingFormat,
 } from './languageRules.js';
 
-export const extractTitleTGW10 = (src, lang) => {
-	const startDelimiter = tgw10Format[lang].indexOf('<<');
-	const endDelimiter = tgw10Format[lang].indexOf('>>');
-	const endText = tgw10Format[lang].substring(endDelimiter + 2);
-	const findIndex = src.indexOf(endText);
+export const extractMonthName = (src, lang) => {
+	let varDay;
+	let monthIndex;
 
-	return src.substring(startDelimiter, findIndex);
+	monthNames.forEach((month) => {
+		const monthLang = month.names[lang];
+		const regex = new RegExp(`(${monthLang})`);
+		const array = regex.exec(src);
+		if (Array.isArray(array)) {
+			varDay = +src.match(/(\d+)/)[0];
+			monthIndex = month.index;
+		}
+	});
+
+	return { varDay, monthIndex };
+};
+
+export const extractTitleTGW10 = (src, lang) => {
+	const variations = tgw10Format[lang].split('|');
+	for (let a = 0; a < variations.length; a++) {
+		const variation = variations[a];
+		const startDelimiter = variation.indexOf('<<');
+		const endDelimiter = variation.indexOf('>>');
+		const endText = variation.substring(endDelimiter + 2);
+		const findIndex = src.indexOf(endText);
+
+		return src.substring(startDelimiter, findIndex);
+	}
 };
 
 export const extractSourceTGWBibleReading = (src, lang) => {
@@ -55,15 +76,8 @@ export const extractSourceAssignments = (src, lang) => {
 				assignmentsList === '' ? assignmentsName[i][lang] : `${assignmentsList}|${assignmentsName[i][lang]}`;
 		}
 
-		// get override
-		const overrides = assignmentsOverride[lang];
-		if (overrides) {
-			for (let i = 0; i < overrides.length; i++) {
-				assignmentsList = `${assignmentsList}|${overrides[i].override}`;
-			}
-		}
-
 		startSrc = startSrc.trim().replace('<AssignmentType>', `(${assignmentsList})`);
+
 		let regex = new RegExp(startSrc);
 		const array = regex.exec(src);
 
@@ -72,20 +86,7 @@ export const extractSourceAssignments = (src, lang) => {
 			const startIndex = array[0].length + 1;
 
 			const obj = {};
-			const temp = array[1];
-
-			// check if override
-			let find;
-			if (overrides) {
-				find = overrides.find((item) => item.override.includes(temp));
-			}
-
-			if (find) {
-				obj.type = find.correct;
-			} else {
-				obj.type = temp;
-			}
-
+			obj.type = array[1];
 			obj.time = assignmentTime;
 
 			const endDelimiter = assignmentsFormat[lang].indexOf('>>');

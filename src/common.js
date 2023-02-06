@@ -1,8 +1,8 @@
 import dateFormat from 'dateformat';
-import { monthNames } from './rules/languageRules.js';
-import languages from './rules/languages.js';
+import languages from './locales/languages.js';
 import {
 	extractConcludeSong,
+	extractMonthName,
 	extractSourceAssignments,
 	extractSourceCBS,
 	extractSourceLiving,
@@ -51,7 +51,7 @@ export const parseEpub = (htmlDocs, mwbYear, lang) => {
 	const weeksData = [];
 	let weeksCount;
 
-	const isEnhancedParsing = languages.includes(lang);
+	const isEnhancedParsing = languages.find((language) => language.code === lang);
 
 	weeksCount = htmlDocs.length;
 
@@ -68,29 +68,8 @@ export const parseEpub = (htmlDocs, mwbYear, lang) => {
 		const weekDate = wdHtml.textContent.replaceAll(/\u00A0/g, ' ');
 
 		if (isEnhancedParsing) {
-			const dayParse = weekDate.match(/((\w|\s)*\w(?=")|\w|[À-ž])+/g);
-			let varDay;
-			let varMonthName;
-
-			for (let b = 0; b < dayParse.length; b++) {
-				if (!varDay) {
-					if (!isNaN(dayParse[b]) && dayParse[b].length < 4) {
-						varDay = +dayParse[b];
-					}
-				}
-				if (!varMonthName) {
-					if (isNaN(dayParse[b])) {
-						varMonthName = dayParse[b];
-					}
-				}
-
-				if (varDay && varMonthName) {
-					break;
-				}
-			}
-
-			const findMonth = monthNames.find((month) => month.names[lang] === varMonthName);
-			const schedDate = new Date(mwbYear, findMonth.index, varDay);
+			const { varDay, monthIndex } = extractMonthName(weekDate, lang);
+			const schedDate = new Date(mwbYear, monthIndex, varDay);
 			weekItem.weekDate = dateFormat(schedDate, 'mm/dd/yyyy');
 			weekItem.weekDateLocale = weekDate;
 		} else {
@@ -98,7 +77,7 @@ export const parseEpub = (htmlDocs, mwbYear, lang) => {
 		}
 
 		// get weekly Bible Reading
-		const wbHtml = htmlItem.getElementsByTagName('h2').item(0);
+		const wbHtml = htmlItem.querySelector('article').querySelector('header').getElementsByTagName('h2').item(0);
 		weekItem.weeklyBibleReading = wbHtml.textContent.replaceAll(/\u00A0/g, ' ');
 
 		let src = '';
