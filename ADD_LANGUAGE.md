@@ -1,19 +1,14 @@
-# Adding Language for Enhanced Parsing
+# JW EPUB Parser Translation Guide
 
-To enable your language for enhanced parsing, please do the following:
+## Get started
 
-- Navigate to `src/rules`.
+1. Open [Congregation Program for Everyone](https://crowdin.com/project/cpe-lmmo) projec on Crowdin
+2. Find your locale and start translation. Find more details in [guide for volunteer translators](https://support.crowdin.com/for-volunteer-translators/)
 
-- Open the `languageRules.js` file. Then add your language definition following the existing languages as model.
+All translated and approved content will be pushed to this repo automatically. You don't need to create any PRs with translation.
 
-- Open the `languages.js` file, and your language code. Make sure that this code is valid according to the naming of your EPUB file from jw.org.
+Original source can be found in [/locales/en](https://github.com/sws2apps/jw-epub-parser/tree/main/src/locales/en). If you find any problem with original source, please create a PR with changes directly to `/locales/en`. Crowdin automatically pull all updates within 3 hours.
 
-- Add an entry for your language in `test/enhancedParsing/list.json` file.
+### I can't find my language on Crowdin
 
-- Create fixture file for the issue you want to test in the `test/fixtures` directory. It is recommended that you create this fixture file manually by checking your Meeting Workbook file. Although it is time consuming, it will ensure that the parsing works as expected.
-
-- Run `npm run build` to build the module.
-
-- Run `npm run test` and verify that all the tests passed.
-
-- Submit a PR to merge your changes.
+Please create a [new issue](https://github.com/sws2apps/jw-epub-parser/issues/new?template=new_language_request.yml) in this repo. We would be happy to add the new language so that you can start the translation on Crowdin.
