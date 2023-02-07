@@ -1,3 +1,10 @@
+## [1.30.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.0...v1.30.1) (2023-02-07)
+
+
+### Bug Fixes
+
+* **parsing-rules:** exit weekdate extraction as soon as value is set ([641aaf8](https://github.com/sws2apps/jw-epub-parser/commit/641aaf8683f440e8a6b34fbaedb13ca33bc97e72))
+
 # [1.30.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.29.0...v1.30.0) (2023-02-07)
 
 
