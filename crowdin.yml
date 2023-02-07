@@ -1,3 +1,6 @@
+'pull_request_title': 'chore(localize): updated translation from Crowdin'
+'pull_request_labels': ['crowdin']
+
 files:
   - source: /src/locales/en/*.json
     translation: /src/locales/%locale%/%original_file_name%
