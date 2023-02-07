@@ -44,6 +44,7 @@
 		"rollup": "^3.0.0"
 	},
 	"dependencies": {
+		"dateformat": "^5.0.3",
 		"global-jsdom": "^8.7.0",
 		"jsdom": "^21.0.0",
 		"jszip": "^3.9.1",
