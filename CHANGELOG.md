@@ -1,3 +1,35 @@
+# [1.30.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.29.0...v1.30.0) (2023-02-07)
+
+
+### Features
+
+* **deps:** bump @rollup/plugin-commonjs from 23.0.4 to 23.0.5 ([b33cf4d](https://github.com/sws2apps/jw-epub-parser/commit/b33cf4dbb49a648bfbc2683f6cf38cdb853e95c1))
+* **deps:** bump @rollup/plugin-commonjs from 23.0.5 to 24.0.0 ([dfbe27a](https://github.com/sws2apps/jw-epub-parser/commit/dfbe27ab6e8c084a3a444f12369e1e43e894c230))
+* **deps:** bump @rollup/plugin-commonjs from 24.0.0 to 24.0.1 ([748c419](https://github.com/sws2apps/jw-epub-parser/commit/748c419d2363405206835bd85b892bee26fcff12))
+* **deps:** bump global-jsdom from 8.6.0 to 8.7.0 ([cf076a4](https://github.com/sws2apps/jw-epub-parser/commit/cf076a4162a9c25bf18150058391f404d18f10a6))
+* **deps:** bump jsdom from 20.0.3 to 21.0.0 ([d9c314d](https://github.com/sws2apps/jw-epub-parser/commit/d9c314daf1762646387763f87c8327e22c0d4f5d))
+* **deps:** bump jsdom from 21.0.0 to 21.1.0 ([5b38e2b](https://github.com/sws2apps/jw-epub-parser/commit/5b38e2b6f98e5f271b2ce9f5c46b628a51d06bbd))
+* **deps:** bump mocha from 10.1.0 to 10.2.0 ([a2e955b](https://github.com/sws2apps/jw-epub-parser/commit/a2e955b453b51cbc36f5a25327284a33a1837478))
+* **deps:** bump rimraf from 3.0.2 to 4.0.4 ([af15517](https://github.com/sws2apps/jw-epub-parser/commit/af1551722b070d78ef298d6e5c175c7d9a0fa217))
+* **deps:** bump rimraf from 4.0.4 to 4.0.7 ([9502956](https://github.com/sws2apps/jw-epub-parser/commit/95029563ccb8b68488979f582be8b814d97fda9e))
+* **deps:** bump rimraf from 4.0.7 to 4.1.0 ([fe524c7](https://github.com/sws2apps/jw-epub-parser/commit/fe524c7a29d5f31fad5f3b2ef9487603ae6f97c1))
+* **deps:** bump rimraf from 4.1.0 to 4.1.1 ([e91f4ad](https://github.com/sws2apps/jw-epub-parser/commit/e91f4ad5001e8e78faa83b0a417b69b91e7b534d))
+* **deps:** bump rimraf from 4.1.1 to 4.1.2 ([13cd6de](https://github.com/sws2apps/jw-epub-parser/commit/13cd6debebf31dcac3f88d2dc5c92414e50697be))
+* **deps:** bump rollup from 3.10.0 to 3.10.1 ([996d1df](https://github.com/sws2apps/jw-epub-parser/commit/996d1df59ea93288cc5b5d062494e51da90df07e))
+* **deps:** bump rollup from 3.10.1 to 3.11.0 ([cc49d2f](https://github.com/sws2apps/jw-epub-parser/commit/cc49d2fd1c0fbd3763b52f8ff9ef0d51ff79afdf))
+* **deps:** bump rollup from 3.11.0 to 3.12.0 ([5f3b3e9](https://github.com/sws2apps/jw-epub-parser/commit/5f3b3e9436acefbc0ab77fa5d992d446110eb19d))
+* **deps:** bump rollup from 3.12.0 to 3.12.1 ([937da81](https://github.com/sws2apps/jw-epub-parser/commit/937da8102dbfc78e0175d5fa86afc46ab9ae70e5))
+* **deps:** bump rollup from 3.12.1 to 3.14.0 ([cad40fd](https://github.com/sws2apps/jw-epub-parser/commit/cad40fd6e7599f9fadfbd43ffa2169085a946f2a))
+* **deps:** bump rollup from 3.7.0 to 3.7.3 ([e6b9ecb](https://github.com/sws2apps/jw-epub-parser/commit/e6b9ecb1fb5964fd5a9e3317541015a820d7a094))
+* **deps:** bump rollup from 3.7.3 to 3.7.4 ([36e6495](https://github.com/sws2apps/jw-epub-parser/commit/36e64959b6c1d73389314888706e208090fa511c))
+* **deps:** bump rollup from 3.7.4 to 3.7.5 ([2fc29bb](https://github.com/sws2apps/jw-epub-parser/commit/2fc29bbc67639ccca17c911e315158ddbe2552de))
+* **deps:** bump rollup from 3.7.5 to 3.8.0 ([ab80d49](https://github.com/sws2apps/jw-epub-parser/commit/ab80d499648d4f1990ba9042702df43f1a7b2c5f))
+* **deps:** bump rollup from 3.8.0 to 3.8.1 ([daf7c7a](https://github.com/sws2apps/jw-epub-parser/commit/daf7c7abeaa107ae3d45d84a34d67f128762b7fa))
+* **deps:** bump rollup from 3.8.1 to 3.9.0 ([6b097de](https://github.com/sws2apps/jw-epub-parser/commit/6b097decb6767c0039654ec19df6b9841b05e49b))
+* **deps:** bump rollup from 3.9.0 to 3.9.1 ([7ed5338](https://github.com/sws2apps/jw-epub-parser/commit/7ed533865d58f4de58aa9a993fb7057cbfc80ad7))
+* **deps:** bump rollup from 3.9.1 to 3.10.0 ([5079f09](https://github.com/sws2apps/jw-epub-parser/commit/5079f099998fc54a615d2657b1aa08ff9f60adb5))
+* **module:** add support for additional languages and integration with Crowdin ([ed19cd7](https://github.com/sws2apps/jw-epub-parser/commit/ed19cd7184ea629d0911e8bcf3b18c38fe0a8f2d))
+
 # [1.30.0-alpha.7](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.0-alpha.6...v1.30.0-alpha.7) (2022-12-31)
 
 
