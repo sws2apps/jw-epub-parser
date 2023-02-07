@@ -1,0 +1,15 @@
+name: Translation for JW EPUB Parser
+description: Request to enable enhanced parsing for a language
+labels: [i18n]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Add an issue title with this format: Enable Enhanced Parsing for [Language]
+  - type: textarea
+    attributes:
+      label: 'Add a brief description for this request'
+      placeholder: |
+        Message body
+    validations:
+      required: true

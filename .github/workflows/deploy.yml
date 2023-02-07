@@ -13,10 +13,6 @@ jobs:
       name: Development
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [17.x]
-
     steps:
       - name: Checkout for release preparation
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
@@ -24,10 +20,10 @@ jobs:
           ref: alpha
           persist-credentials: false
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js current version
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: current
 
       - name: Install package dependencies
         run: npm ci
@@ -48,10 +44,6 @@ jobs:
       name: Staging
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [17.x]
-
     steps:
       - name: Checkout for release preparation
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
@@ -59,10 +51,10 @@ jobs:
           ref: beta
           persist-credentials: false
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js current version
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: current
 
       - name: Install package dependencies
         run: npm ci
@@ -83,10 +75,6 @@ jobs:
       name: Production
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [17.x]
-
     steps:
       - name: Checkout for release preparation
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
@@ -94,10 +82,10 @@ jobs:
           ref: main
           persist-credentials: false
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js current version
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: current
 
       - name: Install package dependencies
         run: npm ci

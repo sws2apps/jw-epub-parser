@@ -3,19 +3,68 @@ import JSZip from 'jszip';
 import fetch from 'node-fetch';
 import * as fs from 'fs';
 import * as path from 'path';
+import { getHtmlRawString, isValidEpubNaming, isValidFilename, isValidMwbSched, parseEpub } from '../common.js';
 import {
-	getHtmlRawString,
-	isValidEpubNaming,
-	isValidFilename,
-	isValidMwbSched,
-	parseEpub,
-} from '../common';
+	assignmentsFormat,
+	assignmentsName,
+	cbsFormat,
+	concludingSongFormat,
+	livingPartsFormat,
+	monthNames,
+	tgw10Format,
+	tgwBibleReadingVariations,
+} from './languageRules.js';
 
 const loadEPUB = async (epubInput) => {
 	const appZip = new JSZip();
 
 	const validMwbFiles = [];
 	let mwbYear;
+	let lang;
+	let skipZip = false;
+
+	// check if we receive path or blob or url or html
+	let data;
+	if (epubInput.name) {
+		if (isValidEpubNaming(epubInput.name)) {
+			mwbYear = epubInput.name.split('_')[2].substring(0, 4);
+			lang = epubInput.name.split('_')[1];
+			data = epubInput; // blob
+		} else {
+			throw new Error('The selected epub file has an incorrect naming.');
+		}
+	} else if (epubInput.htmlDocs) {
+		skipZip = true;
+	} else {
+		const file = path.basename(epubInput.url || epubInput); // blob and url
+		if (isValidEpubNaming(file)) {
+			mwbYear = file.split('_')[2].substring(0, 4);
+			lang = file.split('_')[1];
+		} else {
+			throw new Error('The selected epub file has an incorrect naming.');
+		}
+
+		if (epubInput.url) {
+			const epubRes = await fetch(epubInput.url);
+			const epubData = await epubRes.blob();
+			data = await epubData.arrayBuffer();
+		} else {
+			data = epubInput; // blob
+			const getDataFromPath = () => {
+				return new Promise((resolve, reject) => {
+					fs.readFile(epubInput, (err, data) => {
+						if (err) {
+							reject(err);
+						} else {
+							resolve(data);
+						}
+					});
+				});
+			};
+
+			data = await getDataFromPath(); // path
+		}
+	}
 
 	const initEpub = async (zip) => {
 		const MAX_FILES = 300;
@@ -65,58 +114,47 @@ const loadEPUB = async (epubInput) => {
 		}
 	};
 
-	// check if we receive path or blob or url
-	let data;
-	if (epubInput.name) {
-		if (isValidEpubNaming(epubInput.name)) {
-			mwbYear = epubInput.name.split('_')[2].substring(0, 4);
-			data = epubInput; // blob
-		} else {
-			throw new Error('The selected epub file has an incorrect naming.');
-		}
-	} else {
-		const file = path.basename(epubInput.url || epubInput); // blob and url
-		if (isValidEpubNaming(file)) {
-			mwbYear = file.split('_')[2].substring(0, 4);
-		} else {
-			throw new Error('The selected epub file has an incorrect naming.');
-		}
-
-		if (epubInput.url) {
-			const epubRes = await fetch(epubInput.url);
-			const epubData = await epubRes.blob();
-			data = await epubData.arrayBuffer();
-		} else {
-			data = epubInput; // blob
-			const getDataFromPath = () => {
-				return new Promise((resolve, reject) => {
-					fs.readFile(epubInput, (err, data) => {
-						if (err) {
-							reject(err);
-						} else {
-							resolve(data);
-						}
-					});
-				});
-			};
-
-			data = await getDataFromPath(); // path
-		}
-	}
-
 	const doParsing = () => {
 		return new Promise((resolve, reject) => {
-			appZip.loadAsync(data).then(async (zip) => {
-				await initEpub(zip);
+			if (skipZip) {
+				resolve(
+					parseEpub(epubInput.htmlDocs, epubInput.mwbYear, epubInput.lang, true, {
+						monthNames: monthNames,
+						tgw10Format: tgw10Format,
+						tgwBibleReadingVariations: tgwBibleReadingVariations,
+						assignmentsName: assignmentsName,
+						assignmentsFormat: assignmentsFormat,
+						livingPartsFormat: livingPartsFormat,
+						cbsFormat: cbsFormat,
+						concludingSongFormat: concludingSongFormat,
+					})
+				);
+			}
 
-				if (validMwbFiles.length === 0) {
-					reject(
-						'The file you provided is not a valid Meeting Workbook EPUB file. Please make sure that the file is correct.'
-					);
-				} else {
-					resolve(parseEpub(validMwbFiles, mwbYear));
-				}
-			});
+			if (!skipZip) {
+				appZip.loadAsync(data).then(async (zip) => {
+					await initEpub(zip);
+
+					if (validMwbFiles.length === 0) {
+						reject(
+							'The file you provided is not a valid Meeting Workbook EPUB file. Please make sure that the file is correct.'
+						);
+					} else {
+						resolve(
+							parseEpub(validMwbFiles, mwbYear, lang, false, {
+								monthNames: monthNames,
+								tgw10Format: tgw10Format,
+								tgwBibleReadingVariations: tgwBibleReadingVariations,
+								assignmentsName: assignmentsName,
+								assignmentsFormat: assignmentsFormat,
+								livingPartsFormat: livingPartsFormat,
+								cbsFormat: cbsFormat,
+								concludingSongFormat: concludingSongFormat,
+							})
+						);
+					}
+				});
+			}
 		});
 	};
 

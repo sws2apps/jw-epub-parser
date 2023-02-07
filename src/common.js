@@ -1,3 +1,15 @@
+import dateFormat from 'dateformat';
+import languages from './locales/languages.js';
+import {
+	extractConcludeSong,
+	extractMonthName,
+	extractSourceAssignments,
+	extractSourceCBS,
+	extractSourceLiving,
+	extractSourceTGWBibleReading,
+	extractTitleTGW10,
+} from './rules/parsingRules.js';
+
 export const isValidEpubNaming = (name) => {
 	let regex = /^mwb_[A-Z][A-Z]?[A-Z]?_202\d(0[1-9]|1[0-2])\.epub$/i;
 	return regex.test(name);
@@ -25,9 +37,7 @@ export const getHtmlRawString = async (zip, filename) => {
 export const isValidMwbSched = (htmlDoc) => {
 	const isValidTGW = htmlDoc.querySelector(`[class*=treasures]`) ? true : false;
 	const isValidAYF = htmlDoc.querySelector(`[class*=ministry]`) ? true : false;
-	const isValidLC = htmlDoc.querySelector(`[class*=christianLiving]`)
-		? true
-		: false;
+	const isValidLC = htmlDoc.querySelector(`[class*=christianLiving]`) ? true : false;
 
 	if (isValidTGW === true && isValidAYF === true && isValidLC === true) {
 		return true;
@@ -36,117 +46,231 @@ export const isValidMwbSched = (htmlDoc) => {
 	}
 };
 
-export const parseEpub = (htmlDocs, mwbYear) => {
-	const obj = {};
-	const weeksData = [];
-	let weeksCount;
+export const parseEpub = (htmlDocs, mwbYear, lang, fromHTML, rules) => {
+	try {
+		const obj = {};
+		const weeksData = [];
+		let weeksCount;
 
-	weeksCount = htmlDocs.length;
+		const isEnhancedParsing = languages.find((language) => language.code === lang);
 
-	obj.weeksCount = weeksCount;
-	obj.mwbYear = mwbYear;
+		weeksCount = htmlDocs.length;
 
-	for (let a = 0; a < weeksCount; a++) {
-		const weekItem = {};
+		obj.weeksCount = weeksCount;
+		obj.mwbYear = mwbYear;
 
-		const htmlItem = htmlDocs[a];
+		for (let a = 0; a < weeksCount; a++) {
+			const weekItem = {};
 
-		// get week date
-		const wdHtml = htmlItem.getElementsByTagName('h1').item(0);
-		const weekDate = wdHtml.textContent;
+			const htmlItem = htmlDocs[a];
 
-		weekItem.weekDate = weekDate;
+			// get week date
+			const wdHtml = htmlItem.getElementsByTagName('h1').item(0);
+			const weekDate = wdHtml.textContent.replaceAll(/\u00A0/g, ' ');
 
-		// get weekly Bible Reading
-		const wbHtml = htmlItem.getElementsByTagName('h2').item(0);
-		weekItem.weeklyBibleReading = wbHtml.textContent;
+			if (isEnhancedParsing) {
+				const { varDay, monthIndex } = extractMonthName(rules.monthNames, weekDate, lang);
+				const schedDate = new Date(mwbYear, monthIndex, varDay);
+				weekItem.weekDate = dateFormat(schedDate, 'mm/dd/yyyy');
+				weekItem.weekDateLocale = weekDate;
+			} else {
+				weekItem.weekDate = weekDate;
+			}
 
-		let src = '';
-		let cnLC = 0;
+			// get weekly Bible Reading
+			const wbHtml = fromHTML
+				? htmlItem.querySelector('article').querySelector('header').getElementsByTagName('h2').item(0)
+				: htmlItem.getElementsByTagName('h2').item(0);
+			weekItem.weeklyBibleReading = wbHtml.textContent.replaceAll(/\u00A0/g, ' ');
 
-		// get number of assignments in Apply Yourself Parts
-		const cnAYF = htmlItem
-			.querySelector('#section3')
-			.querySelectorAll('li').length;
+			let src = '';
+			let cnLC = 0;
 
-		// get number of assignments in Living as Christians Parts
-		const lcLiLength = htmlItem
-			.querySelector('#section4')
-			.querySelectorAll('li').length;
-		cnLC = lcLiLength === 6 ? 2 : 1;
+			// get number of assignments in Apply Yourself Parts
+			const cnAYF = htmlItem.querySelector('#section3').querySelectorAll('li').length;
 
-		// get elements with meeting schedule data: pGroup
-		const pGroupData = htmlItem.querySelectorAll('.pGroup');
-		pGroupData.forEach((pGroup) => {
-			let pgData = pGroup.querySelectorAll('p');
-			pgData.forEach((p) => {
-				src += '|' + p.textContent;
+			// get number of assignments in Living as Christians Parts
+			const lcLiLength = htmlItem.querySelector('#section4').querySelectorAll('li').length;
+			cnLC = lcLiLength === 6 ? 2 : 1;
+
+			// get elements with meeting schedule data: pGroup
+			const pGroupData = htmlItem.querySelectorAll('.pGroup');
+			pGroupData.forEach((pGroup) => {
+				let pgData = pGroup.querySelectorAll('p');
+				pgData.forEach((p) => {
+					src += '|' + p.textContent;
+				});
 			});
-		});
 
-		src = src.replaceAll(/\u00A0/g, ' '); // remove non-breaking space
-		let toSplit = src.split('|');
+			src = src.replaceAll(/\u00A0/g, ' '); // remove non-breaking space
+			let toSplit = src.split('|');
 
-		// First song
-		weekItem.songFirst = toSplit[1].match(/(\d+)/)[0];
+			// First song
+			weekItem.songFirst = +toSplit[1].match(/(\d+)/)[0];
 
-		// 10min TGW Source
-		weekItem.tgw10Talk = toSplit[3].trim();
+			// 10min TGW Source
+			if (isEnhancedParsing) {
+				weekItem.tgw10Talk = extractTitleTGW10(rules.tgw10Format, toSplit[3].trim(), lang);
+			} else {
+				weekItem.tgw10Talk = toSplit[3].trim();
+			}
 
-		//Bible Reading Source
-		weekItem.tgwBRead = toSplit[7].trim();
+			//Bible Reading Source
+			if (isEnhancedParsing) {
+				const dataTGWBRead = extractSourceTGWBibleReading(rules.tgwBibleReadingVariations, toSplit[7].trim(), lang);
+				weekItem.tgwBRead = dataTGWBRead.src;
+				weekItem.tgwBReadStudy = dataTGWBRead.study;
+			} else {
+				weekItem.tgwBRead = toSplit[7].trim();
+			}
 
-		// AYF Part Count
-		weekItem.ayfCount = cnAYF;
+			// AYF Part Count
+			weekItem.ayfCount = cnAYF;
 
-		//AYF1 Source
-		weekItem.ayfPart1 = toSplit[8].trim();
+			//AYF1 Source
+			if (isEnhancedParsing) {
+				const dataAssignment = extractSourceAssignments(
+					rules.assignmentsFormat,
+					rules.assignmentsName,
+					toSplit[8].trim(),
+					lang
+				);
+				weekItem.ayfPart1 = dataAssignment.src;
+				weekItem.ayfPart1Time = dataAssignment.time;
+				weekItem.ayfPart1Type = dataAssignment.type;
+				if (dataAssignment.study) {
+					weekItem.ayfPart1Study = dataAssignment.study;
+				}
+			} else {
+				weekItem.ayfPart1 = toSplit[8].trim();
+			}
 
-		if (cnAYF > 1) {
-			//AYF2 Source
-			weekItem.ayfPart2 = toSplit[9].trim();
-		}
+			if (cnAYF > 1) {
+				//AYF2 Source
+				if (isEnhancedParsing) {
+					const dataAssignment = extractSourceAssignments(
+						rules.assignmentsFormat,
+						rules.assignmentsName,
+						toSplit[9].trim(),
+						lang
+					);
+					weekItem.ayfPart2 = dataAssignment.src;
+					weekItem.ayfPart2Time = dataAssignment.time;
+					weekItem.ayfPart2Type = dataAssignment.type;
+					if (dataAssignment.study) {
+						weekItem.ayfPart2Study = dataAssignment.study;
+					}
+				} else {
+					weekItem.ayfPart2 = toSplit[9].trim();
+				}
+			}
 
-		if (cnAYF > 2) {
-			//AYF3 Source
-			weekItem.ayfPart3 = toSplit[10].trim();
-		}
+			if (cnAYF > 2) {
+				//AYF3 Source
+				if (isEnhancedParsing) {
+					const dataAssignment = extractSourceAssignments(
+						rules.assignmentsFormat,
+						rules.assignmentsName,
+						toSplit[10].trim(),
+						lang
+					);
+					weekItem.ayfPart3 = dataAssignment.src;
+					weekItem.ayfPart3Time = dataAssignment.time;
+					weekItem.ayfPart3Type = dataAssignment.type;
+					if (dataAssignment.study) {
+						weekItem.ayfPart3Study = dataAssignment.study;
+					}
+				} else {
+					weekItem.ayfPart3 = toSplit[10].trim();
+				}
+			}
 
-		if (cnAYF > 3) {
-			//AYF4 Source
-			weekItem.ayfPart4 = toSplit[11].trim();
-		}
+			if (cnAYF > 3) {
+				//AYF4 Source
+				if (isEnhancedParsing) {
+					const dataAssignment = extractSourceAssignments(
+						rules.assignmentsFormat,
+						rules.assignmentsName,
+						toSplit[11].trim(),
+						lang
+					);
+					weekItem.ayfPart4 = dataAssignment.src;
+					weekItem.ayfPart4Time = dataAssignment.time;
+					weekItem.ayfPart4Type = dataAssignment.type;
+					if (dataAssignment.study) {
+						weekItem.ayfPart4Study = dataAssignment.study;
+					}
+				} else {
+					weekItem.ayfPart4 = toSplit[11].trim();
+				}
+			}
 
-		// Middle song
-		let nextIndex = cnAYF > 3 ? 12 : cnAYF > 2 ? 11 : cnAYF > 1 ? 10 : 9;
-		weekItem.songMiddle = toSplit[nextIndex].match(/(\d+)/)[0];
+			// Middle song
+			let nextIndex = cnAYF > 3 ? 12 : cnAYF > 2 ? 11 : cnAYF > 1 ? 10 : 9;
+			weekItem.songMiddle = +toSplit[nextIndex].match(/(\d+)/)[0];
 
-		// LC Part Count
-		weekItem.lcCount = cnLC;
+			// LC Part Count
+			weekItem.lcCount = cnLC;
 
-		// 1st LC part
-		nextIndex++;
-		weekItem.lcPart1 = toSplit[nextIndex].trim();
-
-		if (cnLC === 2) {
 			// 1st LC part
 			nextIndex++;
-			weekItem.lcPart2 = toSplit[nextIndex].trim();
+
+			if (isEnhancedParsing) {
+				const dataLC = extractSourceLiving(rules.livingPartsFormat, toSplit[nextIndex].trim(), lang);
+				weekItem.lcPart1 = dataLC.title;
+				weekItem.lcPart1Time = dataLC.time;
+				if (dataLC.content && dataLC.content !== '') {
+					weekItem.lcPart1Content = dataLC.content;
+				}
+			} else {
+				weekItem.lcPart1 = toSplit[nextIndex].trim();
+			}
+
+			if (cnLC === 2) {
+				// 2nd LC part
+				nextIndex++;
+
+				if (isEnhancedParsing) {
+					const dataLC = extractSourceLiving(rules.livingPartsFormat, toSplit[nextIndex].trim(), lang);
+					weekItem.lcPart2 = dataLC.title;
+					weekItem.lcPart2Time = dataLC.time;
+					if (dataLC.content && dataLC.content !== '') {
+						weekItem.lcPart2Content = dataLC.content;
+					}
+				} else {
+					weekItem.lcPart2 = toSplit[nextIndex].trim();
+				}
+			}
+
+			// CBS Source
+			nextIndex++;
+
+			if (isEnhancedParsing) {
+				weekItem.lcCBS = extractSourceCBS(rules.cbsFormat, toSplit[nextIndex].trim(), lang);
+			} else {
+				weekItem.lcCBS = toSplit[nextIndex].trim();
+			}
+			// Concluding Song
+			nextIndex++;
+			nextIndex++;
+
+			if (isEnhancedParsing) {
+				const dataSong = extractConcludeSong(rules.concludingSongFormat, toSplit[nextIndex], lang);
+				const temp = +dataSong.match(/(\d+)/)[0];
+				weekItem.songConclude = temp > 151 ? dataSong : temp;
+			} else {
+				const songText = toSplit[nextIndex];
+				const temp = +songText.match(/(\d+)/)[0];
+				weekItem.songConclude = temp > 151 ? songText : temp;
+			}
+
+			weeksData.push(weekItem);
 		}
 
-		// CBS Source
-		nextIndex++;
-		weekItem.lcCBS = toSplit[nextIndex].trim();
+		obj.weeksData = weeksData;
 
-		// Concluding Song
-		nextIndex++;
-		nextIndex++;
-		weekItem.songConclude = toSplit[nextIndex].match(/(\d+)/)[0];
-
-		weeksData.push(weekItem);
+		return obj;
+	} catch (err) {
+		throw new Error(err);
 	}
-
-	obj.weeksData = weeksData;
-
-	return obj;
 };

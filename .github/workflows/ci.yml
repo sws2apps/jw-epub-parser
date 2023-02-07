@@ -4,6 +4,8 @@ on:
   workflow_dispatch:
   pull_request:
     branches: [main, beta, alpha]
+  schedule:
+    - cron: '0 3 * * *'
 
 permissions: read-all
 
@@ -12,19 +14,14 @@ jobs:
     name: Run Test Units
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [17.x]
-
     steps:
       - name: 'Checkout code'
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js current version
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          node-version: current
 
       - name: Install dependency
         run: npm ci

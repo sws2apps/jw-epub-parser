@@ -1,5 +1,6 @@
 import commonjs from '@rollup/plugin-commonjs';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
+import json from '@rollup/plugin-json';
 
 const config = [
 	{
@@ -10,8 +11,8 @@ const config = [
 				format: 'es',
 			},
 		],
-		plugins: [nodeResolve(), commonjs()],
-		external: ['jszip', 'path-browserify'],
+		plugins: [nodeResolve(), commonjs(), json()],
+		external: ['dateformat', 'jszip', 'path-browserify'],
 	},
 	{
 		input: 'src/node/index.js',
@@ -21,8 +22,9 @@ const config = [
 				format: 'es',
 			},
 		],
-		external: ['jszip', 'global-jsdom/register', 'path', 'fs', 'node-fetch'],
-	}
+		plugins: [commonjs(), json()],
+		external: ['dateformat', 'jszip', 'global-jsdom/register', 'path', 'fs', 'node-fetch'],
+	},
 ];
 
 export default config;
