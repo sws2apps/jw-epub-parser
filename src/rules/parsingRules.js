@@ -2,15 +2,18 @@ export const extractMonthName = (monthNames, src, lang) => {
 	let varDay;
 	let monthIndex;
 
-	monthNames.forEach((month) => {
+	for (let i = 0; i < monthNames.length; i++) {
+		const month = monthNames[i];
 		const monthLang = month.names[lang];
 		const regex = new RegExp(`(${monthLang})`);
 		const array = regex.exec(src);
+
 		if (Array.isArray(array)) {
 			varDay = +src.match(/(\d+)/)[0];
 			monthIndex = month.index;
+			break;
 		}
-	});
+	}
 
 	return { varDay, monthIndex };
 };
