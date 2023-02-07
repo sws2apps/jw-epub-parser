@@ -12,7 +12,7 @@ export default {
 			tgwBReadStudy: 5,
 			ayfCount: 3,
 			ayfPart1:
-				'Discussion. Play the video Memorial Invitation Campaign. Stop the video at each pause, and ask the audience the questions that appear in the video.',
+				'Discussion. Play the video Memorial Invitation Campaign. Stop the video at the pause, and ask the audience the question that appears in the video.',
 			ayfPart1Time: 5,
 			ayfPart1Type: 'Memorial Invitation Video',
 			ayfPart2:
@@ -101,7 +101,7 @@ export default {
 			songConclude: 135,
 		},
 		{
-			weekDate: '03/27/2023',
+			weekDate: '04/27/2023',
 			weekDateLocale: 'March 27–April 2',
 			weeklyBibleReading: '2 CHRONICLES 5-7',
 			songFirst: 129,

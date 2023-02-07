@@ -1,19 +1,24 @@
 import JSZip from 'jszip';
 import * as path from 'path-browserify';
 
+import { getHtmlRawString, isValidEpubNaming, isValidFilename, isValidMwbSched, parseEpub } from '../common.js';
 import {
-	getHtmlRawString,
-	isValidEpubNaming,
-	isValidFilename,
-	isValidMwbSched,
-	parseEpub,
-} from '../common';
+	assignmentsFormat,
+	assignmentsName,
+	cbsFormat,
+	concludingSongFormat,
+	livingPartsFormat,
+	monthNames,
+	tgw10Format,
+	tgwBibleReadingVariations,
+} from './languageRules.js';
 
 const loadEPUB = async (epubInput) => {
 	const appZip = new JSZip();
 
 	const validMwbFiles = [];
 	let mwbYear;
+	let lang;
 
 	const initEpub = async (zip) => {
 		const MAX_FILES = 300;
@@ -68,14 +73,13 @@ const loadEPUB = async (epubInput) => {
 	if (epubInput.name) {
 		if (isValidEpubNaming(epubInput.name)) {
 			mwbYear = epubInput.name.split('_')[2].substring(0, 4);
+			lang = epubInput.name.split('_')[1];
 			data = epubInput; // blob
 		} else {
 			throw new Error('The selected epub file has an incorrect naming.');
 		}
 	} else {
-		throw new Error(
-			'You are using the browser version of the module. Please switch to the node version if needed'
-		);
+		throw new Error('You are using the browser version of the module. Please switch to the node version if needed');
 	}
 
 	const doParsing = () => {
@@ -88,7 +92,18 @@ const loadEPUB = async (epubInput) => {
 						'The file you provided is not a valid Meeting Workbook EPUB file. Please make sure that the file is correct.'
 					);
 				} else {
-					resolve(parseEpub(validMwbFiles, mwbYear));
+					resolve(
+						parseEpub(validMwbFiles, mwbYear, lang, false, {
+							monthNames: monthNames,
+							tgw10Format: tgw10Format,
+							tgwBibleReadingVariations: tgwBibleReadingVariations,
+							assignmentsName: assignmentsName,
+							assignmentsFormat: assignmentsFormat,
+							livingPartsFormat: livingPartsFormat,
+							cbsFormat: cbsFormat,
+							concludingSongFormat: concludingSongFormat,
+						})
+					);
 				}
 			});
 		});

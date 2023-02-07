@@ -4,6 +4,16 @@ import fetch from 'node-fetch';
 import * as fs from 'fs';
 import * as path from 'path';
 import { getHtmlRawString, isValidEpubNaming, isValidFilename, isValidMwbSched, parseEpub } from '../common.js';
+import {
+	assignmentsFormat,
+	assignmentsName,
+	cbsFormat,
+	concludingSongFormat,
+	livingPartsFormat,
+	monthNames,
+	tgw10Format,
+	tgwBibleReadingVariations,
+} from './languageRules.js';
 
 const loadEPUB = async (epubInput) => {
 	const appZip = new JSZip();
@@ -107,7 +117,18 @@ const loadEPUB = async (epubInput) => {
 	const doParsing = () => {
 		return new Promise((resolve, reject) => {
 			if (skipZip) {
-				resolve(parseEpub(epubInput.htmlDocs, epubInput.mwbYear, epubInput.lang));
+				resolve(
+					parseEpub(epubInput.htmlDocs, epubInput.mwbYear, epubInput.lang, true, {
+						monthNames: monthNames,
+						tgw10Format: tgw10Format,
+						tgwBibleReadingVariations: tgwBibleReadingVariations,
+						assignmentsName: assignmentsName,
+						assignmentsFormat: assignmentsFormat,
+						livingPartsFormat: livingPartsFormat,
+						cbsFormat: cbsFormat,
+						concludingSongFormat: concludingSongFormat,
+					})
+				);
 			}
 
 			if (!skipZip) {
@@ -119,7 +140,18 @@ const loadEPUB = async (epubInput) => {
 							'The file you provided is not a valid Meeting Workbook EPUB file. Please make sure that the file is correct.'
 						);
 					} else {
-						resolve(parseEpub(validMwbFiles, mwbYear, lang));
+						resolve(
+							parseEpub(validMwbFiles, mwbYear, lang, false, {
+								monthNames: monthNames,
+								tgw10Format: tgw10Format,
+								tgwBibleReadingVariations: tgwBibleReadingVariations,
+								assignmentsName: assignmentsName,
+								assignmentsFormat: assignmentsFormat,
+								livingPartsFormat: livingPartsFormat,
+								cbsFormat: cbsFormat,
+								concludingSongFormat: concludingSongFormat,
+							})
+						);
 					}
 				});
 			}

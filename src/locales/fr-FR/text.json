@@ -11,7 +11,7 @@
 	"octoberVariations": "octobre",
 	"novemberVariations": "novembre",
 	"decemberVariations": "décembre",
-	"tgwTalk10Variations": "<<Title>>: (10 min)",
+	"tgwTalk10Format": "<<Title>>: (10 min)",
 	"tgwBibleReadingVariations": "Lecture de la Bible (4 min) : <<Title>> (th leçon <n>)",
 	"initialCallVideoVariations": "Vidéo du premier contact",
 	"returnVisitVideoVariations": "Vidéo de la nouvelle visite",
@@ -23,6 +23,6 @@
 	"memorialInvitationVariations": "Invitation au Mémorial",
 	"assignmentAyfVariations": "<AssignmentType> (<n> min) : <<Title>> (th leçon <n>)",
 	"assignmentLcVariations": "<<Title>> (<n> min) : @Description@",
-	"cbsVariations": "Étude biblique de l’assemblée (30 min) : <<Title>>",
+	"cbsFormat": "Étude biblique de l’assemblée (30 min) : <<Title>>",
 	"concludingSongVariations": "<<Song>> et prière"
 }

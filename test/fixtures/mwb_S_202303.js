@@ -10,10 +10,11 @@ export default {
 			tgwBRead: 'Lectura de la Biblia (4 mins.): 1Cr 23:21-32 (th lec. 5).',
 			ayfCount: 3,
 			ayfPart1:
-				'Video de la invitación a la Conmemoración (5 mins.): Análisis con el auditorio. Ponga el video Campaña de la Conmemoración. Detenga el video en cada pausa y haga las preguntas que aparecen en él.',
+				'Video de la invitación a la Conmemoración (5 mins.): Análisis con el auditorio. Ponga el video Campaña de la Conmemoración. Detenga el video en la pausa y haga la pregunta que aparece en él.',
 			ayfPart2:
 				'Invitación a la Conmemoración (3 mins.): Use el tema de las ideas para conversar. Luego, cuando la persona muestre interés, presente y analice el video Recordemos la muerte de Jesús, pero no lo ponga (th lec. 11).',
-			ayfPart3: 'Discurso (5 mins.): w11 1/6 14, 15. Título: ¿Por qué están los cristianos bien organizados? (th lec. 14).',
+			ayfPart3:
+				'Discurso (5 mins.): w11 1/6 14, 15. Título: ¿Por qué están los cristianos bien organizados? (th lec. 14).',
 			songMiddle: 101,
 			lcCount: 2,
 			lcPart1: '“Cómo podemos ayudar cuando ocurre un desastre” (10 mins.): Análisis con el auditorio y video.',
@@ -78,7 +79,8 @@ export default {
 			lcCount: 2,
 			lcPart1: '“Protege tu corazón” (10 mins.): Análisis con el auditorio y video.',
 			lcPart2: 'Necesidades de la congregación (5 mins.)',
-			lcCBS: 'Estudio bíblico de la congregación (30 mins.): lff lección 41 punto 5, resumen, repaso y “Propóngase esto”.',
+			lcCBS:
+				'Estudio bíblico de la congregación (30 mins.): lff lección 41 punto 5, resumen, repaso y “Propóngase esto”.',
 			songConclude: 34,
 		},
 		{
@@ -110,7 +112,8 @@ export default {
 				'Primera conversación (3 mins.): Use el tema de las ideas para conversar y venza una objeción común en su territorio (th lec. 12).',
 			ayfPart2:
 				'Revisita (4 mins.): Use el tema de las ideas para conversar. Luego ofrezca una publicación del kit de enseñanza (th lec. 6).',
-			ayfPart3: 'Discurso (5 mins.): be 69 párrs. 4, 5. Título: Qué hacer cuando un estudiante nos pide un consejo (th lec. 20).',
+			ayfPart3:
+				'Discurso (5 mins.): be 69 párrs. 4, 5. Título: Qué hacer cuando un estudiante nos pide un consejo (th lec. 20).',
 			songMiddle: 79,
 			lcCount: 2,
 			lcPart1:

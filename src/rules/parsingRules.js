@@ -1,15 +1,4 @@
-import {
-	assignmentsFormat,
-	assignmentsName,
-	cbsFormat,
-	concludingSongFormat,
-	livingPartsFormat,
-	monthNames,
-	tgw10Format,
-	tgwBibleReadingFormat,
-} from './languageRules.js';
-
-export const extractMonthName = (src, lang) => {
+export const extractMonthName = (monthNames, src, lang) => {
 	let varDay;
 	let monthIndex;
 
@@ -26,20 +15,16 @@ export const extractMonthName = (src, lang) => {
 	return { varDay, monthIndex };
 };
 
-export const extractTitleTGW10 = (src, lang) => {
-	const variations = tgw10Format[lang].split('|');
-	for (let a = 0; a < variations.length; a++) {
-		const variation = variations[a];
-		const startDelimiter = variation.indexOf('<<');
-		const endDelimiter = variation.indexOf('>>');
-		const endText = variation.substring(endDelimiter + 2);
-		const findIndex = src.indexOf(endText);
+export const extractTitleTGW10 = (tgw10Format, src, lang) => {
+	const startDelimiter = tgw10Format[lang].indexOf('<<');
+	const endDelimiter = tgw10Format[lang].indexOf('>>');
+	const endText = tgw10Format[lang].substring(endDelimiter + 2);
+	const findIndex = src.indexOf(endText);
 
-		return src.substring(startDelimiter, findIndex);
-	}
+	return src.substring(startDelimiter, findIndex);
 };
 
-export const extractSourceTGWBibleReading = (src, lang) => {
+export const extractSourceTGWBibleReading = (tgwBibleReadingFormat, src, lang) => {
 	const variations = tgwBibleReadingFormat[lang].split('|');
 	for (let i = 0; i < variations.length; i++) {
 		const textTest = variations[i];
@@ -60,7 +45,7 @@ export const extractSourceTGWBibleReading = (src, lang) => {
 	}
 };
 
-export const extractSourceAssignments = (src, lang) => {
+export const extractSourceAssignments = (assignmentsFormat, assignmentsName, src, lang) => {
 	const variations = assignmentsFormat[lang].split('|');
 	for (let a = 0; a < variations.length; a++) {
 		const variation = variations[a];
@@ -109,7 +94,7 @@ export const extractSourceAssignments = (src, lang) => {
 	}
 };
 
-export const extractSourceLiving = (src, lang) => {
+export const extractSourceLiving = (livingPartsFormat, src, lang) => {
 	const variations = livingPartsFormat[lang].split('|');
 	for (let i = 0; i < variations.length; i++) {
 		const textTest = variations[i];
@@ -143,13 +128,13 @@ export const extractSourceLiving = (src, lang) => {
 	}
 };
 
-export const extractSourceCBS = (src, lang) => {
+export const extractSourceCBS = (cbsFormat, src, lang) => {
 	const startDelimiter = cbsFormat[lang].indexOf('<<');
 	const textDelimiter = src.substring(0, startDelimiter);
 	return src.split(textDelimiter)[1];
 };
 
-export const extractConcludeSong = (src, lang) => {
+export const extractConcludeSong = (concludingSongFormat, src, lang) => {
 	const variations = concludingSongFormat[lang].split('|');
 	for (let i = 0; i < variations.length; i++) {
 		const textTest = variations[i];

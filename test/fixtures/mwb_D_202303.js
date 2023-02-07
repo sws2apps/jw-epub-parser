@@ -10,10 +10,11 @@ export default {
 			tgwBRead: 'Oplæsning fra Bibelen (4 min.) 1Kr 23:21-32 (th arbejdspunkt 5)',
 			ayfCount: 3,
 			ayfPart1:
-				'Video: Mindehøjtidsinvitation (5 min.) Drøftelse. Afspil videoen Mindehøjtidskampagnen. Stop videoen ved hver pause og stil tilhørerne de spørgsmål der er i videoen.',
+				'Video: Mindehøjtidsinvitation (5 min.) Drøftelse. Afspil videoen Mindehøjtidskampagnen. Stop videoen ved pausen og stil tilhørerne det spørgsmål der er i videoen.',
 			ayfPart2:
 				'Mindehøjtidsinvitation (3 min.) Indled med emnet fra “Forslag til samtaler”. Den besøgte viser interesse. Introducér og drøft (uden at afspille) videoen Vær med til at mindes Jesus’ død. (th arbejdspunkt 11)',
-			ayfPart3: 'Foredrag (5 min.) w11 1/6 14-15 – Tema: Hvorfor er den kristne menighed organiseret? (th arbejdspunkt 14)',
+			ayfPart3:
+				'Foredrag (5 min.) w11 1/6 14-15 – Tema: Hvorfor er den kristne menighed organiseret? (th arbejdspunkt 14)',
 			songMiddle: 101,
 			lcCount: 2,
 			lcPart1: '“Hvordan du kan hjælpe efter en katastrofe” (10 min.) Drøftelse og video.',
@@ -49,7 +50,8 @@ export default {
 			tgw10Talk: '“Kong Salomon tager en uklog beslutning” (10 min.)',
 			tgwBRead: 'Oplæsning fra Bibelen (4 min.) 2Kr 4:7-22 (th arbejdspunkt 10)',
 			ayfCount: 3,
-			ayfPart1: 'Mindehøjtidsinvitation (3 min.) Invitér en kollega, skolekammerat eller slægtning. (th arbejdspunkt 2)',
+			ayfPart1:
+				'Mindehøjtidsinvitation (3 min.) Invitér en kollega, skolekammerat eller slægtning. (th arbejdspunkt 2)',
 			ayfPart2:
 				'Genbesøg (4 min.) Aflæg genbesøg hos en som har taget imod invitationen til mindehøjtiden og vist interesse. Fortæl om vores gratis bibelkursus, og tilbyd brochuren Et håb om en lys fremtid. Introducér og drøft (uden at afspille) videoen Hvordan foregår et bibelkursus? (th arbejdspunkt 17)',
 			ayfPart3: 'Bibelstudie (5 min.) lff lektion 09 punkt 5 (th arbejdspunkt 9)',

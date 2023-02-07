@@ -11,7 +11,7 @@
 	"octoberVariations": "Oktobra",
 	"novemberVariations": "Novambra",
 	"decemberVariations": "Desambra",
-	"tgwTalk10Variations": "<<Title>>: (10 min.)",
+	"tgwTalk10Format": "<<Title>>: (10 min.)",
 	"tgwBibleReadingVariations": "Famakiana Baiboly: (4 min.) <<Title>> (th lesona <n>)",
 	"initialCallVideoVariations": "Video Fitoriana",
 	"returnVisitVideoVariations": "Video Fiverenana Mitsidika",
@@ -23,6 +23,6 @@
 	"memorialInvitationVariations": "Fanasana Fahatsiarovana",
 	"assignmentAyfVariations": "<AssignmentType>: (<n> min.) <<Title>> (th lesona <n>)",
 	"assignmentLcVariations": "<<Title>>: (<n> min.) @Description@",
-	"cbsVariations": "Fianarana Baiboly: (30 min.) <<Title>>",
+	"cbsFormat": "Fianarana Baiboly: (30 min.) <<Title>>",
 	"concludingSongVariations": "<<Song>> sy Vavaka"
 }

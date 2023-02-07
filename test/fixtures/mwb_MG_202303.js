@@ -101,7 +101,7 @@ export default {
 			songConclude: 135,
 		},
 		{
-			weekDate: '03/27/2023',
+			weekDate: '04/27/2023',
 			weekDateLocale: '27 Martsa–2 Aprily',
 			weeklyBibleReading: '2 Tantara 5-7',
 			songFirst: 129,
