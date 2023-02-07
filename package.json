@@ -1,52 +1,54 @@
 {
-  "name": "jw-epub-parser",
-  "version": "1.29.0",
-  "type": "module",
-  "description": "This tool will help you to parse and extract the needed source materials from Meeting Workbook EPUB file. Support for parsing Watchtower Study will be added in future release.",
-  "keywords": [
-    "epub parse",
-    "jw",
-    "jw.org",
-    "epub"
-  ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "files": [
-    "dist/*"
-  ],
-  "homepage": "https://github.com/sws2apps/jw-epub-parser#readme",
-  "author": "Scheduling Workbox System <sws2apps.notification@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/sws2apps/jw-epub-parser/issues",
-    "email": "sws2apps.notification@gmail.com"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sws2apps/jw-epub-parser.git"
-  },
-  "scripts": {
-    "test": "mocha",
-    "build": "npx rimraf dist && npx rollup -c"
-  },
-  "devDependencies": {
-    "@babel/preset-env": "^7.16.11",
-    "@rollup/plugin-babel": "^6.0.0",
-    "@rollup/plugin-commonjs": "^24.0.0",
-    "@rollup/plugin-node-resolve": "^15.0.0",
-    "@semantic-release/changelog": "^6.0.1",
-    "@semantic-release/exec": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
-    "chai": "^4.3.6",
-    "mocha": "^10.0.0",
-    "rimraf": "^3.0.2",
-    "rollup": "^3.0.0"
-  },
-  "dependencies": {
-    "global-jsdom": "^8.4.0",
-    "jsdom": "^20.0.0",
-    "jszip": "^3.9.1",
-    "node-fetch": "^3.2.10",
-    "path-browserify": "^1.0.1"
-  }
+	"name": "jw-epub-parser",
+	"version": "1.30.0-alpha.7",
+	"type": "module",
+	"description": "This tool will help you to parse and extract the needed source materials from Meeting Workbook EPUB file. Support for parsing Watchtower Study will be added in future release.",
+	"keywords": [
+		"epub parse",
+		"jw",
+		"jw.org",
+		"epub"
+	],
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"files": [
+		"dist/*"
+	],
+	"homepage": "https://github.com/sws2apps/jw-epub-parser#readme",
+	"author": "Scheduling Workbox System <sws2apps.notification@gmail.com>",
+	"bugs": {
+		"url": "https://github.com/sws2apps/jw-epub-parser/issues",
+		"email": "sws2apps.notification@gmail.com"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sws2apps/jw-epub-parser.git"
+	},
+	"scripts": {
+		"test": "mocha",
+		"build": "npx rimraf dist && npx rollup -c"
+	},
+	"devDependencies": {
+		"@babel/preset-env": "^7.16.11",
+		"@rollup/plugin-babel": "^6.0.0",
+		"@rollup/plugin-commonjs": "^24.0.0",
+		"@rollup/plugin-json": "^6.0.0",
+		"@rollup/plugin-node-resolve": "^15.0.0",
+		"@semantic-release/changelog": "^6.0.1",
+		"@semantic-release/exec": "^6.0.3",
+		"@semantic-release/git": "^10.0.1",
+		"chai": "^4.3.7",
+		"mocha": "^10.2.0",
+		"rimraf": "^3.0.2",
+		"rollup": "^3.0.0"
+	},
+	"dependencies": {
+		"dateformat": "^5.0.3",
+		"global-jsdom": "^8.4.0",
+		"jsdom": "^20.0.0",
+		"jszip": "^3.9.1",
+		"node-fetch": "^3.2.10",
+		"path-browserify": "^1.0.1"
+	}
 }

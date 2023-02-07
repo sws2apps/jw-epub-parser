@@ -1,3 +1,60 @@
+# [1.30.0-alpha.7](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.0-alpha.6...v1.30.0-alpha.7) (2022-12-31)
+
+
+### Bug Fixes
+
+* **parsing:** change week date formatting ([f47d715](https://github.com/sws2apps/jw-epub-parser/commit/f47d7150f3c3504fb62d6a667c5a0156a071bd79))
+
+# [1.30.0-alpha.6](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.0-alpha.5...v1.30.0-alpha.6) (2022-12-31)
+
+
+### Bug Fixes
+
+* **parsing:** issue when parsing student assignments th study point ([c39b186](https://github.com/sws2apps/jw-epub-parser/commit/c39b18608fc13c6790768f93e3e1bf50aec03bfa))
+
+# [1.30.0-alpha.5](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.0-alpha.4...v1.30.0-alpha.5) (2022-12-30)
+
+
+### Bug Fixes
+
+* **module:** update supported languages ([83b6832](https://github.com/sws2apps/jw-epub-parser/commit/83b6832fac885ef150b513242e127769384cb4c6))
+
+# [1.30.0-alpha.4](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.0-alpha.3...v1.30.0-alpha.4) (2022-12-30)
+
+
+### Bug Fixes
+
+* **localization:** update month names for french ([e6e24de](https://github.com/sws2apps/jw-epub-parser/commit/e6e24dea217512b2c6b9328259d5b997bed414e0))
+
+# [1.30.0-alpha.3](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.0-alpha.2...v1.30.0-alpha.3) (2022-12-30)
+
+
+### Bug Fixes
+
+* handle parsing for roman diacritics ([5245b02](https://github.com/sws2apps/jw-epub-parser/commit/5245b023dfec3691683c4b21e3ffcbb0d7753d3a))
+
+# [1.30.0-alpha.2](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.0-alpha.1...v1.30.0-alpha.2) (2022-12-28)
+
+
+### Bug Fixes
+
+* handle concluding convention song ([ca7c312](https://github.com/sws2apps/jw-epub-parser/commit/ca7c3125ddfd16b69439de683e13f4efa6d7c3cc))
+
+# [1.30.0-alpha.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.29.0...v1.30.0-alpha.1) (2022-12-27)
+
+
+### Features
+
+* **deps:** bump @rollup/plugin-commonjs from 23.0.4 to 23.0.5 ([b33cf4d](https://github.com/sws2apps/jw-epub-parser/commit/b33cf4dbb49a648bfbc2683f6cf38cdb853e95c1))
+* **deps:** bump @rollup/plugin-commonjs from 23.0.5 to 24.0.0 ([dfbe27a](https://github.com/sws2apps/jw-epub-parser/commit/dfbe27ab6e8c084a3a444f12369e1e43e894c230))
+* **deps:** bump mocha from 10.1.0 to 10.2.0 ([a2e955b](https://github.com/sws2apps/jw-epub-parser/commit/a2e955b453b51cbc36f5a25327284a33a1837478))
+* **deps:** bump rollup from 3.7.0 to 3.7.3 ([e6b9ecb](https://github.com/sws2apps/jw-epub-parser/commit/e6b9ecb1fb5964fd5a9e3317541015a820d7a094))
+* **deps:** bump rollup from 3.7.3 to 3.7.4 ([36e6495](https://github.com/sws2apps/jw-epub-parser/commit/36e64959b6c1d73389314888706e208090fa511c))
+* **deps:** bump rollup from 3.7.4 to 3.7.5 ([2fc29bb](https://github.com/sws2apps/jw-epub-parser/commit/2fc29bbc67639ccca17c911e315158ddbe2552de))
+* **deps:** bump rollup from 3.7.5 to 3.8.0 ([ab80d49](https://github.com/sws2apps/jw-epub-parser/commit/ab80d499648d4f1990ba9042702df43f1a7b2c5f))
+* **deps:** bump rollup from 3.8.0 to 3.8.1 ([daf7c7a](https://github.com/sws2apps/jw-epub-parser/commit/daf7c7abeaa107ae3d45d84a34d67f128762b7fa))
+* **module:** add enhanced parsing mode ([daef34c](https://github.com/sws2apps/jw-epub-parser/commit/daef34ca674758bb1f7a2ef9d048f71c427fdd6d))
+
 # [1.29.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.28.0...v1.29.0) (2022-12-09)
 
 
