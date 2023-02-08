@@ -78,9 +78,7 @@ export const parseEpub = (htmlDocs, mwbYear, lang, rules) => {
 			}
 
 			// get weekly Bible Reading
-			const wbHtml = fromHTML
-				? htmlItem.querySelector('article').querySelector('header').getElementsByTagName('h2').item(0)
-				: htmlItem.getElementsByTagName('h2').item(0);
+			const wbHtml = htmlItem.getElementsByTagName('h2').item(0);
 			weekItem.weeklyBibleReading = wbHtml.textContent.replaceAll(/\u00A0/g, ' ');
 
 			let src = '';
