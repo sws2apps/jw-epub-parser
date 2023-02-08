@@ -1,3 +1,10 @@
+## [1.30.4](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.3...v1.30.4) (2023-02-08)
+
+
+### Bug Fixes
+
+* **module:** cleanup reference to invalid language ([6f669cd](https://github.com/sws2apps/jw-epub-parser/commit/6f669cd05d62d6c75c346ff0d3854ae974653bc7))
+
 ## [1.30.3](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.2...v1.30.3) (2023-02-08)
 
 
