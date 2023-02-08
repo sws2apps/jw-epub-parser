@@ -70,7 +70,10 @@ export const extractSourceAssignments = (assignmentsFormat, assignmentsName, src
 		const array = regex.exec(src);
 
 		if (array !== null) {
-			const assignmentTime = +array[0].match(/(\d+)/)[0];
+			const endIndexType = array[1].length + 1;
+			const timingPart = array[0].substring(endIndexType);
+
+			const assignmentTime = +timingPart.match(/(\d+)/)[0];
 			const startIndex = array[0].length + 1;
 
 			const obj = {};
