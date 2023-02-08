@@ -1,3 +1,10 @@
+## [1.30.2](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.1...v1.30.2) (2023-02-08)
+
+
+### Bug Fixes
+
+* **parsing-rules:** fix assignment timing when number is found in type ([819b38c](https://github.com/sws2apps/jw-epub-parser/commit/819b38c1bb1a3bc33fc02c723232d59a5dc89263))
+
 ## [1.30.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.0...v1.30.1) (2023-02-07)
 
 
