@@ -46,7 +46,7 @@ export const isValidMwbSched = (htmlDoc) => {
 	}
 };
 
-export const parseEpub = (htmlDocs, mwbYear, lang, fromHTML, rules) => {
+export const parseEpub = (htmlDocs, mwbYear, lang, rules) => {
 	try {
 		const obj = {};
 		const weeksData = [];

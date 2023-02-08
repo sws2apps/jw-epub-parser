@@ -2,6 +2,8 @@
 
 ## Get started
 
+To enhance parsing for a language, make sure first that EPUB is available for that language on jw.org.
+
 1. Open the [JW EPUB Parser](https://crowdin.com/project/cpe-jw-epub-parser) project on Crowdin
 2. Find your locale and start translation. Find more details in [guide for volunteer translators](https://support.crowdin.com/for-volunteer-translators/)
 

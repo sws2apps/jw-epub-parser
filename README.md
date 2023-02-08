@@ -25,7 +25,6 @@ const epubJW = await loadEPUB('/path/to/file.epub');
 
 const epubJW = await loadEPUB({ url: epubUrl });
 
-const epubJW = await loadEPUB({ htmlDocs: htmlDocs });
 ```
 
 ### loadEPUB(epubData)
@@ -34,9 +33,9 @@ function: asynchronous
 
 #### epubData
 
-type: `string` or `blob` or `url` or `HtmlCollections<array>`
+type: `string` or `blob` or `url`
 
-It can be the path to the EPUB file or EPUB file's blob or url to download the EPUB file. An array of HTML files containing the source materials can also be used.
+It can be the path to the EPUB file or EPUB file's blob or url to download the EPUB file.
 
 ## Return
 
@@ -91,7 +90,7 @@ Here are the list of all available properties in each object in the `weeksData` 
 
 Currently, we only support enhanced parsing for the following languages:
 
-Enlish (E), French (F), Malagasy (MG), Portuguese Brazil (T), Tandroy (TND), Tankarana (TND), Vezo (VZ)
+Enlish (E), French (F), Malagasy (MG), Tandroy (TND), Tankarana (TND), Vezo (VZ)
 
 For the other languages, you may use your own method to convert these outputs according to your needs to get the needed informations. If you want to contribute and add your language in the enhanced parsing list, or edit your language rules, please follow [this guide](./TRANSLATION.md).
 
