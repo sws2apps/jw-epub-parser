@@ -1,3 +1,10 @@
+## [1.30.3](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.2...v1.30.3) (2023-02-08)
+
+
+### Bug Fixes
+
+* **module:** remove support for languages without epub file ([cab36cd](https://github.com/sws2apps/jw-epub-parser/commit/cab36cd4b8c8245cf8f110a591282e2c1775cb39))
+
 ## [1.30.2](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.1...v1.30.2) (2023-02-08)
 
 
