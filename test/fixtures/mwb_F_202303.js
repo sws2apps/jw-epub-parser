@@ -101,7 +101,7 @@ export default {
 			songConclude: 135,
 		},
 		{
-			weekDate: '04/27/2023',
+			weekDate: '03/27/2023',
 			weekDateLocale: '27 mars – 2 avril',
 			weeklyBibleReading: '2 CHRONIQUES 5-7',
 			songFirst: 129,
