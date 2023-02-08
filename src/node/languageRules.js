@@ -22,9 +22,6 @@ for (const [key, value] of Object.entries(F)) {
 for (const [key, value] of Object.entries(MG)) {
 	dataLang[key].MG = value;
 }
-for (const [key, value] of Object.entries(T)) {
-	dataLang[key].T = value;
-}
 for (const [key, value] of Object.entries(TND)) {
 	dataLang[key].TND = value;
 }
