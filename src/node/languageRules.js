@@ -3,7 +3,6 @@ import languages from '../locales/languages.js';
 import source from '../locales/en/text.json' assert { type: 'json' };
 import F from '../locales/fr-FR/text.json' assert { type: 'json' };
 import MG from '../locales/mg-MG/text.json' assert { type: 'json' };
-import T from '../locales/pt-BR/text.json' assert { type: 'json' };
 import TND from '../locales/mg-TND/text.json' assert { type: 'json' };
 import TNK from '../locales/mg-TNK/text.json' assert { type: 'json' };
 import VZ from '../locales/mg-VZ/text.json' assert { type: 'json' };

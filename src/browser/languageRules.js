@@ -3,7 +3,6 @@ import languages from '../locales/languages.js';
 import source from '../locales/en/text.json';
 import F from '../locales/fr-FR/text.json';
 import MG from '../locales/mg-MG/text.json';
-import T from '../locales/pt-BR/text.json';
 import TND from '../locales/mg-TND/text.json';
 import TNK from '../locales/mg-TNK/text.json';
 import VZ from '../locales/mg-VZ/text.json';
