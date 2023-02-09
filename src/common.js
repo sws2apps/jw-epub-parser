@@ -46,7 +46,7 @@ export const isValidMwbSched = (htmlDoc) => {
 	}
 };
 
-export const parseEpub = (htmlDocs, mwbYear, lang, rules) => {
+export const parseEpub = (htmlDocs, mwbYear, lang, fromHTML, rules) => {
 	try {
 		const obj = {};
 		const weeksData = [];
@@ -65,7 +65,9 @@ export const parseEpub = (htmlDocs, mwbYear, lang, rules) => {
 			const htmlItem = htmlDocs[a];
 
 			// get week date
-			const wdHtml = htmlItem.getElementsByTagName('h1').item(0);
+			const wdHtml = fromHTML
+				? htmlItem.querySelector('article').querySelector('header').querySelector('h1')
+				: htmlItem.getElementsByTagName('h1').item(0);
 			const weekDate = wdHtml.textContent.replaceAll(/\u00A0/g, ' ');
 
 			if (isEnhancedParsing) {
@@ -78,7 +80,9 @@ export const parseEpub = (htmlDocs, mwbYear, lang, rules) => {
 			}
 
 			// get weekly Bible Reading
-			const wbHtml = htmlItem.getElementsByTagName('h2').item(0);
+			const wbHtml = fromHTML
+			? htmlItem.querySelector('article').querySelector('header').querySelector('h2')
+			: htmlItem.getElementsByTagName('h2').item(0);
 			weekItem.weeklyBibleReading = wbHtml.textContent.replaceAll(/\u00A0/g, ' ');
 
 			let src = '';
