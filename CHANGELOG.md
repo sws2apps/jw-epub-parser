@@ -1,3 +1,10 @@
+## [1.30.5](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.4...v1.30.5) (2023-02-09)
+
+
+### Bug Fixes
+
+* **module:** restore back support for language without epub ([1496414](https://github.com/sws2apps/jw-epub-parser/commit/14964146869a97b8a994a542feee4e18b177455c))
+
 ## [1.30.4](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.3...v1.30.4) (2023-02-08)
 
 
