@@ -1,8 +1,7 @@
-import languages from '../locales/languages.js';
-
 import source from '../locales/en/text.json';
 import F from '../locales/fr-FR/text.json';
 import MG from '../locales/mg-MG/text.json';
+import T from '../locales/pt-BR/text.json';
 import TND from '../locales/mg-TND/text.json';
 import TNK from '../locales/mg-TNK/text.json';
 import VZ from '../locales/mg-VZ/text.json';
@@ -21,6 +20,9 @@ for (const [key, value] of Object.entries(F)) {
 }
 for (const [key, value] of Object.entries(MG)) {
 	dataLang[key].MG = value;
+}
+for (const [key, value] of Object.entries(T)) {
+	dataLang[key].T = value;
 }
 for (const [key, value] of Object.entries(TND)) {
 	dataLang[key].TND = value;
