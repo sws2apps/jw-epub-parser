@@ -150,7 +150,7 @@ const fetchData = async (language) => {
 
 		if (res.status === 200) {
 			const result = await res.json();
-			const epubEntry = result.files[language].EPUB;
+			const hasEPUB = result.files[language].EPUB;
 
 			issues.push({ issueDate, currentYear, language, hasEPUB: hasEPUB });
 		}
