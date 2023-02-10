@@ -1,3 +1,10 @@
+# [1.31.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.5...v1.31.0) (2023-02-10)
+
+
+### Features
+
+* **browser:** allow fetch from url ([f3fe773](https://github.com/sws2apps/jw-epub-parser/commit/f3fe7737b104a1d037b2b136862138dc40fc75a2))
+
 ## [1.30.5](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.4...v1.30.5) (2023-02-09)
 
 
