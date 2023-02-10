@@ -130,7 +130,6 @@ const fetchData = async (language, issue) => {
 		new URLSearchParams({
 			langwritten: language,
 			pub: 'mwb',
-			fileformat: 'epub',
 			output: 'json',
 			issue,
 		});

@@ -88,18 +88,6 @@ const loadEPUB = async (epubInput) => {
 
 			validMwbFiles.push(htmlDoc);
 		}
-	} else if (epubInput.url) {
-		const file = path.basename(epubInput.url); // blob and url
-		if (isValidEpubNaming(file)) {
-			mwbYear = file.split('_')[2].substring(0, 4);
-			lang = file.split('_')[1];
-		} else {
-			throw new Error('The selected epub file has an incorrect naming.');
-		}
-
-		const epubRes = await fetch(epubInput.url);
-		const epubData = await epubRes.blob();
-		data = await epubData.arrayBuffer();
 	} else {
 		throw new Error('You are using the browser version of the module. Please switch to the node version if needed');
 	}
