@@ -6,6 +6,7 @@ import { loadEPUB } from '../dist/node/index.js';
 const list = JSON.parse(await fs.promises.readFile(new URL('./enhancedParsing/list.json', import.meta.url)));
 
 const JW_CDN = 'https://app.jw-cdn.org/apis/pub-media/GETPUBMEDIALINKS?';
+const JW_FINDER = 'https://www.jw.org/finder?';
 
 const fetchIssueData = (issue) => {
 	return new Promise((resolve) => {
