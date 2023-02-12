@@ -81,8 +81,8 @@ export const parseEpub = (htmlDocs, mwbYear, lang, fromHTML, rules) => {
 
 			// get weekly Bible Reading
 			const wbHtml = fromHTML
-			? htmlItem.querySelector('article').querySelector('header').querySelector('h2')
-			: htmlItem.getElementsByTagName('h2').item(0);
+				? htmlItem.querySelector('article').querySelector('header').querySelector('h2')
+				: htmlItem.getElementsByTagName('h2').item(0);
 			weekItem.weeklyBibleReading = wbHtml.textContent.replaceAll(/\u00A0/g, ' ');
 
 			let src = '';

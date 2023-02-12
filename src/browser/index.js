@@ -119,7 +119,7 @@ const loadEPUB = async (epubInput) => {
 						);
 					} else {
 						resolve(
-							parseEpub(validMwbFiles, mwbYear, lang, {
+							parseEpub(validMwbFiles, mwbYear, lang, false, {
 								monthNames: monthNames,
 								tgw10Format: tgw10Format,
 								tgwBibleReadingVariations: tgwBibleReadingVariations,
