@@ -1,3 +1,10 @@
+## [1.31.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.31.0...v1.31.1) (2023-02-12)
+
+
+### Bug Fixes
+
+* **browser:** add missing parameters preventing import ([d6cb959](https://github.com/sws2apps/jw-epub-parser/commit/d6cb95916a43b9996074b2c32a4888f1df346602))
+
 # [1.31.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.30.5...v1.31.0) (2023-02-10)
 
 
