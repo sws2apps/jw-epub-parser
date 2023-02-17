@@ -12,6 +12,7 @@ for (const [key, value] of Object.entries(source)) {
 	dataLang[key] = {
 		E: value,
 		F: F[key],
+		MG: MG[key],
 		T: T[key],
 		TND: TND[key],
 		TNK: TNK[key],

@@ -97,7 +97,7 @@ export const extractSourceTGWBibleReading = (tgwBibleReadingVariations, src, lan
 			if (verifyExtract === src) {
 				result = {
 					src: extractedSource,
-					study: extractedStudy,
+					study: +extractedStudy,
 				};
 				break;
 			}
@@ -126,8 +126,11 @@ export const extractSourceAssignments = (assignmentsVariations, assignmentsName,
 
 			let assignmentsList = '(';
 			for (let a = 0; a < assignmentsName.length; a++) {
-				assignmentsList =
-					assignmentsList === '' ? assignmentsName[a][lang] : `${assignmentsList}|${assignmentsName[a][lang]}`;
+				assignmentsList += assignmentsName[a][lang];
+
+				if (a < assignmentsName.length - 1) {
+					assignmentsList += '|';
+				}
 			}
 			assignmentsList += ')';
 
@@ -141,6 +144,7 @@ export const extractSourceAssignments = (assignmentsVariations, assignmentsName,
 
 			const regex = new RegExp(textSearch.trim());
 			const array = regex.exec(src);
+
 			if (array !== null) {
 				const partTiming = +array[2].match(/(\d+)/)[0];
 
@@ -150,7 +154,7 @@ export const extractSourceAssignments = (assignmentsVariations, assignmentsName,
 				const split = src.split(textSearch.trim());
 
 				if (split.length === 2) {
-					const partType = split[0];
+					const partType = split[0].trim();
 
 					let textSearch = variation.replace('{{ assignment }}', partType);
 					textSearch = textSearch.replace('{{ duration }}', partTiming);
@@ -221,7 +225,7 @@ export const extractSourceAssignments = (assignmentsVariations, assignmentsName,
 	} catch (err) {
 		throw new JWEPUBParserError(
 			'ayf-part',
-			`Parsing failed for Apply Yourself to the Field Ministry part. Error: ${err.message}. The input was: ${src}`
+			`Parsing failed for Apply Yourself to the Field Ministry part. The input was: ${src}`
 		);
 	}
 };
@@ -267,19 +271,19 @@ export const extractSourceLiving = (livingPartsVariations, src, lang) => {
 				let partContent;
 
 				if (split[1] === '') {
-					partTitle = split[0];
+					partTitle = split[0].trim();
 					partContent = '';
 				}
 
 				if (split[1] !== '') {
 					if (patternSourceIndex < patternContentIndex) {
-						partTitle = split[0];
-						partContent = split[1];
+						partTitle = split[0].trim();
+						partContent = split[1].trim();
 					}
 
 					if (patternSourceIndex > patternContentIndex) {
-						partTitle = split[1];
-						partContent = split[0];
+						partTitle = split[1].trim();
+						partContent = split[0].trim();
 					}
 				}
 
@@ -303,7 +307,7 @@ export const extractSourceLiving = (livingPartsVariations, src, lang) => {
 
 	if (result) return result;
 
-	throw new JWEPUBParserError('lc-part', 'Parsing failed for Living as Christians part');
+	throw new JWEPUBParserError('lc-part', `Parsing failed for Living as Christians part. The input was: ${src}`);
 };
 
 export const extractSourceCBS = (cbsVariations, src, lang) => {
