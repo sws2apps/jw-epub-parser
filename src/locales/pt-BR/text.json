@@ -11,8 +11,8 @@
 	"octoberVariations": "de outubro|outubro",
 	"novemberVariations": "de novembro|novembro",
 	"decemberVariations": "de dezembro|dezembro",
-	"tgwTalk10Format": "<<Title>>: (10 min)",
-	"tgwBibleReadingVariations": "Leitura da Bíblia: (4 min) <<Title>> (th <n>)",
+	"tgwTalk10Variations": "{{ title }}: (10 min)",
+	"tgwBibleReadingVariations": "Leitura da Bíblia: (4 min) {{ source }} (th {{ study }})",
 	"initialCallVideoVariations": "Vídeo da primeira conversa",
 	"returnVisitVideoVariations": "Vídeo da revisita",
 	"memorialInvitationVideoVariations": "Vídeo do convite da Celebração",
@@ -21,8 +21,7 @@
 	"bibleStudyVariations": "Estudo bíblico",
 	"talkVariations": "Discurso",
 	"memorialInvitationVariations": "Convite da Celebração",
-	"assignmentAyfVariations": "<AssignmentType>: (<n> min) <<Title>> (th <n>)",
-	"assignmentLcVariations": "<<Title>>: (<n> min) @Description@",
-	"cbsFormat": "Estudo bíblico de congregação: (30 min) <<Title>>",
-	"concludingSongVariations": "<<Song>> e oração"
+	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min) {{ source }} (th {{ study }})",
+	"assignmentLcVariations": "{{ source }}: ({{ duration }} min) {{ content }}",
+	"cbsVariations": "Estudo bíblico de congregação: (30 min) {{ source }}"
 }

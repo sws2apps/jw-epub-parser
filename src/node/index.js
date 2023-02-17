@@ -5,13 +5,13 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { getHtmlRawString, isValidEpubNaming, isValidFilename, isValidMwbSched, parseEpub } from '../common.js';
 import {
-	assignmentsFormat,
+	assignmentsVariations,
 	assignmentsName,
-	cbsFormat,
+	cbsVariations,
 	concludingSongFormat,
-	livingPartsFormat,
+	livingPartsVariations,
 	monthNames,
-	tgw10Format,
+	tgw10Variations,
 	tgwBibleReadingVariations,
 } from './languageRules.js';
 
@@ -33,7 +33,7 @@ const loadEPUB = async (epubInput) => {
 		} else {
 			throw new Error('The selected epub file has an incorrect naming.');
 		}
-	}  else if (epubInput.htmlRaws) {
+	} else if (epubInput.htmlRaws) {
 		skipZip = true;
 
 		for (const content of epubInput.htmlRaws) {
@@ -42,7 +42,6 @@ const loadEPUB = async (epubInput) => {
 
 			validMwbFiles.push(htmlDoc);
 		}
-		
 	} else {
 		const file = path.basename(epubInput.url || epubInput); // blob and url
 		if (isValidEpubNaming(file)) {
@@ -128,12 +127,12 @@ const loadEPUB = async (epubInput) => {
 				resolve(
 					parseEpub(validMwbFiles, epubInput.mwbYear, epubInput.lang, true, {
 						monthNames: monthNames,
-						tgw10Format: tgw10Format,
+						tgw10Variations: tgw10Variations,
 						tgwBibleReadingVariations: tgwBibleReadingVariations,
 						assignmentsName: assignmentsName,
-						assignmentsFormat: assignmentsFormat,
-						livingPartsFormat: livingPartsFormat,
-						cbsFormat: cbsFormat,
+						assignmentsVariations: assignmentsVariations,
+						livingPartsVariations: livingPartsVariations,
+						cbsVariations: cbsVariations,
 						concludingSongFormat: concludingSongFormat,
 					})
 				);
@@ -151,12 +150,12 @@ const loadEPUB = async (epubInput) => {
 						resolve(
 							parseEpub(validMwbFiles, mwbYear, lang, false, {
 								monthNames: monthNames,
-								tgw10Format: tgw10Format,
+								tgw10Variations: tgw10Variations,
 								tgwBibleReadingVariations: tgwBibleReadingVariations,
 								assignmentsName: assignmentsName,
-								assignmentsFormat: assignmentsFormat,
-								livingPartsFormat: livingPartsFormat,
-								cbsFormat: cbsFormat,
+								assignmentsVariations: assignmentsVariations,
+								livingPartsVariations: livingPartsVariations,
+								cbsVariations: cbsVariations,
 								concludingSongFormat: concludingSongFormat,
 							})
 						);
