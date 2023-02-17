@@ -12,7 +12,7 @@
 	"novemberVariations": "Novambra",
 	"decemberVariations": "Desambra",
 	"tgwTalk10Variations": "{{ title }}: (10 min.)",
-	"tgwBibleReadingVariations": "Famakiagne Baiboly: (4 min.) {{ source }} (th lesogne {{ study }})",
+	"tgwBibleReadingVariations": "Famakiagne Baiboly: (4 min.) <<Title>> (th lesogne <n>)",
 	"initialCallVideoVariations": "Fitoriagne Alefa Video",
 	"returnVisitVideoVariations": "Fiheregnagne Mitilike Alefa Video",
 	"memorialInvitationVideoVariations": "Fanasagne amy ty Fahatsiarovagne Alefa Video",
@@ -21,7 +21,7 @@
 	"bibleStudyVariations": "Fampianaragne Baiboly",
 	"talkVariations": "Lahajaka",
 	"memorialInvitationVariations": "Fanasagne amy ty Fahatsiarovagne",
-	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min.) {{ source }} (th lesona {{ study }})",
-	"assignmentLcVariations": "{{ source }}: ({{ duration }} min.) {{ content }}",
+	"assignmentAyfVariations": "<AssignmentType>: (<n> min.) <<Title>> (th lesona <n>)",
+	"assignmentLcVariations": "<<Title>>: (<n> min.) @Description@",
 	"cbsVariations": "Fianaragne Baiboly Anoe ty Fiangonagne: (30 min.) {{ source }}"
 }
