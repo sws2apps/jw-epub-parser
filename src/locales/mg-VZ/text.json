@@ -11,7 +11,7 @@
 	"octoberVariations": "Oktobra",
 	"novemberVariations": "Novambra",
 	"decemberVariations": "Desambra",
-	"tgwTalk10Format": "<<Title>>: (10 min.)",
+	"tgwTalk10Variations": "<<Title>>: (10 min.)",
 	"tgwBibleReadingVariations": "Famakia Baiboly: (4 min.) <<Title>> (th fianara <n>)",
 	"initialCallVideoVariations": "Video Fitoria",
 	"returnVisitVideoVariations": "Video Fimpolia Mitsidiky",
@@ -23,6 +23,6 @@
 	"memorialInvitationVariations": "Fanasà amy Fahatiarova",
 	"assignmentAyfVariations": "<AssignmentType>: (<n> min.) <<Title>> (th lesona <n>)|<AssignmentType> (<n> min.) <<Title>> (th lesona <n>)",
 	"assignmentLcVariations": "<<Title>>: (<n> min.) @Description@|<<Title>> (<n> min.) @Description@",
-	"cbsFormat": "Fianara Baiboly: (30 min.) <<Title>>",
+	"cbsVariations": "Fianara Baiboly: (30 min.) <<Title>>",
 	"concludingSongVariations": "<<Song>> Noho Vavaky|<<Song>> Noho Vavak"
 }

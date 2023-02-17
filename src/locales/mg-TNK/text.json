@@ -11,7 +11,7 @@
 	"octoberVariations": "Oktobra",
 	"novemberVariations": "Novambra",
 	"decemberVariations": "Desambra",
-	"tgwTalk10Format": "<<Title>>: (10 min.)",
+	"tgwTalk10Variations": "<<Title>>: (10 min.)",
 	"tgwBibleReadingVariations": "Vaky Baiboly: (4 min.) <<Title>> (th fianaran̈a <n>)|Vaky Baiboly: (4 min.) <<Title>> (<n>)",
 	"initialCallVideoVariations": "Video Fitorian̈a",
 	"returnVisitVideoVariations": "Video Lera Mitsidiky",
@@ -23,6 +23,6 @@
 	"memorialInvitationVariations": "Invitasiony Fahatsiarovan̈a",
 	"assignmentAyfVariations": "<AssignmentType>: (<n> min.) <<Title>> (th lesona <n>)",
 	"assignmentLcVariations": "<<Title>>: (<n> min.) @Description@",
-	"cbsFormat": "Fianaran̈a Baiboly Ataony Fiangonan̈a: (30 min.) <<Title>>",
+	"cbsVariations": "Fianaran̈a Baiboly Ataony Fiangonan̈a: (30 min.) <<Title>>",
 	"concludingSongVariations": "<<Song>> Ndreky Vavaka"
 }

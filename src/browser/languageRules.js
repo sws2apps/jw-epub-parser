@@ -8,30 +8,15 @@ import VZ from '../locales/mg-VZ/text.json';
 
 const dataLang = {};
 
-for (const [key] of Object.entries(source)) {
-	dataLang[key] = {};
-}
-
 for (const [key, value] of Object.entries(source)) {
-	dataLang[key].E = value;
-}
-for (const [key, value] of Object.entries(F)) {
-	dataLang[key].F = value;
-}
-for (const [key, value] of Object.entries(MG)) {
-	dataLang[key].MG = value;
-}
-for (const [key, value] of Object.entries(T)) {
-	dataLang[key].T = value;
-}
-for (const [key, value] of Object.entries(TND)) {
-	dataLang[key].TND = value;
-}
-for (const [key, value] of Object.entries(TNK)) {
-	dataLang[key].TNK = value;
-}
-for (const [key, value] of Object.entries(VZ)) {
-	dataLang[key].VZ = value;
+	dataLang[key] = {
+		E: value,
+		F: F[key],
+		T: T[key],
+		TND: TND[key],
+		TNK: TNK[key],
+		VZ: VZ[key],
+	};
 }
 
 export const monthNames = [
@@ -49,7 +34,7 @@ export const monthNames = [
 	{ index: 11, names: dataLang.decemberVariations },
 ];
 
-export const tgw10Format = dataLang.tgwTalk10Format;
+export const tgw10Variations = dataLang.tgwTalk10Variations;
 
 export const tgwBibleReadingVariations = dataLang.tgwBibleReadingVariations;
 
@@ -64,10 +49,10 @@ export const assignmentsName = [
 	dataLang.memorialInvitationVariations,
 ];
 
-export const assignmentsFormat = dataLang.assignmentAyfVariations;
+export const assignmentsVariations = dataLang.assignmentAyfVariations;
 
-export const livingPartsFormat = dataLang.assignmentLcVariations;
+export const livingPartsVariations = dataLang.assignmentLcVariations;
 
-export const cbsFormat = dataLang.cbsFormat;
+export const cbsVariations = dataLang.cbsVariations;
 
 export const concludingSongFormat = dataLang.concludingSongVariations;

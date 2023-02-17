@@ -11,7 +11,7 @@
 	"octoberVariations": "Oktobra",
 	"novemberVariations": "Novambra",
 	"decemberVariations": "Desambra",
-	"tgwTalk10Format": "<<Title>>: (10 min.)",
+	"tgwTalk10Variations": "<<Title>>: (10 min.)",
 	"tgwBibleReadingVariations": "Famakiagne Baiboly: (4 min.) <<Title>> (th lesogne <n>)",
 	"initialCallVideoVariations": "Fitoriagne Alefa Video",
 	"returnVisitVideoVariations": "Fiheregnagne Mitilike Alefa Video",
@@ -23,6 +23,6 @@
 	"memorialInvitationVariations": "Fanasagne amy ty Fahatsiarovagne",
 	"assignmentAyfVariations": "<AssignmentType>: (<n> min.) <<Title>> (th lesona <n>)",
 	"assignmentLcVariations": "<<Title>>: (<n> min.) @Description@",
-	"cbsFormat": "Fianaragne Baiboly Anoe ty Fiangonagne: (30 min.) <<Title>>",
+	"cbsVariations": "Fianaragne Baiboly Anoe ty Fiangonagne: (30 min.) <<Title>>",
 	"concludingSongVariations": "<<Song>> Naho Vavake"
 }
