@@ -12,7 +12,7 @@
 	"novemberVariations": "Novambra",
 	"decemberVariations": "Desambra",
 	"tgwTalk10Variations": "{{ title }}: (10 min.)",
-	"tgwBibleReadingVariations": "Vaky Baiboly: (4 min.) <<Title>> (th fianaran̈a <n>)|Vaky Baiboly: (4 min.) <<Title>> (<n>)",
+	"tgwBibleReadingVariations": "Vaky Baiboly: (4 min.) {{ source }} (th fianaran̈a {{ study }})|Vaky Baiboly: (4 min.) {{ source }} ({{ study }})",
 	"initialCallVideoVariations": "Video Fitorian̈a",
 	"returnVisitVideoVariations": "Video Lera Mitsidiky",
 	"memorialInvitationVideoVariations": "Video Invitasiony Fahatsiarovan̈a",
@@ -21,7 +21,7 @@
 	"bibleStudyVariations": "Lera Mampianatra",
 	"talkVariations": "Kabaro",
 	"memorialInvitationVariations": "Invitasiony Fahatsiarovan̈a",
-	"assignmentAyfVariations": "<AssignmentType>: (<n> min.) <<Title>> (th lesona <n>)",
-	"assignmentLcVariations": "<<Title>>: (<n> min.) @Description@",
+	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min.) {{ source }} (th fianaran̈a {{ study }})",
+	"assignmentLcVariations": "{{ source }}: ({{ duration }} min.) {{ content }}",
 	"cbsVariations": "Fianaran̈a Baiboly Ataony Fiangonan̈a: (30 min.) {{ source }}"
 }
