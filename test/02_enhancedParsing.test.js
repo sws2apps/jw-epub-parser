@@ -43,7 +43,7 @@ const fetchIssueData = (issue) => {
 					const htmlItem = parser.parseFromString(result, 'text/html');
 
 					const docIds = [];
-					const accordionItems = htmlItem.getElementsByClassName('docClass-106');
+					const accordionItems = htmlItem.getElementsByClassName(`docClass-106 iss-${issue.issueDate}`);
 					for (const weekLink of accordionItems) {
 						weekLink.classList.forEach((item) => {
 							if (item.indexOf('docId-') !== -1) {
