@@ -12,7 +12,7 @@
 	"novemberVariations": "Novambra",
 	"decemberVariations": "Desambra",
 	"tgwTalk10Variations": "{{ title }}: (10 min.)",
-	"tgwBibleReadingVariations": "Bible Reading: (4 min.) {{ source }} (th study {{ study }})",
+	"tgwBibleReadingVariations": "Famakia Baiboly: (4 min.) <<Title>> (th fianara <n>)",
 	"initialCallVideoVariations": "Video Fitoria",
 	"returnVisitVideoVariations": "Video Fimpolia Mitsidiky",
 	"memorialInvitationVideoVariations": "Video Fanasà Fahatiarova",
@@ -21,7 +21,7 @@
 	"bibleStudyVariations": "Fampianara Baiboly",
 	"talkVariations": "Lahateny",
 	"memorialInvitationVariations": "Fanasà amy Fahatiarova",
-	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min.) {{ source }} (th study {{ study }})",
-	"assignmentLcVariations": "{{ source }}: ({{ duration }} min.) {{ content }}",
-	"cbsVariations": "Congregation Bible Study: (30 min.) {{ source }}"
+	"assignmentAyfVariations": "<AssignmentType>: (<n> min.) <<Title>> (th lesona <n>)|<AssignmentType> (<n> min.) <<Title>> (th lesona <n>)",
+	"assignmentLcVariations": "<<Title>>: (<n> min.) @Description@|<<Title>> (<n> min.) @Description@",
+	"cbsVariations": "Fianara Baiboly: (30 min.) {{ source }}"
 }
