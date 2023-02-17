@@ -1,3 +1,11 @@
+# [1.32.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.31.1...v1.32.0) (2023-02-17)
+
+
+### Features
+
+* **deps:** bump rollup from 3.14.0 to 3.15.0 ([e58a752](https://github.com/sws2apps/jw-epub-parser/commit/e58a752d9ef0c9337fad7b0f19147b86327ff88c))
+* **module:** improve parsing rules ([eb5da5f](https://github.com/sws2apps/jw-epub-parser/commit/eb5da5f8377bd36e41ab9d480a8e315426710498))
+
 ## [1.31.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.31.0...v1.31.1) (2023-02-12)
 
 
