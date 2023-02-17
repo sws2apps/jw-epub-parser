@@ -11,8 +11,8 @@
 	"octoberVariations": "Oktobra",
 	"novemberVariations": "Novambra",
 	"decemberVariations": "Desambra",
-	"tgwTalk10Format": "<<Title>>: (10 min.)",
-	"tgwBibleReadingVariations": "Famakiagne Baiboly: (4 min.) <<Title>> (th lesogne <n>)",
+	"tgwTalk10Variations": "{{ title }}: (10 min.)",
+	"tgwBibleReadingVariations": "Bible Reading: (4 min.) {{ source }} (th study {{ study }})",
 	"initialCallVideoVariations": "Fitoriagne Alefa Video",
 	"returnVisitVideoVariations": "Fiheregnagne Mitilike Alefa Video",
 	"memorialInvitationVideoVariations": "Fanasagne amy ty Fahatsiarovagne Alefa Video",
@@ -21,8 +21,7 @@
 	"bibleStudyVariations": "Fampianaragne Baiboly",
 	"talkVariations": "Lahajaka",
 	"memorialInvitationVariations": "Fanasagne amy ty Fahatsiarovagne",
-	"assignmentAyfVariations": "<AssignmentType>: (<n> min.) <<Title>> (th lesona <n>)",
-	"assignmentLcVariations": "<<Title>>: (<n> min.) @Description@",
-	"cbsFormat": "Fianaragne Baiboly Anoe ty Fiangonagne: (30 min.) <<Title>>",
-	"concludingSongVariations": "<<Song>> Naho Vavake"
+	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min.) {{ source }} (th study {{ study }})",
+	"assignmentLcVariations": "{{ source }}: ({{ duration }} min.) {{ content }}",
+	"cbsVariations": "Congregation Bible Study: (30 min.) {{ source }}"
 }
