@@ -4,7 +4,7 @@
 [![CD](https://github.com/sws2apps/jw-epub-parser/actions/workflows/deploy.yml/badge.svg)](https://github.com/sws2apps/jw-epub-parser/actions/workflows/deploy.yml)
 [![jw-epub-parser](https://snyk.io/advisor/npm-package/jw-epub-parser/badge.svg)](https://snyk.io/advisor/npm-package/jw-epub-parser)
 
-An EPUB Parser to extract the needed source materials from Meeting Workbook EPUB file. Support for parsing Watchtower Study will be added in future release. This tool was originally created to complement the Scheduling Workbox System (SWS) utilities. But why parsing EPUB file? Should it not be easy to get data directly from the website? Well, we want to do our best to be faithful in what is least, in order to be faithful also in much. The [Terms of Use and License to Use Website](https://www.jw.org/en/terms-of-use/) on jw.org makes it clear that extracting, harvesting, or scraping data, HTML, or text from the website is not recommended.
+An EPUB Parser to extract the needed source materials from Meeting Workbook EPUB file. Support for parsing Watchtower Study will be added in a future release.
 
 ## Install
 
@@ -90,7 +90,14 @@ Here are the list of all available properties in each object in the `weeksData` 
 
 Currently, we only support enhanced parsing for the following languages:
 
-Enlish (E), French (F), Malagasy (MG), Tandroy (TND), Tankarana (TND), Vezo (VZ)
+```bash
+Enlish
+French
+Malagasy
+Portuguese Brazil
+Tandroy, Tankarana
+Vezo
+```
 
 For the other languages, you may use your own method to convert these outputs according to your needs to get the needed informations. If you want to contribute and add your language in the enhanced parsing list, or edit your language rules, please follow [this guide](./TRANSLATION.md).
 
@@ -102,10 +109,10 @@ Here are how the results of this module look like:
 
 ```js
 {
-  weeksCount: 7,
-  mwbYear: '2023',
-  weeksData: [
-    {
+	weeksCount: 7,
+ 	mwbYear: '2023',
+  	weeksData: [
+    		{
 			weekDate: '03/06/2023',
 			weekDateLocale: 'March 6-12',
 			weeklyBibleReading: '1 CHRONICLES 23-26',
@@ -123,7 +130,7 @@ Here are how the results of this module look like:
 			ayfPart2Time: 3,
 			ayfPart2Type: 'Memorial Invitation',
 			ayfPart2Study: 11,
-			ayfPart3: 'w11 6/1 14-15​—Theme: Why Are Christians Organized?',
+			ayfPart3: 'w11 6/1 14-15—Theme: Why Are Christians Organized?',
 			ayfPart3Time: 5,
 			ayfPart3Type: 'Talk',
 			ayfPart3Study: 14,
@@ -139,41 +146,8 @@ Here are how the results of this module look like:
 			lcCBS: 'lff lesson 39 and endnote 3',
 			songConclude: 127,
 		},
-		{
-			weekDate: '03/13/2023',
-			weekDateLocale: 'March 13-19',
-			weeklyBibleReading: '1 CHRONICLES 27-29',
-			songFirst: 133,
-			tgw10Talk: '“A Father’s Loving Admonition to His Son”',
-			tgwBRead: '1Ch 27:1-15',
-			tgwBReadStudy: 10,
-			ayfCount: 3,
-			ayfPart1:
-				'Discussion. Play the video Return Visit: Jesus​—Mt 20:28. Stop the video at each pause, and ask the audience the questions that appear in the video.',
-			ayfPart1Time: 5,
-			ayfPart1Type: 'Return Visit Video',
-			ayfPart2:
-				'Make a return visit on someone who accepted the Memorial invitation and showed interest. Introduce and discuss (but do not play) Why Did Jesus Die?',
-			ayfPart2Time: 4,
-			ayfPart2Type: 'Return Visit',
-			ayfPart2Study: 9,
-			ayfPart3:
-				'Make a return visit on someone who accepted the Memorial invitation and showed interest. Start a Bible study in the Enjoy Life Forever! brochure.',
-			ayfPart3Time: 4,
-			ayfPart3Type: 'Return Visit',
-			ayfPart3Study: 6,
-			songMiddle: 4,
-			lcCount: 2,
-			lcPart1: 'Local Needs',
-			lcPart1Time: 5,
-			lcPart2: 'Organizational Accomplishments',
-			lcPart2Time: 10,
-			lcPart2Content: 'Play the Organizational Accomplishments video for March.',
-			lcCBS: 'lff lesson 40',
-			songConclude: 45,
-		},
-    ...
-  ]
+    		...
+  	]
 }
 ```
 
@@ -181,10 +155,10 @@ Here are how the results of this module look like:
 
 ```js
 {
-  weeksCount: 7,
-  mwbYear: '2023',
-  weeksData: [
-    {
+	weeksCount: 7,
+	mwbYear: '2023',
+ 	weeksData: [
+ 		{
 			weekDate: '6-12 de marzo',
 			weeklyBibleReading: '1 CRÓNICAS 23-26',
 			songFirst: 123,
@@ -204,27 +178,7 @@ Here are how the results of this module look like:
 			lcCBS: 'Estudio bíblico de la congregación (30 mins.): lff lección 39 y nota 3.',
 			songConclude: 127,
 		},
-		{
-			weekDate: '13-19 de marzo',
-			weeklyBibleReading: '1 CRÓNICAS 27-29',
-			songFirst: 133,
-			tgw10Talk: '“Los buenos consejos de un padre que amaba a su hijo” (10 mins.)',
-			tgwBRead: 'Lectura de la Biblia (4 mins.): 1Cr 27:1-15 (th lec. 10).',
-			ayfCount: 3,
-			ayfPart1:
-				'Video de la revisita (5 mins.): Análisis con el auditorio. Ponga el video Revisita: Jesús (Mt 20:28). Detenga el video en cada pausa y haga las preguntas que aparecen en él.',
-			ayfPart2:
-				'Revisita (4 mins.): Vuelva a visitar a alguien que haya aceptado una invitación a la Conmemoración y que haya mostrado interés. Presente y analice el video ¿Por qué murió Jesús?, pero no lo ponga (th lec. 9).',
-			ayfPart3:
-				'Revisita (4 mins.): Vuelva a visitar a alguien que haya aceptado una invitación a la Conmemoración y que haya mostrado interés. Comience un curso bíblico utilizando el folleto Disfrute de la vida (th lec. 6).',
-			songMiddle: 4,
-			lcCount: 2,
-			lcPart1: 'Necesidades de la congregación (5 mins.)',
-			lcPart2: 'Logros de la organización (10 mins.): Ponga el video Logros de la organización para el mes de marzo.',
-			lcCBS: 'Estudio bíblico de la congregación (30 mins.): lff lección 40.',
-			songConclude: 45,
-		},
-    ...
-  ]
+    		...
+  	]
 }
 ```
