@@ -1,3 +1,10 @@
+## [1.32.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.32.0...v1.32.1) (2023-02-19)
+
+
+### Bug Fixes
+
+* **rules:** update language rules for F and TND ([c1813c1](https://github.com/sws2apps/jw-epub-parser/commit/c1813c10973310652fd3f5abcfb108c9642ad2c4))
+
 # [1.32.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.31.1...v1.32.0) (2023-02-17)
 
 
