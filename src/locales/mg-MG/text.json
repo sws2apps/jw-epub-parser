@@ -21,7 +21,7 @@
 	"bibleStudyVariations": "Fampianarana Baiboly",
 	"talkVariations": "Lahateny",
 	"memorialInvitationVariations": "Fanasana Fahatsiarovana",
-	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min.) {{ source }} (th lesona {{ study }})",
+	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min.) {{ source }} (th lesona {{ study }})|{{ assignment }}: ({{ duration }} min.) {{ source }}",
 	"assignmentLcVariations": "{{ source }}: ({{ duration }} min.) {{ content }}",
 	"cbsVariations": "Fianarana Baiboly: (30 min.) {{ source }}"
 }
