@@ -4,8 +4,11 @@ export const extractMonthName = (monthNames, src, lang) => {
 	let varDay;
 	let monthIndex;
 
+	src = src.split('–')[0];
+
 	for (let i = 0; i < monthNames.length; i++) {
 		const month = monthNames[i];
+
 		const monthLang = month.names[lang];
 		const regex = new RegExp(`(${monthLang})`);
 		const array = regex.exec(src);
@@ -116,12 +119,15 @@ export const extractSourceAssignments = (assignmentsVariations, assignmentsName,
 		const patternAssignment = '{{ assignment }}';
 		const patternDuration = '{{ duration }}';
 		const patternSource = '{{ source }}';
+		const patternStudy = '{{ study }}';
 
 		let result;
 		for (let i = 0; i < variations.length; i++) {
 			const variation = variations[i];
 
 			const patternSourceIndex = variation.indexOf(patternSource);
+			const patternStudyIndex = variation.indexOf(patternStudy);
+
 			const findRoundOne = variation.substring(0, patternSourceIndex).trim();
 
 			let assignmentsList = '(';
@@ -163,50 +169,34 @@ export const extractSourceAssignments = (assignmentsVariations, assignmentsName,
 					const srcNext = src.substring(findNextIndex);
 					const findRoundTwo = variation.substring(patternSourceIndex);
 
-					textSearch = findRoundTwo.replace('{{ source }}', '');
-					textSearch = textSearch.replace('{{ study }}', '\\d+');
-					textSearch = textSearch.replace('(', '(\\(');
-					textSearch = textSearch.replace(')', ')\\)');
-					textSearch = textSearch.replace(') ', ') ?');
-					textSearch = textSearch.replace('??', '?');
-
-					const regex = new RegExp(textSearch.trim());
-					const array2 = regex.exec(srcNext);
-
 					const obj = { type: partType, time: partTiming };
 
-					if (array2 === null) {
+					if (patternStudyIndex === -1) {
 						obj.src = srcNext;
 					}
 
-					if (array2 !== null) {
-						obj.study = +array2[1].match(/(\d+)/)[0];
-						obj.src = srcNext.substring(0, array2.index).trim();
+					if (patternStudyIndex !== -1) {
+						textSearch = findRoundTwo.replace('{{ source }}', '');
+						textSearch = textSearch.replace('{{ study }}', '\\d+');
+						textSearch = textSearch.replace('(', '(\\(');
+						textSearch = textSearch.replace(')', ')\\)');
+						textSearch = textSearch.replace(') ', ') ?');
+						textSearch = textSearch.replace('??', '?');
+
+						const regex = new RegExp(textSearch.trim());
+
+						const array2 = regex.exec(srcNext);
+
+						if (array2 !== null) {
+							obj.study = +array2[1].match(/(\d+)/)[0];
+							obj.src = srcNext.substring(0, array2.index).trim();
+						}
 					}
 
 					let verifyExtract = variation.replace('{{ assignment }}', obj.type);
 					verifyExtract = verifyExtract.replace('{{ duration }}', obj.time);
 					verifyExtract = verifyExtract.replace('{{ source }}', obj.src);
-
-					if (obj.study) {
-						verifyExtract = verifyExtract.replace('{{ study }}', obj.study);
-					}
-
-					if (!obj.study) {
-						const patternSourceIndex = variation.indexOf(patternSource);
-						const endPatternSourceIndex = patternSourceIndex + patternSource.length;
-
-						const srcEndIndex =
-							endPatternSourceIndex -
-							patternAssignment.length -
-							patternDuration.length -
-							patternSource.length +
-							obj.type.length +
-							obj.time.toString().length +
-							obj.src.length;
-
-						verifyExtract = src.substring(0, srcEndIndex).trim();
-					}
+					verifyExtract = verifyExtract.replace('{{ study }}', obj.study);
 
 					if (verifyExtract === src) {
 						result = obj;
