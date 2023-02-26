@@ -21,7 +21,7 @@
 	"bibleStudyVariations": "Estudo bíblico",
 	"talkVariations": "Discurso",
 	"memorialInvitationVariations": "Convite da Celebração",
-	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min) {{ source }} (th {{ study }})",
+	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min.) {{ source }} (th study {{ study }})|{{ assignment }}: ({{ duration }} min.) {{ source }}",
 	"assignmentLcVariations": "{{ source }}: ({{ duration }} min) {{ content }}",
 	"cbsVariations": "Estudo bíblico de congregação: (30 min) {{ source }}"
 }
