@@ -21,7 +21,7 @@
 	"bibleStudyVariations": "Bible Study",
 	"talkVariations": "Talk",
 	"memorialInvitationVariations": "Memorial Invitation",
-	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min.) {{ source }} (th study {{ study }})",
+	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min.) {{ source }} (th study {{ study }})|{{ assignment }}: ({{ duration }} min.) {{ source }}",
 	"assignmentLcVariations": "{{ source }}: ({{ duration }} min.) {{ content }}",
 	"cbsVariations": "Congregation Bible Study: (30 min.) {{ source }}"
 }
