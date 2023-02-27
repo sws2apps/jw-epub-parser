@@ -1,3 +1,11 @@
+# [1.34.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.33.0...v1.34.0) (2023-02-27)
+
+
+### Features
+
+* **deps:** bump rollup from 3.17.2 to 3.17.3 ([059a9ce](https://github.com/sws2apps/jw-epub-parser/commit/059a9ce5a82822aeee40f68d52db6d807e7bf9a6))
+* **module:** don’t parse meeting workbook prior to july 2022 ([1738328](https://github.com/sws2apps/jw-epub-parser/commit/173832828efec42bf22c6c96be8e18f8fd3e5774))
+
 # [1.33.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.32.1...v1.33.0) (2023-02-26)
 
 
