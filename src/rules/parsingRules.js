@@ -8,7 +8,6 @@ export const extractMonthName = (monthNames, src, lang) => {
 
 	for (let i = 0; i < monthNames.length; i++) {
 		const month = monthNames[i];
-
 		const monthLang = month.names[lang];
 		const regex = new RegExp(`(${monthLang})`);
 		const array = regex.exec(src);
@@ -20,7 +19,11 @@ export const extractMonthName = (monthNames, src, lang) => {
 		}
 	}
 
-	return { varDay, monthIndex };
+	if (typeof varDay === 'number' && typeof monthIndex === 'number') {
+		return { varDay, monthIndex };
+	}
+
+	throw new JWEPUBParserError('week-date', `Parsing failed when extracting the week date. The input was: ${src}`);
 };
 
 export const extractTitleTGW10 = (tgw10Variations, src, lang) => {
@@ -42,7 +45,7 @@ export const extractTitleTGW10 = (tgw10Variations, src, lang) => {
 
 	if (result) return result;
 
-	throw new JWEPUBParserError('tgw-talk', 'Parsing failed for Treasures from God’s Word part');
+	throw new JWEPUBParserError('tgw-talk', `Parsing failed for Treasures from God’s Word part. The input was: ${src}`);
 };
 
 export const extractSourceTGWBibleReading = (tgwBibleReadingVariations, src, lang) => {
@@ -320,5 +323,5 @@ export const extractSourceCBS = (cbsVariations, src, lang) => {
 
 	if (result) return result;
 
-	throw new JWEPUBParserError('lc-cbs', 'Parsing failed for Congregation Bible Study part');
+	throw new JWEPUBParserError('lc-cbs', `Parsing failed for Congregation Bible Study part. The input was: ${src}`);
 };
