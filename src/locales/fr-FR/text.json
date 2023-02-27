@@ -21,7 +21,7 @@
 	"bibleStudyVariations": "Cours biblique",
 	"talkVariations": "Discours",
 	"memorialInvitationVariations": "Invitation au Mémorial",
-	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min.) {{ source }} (th study {{ study }})|{{ assignment }}: ({{ duration }} min.) {{ source }}",
+	"assignmentAyfVariations": "{{ assignment }} ({{ duration }} min) : {{ source }} (th leçon {{ study }})|{{ assignment }} ({{ duration }} min) : {{ source }} (th leçon {{ study }}).|{{ assignment }} ({{ duration }} min) : {{ source }}",
 	"assignmentLcVariations": "{{ source }} ({{ duration }} min) : {{ content }}|{{ source }} ({{ duration }} min)",
 	"cbsVariations": "Étude biblique de l’assemblée (30 min) : {{ source }}"
 }
