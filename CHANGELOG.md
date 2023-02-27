@@ -1,3 +1,16 @@
+# [1.33.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.32.1...v1.33.0) (2023-02-26)
+
+
+### Bug Fixes
+
+* **parsing:** fix issue when week date spans between two months ([c051f1f](https://github.com/sws2apps/jw-epub-parser/commit/c051f1fa6b5ab704a3586296f8f97397c3145b39))
+
+
+### Features
+
+* **deps:** bump rollup from 3.15.0 to 3.17.1 ([0e37849](https://github.com/sws2apps/jw-epub-parser/commit/0e37849ee48dc2711c0cab205f2453607b3c9859))
+* **deps:** bump rollup from 3.17.1 to 3.17.2 ([c779e7e](https://github.com/sws2apps/jw-epub-parser/commit/c779e7ed9a7c55ad170a1b4a0a55a7cde1cf26e7))
+
 ## [1.32.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.32.0...v1.32.1) (2023-02-19)
 
 
