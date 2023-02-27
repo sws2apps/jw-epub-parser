@@ -21,7 +21,7 @@
 	"bibleStudyVariations": "Fampianara Baiboly",
 	"talkVariations": "Lahateny",
 	"memorialInvitationVariations": "Fanasà amy Fahatiarova",
-	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min.) {{ source }} (th study {{ study }})|{{ assignment }}: ({{ duration }} min.) {{ source }}",
+	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min.) {{ source }} (th fianara {{ study }})|{{ assignment }} ({{ duration }} min.) {{ source }} (th fianara {{ study }})|{{ assignment }}: ({{ duration }} min.) {{ source }}",
 	"assignmentLcVariations": "{{ source }}: ({{ duration }} min.) {{ content }}|{{ source }} ({{ duration }} min.) {{ content }}",
 	"cbsVariations": "Fianara Baiboly: (30 min.) {{ source }}"
 }
