@@ -21,7 +21,7 @@
 	"bibleStudyVariations": "Fampianaragne Baiboly",
 	"talkVariations": "Lahajaka",
 	"memorialInvitationVariations": "Fanasagne amy ty Fahatsiarovagne",
-	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min.) {{ source }} (th study {{ study }})|{{ assignment }}: ({{ duration }} min.) {{ source }}",
+	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min.) {{ source }} (th lesogne {{ study }})|{{ assignment }}: ({{ duration }} min.). {{ source }} (th lesogne {{ study }})|{{ assignment }}: ({{ duration }} min.) {{ source }}",
 	"assignmentLcVariations": "{{ source }}: ({{ duration }} min.) {{ content }}",
 	"cbsVariations": "Fianaragne Baiboly Anoe ty Fiangonagne: (30 min.) {{ source }}"
 }
