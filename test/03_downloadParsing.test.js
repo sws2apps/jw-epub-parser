@@ -129,35 +129,39 @@ const fetchData = async (language) => {
 	const day = today.getDay();
 	const diff = today.getDate() - day + (day === 0 ? -6 : 1);
 	const weekDate = new Date(today.setDate(diff));
-	const currentMonth = weekDate.getMonth() + 1;
+	const validDate = weekDate.setMonth(weekDate.getMonth() - 12);
+	const startDate = new Date(validDate);
+	const currentMonth = startDate.getMonth() + 1;
 	const monthOdd = currentMonth % 2 === 0 ? false : true;
 	let monthMwb = monthOdd ? currentMonth : currentMonth - 1;
-	let currentYear = weekDate.getFullYear();
+	let currentYear = startDate.getFullYear();
 
 	const issues = [];
 
 	do {
-		const issueDate = currentYear + String(monthMwb).padStart(2, '0');
-		const url =
-			JW_CDN +
-			new URLSearchParams({
-				langwritten: language,
-				pub: 'mwb',
-				output: 'json',
-				issue: issueDate,
-			});
+		if ((currentYear === 2022 && monthMwb > 5) || currentYear > 2022) {
+			const issueDate = currentYear + String(monthMwb).padStart(2, '0');
+			const url =
+				JW_CDN +
+				new URLSearchParams({
+					langwritten: language,
+					pub: 'mwb',
+					output: 'json',
+					issue: issueDate,
+				});
 
-		const res = await fetch(url);
+			const res = await fetch(url);
 
-		if (res.status === 200) {
-			const result = await res.json();
-			const hasEPUB = result.files[language].EPUB;
+			if (res.status === 200) {
+				const result = await res.json();
+				const hasEPUB = result.files[language].EPUB;
 
-			issues.push({ issueDate, currentYear, language, hasEPUB: hasEPUB });
-		}
+				issues.push({ issueDate, currentYear, language, hasEPUB: hasEPUB });
+			}
 
-		if (res.status === 404) {
-			notFound = true;
+			if (res.status === 404) {
+				notFound = true;
+			}
 		}
 
 		// assigning next issue
