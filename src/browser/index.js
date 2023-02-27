@@ -84,6 +84,23 @@ const loadEPUB = async (epubInput) => {
 		} else {
 			throw new Error('The selected epub file has an incorrect naming.');
 		}
+	} else if (epubInput.url) {
+		const file = path.basename(epubInput.url);
+		if (isValidEpubNaming(file)) {
+			const issue = +file.split('_')[2].split('.epub')[0];
+			if (issue >= 202207) {
+				mwbYear = file.split('_')[2].substring(0, 4);
+				lang = file.split('_')[1];
+			} else {
+				throw new Error('EPUB import is only supported for Meeting Workbook starting on July 2022');
+			}
+		} else {
+			throw new Error('The selected epub file has an incorrect naming.');
+		}
+
+		const epubRes = await fetch(epubInput.url);
+		const epubData = await epubRes.blob();
+		data = await epubData.arrayBuffer();
 	} else if (epubInput.htmlRaws) {
 		skipZip = true;
 

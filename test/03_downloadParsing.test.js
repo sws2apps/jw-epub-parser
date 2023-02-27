@@ -177,8 +177,29 @@ const fetchData = async (language) => {
 		const fetchSource2 = issues.length > 1 ? fetchIssueData(issues[1]) : Promise.resolve({});
 		const fetchSource3 = issues.length > 2 ? fetchIssueData(issues[2]) : Promise.resolve({});
 		const fetchSource4 = issues.length > 3 ? fetchIssueData(issues[3]) : Promise.resolve({});
+		const fetchSource5 = issues.length > 4 ? fetchIssueData(issues[4]) : Promise.resolve({});
+		const fetchSource6 = issues.length > 5 ? fetchIssueData(issues[5]) : Promise.resolve({});
+		const fetchSource7 = issues.length > 6 ? fetchIssueData(issues[6]) : Promise.resolve({});
+		const fetchSource8 = issues.length > 7 ? fetchIssueData(issues[7]) : Promise.resolve({});
+		const fetchSource9 = issues.length > 8 ? fetchIssueData(issues[8]) : Promise.resolve({});
+		const fetchSource10 = issues.length > 9 ? fetchIssueData(issues[9]) : Promise.resolve({});
+		const fetchSource11 = issues.length > 10 ? fetchIssueData(issues[10]) : Promise.resolve({});
+		const fetchSource12 = issues.length > 11 ? fetchIssueData(issues[11]) : Promise.resolve({});
 
-		const allData = await Promise.all([fetchSource1, fetchSource2, fetchSource3, fetchSource4]);
+		const allData = await Promise.all([
+			fetchSource1,
+			fetchSource2,
+			fetchSource3,
+			fetchSource4,
+			fetchSource5,
+			fetchSource6,
+			fetchSource7,
+			fetchSource8,
+			fetchSource9,
+			fetchSource10,
+			fetchSource11,
+			fetchSource12,
+		]);
 
 		for (let z = 0; z < allData.length; z++) {
 			const tempObj = allData[z];
