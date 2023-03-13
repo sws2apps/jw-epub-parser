@@ -1,3 +1,19 @@
+# [1.36.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.35.0...v1.36.0) (2023-03-13)
+
+
+### Features
+
+* **deps:** bump jsdom from 21.1.0 to 21.1.1 ([48025ba](https://github.com/sws2apps/jw-epub-parser/commit/48025ba3b4df31d8c2d1404d9e541f1c03b1fe44))
+* **deps:** bump node-fetch from 3.3.0 to 3.3.1 ([c8ae05c](https://github.com/sws2apps/jw-epub-parser/commit/c8ae05cc54190c82ac1691d64180810dff7281cd))
+* **deps:** bump rimraf from 4.1.2 to 4.1.3 ([b8a1952](https://github.com/sws2apps/jw-epub-parser/commit/b8a19523f1b6775c46ab659fc83d2abddbdfc586))
+* **deps:** bump rimraf from 4.1.3 to 4.2.0 ([a055786](https://github.com/sws2apps/jw-epub-parser/commit/a055786313e7573d27a65cb052ed076b165f6e50))
+* **deps:** bump rimraf from 4.2.0 to 4.3.0 ([c71c31c](https://github.com/sws2apps/jw-epub-parser/commit/c71c31cfc7345f4d15419fb1c83111c28af777b2))
+* **deps:** bump rimraf from 4.3.0 to 4.3.1 ([1cf716f](https://github.com/sws2apps/jw-epub-parser/commit/1cf716f842daa8e628c5bdff77399a4625ad367a))
+* **deps:** bump rimraf from 4.3.1 to 4.4.0 ([0a7bfcb](https://github.com/sws2apps/jw-epub-parser/commit/0a7bfcb635354c6f65a4da537fa90aa41a9749af))
+* **deps:** bump rollup from 3.17.3 to 3.18.0 ([544c69c](https://github.com/sws2apps/jw-epub-parser/commit/544c69c52ea6c86eeb9d6fa5ade8c40249f5d085))
+* **deps:** bump rollup from 3.18.0 to 3.19.0 ([9331762](https://github.com/sws2apps/jw-epub-parser/commit/93317628b73a835c5d087aa013bf98808f1a1287))
+* **deps:** bump rollup from 3.19.0 to 3.19.1 ([f5b987b](https://github.com/sws2apps/jw-epub-parser/commit/f5b987b130fe3644b3310169c5510cbb5e7b94d4))
+
 # [1.35.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.34.0...v1.35.0) (2023-02-27)
 
 
