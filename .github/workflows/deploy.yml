@@ -30,7 +30,7 @@ jobs:
 
       - name: Semantic Release
         id: semantic
-        uses: cycjimmy/semantic-release-action@91ab76a4a393a8d0c4739e9aea1818b56bc953ea
+        uses: cycjimmy/semantic-release-action@8e58d20d0f6c8773181f43eb74d6a05e3099571d
         with:
           semantic_version: 19.0.2
         env:
@@ -61,7 +61,7 @@ jobs:
 
       - name: Semantic Release
         id: semantic
-        uses: cycjimmy/semantic-release-action@91ab76a4a393a8d0c4739e9aea1818b56bc953ea
+        uses: cycjimmy/semantic-release-action@8e58d20d0f6c8773181f43eb74d6a05e3099571d
         with:
           semantic_version: 19.0.2
         env:
@@ -92,7 +92,7 @@ jobs:
 
       - name: Semantic Release
         id: semantic
-        uses: cycjimmy/semantic-release-action@91ab76a4a393a8d0c4739e9aea1818b56bc953ea
+        uses: cycjimmy/semantic-release-action@8e58d20d0f6c8773181f43eb74d6a05e3099571d
         with:
           semantic_version: 19.0.2
         env:
