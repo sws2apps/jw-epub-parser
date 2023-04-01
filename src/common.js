@@ -46,12 +46,6 @@ export const isValidMwbSched = (htmlDoc) => {
 };
 
 export const parseEpub = (htmlDocs, mwbYear, lang, fromHTML, rules) => {
-	// try {
-
-	// } catch (err) {
-	// 	throw new Error(err);
-	// }
-
 	const obj = {};
 	const weeksData = [];
 	let weeksCount;
@@ -102,9 +96,10 @@ export const parseEpub = (htmlDocs, mwbYear, lang, fromHTML, rules) => {
 		// get elements with meeting schedule data: pGroup
 		const pGroupData = htmlItem.querySelectorAll('.pGroup');
 		pGroupData.forEach((pGroup) => {
-			let pgData = pGroup.querySelectorAll('p');
-			pgData.forEach((p) => {
-				src += '|' + p.textContent;
+			const liData = pGroup.querySelectorAll('li');
+			liData.forEach((li) => {
+				const firstP = li.querySelector('p');
+				src += '|' + firstP.textContent;
 			});
 		});
 
