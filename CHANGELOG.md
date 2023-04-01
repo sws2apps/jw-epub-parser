@@ -1,3 +1,20 @@
+# [1.37.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.36.0...v1.37.0) (2023-04-01)
+
+
+### Bug Fixes
+
+* **module:** update html element to get source text ([4e98136](https://github.com/sws2apps/jw-epub-parser/commit/4e98136bfaae2ecdadee97c29a388a61f0e37693))
+
+
+### Features
+
+* **deps:** bump @semantic-release/changelog from 6.0.2 to 6.0.3 ([de4ce5a](https://github.com/sws2apps/jw-epub-parser/commit/de4ce5ad8c0a84ba44368f776fbc7a13c57d522d))
+* **deps:** bump global-jsdom from 8.7.0 to 8.8.0 ([7bf2766](https://github.com/sws2apps/jw-epub-parser/commit/7bf2766f9f1780ab6ea24d9fdce04d6b40f6d182))
+* **deps:** bump rimraf from 4.4.0 to 4.4.1 ([bc16fb6](https://github.com/sws2apps/jw-epub-parser/commit/bc16fb63aa0fd5476f58981ae993f05a91c7a2ad))
+* **deps:** bump rollup from 3.19.1 to 3.20.0 ([9631d29](https://github.com/sws2apps/jw-epub-parser/commit/9631d299bffaa2ffc3ffc7e0d57b28b2e0891bce))
+* **deps:** bump rollup from 3.20.0 to 3.20.1 ([0a73787](https://github.com/sws2apps/jw-epub-parser/commit/0a7378787615aac06b4c861bb0716ccf294d5f39))
+* **deps:** bump rollup from 3.20.1 to 3.20.2 ([0b9cb03](https://github.com/sws2apps/jw-epub-parser/commit/0b9cb033bed9852674428a006103904a3f7d7694))
+
 # [1.36.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.35.0...v1.36.0) (2023-03-13)
 
 
