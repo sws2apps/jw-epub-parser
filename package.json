@@ -29,6 +29,9 @@
 		"test": "mocha",
 		"build": "npx rimraf dist && npx rollup -c"
 	},
+	"publishConfig": {
+		"provenance": true
+	},
 	"devDependencies": {
 		"@babel/preset-env": "^7.16.11",
 		"@rollup/plugin-babel": "^6.0.0",

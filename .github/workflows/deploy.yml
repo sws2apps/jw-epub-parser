@@ -12,6 +12,9 @@ jobs:
     environment:
       name: Development
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
 
     steps:
       - name: Checkout for release preparation
