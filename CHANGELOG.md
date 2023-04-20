@@ -1,3 +1,15 @@
+# [1.38.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.37.0...v1.38.0) (2023-04-20)
+
+
+### Features
+
+* **deps:** bump @babel/preset-env from 7.20.2 to 7.21.4 ([1bcafb3](https://github.com/sws2apps/jw-epub-parser/commit/1bcafb3e56a736edfb86ac5b693c9b58306ffe61))
+* **deps:** bump @rollup/plugin-commonjs from 24.0.1 to 24.1.0 ([efca902](https://github.com/sws2apps/jw-epub-parser/commit/efca9022bc336c42f0034164f7a6b0d617cb0f83))
+* **deps:** bump @rollup/plugin-node-resolve from 15.0.1 to 15.0.2 ([ae32efd](https://github.com/sws2apps/jw-epub-parser/commit/ae32efd593162d9b75f6e2cecbc62fb3ba04973d))
+* **deps:** bump rimraf from 4.4.1 to 5.0.0 ([52c65c6](https://github.com/sws2apps/jw-epub-parser/commit/52c65c63e93b9d4a41d5dcc3fd57cf8de665c6bc))
+* **deps:** bump rollup from 3.20.2 to 3.20.3 ([a6452ab](https://github.com/sws2apps/jw-epub-parser/commit/a6452ab3d7074d2a3901f4eafc92dd42f69932b0))
+* **module:** add provenance setting ([812ffc1](https://github.com/sws2apps/jw-epub-parser/commit/812ffc13b82ee50c384e68b827733ace0c53fcc0))
+
 # [1.37.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.36.0...v1.37.0) (2023-04-01)
 
 
