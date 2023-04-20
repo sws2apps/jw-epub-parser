@@ -46,6 +46,9 @@ jobs:
     environment:
       name: Staging
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
 
     steps:
       - name: Checkout for release preparation
@@ -77,6 +80,9 @@ jobs:
     environment:
       name: Production
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
 
     steps:
       - name: Checkout for release preparation
