@@ -1,3 +1,10 @@
+## [1.38.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.38.0...v1.38.1) (2023-04-20)
+
+
+### Bug Fixes
+
+* **module:** add job permission for each environment ([86968fb](https://github.com/sws2apps/jw-epub-parser/commit/86968fbda414114bb4ca561accf5fc499c0afc4d))
+
 # [1.38.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.37.0...v1.38.0) (2023-04-20)
 
 
