@@ -91,7 +91,7 @@ const loadEPUB = async (epubInput) => {
 		let totalSize = 0;
 		let targetDirectory = 'archive_tmp';
 
-		for (let [filename, file] of Object.entries(zip.files)) {
+		for (let [filename] of Object.entries(zip.files)) {
 			fileCount++;
 			if (fileCount > MAX_FILES) {
 				while (validMwbFiles.length > 0) {

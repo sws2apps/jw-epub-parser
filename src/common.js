@@ -15,16 +15,16 @@ export const isValidEpubNaming = (name) => {
 };
 
 export const isValidFilename = (name) => {
+	let valid = false;
+
 	if (name.startsWith('OEBPS') && name.endsWith('.xhtml')) {
 		const fileName = name.split('/')[1].split('.')[0];
 		if (!isNaN(fileName)) {
-			return true;
-		} else {
-			return false;
+			valid = true;
 		}
-	} else {
-		return false;
 	}
+
+	return valid;
 };
 
 export const getHtmlRawString = async (zip, filename) => {
@@ -38,11 +38,12 @@ export const isValidMwbSched = (htmlDoc) => {
 	const isValidAYF = htmlDoc.querySelector(`[class*=ministry]`) ? true : false;
 	const isValidLC = htmlDoc.querySelector(`[class*=christianLiving]`) ? true : false;
 
+	let valid = false;
 	if (isValidTGW === true && isValidAYF === true && isValidLC === true) {
 		return true;
-	} else {
-		return false;
 	}
+
+	return valid;
 };
 
 export const parseEpub = (htmlDocs, mwbYear, lang, fromHTML, rules) => {

@@ -6,8 +6,7 @@ export const extractMonthName = (monthNames, src, lang) => {
 
 	src = src.split('–')[0];
 
-	for (let i = 0; i < monthNames.length; i++) {
-		const month = monthNames[i];
+	for (const month of monthNames) {
 		const monthLang = month.names[lang];
 		const regex = new RegExp(`(${monthLang})`);
 		const array = regex.exec(src);
@@ -31,8 +30,7 @@ export const extractTitleTGW10 = (tgw10Variations, src, lang) => {
 	const pattern = '{{ title }}';
 
 	let result;
-	for (let i = 0; i < variations.length; i++) {
-		const variation = variations[i];
+	for (const variation of variations) {
 		const startIndex = variation.indexOf(pattern);
 		const endIndex = src.length - variation.replace('{{ title }}', '').length + startIndex;
 		const extracted = src.substring(startIndex, endIndex);
@@ -52,9 +50,7 @@ export const extractSourceTGWBibleReading = (tgwBibleReadingVariations, src, lan
 	const variations = tgwBibleReadingVariations[lang].split('|');
 
 	let result;
-	for (let i = 0; i < variations.length; i++) {
-		const variation = variations[i];
-
+	for (const variation of variations) {
 		const patternSource = '{{ source }}';
 		const patternStudy = '{{ study }}';
 
@@ -120,14 +116,11 @@ export const extractSourceAssignments = (assignmentsVariations, assignmentsName,
 		const variations = assignmentsVariations[lang].split('|');
 
 		const patternAssignment = '{{ assignment }}';
-		const patternDuration = '{{ duration }}';
 		const patternSource = '{{ source }}';
 		const patternStudy = '{{ study }}';
 
 		let result;
-		for (let i = 0; i < variations.length; i++) {
-			const variation = variations[i];
-
+		for (const variation of variations) {
 			const patternSourceIndex = variation.indexOf(patternSource);
 			const patternStudyIndex = variation.indexOf(patternStudy);
 
@@ -230,9 +223,7 @@ export const extractSourceLiving = (livingPartsVariations, src, lang) => {
 	const patternContent = '{{ content }}';
 
 	let result;
-	for (let i = 0; i < variations.length; i++) {
-		const variation = variations[i];
-
+	for (const variation of variations) {
 		const patternSourceIndex = variation.indexOf(patternSource);
 		const patternContentIndex = variation.indexOf(patternContent);
 
@@ -309,8 +300,7 @@ export const extractSourceCBS = (cbsVariations, src, lang) => {
 	const pattern = '{{ source }}';
 
 	let result;
-	for (let i = 0; i < variations.length; i++) {
-		const variation = variations[i];
+	for (const variation of variations) {
 		const startIndex = variation.indexOf(pattern);
 		const endIndex = src.length - variation.replace('{{ source }}', '').length + startIndex;
 		const extracted = src.substring(startIndex, endIndex);
