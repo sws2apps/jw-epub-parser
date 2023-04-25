@@ -1,3 +1,15 @@
+# [1.39.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.38.1...v1.39.0) (2023-04-25)
+
+
+### Bug Fixes
+
+* **module:** reduce code smells ([72ecb7e](https://github.com/sws2apps/jw-epub-parser/commit/72ecb7e0ea0d0dc8760fef8976cbc6453f4b68e6))
+
+
+### Features
+
+* **deps:** bump yaml and semantic-release ([27b33ee](https://github.com/sws2apps/jw-epub-parser/commit/27b33ee6e8bfad6a544d999f5815235e6622e599))
+
 ## [1.38.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.38.0...v1.38.1) (2023-04-20)
 
 
