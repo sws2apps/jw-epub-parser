@@ -45,8 +45,8 @@
 	},
 	"dependencies": {
 		"dateformat": "^5.0.3",
-		"global-jsdom": "^8.7.0",
-		"jsdom": "^21.0.0",
+		"global-jsdom": "^9.0.1",
+		"jsdom": "^22.0.0",
 		"jszip": "^3.9.1",
 		"node-fetch": "^3.2.10",
 		"path-browserify": "^1.0.1"
