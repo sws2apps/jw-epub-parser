@@ -1,3 +1,12 @@
+# [1.40.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.39.0...v1.40.0) (2023-05-29)
+
+
+### Features
+
+* **deps:** bump jsdom and global-jsdom ([d6fb0b5](https://github.com/sws2apps/jw-epub-parser/commit/d6fb0b57c63e947f209410f5921f350ed98f8420))
+* **deps:** bump jsdom from 21.1.1 to 21.1.2 ([cc25de4](https://github.com/sws2apps/jw-epub-parser/commit/cc25de401574c6596a55761ab440072e6dcf4729))
+* **deps:** bump jsdom from 22.0.0 to 22.1.0 ([cf8ebf1](https://github.com/sws2apps/jw-epub-parser/commit/cf8ebf1ebd6ea715da524762438d32f1f1117ec3))
+
 # [1.39.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.38.1...v1.39.0) (2023-04-25)
 
 
