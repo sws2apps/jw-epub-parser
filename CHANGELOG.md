@@ -1,3 +1,10 @@
+## [1.40.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.40.0...v1.40.1) (2023-06-05)
+
+
+### Bug Fixes
+
+* **module:** force bump version to include latest translation ([346ba29](https://github.com/sws2apps/jw-epub-parser/commit/346ba299b736f5ff6f9d55c82f9047fa02239b5f))
+
 # [1.40.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.39.0...v1.40.0) (2023-05-29)
 
 
