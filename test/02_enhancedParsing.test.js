@@ -10,20 +10,22 @@ const JW_CDN = 'https://app.jw-cdn.org/apis/pub-media/GETPUBMEDIALINKS?';
 const JW_FINDER = 'https://www.jw.org/finder?';
 
 const fetchIssueData = (issue) => {
-	return new Promise((resolve) => {
+	return new Promise((resolve, reject) => {
 		if (issue.hasEPUB) {
 			const epubFile = issue.hasEPUB[0].file;
 			const epubUrl = epubFile.url;
 			const epubModifiedDate = epubFile.modifiedDatetime;
 
-			loadEPUB({ url: epubUrl }).then((epubData) => {
-				const obj = {
-					issueDate: issue.issueDate,
-					modifiedDateTime: epubModifiedDate,
-					...epubData,
-				};
-				resolve(obj);
-			});
+			loadEPUB({ url: epubUrl })
+				.then((epubData) => {
+					const obj = {
+						issueDate: issue.issueDate,
+						modifiedDateTime: epubModifiedDate,
+						...epubData,
+					};
+					resolve(obj);
+				})
+				.catch((err) => reject(err));
 		}
 
 		if (!issue.hasEPUB) {
@@ -37,86 +39,92 @@ const fetchIssueData = (issue) => {
 					issue: issue.issueDate,
 				});
 
-			fetch(url).then((res) =>
-				res.text().then((result) => {
-					const parser = new window.DOMParser();
-					const htmlItem = parser.parseFromString(result, 'text/html');
+			fetch(url)
+				.then((res) =>
+					res.text().then((result) => {
+						const parser = new window.DOMParser();
+						const htmlItem = parser.parseFromString(result, 'text/html');
 
-					const docIds = [];
-					const accordionItems = htmlItem.getElementsByClassName(`docClass-106 iss-${issue.issueDate}`);
-					for (const weekLink of accordionItems) {
-						weekLink.classList.forEach((item) => {
-							if (item.indexOf('docId-') !== -1) {
-								docIds.push(item.split('-')[1]);
-							}
-						});
-					}
-
-					const htmlRaws = [];
-
-					const fetchSchedule1 = fetch(`https://www.jw.org/finder?wtlocale=${language}&docid=${docIds[0]}`).then(
-						(res) => res.text()
-					);
-					const fetchSchedule2 = fetch(`https://www.jw.org/finder?wtlocale=${language}&docid=${docIds[1]}`).then(
-						(res) => res.text()
-					);
-					const fetchSchedule3 = fetch(`https://www.jw.org/finder?wtlocale=${language}&docid=${docIds[2]}`).then(
-						(res) => res.text()
-					);
-					const fetchSchedule4 = fetch(`https://www.jw.org/finder?wtlocale=${language}&docid=${docIds[3]}`).then(
-						(res) => res.text()
-					);
-					const fetchSchedule5 = fetch(`https://www.jw.org/finder?wtlocale=${language}&docid=${docIds[4]}`).then(
-						(res) => res.text()
-					);
-					const fetchSchedule6 = fetch(`https://www.jw.org/finder?wtlocale=${language}&docid=${docIds[5]}`).then(
-						(res) => res.text()
-					);
-					const fetchSchedule7 = fetch(`https://www.jw.org/finder?wtlocale=${language}&docid=${docIds[6]}`).then(
-						(res) => res.text()
-					);
-					const fetchSchedule8 = docIds[7]
-						? fetch(`https://www.jw.org/finder?wtlocale=${language}&docid=${docIds[7]}`).then((res) => res.text())
-						: Promise.resolve('');
-					const fetchSchedule9 = docIds[8]
-						? fetch(`https://www.jw.org/finder?wtlocale=${language}&docid=${docIds[8]}`).then((res) => res.text())
-						: Promise.resolve('');
-					const fetchSchedule10 = docIds[9]
-						? fetch(`https://www.jw.org/finder?wtlocale=${language}&docid=${docIds[9]}`).then((res) => res.text())
-						: Promise.resolve('');
-
-					const allData = Promise.all([
-						fetchSchedule1,
-						fetchSchedule2,
-						fetchSchedule3,
-						fetchSchedule4,
-						fetchSchedule5,
-						fetchSchedule6,
-						fetchSchedule7,
-						fetchSchedule8,
-						fetchSchedule9,
-						fetchSchedule10,
-					]);
-
-					allData.then((raws) => {
-						for (let z = 0; z < raws.length; z++) {
-							const rawText = raws[z];
-							if (rawText !== '') {
-								htmlRaws.push(rawText);
-							}
+						const docIds = [];
+						const accordionItems = htmlItem.getElementsByClassName(`docClass-106 iss-${issue.issueDate}`);
+						for (const weekLink of accordionItems) {
+							weekLink.classList.forEach((item) => {
+								if (item.indexOf('docId-') !== -1) {
+									docIds.push(item.split('-')[1]);
+								}
+							});
 						}
 
-						loadEPUB({ htmlRaws, mwbYear: issue.currentYear, lang: language }).then((epubData) => {
-							const obj = {
-								issueDate: issue.issueDate,
-								...epubData,
-							};
+						const htmlRaws = [];
 
-							resolve(obj);
-						});
-					});
-				})
-			);
+						const fetchSchedule1 = fetch(`https://www.jw.org/finder?wtlocale=${language}&docid=${docIds[0]}`).then(
+							(res) => res.text()
+						);
+						const fetchSchedule2 = fetch(`https://www.jw.org/finder?wtlocale=${language}&docid=${docIds[1]}`).then(
+							(res) => res.text()
+						);
+						const fetchSchedule3 = fetch(`https://www.jw.org/finder?wtlocale=${language}&docid=${docIds[2]}`).then(
+							(res) => res.text()
+						);
+						const fetchSchedule4 = fetch(`https://www.jw.org/finder?wtlocale=${language}&docid=${docIds[3]}`).then(
+							(res) => res.text()
+						);
+						const fetchSchedule5 = fetch(`https://www.jw.org/finder?wtlocale=${language}&docid=${docIds[4]}`).then(
+							(res) => res.text()
+						);
+						const fetchSchedule6 = fetch(`https://www.jw.org/finder?wtlocale=${language}&docid=${docIds[5]}`).then(
+							(res) => res.text()
+						);
+						const fetchSchedule7 = fetch(`https://www.jw.org/finder?wtlocale=${language}&docid=${docIds[6]}`).then(
+							(res) => res.text()
+						);
+						const fetchSchedule8 = docIds[7]
+							? fetch(`https://www.jw.org/finder?wtlocale=${language}&docid=${docIds[7]}`).then((res) => res.text())
+							: Promise.resolve('');
+						const fetchSchedule9 = docIds[8]
+							? fetch(`https://www.jw.org/finder?wtlocale=${language}&docid=${docIds[8]}`).then((res) => res.text())
+							: Promise.resolve('');
+						const fetchSchedule10 = docIds[9]
+							? fetch(`https://www.jw.org/finder?wtlocale=${language}&docid=${docIds[9]}`).then((res) => res.text())
+							: Promise.resolve('');
+
+						const allData = Promise.all([
+							fetchSchedule1,
+							fetchSchedule2,
+							fetchSchedule3,
+							fetchSchedule4,
+							fetchSchedule5,
+							fetchSchedule6,
+							fetchSchedule7,
+							fetchSchedule8,
+							fetchSchedule9,
+							fetchSchedule10,
+						]);
+
+						allData
+							.then((raws) => {
+								for (let z = 0; z < raws.length; z++) {
+									const rawText = raws[z];
+									if (rawText !== '') {
+										htmlRaws.push(rawText);
+									}
+								}
+
+								loadEPUB({ htmlRaws, epubYear: issue.currentYear, epubLang: language, isMWB: true })
+									.then((epubData) => {
+										const obj = {
+											issueDate: issue.issueDate,
+											...epubData,
+										};
+
+										resolve(obj);
+									})
+									.catch((err) => reject(err));
+							})
+							.catch((err) => reject(err));
+					})
+				)
+				.catch((err) => reject(err));
 		}
 	});
 };

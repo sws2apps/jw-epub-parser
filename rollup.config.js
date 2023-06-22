@@ -23,7 +23,7 @@ const config = [
 			},
 		],
 		plugins: [commonjs(), json()],
-		external: ['dateformat', 'jszip', 'global-jsdom/register', 'path', 'fs', 'node-fetch'],
+		external: ['dateformat', 'jszip', 'global-jsdom/register', 'path', 'fs', 'node-fetch', 'fs/promises'],
 	},
 ];
 
