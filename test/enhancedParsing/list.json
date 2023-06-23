@@ -1,1 +1,9 @@
-[{ "language": "T", "issue": "202307" }]
+[
+	{ "language": "E", "issue": "202309" },
+	{ "language": "F", "issue": "202309" },
+	{ "language": "MG", "issue": "202309" },
+	{ "language": "T", "issue": "202307" },
+	{ "language": "TND", "issue": "202309" },
+	{ "language": "TNK", "issue": "202309" },
+	{ "language": "VZ", "issue": "202309" }
+]
