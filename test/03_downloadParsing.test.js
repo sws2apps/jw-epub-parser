@@ -334,18 +334,20 @@ const fetchData = async (language, pub) => {
 	}
 };
 
-describe('Live download enhanced parsing', async () => {
+describe('Live Download with Enhanced Parsing', async () => {
 	for (let i = 0; i < list.length; i++) {
 		const { language } = list[i];
 
-		it(`Download Meeting Workbook data from jw.org for ${language} language`, async () => {
-			const mergedSources = await fetchData(language, 'mwb');
-			expect(mergedSources).to.be.an('array').to.have.lengthOf.above(0);
-		});
+		describe(`Test live download for ${language} language`, async () => {
+			it(`Download Meeting Workbook data from jw.org for ${language} language`, async () => {
+				const mergedSources = await fetchData(language, 'mwb');
+				expect(mergedSources).to.be.an('array').to.have.lengthOf.above(0);
+			});
 
-		it(`Download Watchtower Study data from jw.org for ${language} language`, async () => {
-			const mergedSources = await fetchData(language, 'w');
-			expect(mergedSources).to.be.an('array').to.have.lengthOf.above(0);
+			it(`Download Watchtower Study data from jw.org for ${language} language`, async () => {
+				const mergedSources = await fetchData(language, 'w');
+				expect(mergedSources).to.be.an('array').to.have.lengthOf.above(0);
+			});
 		});
 	}
 });
