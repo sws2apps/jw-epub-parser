@@ -1,4 +1,5 @@
 import fs from 'fs';
+import * as path from 'path';
 import fetch from 'node-fetch';
 import { expect } from 'chai';
 import { loadEPUB } from '../dist/node/index.js';
@@ -170,193 +171,70 @@ const fetchIssueData = async (issue, pub) => {
 	}
 };
 
-const fetchData = async (language) => {
-	let mergedSources = [];
-	let notFound = false;
+const fetchData = async (language, issue, pub) => {
+	let data = [];
+	let fixture = [];
 
-	// get mwb current issue
-	const today = new Date();
-	const day = today.getDay();
-	const diff = today.getDate() - day + (day === 0 ? -6 : 1);
-	let weekDate = new Date(today.setDate(diff));
-	let currentMonth = weekDate.getMonth() + 1;
-	const monthOdd = currentMonth % 2 === 0 ? false : true;
-	let monthMwb = monthOdd ? currentMonth : currentMonth - 1;
-	let currentYear = weekDate.getFullYear();
+	const url =
+		JW_CDN +
+		new URLSearchParams({
+			langwritten: language,
+			pub,
+			output: 'json',
+			issue,
+		});
 
-	const issues = [];
+	const res = await fetch(url);
 
-	do {
-		const issueDate = currentYear + String(monthMwb).padStart(2, '0');
-		const url =
-			JW_CDN +
-			new URLSearchParams({
-				langwritten: language,
-				pub: 'mwb',
-				output: 'json',
-				issue: issueDate,
-			});
+	if (res.status === 200) {
+		const result = await res.json();
+		const hasEPUB = result.files[language].EPUB;
 
-		const res = await fetch(url);
+		const issueFetch = { issueDate: issue, currentYear: issue.substring(0, 4), language, hasEPUB: hasEPUB };
 
-		if (res.status === 200) {
-			const result = await res.json();
-			const hasEPUB = result.files[language].EPUB;
+		data = await fetchIssueData(issueFetch, pub);
 
-			issues.push({ issueDate, currentYear, language, hasEPUB: hasEPUB });
+		if (hasEPUB) {
+			const epubFile = hasEPUB[0].file;
+			const epubUrl = epubFile.url;
+			const epubName = path.basename(epubUrl);
+			fixture = (await import(`./fixtures/${epubName.replace('.epub', '.js')}`)).default;
 		}
 
-		if (res.status === 404) {
-			notFound = true;
-		}
-
-		// assigning next issue
-		monthMwb = monthMwb + 2;
-		if (monthMwb === 13) {
-			monthMwb = 1;
-			currentYear++;
-		}
-	} while (notFound === false);
-
-	if (issues.length > 0) {
-		const fetchSource1 = fetchIssueData(issues[0], 'mwb');
-		const fetchSource2 = issues.length > 1 ? fetchIssueData(issues[1], 'mwb') : Promise.resolve([]);
-		const fetchSource3 = issues.length > 2 ? fetchIssueData(issues[2], 'mwb') : Promise.resolve([]);
-		const fetchSource4 = issues.length > 3 ? fetchIssueData(issues[3], 'mwb') : Promise.resolve([]);
-		const fetchSource5 = issues.length > 4 ? fetchIssueData(issues[4], 'mwb') : Promise.resolve([]);
-		const fetchSource6 = issues.length > 5 ? fetchIssueData(issues[5], 'mwb') : Promise.resolve([]);
-		const fetchSource7 = issues.length > 6 ? fetchIssueData(issues[6], 'mwb') : Promise.resolve([]);
-		const fetchSource8 = issues.length > 7 ? fetchIssueData(issues[7], 'mwb') : Promise.resolve([]);
-		const fetchSource9 = issues.length > 8 ? fetchIssueData(issues[8], 'mwb') : Promise.resolve([]);
-		const fetchSource10 = issues.length > 9 ? fetchIssueData(issues[9], 'mwb') : Promise.resolve([]);
-		const fetchSource11 = issues.length > 10 ? fetchIssueData(issues[10], 'mwb') : Promise.resolve([]);
-		const fetchSource12 = issues.length > 11 ? fetchIssueData(issues[11], 'mwb') : Promise.resolve([]);
-
-		const allData = await Promise.all([
-			fetchSource1,
-			fetchSource2,
-			fetchSource3,
-			fetchSource4,
-			fetchSource5,
-			fetchSource6,
-			fetchSource7,
-			fetchSource8,
-			fetchSource9,
-			fetchSource10,
-			fetchSource11,
-			fetchSource12,
-		]);
-
-		for (let z = 0; z < allData.length; z++) {
-			const tempObj = allData[z];
-			if (tempObj.length > 0) {
-				mergedSources = mergedSources.concat(tempObj);
-			}
+		if (!hasEPUB) {
+			fixture = (await import(`./fixtures/${pub}_${language}_${issue}.js`)).default;
 		}
 	}
 
-	// get w current issue
-	weekDate = new Date(today.setMonth(today.getMonth() - 2));
-	let monthW = weekDate.getMonth() + 1;
-	currentYear = weekDate.getFullYear();
-
-	issues.length = 0;
-	notFound = false;
-
-	do {
-		const issueDate = currentYear + String(monthW).padStart(2, '0');
-		const url =
-			JW_CDN +
-			new URLSearchParams({
-				langwritten: language,
-				pub: 'w',
-				output: 'json',
-				issue: issueDate,
-			});
-
-		const res = await fetch(url);
-
-		if (res.status === 200) {
-			const result = await res.json();
-			const hasEPUB = result.files[language].EPUB;
-
-			issues.push({ issueDate, currentYear, language, hasEPUB: hasEPUB });
-		}
-
-		if (res.status === 404) {
-			notFound = true;
-		}
-
-		// assigning next issue
-		monthW = monthW + 1;
-		if (monthW === 13) {
-			monthW = 1;
-			currentYear++;
-		}
-	} while (notFound === false);
-
-	if (issues.length > 0) {
-		const fetchSource1 = fetchIssueData(issues[0], 'w');
-		const fetchSource2 = issues.length > 1 ? fetchIssueData(issues[1], 'w') : Promise.resolve([]);
-		const fetchSource3 = issues.length > 2 ? fetchIssueData(issues[2], 'w') : Promise.resolve([]);
-		const fetchSource4 = issues.length > 3 ? fetchIssueData(issues[3], 'w') : Promise.resolve([]);
-		const fetchSource5 = issues.length > 4 ? fetchIssueData(issues[4], 'w') : Promise.resolve([]);
-		const fetchSource6 = issues.length > 5 ? fetchIssueData(issues[5], 'w') : Promise.resolve([]);
-		const fetchSource7 = issues.length > 6 ? fetchIssueData(issues[6], 'w') : Promise.resolve([]);
-
-		const allData = await Promise.all([
-			fetchSource1,
-			fetchSource2,
-			fetchSource3,
-			fetchSource4,
-			fetchSource5,
-			fetchSource6,
-			fetchSource7,
-		]);
-
-		let WTSources = [];
-
-		for (let z = 0; z < allData.length; z++) {
-			const tempObj = allData[z];
-			if (tempObj.length > 0) {
-				WTSources = WTSources.concat(tempObj);
-			}
-		}
-
-		for (const WTSource of WTSources) {
-			const weekSource = mergedSources.find((MWBSource) => MWBSource.mwb_week_date === WTSource.w_study_date);
-			if (weekSource) {
-				Object.assign(weekSource, WTSource);
-			}
-
-			if (!weekSource) {
-				mergedSources.push(WTSource);
-			}
-		}
-	}
-
-	for (const weekSource of mergedSources) {
-		if (weekSource.mwb_week_date) {
-			weekSource.week_date = weekSource.mwb_week_date;
-			delete weekSource.mwb_week_date;
-		}
-
-		if (weekSource.w_study_date) {
-			weekSource.week_date = weekSource.w_study_date;
-			delete weekSource.w_study_date;
-		}
-	}
-
-	return mergedSources;
+	return { data, fixture };
 };
 
-describe('Live download enhanced parsing', async () => {
+describe('Testing Enhanced Parsing', async () => {
 	for (let i = 0; i < list.length; i++) {
-		const { language } = list[i];
+		const { language, issue } = list[i];
 
-		it(`Test live download from jw.org for ${language} language`, async () => {
-			const mergedSources = await fetchData(language);
-			expect(mergedSources).to.be.an('array').to.have.lengthOf.above(0);
+		describe(`Test loadEPUB function for ${language} language`, async () => {
+			it(`Parsing Meeting Workbook EPUB file`, async () => {
+				const { data, fixture } = await fetchData(language, issue, 'mwb');
+
+				for (let a = 0; a < fixture.length; a++) {
+					const week = fixture[a];
+					for (let [key, value] of Object.entries(week)) {
+						expect(data[a]).to.have.property(key).equal(value);
+					}
+				}
+			});
+
+			it(`Parsing Watchtower Study EPUB file`, async () => {
+				const { data, fixture } = await fetchData(language, issue, 'w');
+
+				for (let a = 0; a < fixture.length; a++) {
+					const week = fixture[a];
+					for (let [key, value] of Object.entries(week)) {
+						expect(data[a]).to.have.property(key).equal(value);
+					}
+				}
+			});
 		});
 	}
 });
