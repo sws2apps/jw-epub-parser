@@ -261,9 +261,10 @@ const fetchData = async (language, pub) => {
 
 	if (pub === 'w') {
 		// get w current issue
-		weekDate = new Date(today.setMonth(today.getMonth() - 2));
+		const today = new Date();
+		const weekDate = new Date(today.setMonth(today.getMonth() - 2));
 		let monthW = weekDate.getMonth() + 1;
-		currentYear = weekDate.getFullYear();
+		let currentYear = weekDate.getFullYear();
 
 		issues.length = 0;
 		notFound = false;
