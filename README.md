@@ -46,7 +46,7 @@ It can be the path to the EPUB file or EPUB file's blob or url to download the E
 
 By calling the `loadEPUB` function, it will return an array of objects with the following properties:
 
-### Meeting Workbook Data
+#### Meeting Workbook Data
 
 | Name                     |       Type        | Description                                                                                                                |
 | ------------------------ | :---------------: | -------------------------------------------------------------------------------------------------------------------------- |
@@ -80,7 +80,7 @@ By calling the `loadEPUB` function, it will return an array of objects with the 
 | mwb_lc_cbs               |      string       | Congregation Bible Study source material                                                                                   |
 | mwb_song_conclude        | integer or string | Concluding song. When the song number is out of range, it will be the default text from the Meeting Workbook.              |
 
-### Watchtowet Study Data
+#### Watchtowet Study Data
 
 | Name                    |  Type   | Description                                                      |
 | ----------------------- | :-----: | ---------------------------------------------------------------- |
