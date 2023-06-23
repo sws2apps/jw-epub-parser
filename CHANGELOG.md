@@ -1,3 +1,15 @@
+# [2.0.0-beta.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.40.1...v2.0.0-beta.1) (2023-06-23)
+
+
+### Features
+
+* **module:** remove study point from students parts and properties change ([dfc2bec](https://github.com/sws2apps/jw-epub-parser/commit/dfc2bec0545a19b82e9665b014d89248a678d246))
+
+
+### BREAKING CHANGES
+
+* **module:** With this release, the `loadEPUB` function will return an array of objects, containing all the weekly source materials. The property names were all adjusted. Also the, the study point for students parts is no longer a separate property. It is now included with the source part.
+
 ## [1.40.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.40.0...v1.40.1) (2023-06-05)
 
 
