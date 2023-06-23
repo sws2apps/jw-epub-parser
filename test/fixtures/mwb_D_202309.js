@@ -1,0 +1,172 @@
+export default [
+  {
+    mwb_week_date: '4.-10. september',
+    mwb_weekly_bible_reading: 'ESTER 1-2',
+    mwb_song_first: 137,
+    mwb_tgw_talk: '“Vær beskeden ligesom Ester” (10 min.)',
+    mwb_tgw_bread: 'Oplæsning fra Bibelen (4 min.) Est 1:13-22 (th arbejdspunkt 10)',
+    mwb_ayf_count: 3,
+    mwb_ayf_part1:
+      'Video: Første besøg (5 min.) Drøftelse. Afspil videoen Første besøg: Guds rige – Mt 6:9, 10. Stop videoen ved hver pause, og stil tilhørerne de spørgsmål der er i videoen.',
+    mwb_ayf_part2:
+      'Første besøg (3 min.) Indled med emnet fra “Forslag til samtaler”. Giv den besøgte brochuren Et håb om en lys fremtid. (th arbejdspunkt 1)',
+    mwb_ayf_part3: 'Foredrag (5 min.) w20.11 12-14 § 3-7 – Tema: Hjælp fra Jesus og englene. (th arbejdspunkt 14)',
+    mwb_song_middle: 106,
+    mwb_lc_count: 2,
+    mwb_lc_part1:
+      'Hvad andre unge siger – Udseendet (5 min.) Drøftelse. Afspil videoen. Spørg derefter tilhørerne: Hvorfor kan det være en udfordring at have et ligevægtigt syn på sit udseende?',
+    mwb_lc_part2: 'Hvad organisationen udretter (10 min.) Afspil Hvad organisationen udretter for september.',
+    mwb_lc_cbs: 'Menighedsbibelstudiet (30 min.) lff lektion 56 og slutnote 6 og 7',
+    mwb_song_conclude: 101,
+  },
+  {
+    mwb_week_date: '11.-17. september',
+    mwb_weekly_bible_reading: 'ESTER 3-5',
+    mwb_song_first: 85,
+    mwb_tgw_talk: '“Hjælp andre til at nå deres fulde potentiale” (10 min.)',
+    mwb_tgw_bread: 'Oplæsning fra Bibelen (4 min.) Est 3:1-12 (th arbejdspunkt 2)',
+    mwb_ayf_count: 3,
+    mwb_ayf_part1:
+      'Video: Genbesøg (5 min.) Drøftelse. Afspil videoen Genbesøg: Guds rige – Mt 14:19, 20. Stop videoen ved hver pause, og stil tilhørerne de spørgsmål der er i videoen.',
+    mwb_ayf_part2:
+      'Genbesøg (3 min.) Indled med emnet fra “Forslag til samtaler”. Fortæl om det bibelkursus vi tilbyder, og giv den besøgte visitkortet “Gratis bibelkursus”. (th arbejdspunkt 16)',
+    mwb_ayf_part3: 'Bibelstudie (5 min.) lff lektion 12 indledning og punkt 1-3 (th arbejdspunkt 15)',
+    mwb_song_middle: 65,
+    mwb_lc_count: 2,
+    mwb_lc_part1:
+      'Bliv Jehovas ven – Ester var modig (5 min.) Drøftelse. Afspil videoen. Hvis det er muligt, så stil nogle børn du har talt med i forvejen, følgende spørgsmål: Hvornår kan du være modig ligesom Ester?',
+    mwb_lc_part2: 'Tilrettelægges lokalt (10 min.)',
+    mwb_lc_cbs: 'Menighedsbibelstudiet (30 min.) lff lektion 57',
+    mwb_song_conclude: 125,
+  },
+  {
+    mwb_week_date: '18.-24. september',
+    mwb_weekly_bible_reading: 'ESTER 6-8',
+    mwb_song_first: 115,
+    mwb_tgw_talk: '“En lektion i god kommunikation” (10 min.)',
+    mwb_tgw_bread: 'Oplæsning fra Bibelen (4 min.) Est 8:9-17 (th arbejdspunkt 5)',
+    mwb_ayf_count: 3,
+    mwb_ayf_part1:
+      'Første besøg (3 min.) Indled med emnet fra “Forslag til samtaler”. Svar på en almindelig indvending. (th arbejdspunkt 3)',
+    mwb_ayf_part2:
+      'Genbesøg (4 min.) Indled med emnet fra “Forslag til samtaler”. Invitér den besøgte med til møde, og introducér og drøft (uden at afspille) videoen Hvad sker der i en rigssal? (th arbejdspunkt 12)',
+    mwb_ayf_part3:
+      'Foredrag (5 min.) w22.01 10-11 § 8-10 – Tema: Undervis på en god måde, ligesom Jakob – Hold budskabet enkelt. (th arbejdspunkt 17)',
+    mwb_song_middle: 148,
+    mwb_lc_count: 1,
+    mwb_lc_part1: '“Stol på Jehova hvis du bliver mobbet” (15 min.) Drøftelse og video.',
+    mwb_lc_cbs: 'Menighedsbibelstudiet (30 min.) lff lektion 58',
+    mwb_song_conclude: 124,
+  },
+  {
+    mwb_week_date: '25. september – 1. oktober',
+    mwb_weekly_bible_reading: 'ESTER 9-10',
+    mwb_song_first: 102,
+    mwb_tgw_talk: '“Han brugte sin indflydelse til at hjælpe andre” (10 min.)',
+    mwb_tgw_bread: 'Oplæsning fra Bibelen (4 min.) Est 9:1-14 (th arbejdspunkt 11)',
+    mwb_ayf_count: 3,
+    mwb_ayf_part1: 'Første besøg (2 min.) Brug emnet fra “Forslag til samtaler”. (th arbejdspunkt 6)',
+    mwb_ayf_part2:
+      'Genbesøg (5 min.) Indled med emnet fra “Forslag til samtaler”. Giv den besøgte brochuren Et håb om en lys fremtid, og vis hvordan et bibelkursus foregår. (th arbejdspunkt 13)',
+    mwb_ayf_part3: 'Bibelstudie (5 min.) lff lektion 12 indledning til Gå i dybden og punkt 4 (th arbejdspunkt 19)',
+    mwb_song_middle: 117,
+    mwb_lc_count: 1,
+    mwb_lc_part1: '“Hyrder der tager sig godt af Jehovas folk” (15 min.) Drøftelse og video.',
+    mwb_lc_cbs: 'Menighedsbibelstudiet (30 min.) lff lektion 59 punkt 1-5',
+    mwb_song_conclude: 55,
+  },
+  {
+    mwb_week_date: '2.-8. oktober',
+    mwb_weekly_bible_reading: 'JOB 1-3',
+    mwb_song_first: 141,
+    mwb_tgw_talk: '“Vis at du elsker Jehova højt” (10 min.)',
+    mwb_tgw_bread: 'Oplæsning fra Bibelen (4 min.) Job 3:1-26 (th arbejdspunkt 12)',
+    mwb_ayf_count: 3,
+    mwb_ayf_part1:
+      'Første besøg (3 min.) Indled med emnet fra “Forslag til samtaler”. Fortæl om hjemmesiden, og giv den besøgte visitkortet “jw.org”. (th arbejdspunkt 9)',
+    mwb_ayf_part2:
+      'Genbesøg (4 min.) Indled med emnet fra “Forslag til samtaler”. Introducér og drøft (uden at afspille) videoen Hvorfor studere Bibelen? (th arbejdspunkt 20)',
+    mwb_ayf_part3:
+      'Foredrag (5 min.) w22.01 11-12 § 11-14 – Tema: Undervis på en god måde, ligesom Jakob – Vær realistisk og ydmyg. (th arbejdspunkt 18)',
+    mwb_song_middle: 21,
+    mwb_lc_count: 2,
+    mwb_lc_part1:
+      'Jeg mente selv at jeg havde en god balance i mit liv (10 min.) Drøftelse. Afspil videoen. Spørg derefter tilhørerne: På hvilken måde mente bror Birdwell at han havde “en god balance” i sit liv?',
+    mwb_lc_part2: '“Brug startsiden på jw.org i forkyndelsen” (5 min.) Drøftelse.',
+    mwb_lc_cbs: 'Menighedsbibelstudiet (30 min.) lff lektion 59 punkt 6 og Kort sagt, Forklar og Mål',
+    mwb_song_conclude: 129,
+  },
+  {
+    mwb_week_date: '9.-15. oktober',
+    mwb_weekly_bible_reading: 'JOB 4-5',
+    mwb_song_first: 121,
+    mwb_tgw_talk: '“Er du opmærksom på misinformation?” (10 min.)',
+    mwb_tgw_bread: 'Oplæsning fra Bibelen (4 min.) Job 5:1-27 (th arbejdspunkt 10)',
+    mwb_ayf_count: 3,
+    mwb_ayf_part1: 'Første besøg (2 min.) Brug emnet fra “Forslag til samtaler”. (th arbejdspunkt 4)',
+    mwb_ayf_part2:
+      'Genbesøg (5 min.) Indled med emnet fra “Forslag til samtaler”. Vis den besøgte hvordan man kan finde oplysninger på jw.org. (th arbejdspunkt 15)',
+    mwb_ayf_part3: 'Bibelstudie (5 min.) lff lektion 16 punkt 5 (th arbejdspunkt 16)',
+    mwb_song_middle: 78,
+    mwb_lc_count: 1,
+    mwb_lc_part1: 'Tilrettelægges lokalt (15 min.)',
+    mwb_lc_cbs: 'Menighedsbibelstudiet (30 min.) lff lektion 60',
+    mwb_song_conclude: 38,
+  },
+  {
+    mwb_week_date: '16.-22. oktober',
+    mwb_weekly_bible_reading: 'JOB 6-7',
+    mwb_song_first: 33,
+    mwb_tgw_talk: '“Når du føler at du ikke kan klare mere” (10 min.)',
+    mwb_tgw_bread: 'Oplæsning fra Bibelen (4 min.) Job 6:1-21 (th arbejdspunkt 2)',
+    mwb_ayf_count: 3,
+    mwb_ayf_part1:
+      'Første besøg (3 min.) Indled med emnet fra “Forslag til samtaler”. Svar på en almindelig indvending. (th arbejdspunkt 7)',
+    mwb_ayf_part2:
+      'Genbesøg (4 min.) Indled med emnet fra “Forslag til samtaler”. Tilbyd en publikation fra Forkynderens værktøjskasse. (th arbejdspunkt 11)',
+    mwb_ayf_part3:
+      'Foredrag (5 min.) w22.01 12-13 § 15-18 – Tema: Undervis på en god måde, ligesom Jakob – Brug gode illustrationer. (th arbejdspunkt 8)',
+    mwb_song_middle: 144,
+    mwb_lc_count: 1,
+    mwb_lc_part1: '“Jehova hjælper dem der føler sig langt nede” (15 min.) Drøftelse og video.',
+    mwb_lc_cbs: 'Menighedsbibelstudiet (30 min.) lff sektion 4 Opsummering',
+    mwb_song_conclude: 143,
+  },
+  {
+    mwb_week_date: '23.-29. oktober',
+    mwb_weekly_bible_reading: 'JOB 8-10',
+    mwb_song_first: 107,
+    mwb_tgw_talk: '“Guds loyale kærlighed beskytter os mod Satans løgne” (10 min.)',
+    mwb_tgw_bread: 'Oplæsning fra Bibelen (4 min.) Job 9:20-35 (th arbejdspunkt 11)',
+    mwb_ayf_count: 3,
+    mwb_ayf_part1:
+      'Første besøg (3 min.) Indled med emnet fra “Forslag til samtaler”. Tilbyd en publikation fra Forkynderens værktøjskasse. (th arbejdspunkt 17)',
+    mwb_ayf_part2:
+      'Genbesøg (4 min.) Indled med emnet fra “Forslag til samtaler”. Giv den besøgte brochuren Et håb om en lys fremtid, og gennemgå kort “Hvordan du får mest muligt ud af materialet”. (th arbejdspunkt 3)',
+    mwb_ayf_part3: 'Bibelstudie (5 min.) lff lektion 16 punkt 6 og Nogle siger måske (th arbejdspunkt 14)',
+    mwb_song_middle: 109,
+    mwb_lc_count: 2,
+    mwb_lc_part1: '“Hjælp ikkereligiøse mennesker til at lære deres Skaber at kende” (10 min.) Drøftelse og video.',
+    mwb_lc_part2: 'Tilrettelægges lokalt (5 min.)',
+    mwb_lc_cbs: 'Menighedsbibelstudiet (30 min.) bt “Et brev fra Det Styrende Råd” og kap. 1 § 1-7',
+    mwb_song_conclude: 64,
+  },
+  {
+    mwb_week_date: '30. oktober – 5. november',
+    mwb_weekly_bible_reading: 'JOB 11-12',
+    mwb_song_first: 87,
+    mwb_tgw_talk: '“Tre måder vi kan få visdom på” (10 min.)',
+    mwb_tgw_bread: 'Oplæsning fra Bibelen (4 min.) Job 12:1-25 (th arbejdspunkt 5)',
+    mwb_ayf_count: 3,
+    mwb_ayf_part1:
+      'Første besøg (4 min.) Indled med emnet fra “Forslag til samtaler”. Fortæl om det bibelkursus vi tilbyder, og giv den besøgte visitkortet “Gratis bibelkursus”. (th arbejdspunkt 1)',
+    mwb_ayf_part2:
+      'Genbesøg (3 min.) Indled med emnet fra “Forslag til samtaler”. Invitér den besøgte med til møde, og introducér og drøft (uden at afspille) videoen Hvad sker der i en rigssal? (th arbejdspunkt 13)',
+    mwb_ayf_part3: 'Bibelstudie (5 min.) lff lektion 12 Kort sagt, Forklar og Mål (th arbejdspunkt 19)',
+    mwb_song_middle: 135,
+    mwb_lc_count: 1,
+    mwb_lc_part1: '“Hjælp jeres børn til at få gavn af det de lærer ved møderne” (15 min.) Drøftelse og video.',
+    mwb_lc_cbs: 'Menighedsbibelstudiet (30 min.) bt kap. 1 § 8-15, boks på s. 12',
+    mwb_song_conclude: 3,
+  },
+];
