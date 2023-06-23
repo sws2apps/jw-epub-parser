@@ -171,10 +171,10 @@ const fetchIssueData = async (issue, pub) => {
 };
 
 const fetchData = async (language, pub) => {
-	let mergedSources = [];
-	let notFound = false;
-
 	if (pub === 'mwb') {
+		let mergedSources = [];
+		let notFound = false;
+
 		// get mwb current issue
 		const today = new Date();
 		const day = today.getDay();
@@ -260,14 +260,16 @@ const fetchData = async (language, pub) => {
 	}
 
 	if (pub === 'w') {
+		let mergedSources = [];
+		let notFound = false;
+
 		// get w current issue
 		const today = new Date();
 		const weekDate = new Date(today.setMonth(today.getMonth() - 2));
 		let monthW = weekDate.getMonth() + 1;
 		let currentYear = weekDate.getFullYear();
 
-		issues.length = 0;
-		notFound = false;
+		const issues = [];
 
 		do {
 			const issueDate = currentYear + String(monthW).padStart(2, '0');
@@ -326,9 +328,9 @@ const fetchData = async (language, pub) => {
 					mergedSources = mergedSources.concat(tempObj);
 				}
 			}
-
-			return mergedSources;
 		}
+
+		return mergedSources;
 	}
 };
 
