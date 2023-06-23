@@ -1,3 +1,10 @@
+# [2.0.0-beta.2](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2023-06-23)
+
+
+### Bug Fixes
+
+* force version bump ([271c237](https://github.com/sws2apps/jw-epub-parser/commit/271c237763335d2afec051331b6d7dc90ed34dd5))
+
 # [2.0.0-beta.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.40.1...v2.0.0-beta.1) (2023-06-23)
 
 
