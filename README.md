@@ -60,9 +60,8 @@ Here are the list of all available properties in each object in the `weeksData` 
 | weekDateLocale\*   |      string       | Week date                                                                                                                  |
 | weeklyBibleReading |      string       | Weekly Bible Reading                                                                                                       |
 | songFirst          |      integer      | First song                                                                                                                 |
-| tgw10Talk          |      string       | 10 min talk title of the Treasures from God’s Word                                                                         |
+| tgwTalk            |      string       | 10 min talk title of the Treasures from God’s Word                                                                         |
 | tgwBRead           |      string       | Bible Reading for student                                                                                                  |
-| tgwBReadStudy\*    |      integer      | Study Point for Bible Reading part                                                                                         |
 | ayfCount           |      integer      | Number of parts in Apply Yourself to the Field Ministry                                                                    |
 | ayfPart1           |      string       | Part 1 in Apply Yourself to the Field Ministry                                                                             |
 | ayfPart1Time\*     |      integer      | Timing of Part 1 in Apply Yourself to the Field Ministry                                                                   |
@@ -113,39 +112,35 @@ Here are how the results of this module look like:
 	weeksCount: 7,
  	mwbYear: '2023',
   	weeksData: [
-    		{
-			weekDate: '03/06/2023',
-			weekDateLocale: 'March 6-12',
-			weeklyBibleReading: '1 CHRONICLES 23-26',
-			songFirst: 123,
-			tgw10Talk: '“Temple Worship Becomes Highly Organized”',
-			tgwBRead: '1Ch 23:21-32',
-			tgwBReadStudy: 5,
+    	{
+			weekDate: '09/04/2023',
+			weekDateLocale: 'September 4-10',
+			weeklyBibleReading: 'ESTHER 1-2',
+			songFirst: 137,
+			tgwTalk: '“Strive to Be Modest Like Esther”',
+			tgwBRead: 'Es 1:13-22 (th study 10)',
 			ayfCount: 3,
 			ayfPart1:
-				'Discussion. Play the video Memorial Invitation Campaign. Stop the video at each pause, and ask the audience the questions that appear in the video.',
+				'Discussion. Play the video Initial Call: Kingdom​—Mt 6:9, 10. Stop the video at each pause, and ask the audience the questions that appear in the video.',
 			ayfPart1Time: 5,
-			ayfPart1Type: 'Memorial Invitation Video',
-			ayfPart2:
-				'Begin with the sample conversation topic. After the householder expresses interest, introduce and discuss (but do not play) the video Remember Jesus’ Death.',
+			ayfPart1Type: 'Initial Call Video',
+			ayfPart2: 'Begin with the sample conversation topic. Offer the Enjoy Life Forever! brochure. (th study 1)',
 			ayfPart2Time: 3,
-			ayfPart2Type: 'Memorial Invitation',
-			ayfPart2Study: 11,
-			ayfPart3: 'w11 6/1 14-15—Theme: Why Are Christians Organized?',
+			ayfPart2Type: 'Initial Call',
+			ayfPart3: 'w20.11 12-14 ¶3-7​—Theme: Help From Jesus and the Angels. (th study 14)',
 			ayfPart3Time: 5,
 			ayfPart3Type: 'Talk',
-			ayfPart3Study: 14,
-			songMiddle: 101,
+			songMiddle: 106,
 			lcCount: 2,
-			lcPart1: '“How to Help After a Disaster”',
-			lcPart1Time: 10,
-			lcPart1Content: 'Discussion and video.',
-			lcPart2: 'Memorial Campaign to Begin Saturday, March 11',
-			lcPart2Time: 5,
-			lcPart2Content:
-				'Discussion. Briefly review the invitation. Outline the local arrangements for the special talk and the Memorial and for covering the territory.',
-			lcCBS: 'lff lesson 39 and endnote 3',
-			songConclude: 127,
+			lcPart1: 'What Your Peers Say​—Body Image',
+			lcPart1Time: 5,
+			lcPart1Content:
+				'Discussion. Play the video. Then ask the audience: Why can it be difficult to have a balanced view of our appearance?',
+			lcPart2: 'Organizational Accomplishments',
+			lcPart2Time: 10,
+			lcPart2Content: 'Play the Organizational Accomplishments video for September.',
+			lcCBS: 'lff lesson 56 and endnotes 6 and 7',
+			songConclude: 101,
 		},
     		...
   	]
@@ -159,25 +154,26 @@ Here are how the results of this module look like:
 	weeksCount: 7,
 	mwbYear: '2023',
  	weeksData: [
- 		{
-			weekDate: '6-12 de marzo',
-			weeklyBibleReading: '1 CRÓNICAS 23-26',
-			songFirst: 123,
-			tgw10Talk: '“La adoración en el templo estaba bien organizada” (10 mins.)',
-			tgwBRead: 'Lectura de la Biblia (4 mins.): 1Cr 23:21-32 (th lec. 5).',
+		{
+			weekDate: '4-10 de septiembre',
+			weeklyBibleReading: 'ESTER 1, 2',
+			songFirst: 137,
+			tgwTalk: '“Esfuércese por ser modesto como Ester” (10 mins.)',
+			tgwBRead: 'Lectura de la Biblia (4 mins.): Est 1:13-22 (th lec. 10).',
 			ayfCount: 3,
 			ayfPart1:
-				'Video de la invitación a la Conmemoración (5 mins.): Análisis con el auditorio. Ponga el video Campaña de la Conmemoración. Detenga el video en cada pausa y haga las preguntas que aparecen en él.',
+				'Video de la primera conversación (5 mins.): Análisis con el auditorio. Ponga el video Primera conversación: El Reino (Mt 6:9, 10). Detenga el video en cada pausa y haga las preguntas que aparecen en él.',
 			ayfPart2:
-				'Invitación a la Conmemoración (3 mins.): Use el tema de las ideas para conversar. Luego, cuando la persona muestre interés, presente y analice el video Recordemos la muerte de Jesús, pero no lo ponga (th lec. 11).',
-			ayfPart3: 'Discurso (5 mins.): w11 1/6 14, 15. Título: ¿Por qué están los cristianos bien organizados? (th lec. 14).',
-			songMiddle: 101,
+				'Primera conversación (3 mins.): Use el tema de las ideas para conversar. Luego ofrezca el folleto Disfrute de la vida (th lec. 1).',
+			ayfPart3: 'Discurso (5 mins.): w20.11 12-14 párrs. 3-7. Título: Jesús y los ángeles nos ayudan (th lec. 14).',
+			songMiddle: 106,
 			lcCount: 2,
-			lcPart1: '“Cómo podemos ayudar cuando ocurre un desastre” (10 mins.): Análisis con el auditorio y video.',
+			lcPart1:
+				'Lo que opinan otros jóvenes: La apariencia (5 mins.): Análisis con el auditorio. Ponga el video. Luego pregunte: ¿por qué puede ser difícil mantener una actitud equilibrada sobre nuestra apariencia física?',
 			lcPart2:
-				'El 11 de marzo comienza la campaña de la Conmemoración (5 mins.): Análisis con el auditorio. Repase brevemente el contenido de la invitación. Explique los planes que se han hecho para el discurso especial, para celebrar la Conmemoración y para cubrir el territorio.',
-			lcCBS: 'Estudio bíblico de la congregación (30 mins.): lff lección 39 y nota 3.',
-			songConclude: 127,
+				'Logros de la organización (10 mins.): Ponga el video Logros de la organización para el mes de septiembre.',
+			lcCBS: 'Estudio bíblico de la congregación (30 mins.): lff lección 56 y notas 6 y 7.',
+			songConclude: 101,
 		},
     		...
   	]
