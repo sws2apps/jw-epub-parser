@@ -23,5 +23,6 @@
 	"memorialInvitationVariations": "Invitasiony Fahatsiarovan̈a",
 	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min.) {{ source }}",
 	"assignmentLcVariations": "{{ source }}: ({{ duration }} min.) {{ content }}",
-	"cbsVariations": "Fianaran̈a Baiboly Ataony Fiangonan̈a: (30 min.) {{ source }}|Fianaran̈a Baiboly Ataony Fiangonan̈a: (30min.) {{ source }}"
+	"cbsVariations": "Fianaran̈a Baiboly Ataony Fiangonan̈a: (30 min.) {{ source }}|Fianaran̈a Baiboly Ataony Fiangonan̈a: (30min.) {{ source }}",
+	"studyArticleDateVariations": "Lahatsoratra Fianaran̈a {{ number }}: {{ date }}"
 }

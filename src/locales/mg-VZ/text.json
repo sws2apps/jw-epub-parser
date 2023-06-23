@@ -23,5 +23,6 @@
 	"memorialInvitationVariations": "Fanasà amy Fahatiarova",
 	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min.) {{ source }}|{{ assignment }} ({{ duration }} min.) {{ source }}",
 	"assignmentLcVariations": "{{ source }}: ({{ duration }} min.) {{ content }}|{{ source }} ({{ duration }} min.) {{ content }}",
-	"cbsVariations": "Fianara Baiboly: (30 min.) {{ source }}"
+	"cbsVariations": "Fianara Baiboly: (30 min.) {{ source }}",
+	"studyArticleDateVariations": "Lahatsoratsy Fianara {{ number }}: {{ date }}"
 }
