@@ -136,7 +136,7 @@ export default [
 		mwb_lc_part1_content:
 			'Discurso, com algumas participações da assistência. Mostre o vídeo. Depois, pergunte: De acordo com o vídeo, como a nossa conduta pode dar um bom testemunho no nosso local de trabalho?',
 		mwb_lc_part2: 'Necessidades locais',
-		mwb_lc_part2Time: 7,
+		mwb_lc_part2_time: 7,
 		mwb_lc_cbs: 'lff lição 52',
 		mwb_song_conclude: 29,
 	},
@@ -219,8 +219,8 @@ export default [
 		mwb_lc_part1_time: 10,
 		mwb_lc_part1_content: 'Discurso, com algumas participações da assistência.',
 		mwb_lc_part2: '“Campanha especial em setembro para divulgar o Reino de Deus!”',
-		mwb_lc_part2Time: 5,
-		mwb_lc_part2Content:
+		mwb_lc_part2_time: 5,
+		mwb_lc_part2_content:
 			'Discurso pelo superintendente de serviço. Incentive todos a participar e fale do planejamento que foi feito para a campanha.',
 		mwb_lc_cbs: 'lff lição 55 pontos 1-4',
 		mwb_song_conclude: 92,
@@ -249,8 +249,8 @@ export default [
 		mwb_lc_part1: 'Necessidades locais',
 		mwb_lc_part1_time: 5,
 		mwb_lc_part2: '“Imite o amor leal de Jeová”',
-		mwb_lc_part2Time: 10,
-		mwb_lc_part2Content: 'Discurso, com algumas participações da assistência, e vídeo.',
+		mwb_lc_part2_time: 10,
+		mwb_lc_part2_content: 'Discurso, com algumas participações da assistência, e vídeo.',
 		mwb_lc_cbs: 'lff lição 55 ponto 5, “Resumo”, “Revisão” e “Tente o Seguinte”',
 		mwb_song_conclude: 84,
 	},
