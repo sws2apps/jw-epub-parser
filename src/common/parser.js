@@ -244,9 +244,9 @@ const parseMWBEpub = async ({ htmlDocs, epubYear, epubLang, fromHTML }) => {
     if (isEnhancedParsing) {
       const lcEnhanced = getMWBLCEnhanced(tmpSrc, epubLang);
       weekItem.mwb_lc_part1 = lcEnhanced.title;
-      weekItem.mwb_lc_part1Time = lcEnhanced.time;
+      weekItem.mwb_lc_part1_time = lcEnhanced.time;
       if (lcEnhanced.content && lcEnhanced.content !== '') {
-        weekItem.mwb_lc_part1Content = lcEnhanced.content;
+        weekItem.mwb_lc_part1_content = lcEnhanced.content;
       }
     } else {
       weekItem.mwb_lc_part1 = tmpSrc;
@@ -260,9 +260,9 @@ const parseMWBEpub = async ({ htmlDocs, epubYear, epubLang, fromHTML }) => {
       if (isEnhancedParsing) {
         const lcEnhanced = getMWBLCEnhanced(tmpSrc, epubLang);
         weekItem.mwb_lc_part2 = lcEnhanced.title;
-        weekItem.mwb_lc_part2Time = lcEnhanced.time;
+        weekItem.mwb_lc_part2_time = lcEnhanced.time;
         if (lcEnhanced.content && lcEnhanced.content !== '') {
-          weekItem.mwb_lc_part2Content = lcEnhanced.content;
+          weekItem.mwb_lc_part2_content = lcEnhanced.content;
         }
       } else {
         weekItem.mwb_lc_part2 = tmpSrc;
