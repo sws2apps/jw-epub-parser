@@ -1,3 +1,10 @@
+# [2.0.0-beta.3](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2023-06-24)
+
+
+### Bug Fixes
+
+* **browser:** global variables not accessible ([1282e30](https://github.com/sws2apps/jw-epub-parser/commit/1282e300f9e9a33ff2e8cbf49f6a8936d2f59be2))
+
 # [2.0.0-beta.2](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2023-06-23)
 
 
