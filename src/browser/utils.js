@@ -10,5 +10,5 @@ import VZ from '../locales/mg-VZ/text.json';
 
 window.path = path;
 window.jw_epub_parser = {
-	languages: { E, F, MG, T, TND, TNK, VZ },
+  languages: { E, F, MG, T, TND, TNK, VZ },
 };
