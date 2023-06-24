@@ -1,3 +1,10 @@
+# [2.0.0-beta.4](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0-beta.3...v2.0.0-beta.4) (2023-06-24)
+
+
+### Bug Fixes
+
+* **module:** update property names for living parts ([af9318c](https://github.com/sws2apps/jw-epub-parser/commit/af9318cc5b8e926924b8351c3c0025ed28838b2f))
+
 # [2.0.0-beta.3](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2023-06-24)
 
 
