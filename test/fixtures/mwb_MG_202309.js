@@ -25,8 +25,9 @@ export default [
 		mwb_lc_part1_content:
 			'Fiaraha-midinika. Alefaso ilay video. Fanontaniana: Nahoana no sarotra ny mahay mandanjalanja fa tsy mifantoka be loatra amin’ny bika aman’endrika?',
 		mwb_lc_part2: 'Zava-bitan’ny Fandaminana',
-		mwb_lc_part2Time: 10,
-		mwb_lc_part2Content: 'Alefaso ilay video hoe Zava-bitan’ny Fandaminana, izay tokony halefa amin’ity Septambra ity.',
+		mwb_lc_part2_time: 10,
+		mwb_lc_part2_content:
+			'Alefaso ilay video hoe Zava-bitan’ny Fandaminana, izay tokony halefa amin’ity Septambra ity.',
 		mwb_lc_cbs: 'lff lesona 56 sy fanamarihana 6, 7',
 		mwb_song_conclude: 101,
 	},
@@ -56,7 +57,7 @@ export default [
 		mwb_lc_part1_content:
 			'Fiaraha-midinika. Alefaso ilay video. Raha azo atao, dia manadinadìna ankizy vitsivitsy nofidina mialoha. Fanontaniana: Ahoana avy no tianao ampisehoana hoe be herim-po hoatran’i Estera ianao?',
 		mwb_lc_part2: 'Zavatra Ilain’ny Fiangonana',
-		mwb_lc_part2Time: 10,
+		mwb_lc_part2_time: 10,
 		mwb_lc_cbs: 'lff lesona 57',
 		mwb_song_conclude: 125,
 	},
@@ -141,8 +142,8 @@ export default [
 		mwb_lc_part1_content:
 			'Fiaraha-midinika. Alefaso ilay video. Fanontaniana: Fa maninona ny Rahalahy Birdwell no nieritreritra hoe efa nananany daholo ny zava-drehetra?',
 		mwb_lc_part2: '“Ampiasao ny Pejy Fandraisana ao Amin’ny JW.ORG Rehefa Manompo”',
-		mwb_lc_part2Time: 5,
-		mwb_lc_part2Content: 'Fiaraha-midinika.',
+		mwb_lc_part2_time: 5,
+		mwb_lc_part2_content: 'Fiaraha-midinika.',
 		mwb_lc_cbs: 'lff lesona 59: Hevitra 6, famintinana sy famerenana ary tanjona',
 		mwb_song_conclude: 129,
 	},
@@ -224,7 +225,7 @@ export default [
 		mwb_lc_part1_time: 10,
 		mwb_lc_part1_content: 'Fiaraha-midinika sy video.',
 		mwb_lc_part2: 'Zavatra Ilain’ny Fiangonana',
-		mwb_lc_part2Time: 5,
+		mwb_lc_part2_time: 5,
 		mwb_lc_cbs:
 			'rr “Taratasy avy Amin’ny Filan-kevi-pitantanana” sy “Fanazavana ny Zavatra Mampiavaka An’ity Boky Ity”',
 		mwb_song_conclude: 95,
