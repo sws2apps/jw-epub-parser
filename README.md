@@ -60,23 +60,23 @@ By calling the `loadEPUB` function, it will return an array of objects with the 
 | mwb_ayf_part1            |      string       | Part 1 in Apply Yourself to the Field Ministry                                                                             |
 | mwb_ayf_part1_time\*     |      integer      | Timing of Part 1 in Apply Yourself to the Field Ministry                                                                   |
 | mwb_ayf_part1_type\*     |      string       | Type of Part 1 in Apply Yourself to the Field Ministry                                                                     |
-| mwb_ayf_part2            |      string       | Part 2 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is 1                     |
-| mwb_ayf_part2_time\*     |      integer      | Timing of Part 2 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is 1           |
-| mwb_ayf_part2_type\*     |      string       | Type of Part 2 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is 1             |
-| mwb_ayf_part3            |      string       | Part 3 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 3           |
-| mwb_ayf_part3_time\*     |      integer      | Timing of Part 3 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 3 |
-| mwb_ayf_part3_type\*     |      string       | Type of Part 3 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 3   |
-| mwb_ayf_part4            |      string       | Part 4 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 4           |
-| mwb_ayf_part4_time\*     |      integer      | Timing of Part 4 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 4 |
-| mwb_ayf_part4_type\*     |      string       | Type of Part 4 in Apply Yourself to the Field Ministry. This property will not be available if `ayfCount` is less than 4   |
+| mwb_ayf_part2            |      string       | Part 2 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is 1                     |
+| mwb_ayf_part2_time\*     |      integer      | Timing of Part 2 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is 1           |
+| mwb_ayf_part2_type\*     |      string       | Type of Part 2 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is 1             |
+| mwb_ayf_part3            |      string       | Part 3 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is less than 3           |
+| mwb_ayf_part3_time\*     |      integer      | Timing of Part 3 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is less than 3 |
+| mwb_ayf_part3_type\*     |      string       | Type of Part 3 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is less than 3   |
+| mwb_ayf_part4            |      string       | Part 4 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is less than 4           |
+| mwb_ayf_part4_time\*     |      integer      | Timing of Part 4 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is less than 4 |
+| mwb_ayf_part4_type\*     |      string       | Type of Part 4 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is less than 4   |
 | mwb_song_middle          |      integer      | Middle song                                                                                                                |
 | mwb_lc_count             |      integer      | Number of parts in Living as Christians                                                                                    |
 | mwb_lc_part1             |      string       | Part 1 in Living as Christians                                                                                             |
 | mwb_lc_part1_time\*      |      integer      | Timing of Part 1 in Living as Christians                                                                                   |
 | mwb_lc_part1_content\*   |      string       | Content of Part 1 in Living as Christians                                                                                  |
-| mwb_lc_part2             |      string       | Part 2 in Living as Christians. This property will not be available if `lcCount` is 1                                      |
-| mwb_lc_part2_time\*      |      integer      | Timing of Part 2 in Living as Christians. This property will not be available if `lcCount` is 1                            |
-| mwb_lc_part2_content\*   |      string       | Content of Part 2 in Living as Christians. This property will not be available if `lcCount` is 1                           |
+| mwb_lc_part2             |      string       | Part 2 in Living as Christians. This property will not be available if `mwb_lc_count` is 1                                      |
+| mwb_lc_part2_time\*      |      integer      | Timing of Part 2 in Living as Christians. This property will not be available if `mwb_lc_count` is 1                            |
+| mwb_lc_part2_content\*   |      string       | Content of Part 2 in Living as Christians. This property will not be available if `mwb_lc_count` is 1                           |
 | mwb_lc_cbs               |      string       | Congregation Bible Study source material                                                                                   |
 | mwb_song_conclude        | integer or string | Concluding song. When the song number is out of range, it will be the default text from the Meeting Workbook.              |
 
@@ -88,7 +88,7 @@ By calling the `loadEPUB` function, it will return an array of objects with the 
 | w_study_date_locale\*   | string  | Week date                                                        |
 | w_study_title           | string  | Watchtower Study Article Title                                   |
 | w_study_opening_song    | integer | Opening Song for the Watchtower Study                            |
-| w_study_concluding_song | string  | Concluding Song for the Watchtower Study                         |
+| w_study_concluding_song | integer  | Concluding Song for the Watchtower Study                         |
 
 \* These properties are only available when enhanced parsing is available for the language you parse.
 
@@ -136,12 +136,12 @@ Here are how the results of this module look like:
     mwb_song_middle: 106,
     mwb_lc_count: 2,
     mwb_lc_part1: 'What Your Peers Say​—Body Image',
-    mwb_lc_part1Time: 5,
-    mwb_lc_part1Content:
+    mwb_lc_part1_time: 5,
+    mwb_lc_part1_content:
       'Discussion. Play the video. Then ask the audience: Why can it be difficult to have a balanced view of our appearance?',
     mwb_lc_part2: 'Organizational Accomplishments',
-    mwb_lc_part2Time: 10,
-    mwb_lc_part2Content: 'Play the Organizational Accomplishments video for September.',
+    mwb_lc_part2_time: 10,
+    mwb_lc_part2_content: 'Play the Organizational Accomplishments video for September.',
     mwb_lc_cbs: 'lff lesson 56 and endnotes 6 and 7',
     mwb_song_conclude: 101,
   },
