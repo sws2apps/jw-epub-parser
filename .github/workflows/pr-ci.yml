@@ -32,6 +32,7 @@ jobs:
       - name: Browser version testing
         uses: cypress-io/github-action@d69252d52b9a31bad4f418f05ba2bc83687a02eb
         with:
+          command-prefix: '--'
           install: false
           browser: chrome
           build: npm run setup:client
