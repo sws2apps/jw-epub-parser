@@ -97,7 +97,7 @@ Currently, we only support enhanced parsing for the following languages:
 ```bash
 Enlish
 French
-Malagasy
+Madagascar Sign Language, Malagasy
 Portuguese Brazil
 Tandroy, Tankarana
 Vezo
