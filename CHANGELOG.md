@@ -1,3 +1,10 @@
+# [2.0.0-beta.5](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2023-07-05)
+
+
+### Features
+
+* **module:** add support for madagascar sign language ([21b26b9](https://github.com/sws2apps/jw-epub-parser/commit/21b26b919676917dd0a127acf81183c74d1843d7))
+
 # [2.0.0-beta.4](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0-beta.3...v2.0.0-beta.4) (2023-06-24)
 
 
