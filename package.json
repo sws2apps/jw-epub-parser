@@ -25,10 +25,14 @@
 		"type": "git",
 		"url": "https://github.com/sws2apps/jw-epub-parser.git"
 	},
+	"funding": {
+		"type": "buymeacoffee",
+		"url": "https://www.buymeacoffee.com/sws2apps/e/146062"
+	},
 	"scripts": {
 		"test": "mocha",
 		"build": "npx rimraf dist && npx rollup -c",
-		"parse": "node example/index.js --",
+		"parse": "node example/index.js",
 		"setup:client": "cd client && npm install",
 		"start:client": "cd client && npm run dev",
 		"cypress:open": "cypress open",
