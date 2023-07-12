@@ -1,3 +1,10 @@
+# [2.0.0-beta.6](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2023-07-12)
+
+
+### Bug Fixes
+
+* **rules:** wrong week date parsed from wt study ([5adbf91](https://github.com/sws2apps/jw-epub-parser/commit/5adbf91b3b844c7207f13ac67d97909f1c15c909))
+
 # [2.0.0-beta.5](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2023-07-05)
 
 
