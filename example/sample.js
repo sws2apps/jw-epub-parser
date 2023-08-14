@@ -115,66 +115,6 @@ const fetchIssueData = async (issue, pub) => {
 				const epubData = await loadEPUB({ htmlRaws, epubYear: issue.currentYear, epubLang: language, isMWB: true });
 				return epubData;
 			}
-
-			if (pub === 'w') {
-				const url = `${WOL_CDN}${language}/pi-w_${issue.issueDate}`;
-				let res = await fetch(url);
-				let result = await res.json();
-
-				if (Array.isArray(result)) {
-					return [];
-				}
-
-				if (result.url) {
-					res = await fetch(result.url);
-					result = await res.text();
-
-					let htmlItem = parser.parseFromString(result, 'text/html');
-
-					const tocWT = htmlItem.querySelector('#materialNav').querySelector('ul');
-					const tocWTLinks = tocWT.querySelectorAll('li');
-					const tocWTLink = 'https://wol.jw.org' + tocWTLinks[1].querySelector('a').getAttribute('href');
-
-					res = await fetch(tocWTLink);
-					result = await res.text();
-
-					htmlItem = parser.parseFromString(result, 'text/html');
-
-					const urls = [];
-					const studyArticles = htmlItem.querySelector('.groupTOC').querySelectorAll('h3');
-					for (const article of studyArticles) {
-						const articleLink = article.nextElementSibling.querySelector('a').getAttribute('href');
-						urls.push(`https://wol.jw.org${articleLink}`);
-					}
-
-					const htmlArticles = [];
-
-					const fetchArticle1 = fetch(urls[0]).then((res) => res.text());
-					const fetchArticle2 = fetch(urls[1]).then((res) => res.text());
-					const fetchArticle3 = fetch(urls[2]).then((res) => res.text());
-					const fetchArticle4 = fetch(urls[3]).then((res) => res.text());
-					const fetchArticle5 = urls[4] ? fetch(urls[4]).then((res) => res.text()) : Promise.resolve('');
-
-					const raws = await Promise.all([fetchArticle1, fetchArticle2, fetchArticle3, fetchArticle4, fetchArticle5]);
-
-					for (let z = 0; z < raws.length; z++) {
-						const rawText = raws[z];
-						if (rawText !== '') {
-							htmlArticles.push(rawText);
-						}
-					}
-
-					const epubData = await loadEPUB({
-						htmlRaws: [result],
-						epubYear: issue.currentYear,
-						epubLang: language,
-						isW: true,
-						htmlArticles,
-					});
-
-					return epubData;
-				}
-			}
 		}
 	} catch (err) {
 		throw new Error(err);
@@ -185,7 +125,7 @@ export const fetchData = async (language, issue, pub) => {
 	let data = [];
 
 	if (!issue && !pub) {
-		for await (const pub of ['mwb', 'w']) {
+		for await (const pub of ['mwb']) {
 			const issues = [];
 
 			if (pub === 'mwb') {
@@ -237,71 +177,14 @@ export const fetchData = async (language, issue, pub) => {
 				} while (notFound === false);
 			}
 
-			if (pub === 'w') {
-				let notFound = false;
-
-				// get w current issue
-				const today = new Date();
-				const url = `${WOL_E}/${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()}`;
-
-				const res = await fetch(url);
-				const data = await res.json();
-
-				const wData = data.items.find((item) => item.classification === 68);
-				const publicationTitle = wData.publicationTitle;
-
-				const findYear = /\b\d{4}\b/;
-				const array = findYear.exec(publicationTitle);
-				let currentYear = +array[0];
-
-				const monthsRegex = `(${months.join('|')})`;
-
-				const regex = new RegExp(monthsRegex);
-				const array2 = regex.exec(publicationTitle);
-
-				let monthW = months.findIndex((month) => month === array2[0]) + 1;
-
-				do {
-					const issueDate = currentYear + String(monthW).padStart(2, '0');
-					const url =
-						JW_CDN +
-						new URLSearchParams({
-							langwritten: language,
-							pub,
-							output: 'json',
-							issue: issueDate,
-						});
-
-					const res = await fetch(url);
-
-					if (res.status === 200) {
-						const result = await res.json();
-						const hasEPUB = result.files[language].EPUB;
-
-						issues.push({ issueDate, currentYear, language, hasEPUB: hasEPUB });
-					}
-
-					if (res.status === 404) {
-						notFound = true;
-					}
-
-					// assigning next issue
-					monthW = monthW + 1;
-					if (monthW === 13) {
-						monthW = 1;
-						currentYear++;
-					}
-				} while (notFound === false);
-			}
-
 			if (issues.length > 0) {
 				const fetchSource1 = fetchIssueData(issues[0], pub);
-				const fetchSource2 = issues.length > 1 ? fetchIssueData(issues[1], pub) : Promise.resolve([]);
-				const fetchSource3 = issues.length > 2 ? fetchIssueData(issues[2], pub) : Promise.resolve([]);
-				const fetchSource4 = issues.length > 3 ? fetchIssueData(issues[3], pub) : Promise.resolve([]);
-				const fetchSource5 = issues.length > 4 ? fetchIssueData(issues[4], pub) : Promise.resolve([]);
-				const fetchSource6 = issues.length > 5 ? fetchIssueData(issues[5], pub) : Promise.resolve([]);
-				const fetchSource7 = issues.length > 6 ? fetchIssueData(issues[6], pub) : Promise.resolve([]);
+				const fetchSource2 = issues.length > 1 ? fetchIssueData(issues[1], pub) : Promise.resolve(undefined);
+				const fetchSource3 = issues.length > 2 ? fetchIssueData(issues[2], pub) : Promise.resolve(undefined);
+				const fetchSource4 = issues.length > 3 ? fetchIssueData(issues[3], pub) : Promise.resolve(undefined);
+				const fetchSource5 = issues.length > 4 ? fetchIssueData(issues[4], pub) : Promise.resolve(undefined);
+				const fetchSource6 = issues.length > 5 ? fetchIssueData(issues[5], pub) : Promise.resolve(undefined);
+				const fetchSource7 = issues.length > 6 ? fetchIssueData(issues[6], pub) : Promise.resolve(undefined);
 
 				const allData = await Promise.all([
 					fetchSource1,
@@ -315,34 +198,10 @@ export const fetchData = async (language, issue, pub) => {
 
 				for (let z = 0; z < allData.length; z++) {
 					const tempObj = allData[z];
-					if (tempObj.length > 0) {
-						for (const src of tempObj) {
-							const date = src.mwb_week_date || src.w_study_date;
-
-							const prevSrc = data.find((item) => item.mwb_week_date === date || item.w_study_date === date);
-
-							if (prevSrc) {
-								Object.assign(prevSrc, src);
-							}
-
-							if (!prevSrc) {
-								data.push(src);
-							}
-						}
+					if (tempObj) {
+						data.push(tempObj);
 					}
 				}
-			}
-		}
-
-		for (const src of data) {
-			if (src.mwb_week_date) {
-				src.week_date = src.mwb_week_date;
-				delete src.mwb_week_date;
-			}
-
-			if (src.w_study_date) {
-				src.week_date = src.w_study_date;
-				delete src.w_study_date;
 			}
 		}
 	}
