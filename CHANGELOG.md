@@ -1,3 +1,13 @@
+# [1.41.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.40.1...v1.41.0) (2023-08-14)
+
+
+### Features
+
+* **deps:** bump global-jsdom from 9.0.1 to 9.1.0 ([1949863](https://github.com/sws2apps/jw-epub-parser/commit/194986319f730e4063bad9b78127edcd7fa97db8))
+* **deps:** bump node-fetch from 3.3.1 to 3.3.2 ([4e3fb87](https://github.com/sws2apps/jw-epub-parser/commit/4e3fb8707d93cc9c94c93d9ee9e262f7b3a59cf7))
+* **deps:** bump tough-cookie from 4.1.2 to 4.1.3 ([debb7b1](https://github.com/sws2apps/jw-epub-parser/commit/debb7b11f4361122bcb356eeb47417c034e0cb15))
+* **module:** add support for German and Ukrainian languages ([bb15d93](https://github.com/sws2apps/jw-epub-parser/commit/bb15d93fb459a466f267228b741d50a6bfe61a7a))
+
 ## [1.40.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.40.0...v1.40.1) (2023-06-05)
 
 
