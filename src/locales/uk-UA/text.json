@@ -22,6 +22,6 @@
 	"talkVariations": "Промова",
 	"memorialInvitationVariations": "Запрошення на Спомин",
 	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} хв) {{ source }} (урок {{ study }})|{{ assignment }}: ({{ duration }} хв) {{ source }}",
-	"assignmentLcVariations": "{{ source }}: ({{ duration }} хв) {{ content }}",
+	"assignmentLcVariations": "{{ source }}: ({{ duration }} min.)|{{ source }}: ({{ duration }} min.) {{ content }}",
 	"cbsVariations": "Вивчення Біблії у зборі: (30 хв) {{ source }}"
 }
