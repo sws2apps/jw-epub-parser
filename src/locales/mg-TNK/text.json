@@ -22,6 +22,6 @@
 	"talkVariations": "Kabaro",
 	"memorialInvitationVariations": "Invitasiony Fahatsiarovan̈a",
 	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min.) {{ source }} (th fianaran̈a {{ study }})|{{ assignment }}: ({{ duration }} min.) {{ source }}",
-	"assignmentLcVariations": "{{ source }}: ({{ duration }} min.) {{ content }}",
+	"assignmentLcVariations": "{{ source }}: ({{ duration }} min.)|{{ source }}: ({{ duration }} min.) {{ content }}",
 	"cbsVariations": "Fianaran̈a Baiboly Ataony Fiangonan̈a: (30 min.) {{ source }}|Fianaran̈a Baiboly Ataony Fiangonan̈a: (30min.) {{ source }}"
 }
