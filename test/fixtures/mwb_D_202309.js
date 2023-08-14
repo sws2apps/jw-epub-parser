@@ -1,0 +1,176 @@
+export default {
+	weeksCount: 9,
+	mwbYear: '2023',
+	weeksData: [
+		{
+			weekDate: '4.-10. september',
+			weeklyBibleReading: 'ESTER 1-2',
+			songFirst: 137,
+			tgw10Talk: '“Vær beskeden ligesom Ester” (10 min.)',
+			tgwBRead: 'Oplæsning fra Bibelen (4 min.) Est 1:13-22 (th arbejdspunkt 10)',
+			ayfCount: 3,
+			ayfPart1:
+				'Video: Første besøg (5 min.) Drøftelse. Afspil videoen Første besøg: Guds rige – Mt 6:9, 10. Stop videoen ved hver pause, og stil tilhørerne de spørgsmål der er i videoen.',
+			ayfPart2:
+				'Første besøg (3 min.) Indled med emnet fra “Forslag til samtaler”. Giv den besøgte brochuren Et håb om en lys fremtid. (th arbejdspunkt 1)',
+			ayfPart3: 'Foredrag (5 min.) w20.11 12-14 § 3-7 – Tema: Hjælp fra Jesus og englene. (th arbejdspunkt 14)',
+			songMiddle: 106,
+			lcCount: 2,
+			lcPart1:
+				'Hvad andre unge siger – Udseendet (5 min.) Drøftelse. Afspil videoen. Spørg derefter tilhørerne: Hvorfor kan det være en udfordring at have et ligevægtigt syn på sit udseende?',
+			lcPart2: 'Hvad organisationen udretter (10 min.) Afspil Hvad organisationen udretter for september.',
+			lcCBS: 'Menighedsbibelstudiet (30 min.) lff lektion 56 og slutnote 6 og 7',
+			songConclude: 101,
+		},
+		{
+			weekDate: '11.-17. september',
+			weeklyBibleReading: 'ESTER 3-5',
+			songFirst: 85,
+			tgw10Talk: '“Hjælp andre til at nå deres fulde potentiale” (10 min.)',
+			tgwBRead: 'Oplæsning fra Bibelen (4 min.) Est 3:1-12 (th arbejdspunkt 2)',
+			ayfCount: 3,
+			ayfPart1:
+				'Video: Genbesøg (5 min.) Drøftelse. Afspil videoen Genbesøg: Guds rige – Mt 14:19, 20. Stop videoen ved hver pause, og stil tilhørerne de spørgsmål der er i videoen.',
+			ayfPart2:
+				'Genbesøg (3 min.) Indled med emnet fra “Forslag til samtaler”. Fortæl om det bibelkursus vi tilbyder, og giv den besøgte visitkortet “Gratis bibelkursus”. (th arbejdspunkt 16)',
+			ayfPart3: 'Bibelstudie (5 min.) lff lektion 12 indledning og punkt 1-3 (th arbejdspunkt 15)',
+			songMiddle: 65,
+			lcCount: 2,
+			lcPart1:
+				'Bliv Jehovas ven – Ester var modig (5 min.) Drøftelse. Afspil videoen. Hvis det er muligt, så stil nogle børn du har talt med i forvejen, følgende spørgsmål: Hvornår kan du være modig ligesom Ester?',
+			lcPart2: 'Tilrettelægges lokalt (10 min.)',
+			lcCBS: 'Menighedsbibelstudiet (30 min.) lff lektion 57',
+			songConclude: 125,
+		},
+		{
+			weekDate: '18.-24. september',
+			weeklyBibleReading: 'ESTER 6-8',
+			songFirst: 115,
+			tgw10Talk: '“En lektion i god kommunikation” (10 min.)',
+			tgwBRead: 'Oplæsning fra Bibelen (4 min.) Est 8:9-17 (th arbejdspunkt 5)',
+			ayfCount: 3,
+			ayfPart1:
+				'Første besøg (3 min.) Indled med emnet fra “Forslag til samtaler”. Svar på en almindelig indvending. (th arbejdspunkt 3)',
+			ayfPart2:
+				'Genbesøg (4 min.) Indled med emnet fra “Forslag til samtaler”. Invitér den besøgte med til møde, og introducér og drøft (uden at afspille) videoen Hvad sker der i en rigssal? (th arbejdspunkt 12)',
+			ayfPart3:
+				'Foredrag (5 min.) w22.01 10-11 § 8-10 – Tema: Undervis på en god måde, ligesom Jakob – Hold budskabet enkelt. (th arbejdspunkt 17)',
+			songMiddle: 148,
+			lcCount: 1,
+			lcPart1: '“Stol på Jehova hvis du bliver mobbet” (15 min.) Drøftelse og video.',
+			lcCBS: 'Menighedsbibelstudiet (30 min.) lff lektion 58',
+			songConclude: 124,
+		},
+		{
+			weekDate: '25. september – 1. oktober',
+			weeklyBibleReading: 'ESTER 9-10',
+			songFirst: 102,
+			tgw10Talk: '“Han brugte sin indflydelse til at hjælpe andre” (10 min.)',
+			tgwBRead: 'Oplæsning fra Bibelen (4 min.) Est 9:1-14 (th arbejdspunkt 11)',
+			ayfCount: 3,
+			ayfPart1: 'Første besøg (2 min.) Brug emnet fra “Forslag til samtaler”. (th arbejdspunkt 6)',
+			ayfPart2:
+				'Genbesøg (5 min.) Indled med emnet fra “Forslag til samtaler”. Giv den besøgte brochuren Et håb om en lys fremtid, og vis hvordan et bibelkursus foregår. (th arbejdspunkt 13)',
+			ayfPart3: 'Bibelstudie (5 min.) lff lektion 12 indledning til Gå i dybden og punkt 4 (th arbejdspunkt 19)',
+			songMiddle: 117,
+			lcCount: 1,
+			lcPart1: '“Hyrder der tager sig godt af Jehovas folk” (15 min.) Drøftelse og video.',
+			lcCBS: 'Menighedsbibelstudiet (30 min.) lff lektion 59 punkt 1-5',
+			songConclude: 55,
+		},
+		{
+			weekDate: '2.-8. oktober',
+			weeklyBibleReading: 'JOB 1-3',
+			songFirst: 141,
+			tgw10Talk: '“Vis at du elsker Jehova højt” (10 min.)',
+			tgwBRead: 'Oplæsning fra Bibelen (4 min.) Job 3:1-26 (th arbejdspunkt 12)',
+			ayfCount: 3,
+			ayfPart1:
+				'Første besøg (3 min.) Indled med emnet fra “Forslag til samtaler”. Fortæl om hjemmesiden, og giv den besøgte visitkortet “jw.org”. (th arbejdspunkt 9)',
+			ayfPart2:
+				'Genbesøg (4 min.) Indled med emnet fra “Forslag til samtaler”. Introducér og drøft (uden at afspille) videoen Hvorfor studere Bibelen? (th arbejdspunkt 20)',
+			ayfPart3:
+				'Foredrag (5 min.) w22.01 11-12 § 11-14 – Tema: Undervis på en god måde, ligesom Jakob – Vær realistisk og ydmyg. (th arbejdspunkt 18)',
+			songMiddle: 21,
+			lcCount: 2,
+			lcPart1:
+				'Jeg mente selv at jeg havde en god balance i mit liv (10 min.) Drøftelse. Afspil videoen. Spørg derefter tilhørerne: På hvilken måde mente bror Birdwell at han havde “en god balance” i sit liv?',
+			lcPart2: '“Brug startsiden på jw.org i forkyndelsen” (5 min.) Drøftelse.',
+			lcCBS: 'Menighedsbibelstudiet (30 min.) lff lektion 59 punkt 6 og Kort sagt, Forklar og Mål',
+			songConclude: 129,
+		},
+		{
+			weekDate: '9.-15. oktober',
+			weeklyBibleReading: 'JOB 4-5',
+			songFirst: 121,
+			tgw10Talk: '“Er du opmærksom på misinformation?” (10 min.)',
+			tgwBRead: 'Oplæsning fra Bibelen (4 min.) Job 5:1-27 (th arbejdspunkt 10)',
+			ayfCount: 3,
+			ayfPart1: 'Første besøg (2 min.) Brug emnet fra “Forslag til samtaler”. (th arbejdspunkt 4)',
+			ayfPart2:
+				'Genbesøg (5 min.) Indled med emnet fra “Forslag til samtaler”. Vis den besøgte hvordan man kan finde oplysninger på jw.org. (th arbejdspunkt 15)',
+			ayfPart3: 'Bibelstudie (5 min.) lff lektion 16 punkt 5 (th arbejdspunkt 16)',
+			songMiddle: 78,
+			lcCount: 1,
+			lcPart1: 'Tilrettelægges lokalt (15 min.)',
+			lcCBS: 'Menighedsbibelstudiet (30 min.) lff lektion 60',
+			songConclude: 38,
+		},
+		{
+			weekDate: '16.-22. oktober',
+			weeklyBibleReading: 'JOB 6-7',
+			songFirst: 33,
+			tgw10Talk: '“Når du føler at du ikke kan klare mere” (10 min.)',
+			tgwBRead: 'Oplæsning fra Bibelen (4 min.) Job 6:1-21 (th arbejdspunkt 2)',
+			ayfCount: 3,
+			ayfPart1:
+				'Første besøg (3 min.) Indled med emnet fra “Forslag til samtaler”. Svar på en almindelig indvending. (th arbejdspunkt 7)',
+			ayfPart2:
+				'Genbesøg (4 min.) Indled med emnet fra “Forslag til samtaler”. Tilbyd en publikation fra Forkynderens værktøjskasse. (th arbejdspunkt 11)',
+			ayfPart3:
+				'Foredrag (5 min.) w22.01 12-13 § 15-18 – Tema: Undervis på en god måde, ligesom Jakob – Brug gode illustrationer. (th arbejdspunkt 8)',
+			songMiddle: 144,
+			lcCount: 1,
+			lcPart1: '“Jehova hjælper dem der føler sig langt nede” (15 min.) Drøftelse og video.',
+			lcCBS: 'Menighedsbibelstudiet (30 min.) lff sektion 4 Opsummering',
+			songConclude: 143,
+		},
+		{
+			weekDate: '23.-29. oktober',
+			weeklyBibleReading: 'JOB 8-10',
+			songFirst: 107,
+			tgw10Talk: '“Guds loyale kærlighed beskytter os mod Satans løgne” (10 min.)',
+			tgwBRead: 'Oplæsning fra Bibelen (4 min.) Job 9:20-35 (th arbejdspunkt 11)',
+			ayfCount: 3,
+			ayfPart1:
+				'Første besøg (3 min.) Indled med emnet fra “Forslag til samtaler”. Tilbyd en publikation fra Forkynderens værktøjskasse. (th arbejdspunkt 17)',
+			ayfPart2:
+				'Genbesøg (4 min.) Indled med emnet fra “Forslag til samtaler”. Giv den besøgte brochuren Et håb om en lys fremtid, og gennemgå kort “Hvordan du får mest muligt ud af materialet”. (th arbejdspunkt 3)',
+			ayfPart3: 'Bibelstudie (5 min.) lff lektion 16 punkt 6 og Nogle siger måske (th arbejdspunkt 14)',
+			songMiddle: 109,
+			lcCount: 2,
+			lcPart1: '“Hjælp ikkereligiøse mennesker til at lære deres Skaber at kende” (10 min.) Drøftelse og video.',
+			lcPart2: 'Tilrettelægges lokalt (5 min.)',
+			lcCBS: 'Menighedsbibelstudiet (30 min.) bt “Et brev fra Det Styrende Råd” og kap. 1 § 1-7',
+			songConclude: 64,
+		},
+		{
+			weekDate: '30. oktober – 5. november',
+			weeklyBibleReading: 'JOB 11-12',
+			songFirst: 87,
+			tgw10Talk: '“Tre måder vi kan få visdom på” (10 min.)',
+			tgwBRead: 'Oplæsning fra Bibelen (4 min.) Job 12:1-25 (th arbejdspunkt 5)',
+			ayfCount: 3,
+			ayfPart1:
+				'Første besøg (4 min.) Indled med emnet fra “Forslag til samtaler”. Fortæl om det bibelkursus vi tilbyder, og giv den besøgte visitkortet “Gratis bibelkursus”. (th arbejdspunkt 1)',
+			ayfPart2:
+				'Genbesøg (3 min.) Indled med emnet fra “Forslag til samtaler”. Invitér den besøgte med til møde, og introducér og drøft (uden at afspille) videoen Hvad sker der i en rigssal? (th arbejdspunkt 13)',
+			ayfPart3: 'Bibelstudie (5 min.) lff lektion 12 Kort sagt, Forklar og Mål (th arbejdspunkt 19)',
+			songMiddle: 135,
+			lcCount: 1,
+			lcPart1: '“Hjælp jeres børn til at få gavn af det de lærer ved møderne” (15 min.) Drøftelse og video.',
+			lcCBS: 'Menighedsbibelstudiet (30 min.) bt kap. 1 § 8-15, boks på s. 12',
+			songConclude: 3,
+		},
+	],
+};

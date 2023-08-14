@@ -4,8 +4,6 @@ export const extractMonthName = (monthNames, src, lang) => {
 	let varDay;
 	let monthIndex;
 
-	src = src.split('–')[0];
-
 	for (const month of monthNames) {
 		const monthLang = month.names[lang];
 		const regex = new RegExp(`(${monthLang})`);
@@ -108,7 +106,7 @@ export const extractSourceTGWBibleReading = (tgwBibleReadingVariations, src, lan
 
 	if (result) return result;
 
-	throw new JWEPUBParserError('tgw-bibleReading', 'Parsing failed for Bible Reading part');
+	throw new JWEPUBParserError('tgw-bibleReading', `Parsing failed for Bible Reading part. The input was: ${src}`);
 };
 
 export const extractSourceAssignments = (assignmentsVariations, assignmentsName, src, lang) => {
@@ -128,7 +126,10 @@ export const extractSourceAssignments = (assignmentsVariations, assignmentsName,
 
 			let assignmentsList = '(';
 			for (let a = 0; a < assignmentsName.length; a++) {
-				assignmentsList += assignmentsName[a][lang];
+				let tmp = assignmentsName[a][lang];
+				tmp = tmp.replace('(', '\\(');
+				tmp = tmp.replace(')', '\\)');
+				assignmentsList += tmp;
 
 				if (a < assignmentsName.length - 1) {
 					assignmentsList += '|';
@@ -137,9 +138,8 @@ export const extractSourceAssignments = (assignmentsVariations, assignmentsName,
 			assignmentsList += ')';
 
 			let textSearch = findRoundOne.replace('{{ duration }}', '\\d+');
-			textSearch = textSearch.replace('(', '(\\(');
-			textSearch = textSearch.replace(')', ')\\)');
-			textSearch = textSearch.replace(' :', ' ?:?');
+			textSearch = textSearch.replace('(', '\\(');
+			textSearch = textSearch.replace(')', '\\)');
 			textSearch = textSearch.replace(') ', ') ?');
 			textSearch = textSearch.replace('??', '?');
 			textSearch = textSearch.replace(patternAssignment, assignmentsList);
@@ -148,7 +148,7 @@ export const extractSourceAssignments = (assignmentsVariations, assignmentsName,
 			const array = regex.exec(src);
 
 			if (array !== null) {
-				const partTiming = +array[2].match(/(\d+)/)[0];
+				const partTiming = +array[0].match(/(\d+)/)[0];
 
 				let textSearch = findRoundOne.replace('{{ assignment }}', '');
 				textSearch = textSearch.replace('{{ duration }}', partTiming);
@@ -231,12 +231,11 @@ export const extractSourceLiving = (livingPartsVariations, src, lang) => {
 		masterSearch = masterSearch.replace(patternContent, '');
 
 		let textSearch = masterSearch.replace('{{ duration }}', '\\d+');
-		textSearch = textSearch.replace('(', '(\\(');
-		textSearch = textSearch.replace(')', ')\\)');
-		textSearch = textSearch.replace(' :', ' ?:?');
+		textSearch = textSearch.replace('(', '\\(');
+		textSearch = textSearch.replace(')', '\\)');
+		textSearch = textSearch.replace(':', ':?');
 		textSearch = textSearch.replace(') ', ') ?');
 		textSearch = textSearch.replace('??', '?');
-
 		const regex = new RegExp(textSearch.trim());
 		const array = regex.exec(src);
 
