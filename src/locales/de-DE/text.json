@@ -22,6 +22,6 @@
 	"talkVariations": "Vortrag",
 	"memorialInvitationVariations": "Einladung zum Gedächtnismahl",
 	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} Min.) {{ source }} (th Lektion {{ study }})|{{ assignment }}: ({{ duration }} Min.) {{ source }}",
-	"assignmentLcVariations": "{{ source }}: ({{ duration }} Min.) {{ content }}",
+	"assignmentLcVariations": "{{ source }}: ({{ duration }} min.)|{{ source }}: ({{ duration }} min.) {{ content }}",
 	"cbsVariations": "Versammlungs­bibelstudium: (30 Min.) {{ source }}"
 }
