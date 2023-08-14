@@ -30,7 +30,6 @@ import { loadEPUB } from 'jw-epub-parser/dist/node/index.js';
 const epubJW = await loadEPUB('/path/to/file.epub');
 
 const epubJW = await loadEPUB({ url: epubUrl });
-
 ```
 
 ### loadEPUB(epubData)
@@ -99,9 +98,11 @@ Currently, we only support enhanced parsing for the following languages:
 ```bash
 Enlish
 French
+German
 Malagasy
 Portuguese Brazil
 Tandroy, Tankarana
+Ukrainian
 Vezo
 ```
 
