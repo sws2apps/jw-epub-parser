@@ -46,7 +46,7 @@ export default {
 			tgwBReadStudy: 2,
 			ayfCount: 3,
 			ayfPart1:
-				'Fiharoagne midineke. Alefaso ty video Fiheregnagne Mitilike: Fanjakagne—Mt 14:​19, 20. Ajanogno i videoy isake misy fitofàgne, le iharò midinekee i fagnonteneagne miboake eoy.',
+				'Fiharoagne midineke. Alefaso ty video Fiheregnagne Mitilike: Fanjakagne—Mt 14:​19, 20. Ajanogno i videoy isake misy fitofàgne, le iharò midineke i fagnonteneagne miboake eoy.',
 			ayfPart1Time: 5,
 			ayfPart1Type: 'Fiheregnagne Mitilike Alefa Video',
 			ayfPart2:

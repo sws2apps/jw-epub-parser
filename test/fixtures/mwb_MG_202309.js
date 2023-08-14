@@ -46,7 +46,7 @@ export default {
 			tgwBReadStudy: 2,
 			ayfCount: 3,
 			ayfPart1:
-				'Fiaraha-midinika. Alefaso ilay video hoe Fiverenana Mitsidika: Fanjakana​—Mt 14:​19, 20. Ajanòny ilay video isaky ny misy fiatoana, ary iaraho m midinika ny fanontaniana mipoitra eo.',
+				'Fiaraha-midinika. Alefaso ilay video hoe Fiverenana Mitsidika: Fanjakana​—Mt 14:​19, 20. Ajanòny ilay video isaky ny misy fiatoana, ary iaraho midinika ny fanontaniana mipoitra eo.',
 			ayfPart1Time: 5,
 			ayfPart1Type: 'Video Fiverenana Mitsidika',
 			ayfPart2:

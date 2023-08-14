@@ -45,7 +45,7 @@ export default {
 			tgwBReadStudy: 2,
 			ayfCount: 3,
 			ayfPart1:
-				'Fiarahan̈a midiniky. Alifasa video Lera Mitsidiky: Fanjakan̈any Zan̈ahary—Mt 14:​19, 20. Ajanòna video io isaka izy mijanon̈o hely, avio an̈onta     ania pan̈atriky fan̈ontanian̈a miboaka amy video io.',
+				'Fiarahan̈a midiniky. Alifasa video Lera Mitsidiky: Fanjakan̈any Zan̈ahary—Mt 14:​19, 20. Ajanòna video io isaka izy mijanon̈o hely, avio an̈ontania pan̈atriky fan̈ontanian̈a miboaka amy video io.',
 			ayfPart1Time: 5,
 			ayfPart1Type: 'Video Lera Mitsidiky',
 			ayfPart2:
@@ -62,7 +62,7 @@ export default {
 			lcPart1: 'Ataova Kamaradinao Jehovah—Estera Nisy Korazy',
 			lcPart1Time: 5,
 			lcPart1Content:
-				'Fiarahan̈a midiniky. Alifasa video io. Mifidiana tsialohaloha tsaiky hadikadin̈iny, izikoa misy. An̈ontania iro: Amy lera karakory anao ti  ianao misy korazy karaha Estera in̈y?',
+				'Fiarahan̈a midiniky. Alifasa video io. Mifidiana tsialohaloha tsaiky hadikadin̈iny, izikoa misy. An̈ontania iro: Amy lera karakory anao tianao misy korazy karaha Estera in̈y?',
 			lcPart2: 'Raha Ilainy Fiangonan̈a',
 			lcPart2Time: 10,
 			lcCBS: 'lff leson 57',
@@ -82,7 +82,7 @@ export default {
 			ayfPart1Time: 3,
 			ayfPart1Type: 'Fitorian̈a',
 			ayfPart2:
-				'Ampiasà hevitry amy raha mety koran̈iny. Tahaoma mivory izy, avio aboaha izy ndreky iaraha midiniky aminany (fa aza alefa) video Ino ma Raha Ataao amy Tran̈o Fivorian̈a An̈y?',
+				'Ampiasà hevitry amy raha mety koran̈iny. Tahaoma mivory izy, avio aboaha izy ndreky iaraha midiniky aminany (fa aza alefa) video Ino ma Raha Atao amy Tran̈o Fivorian̈a An̈y?',
 			ayfPart2Time: 4,
 			ayfPart2Type: 'Lera Mitsidiky',
 			ayfPart2Study: 12,
@@ -142,7 +142,7 @@ export default {
 			ayfPart1Type: 'Fitorian̈a',
 			ayfPart1Study: 9,
 			ayfPart2:
-				'Ampiasà hevitry amy raha mety koran̈iny. Ampizahava izy ndreky iaraha midiniky aminany (fa aza alefa) video Nan̈ino ma Anao Tokony Hianatra Baib boly?',
+				'Ampiasà hevitry amy raha mety koran̈iny. Ampizahava izy ndreky iaraha midiniky aminany (fa aza alefa) video Nan̈ino ma Anao Tokony Hianatra Baiboly?',
 			ayfPart2Time: 4,
 			ayfPart2Type: 'Lera Mitsidiky',
 			ayfPart2Study: 20,
@@ -235,7 +235,7 @@ export default {
 			ayfPart1Type: 'Fitorian̈a',
 			ayfPart1Study: 17,
 			ayfPart2:
-				'Ampiasà hevitry amy raha mety koran̈iny. Izy amia bokikely Mankafiza Fiain̈ana Tsisy Farany!, avio iaraha dinihin̈y tsy ela “Karakory ma Fampias  san̈a Bokikely Ty?”',
+				'Ampiasà hevitry amy raha mety koran̈iny. Izy amia bokikely Mankafiza Fiain̈ana Tsisy Farany!, avio iaraha dinihin̈y tsy ela “Karakory ma Fampiasan̈a Bokikely Ty?”',
 			ayfPart2Time: 4,
 			ayfPart2Type: 'Lera Mitsidiky',
 			ayfPart2Study: 3,
@@ -268,7 +268,7 @@ export default {
 			ayfPart1Type: 'Fitorian̈a',
 			ayfPart1Study: 1,
 			ayfPart2:
-				'Ampiasà hevitry amy raha mety koran̈iny. Tahaoma mivory izy, avio aboaha izy ndreky iaraha midiniky aminany (fa aza alefa) video Ino ma Raha Ataao amy Tran̈o Fivorian̈a An̈y?',
+				'Ampiasà hevitry amy raha mety koran̈iny. Tahaoma mivory izy, avio aboaha izy ndreky iaraha midiniky aminany (fa aza alefa) video Ino ma Raha Atao amy Tran̈o Fivorian̈a An̈y?',
 			ayfPart2Time: 3,
 			ayfPart2Type: 'Lera Mitsidiky',
 			ayfPart2Study: 13,

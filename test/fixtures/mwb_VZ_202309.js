@@ -46,7 +46,7 @@ export default {
 			tgwBReadStudy: 2,
 			ayfCount: 3,
 			ayfPart1:
-				'Fiaraha midiniky. Alefaso ty video hoe Fimpolia Mitsidiky: Fanjakà—Mt 14:​19, 20. Ajanono video iny saky miseho mariky fijanona rey, bakeo apetrraho amy mpanatriky ze fanontanea miseho eo.',
+				'Fiaraha midiniky. Alefaso ty video hoe Fimpolia Mitsidiky: Fanjakà—Mt 14:​19, 20. Ajanono video iny saky miseho mariky fijanona rey, bakeo apetraho amy mpanatriky ze fanontanea miseho eo.',
 			ayfPart1Time: 5,
 			ayfPart1Type: 'Video Fimpolia Mitsidiky',
 			ayfPart2:

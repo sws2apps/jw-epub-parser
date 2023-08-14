@@ -28,7 +28,7 @@ export default {
 			lcPart1: 'Ce qu’ils en pensent : L’importance du physique',
 			lcPart1Time: 5,
 			lcPart1Content:
-				'Discussion. Montrer la vidéo. Puis poser ces questions : Pourquoi est-​il parfois difficile d’avoir un point de vue équilibré sur notre appparence ?',
+				'Discussion. Montrer la vidéo. Puis poser ces questions : Pourquoi est-​il parfois difficile d’avoir un point de vue équilibré sur notre apparence ?',
 			lcPart2: 'L’organisation de Dieu à l’oeuvre',
 			lcPart2Time: 10,
 			lcPart2Content: 'Montrer la vidéo L’organisation de Dieu à l’oeuvre prévue pour septembre.',
@@ -49,7 +49,7 @@ export default {
 			ayfPart1Time: 5,
 			ayfPart1Type: 'Vidéo de la nouvelle visite',
 			ayfPart2:
-				'Engage la conversation sur la base du thème suggéré. Parle à ton interlocuteur de la possibilité de suivre des cours bibliques et remets-​lui unne carte de visite « cours biblique »',
+				'Engage la conversation sur la base du thème suggéré. Parle à ton interlocuteur de la possibilité de suivre des cours bibliques et remets-​lui une carte de visite « cours biblique »',
 			ayfPart2Time: 3,
 			ayfPart2Type: 'Nouvelle visite',
 			ayfPart2Study: 16,
@@ -62,7 +62,7 @@ export default {
 			lcPart1: 'Deviens l’ami de Jéhovah : Esther avait du courage',
 			lcPart1Time: 5,
 			lcPart1Content:
-				'Discussion. Montrer la vidéo. Puis, si possible, poser à de jeunes enfants désignés à l’avance cette question : Comment aimerais-​tu imiteer le courage d’Esther ?',
+				'Discussion. Montrer la vidéo. Puis, si possible, poser à de jeunes enfants désignés à l’avance cette question : Comment aimerais-​tu imiter le courage d’Esther ?',
 			lcPart2: 'Besoins de l’assemblée',
 			lcPart2Time: 10,
 			lcCBS: 'lff leçon 57',
@@ -82,7 +82,7 @@ export default {
 			ayfPart1Type: 'Premier contact',
 			ayfPart1Study: 3,
 			ayfPart2:
-				'Engage la conversation sur la base du thème suggéré. Invite ton interlocuteur à une réunion. Présente-​lui (sans la visionner) la vidéo Que se ppasse-​t-​il dans une salle du Royaume ?, puis discutes-​en avec lui',
+				'Engage la conversation sur la base du thème suggéré. Invite ton interlocuteur à une réunion. Présente-​lui (sans la visionner) la vidéo Que se passe-​t-​il dans une salle du Royaume ?, puis discutes-​en avec lui',
 			ayfPart2Time: 4,
 			ayfPart2Type: 'Nouvelle visite',
 			ayfPart2Study: 12,
@@ -112,7 +112,7 @@ export default {
 			ayfPart1Type: 'Premier contact',
 			ayfPart1Study: 6,
 			ayfPart2:
-				'Engage la conversation sur la base du thème suggéré. Propose à ton interlocuteur la brochure Vivez pour toujours ! et montre-​lui comment, dans  la pratique, se passe un cours biblique',
+				'Engage la conversation sur la base du thème suggéré. Propose à ton interlocuteur la brochure Vivez pour toujours ! et montre-​lui comment, dans la pratique, se passe un cours biblique',
 			ayfPart2Time: 5,
 			ayfPart2Type: 'Nouvelle visite',
 			ayfPart2Study: 13,
@@ -143,7 +143,7 @@ export default {
 			ayfPart1Type: 'Premier contact',
 			ayfPart1Study: 9,
 			ayfPart2:
-				'Engage la conversation sur la base du thème suggéré. Présente (sans la visionner) la vidéo Pourquoi étudier la Bible ?, puis discutes-​en avec tton interlocuteur',
+				'Engage la conversation sur la base du thème suggéré. Présente (sans la visionner) la vidéo Pourquoi étudier la Bible ?, puis discutes-​en avec ton interlocuteur',
 			ayfPart2Time: 4,
 			ayfPart2Type: 'Nouvelle visite',
 			ayfPart2Study: 20,
@@ -266,7 +266,7 @@ export default {
 			tgwBReadStudy: 5,
 			ayfCount: 3,
 			ayfPart1:
-				'Engage la conversation sur la base du thème suggéré. Parle à ton interlocuteur de la possibilité de suivre des cours bibliques et remets-​lui unne carte de visite « cours biblique »',
+				'Engage la conversation sur la base du thème suggéré. Parle à ton interlocuteur de la possibilité de suivre des cours bibliques et remets-​lui une carte de visite « cours biblique »',
 			ayfPart1Time: 4,
 			ayfPart1Type: 'Premier contact',
 			ayfPart1Study: 1,

@@ -45,7 +45,7 @@ export default {
 			tgwBReadStudy: 2,
 			ayfCount: 3,
 			ayfPart1:
-				'Discussion. Play the video Return Visit: Kingdom​—Mt 14:19, 20. Stop the video at each pause, and ask the audience the questions that appear in  the video.',
+				'Discussion. Play the video Return Visit: Kingdom​—Mt 14:19, 20. Stop the video at each pause, and ask the audience the questions that appear in the video.',
 			ayfPart1Time: 5,
 			ayfPart1Type: 'Return Visit Video',
 			ayfPart2:
