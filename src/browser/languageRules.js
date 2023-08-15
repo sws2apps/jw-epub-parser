@@ -1,10 +1,12 @@
 import source from '../locales/en/text.json';
 import F from '../locales/fr-FR/text.json';
+import K from '../locales/uk-UA/text.json';
 import MG from '../locales/mg-MG/text.json';
 import T from '../locales/pt-BR/text.json';
 import TND from '../locales/mg-TND/text.json';
 import TNK from '../locales/mg-TNK/text.json';
 import VZ from '../locales/mg-VZ/text.json';
+import X from '../locales/de-DE/text.json';
 
 const dataLang = {};
 
@@ -12,11 +14,13 @@ for (const [key, value] of Object.entries(source)) {
 	dataLang[key] = {
 		E: value,
 		F: F[key],
+		K: K[key],
 		MG: MG[key],
 		T: T[key],
 		TND: TND[key],
 		TNK: TNK[key],
 		VZ: VZ[key],
+		X: X[key],
 	};
 }
 

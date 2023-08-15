@@ -1,10 +1,12 @@
 import source from '../locales/en/text.json' assert { type: 'json' };
 import F from '../locales/fr-FR/text.json' assert { type: 'json' };
+import K from '../locales/uk-UA/text.json' assert { type: 'json' };
 import MG from '../locales/mg-MG/text.json' assert { type: 'json' };
 import T from '../locales/pt-BR/text.json' assert { type: 'json' };
 import TND from '../locales/mg-TND/text.json' assert { type: 'json' };
 import TNK from '../locales/mg-TNK/text.json' assert { type: 'json' };
 import VZ from '../locales/mg-VZ/text.json' assert { type: 'json' };
+import X from '../locales/de-DE/text.json' assert { type: 'json' };
 
 const dataLang = {};
 
@@ -12,11 +14,13 @@ for (const [key, value] of Object.entries(source)) {
 	dataLang[key] = {
 		E: value,
 		F: F[key],
+		K: K[key],
 		MG: MG[key],
 		T: T[key],
 		TND: TND[key],
 		TNK: TNK[key],
 		VZ: VZ[key],
+		X: X[key],
 	};
 }
 
