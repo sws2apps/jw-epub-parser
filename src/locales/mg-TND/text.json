@@ -22,6 +22,6 @@
 	"talkVariations": "Lahajaka",
 	"memorialInvitationVariations": "Fanasagne amy ty Fahatsiarovagne",
 	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min.) {{ source }} (th lesogne {{ study }})|{{ assignment }}: ({{ duration }} min) {{ source }} (th lesogne {{ study }})|{{ assignment }}: ({{ duration }} min.). {{ source }} (th lesogne {{ study }})|{{ assignment }}: ({{ duration }} min.). {{ source }}|{{ assignment }}: ({{ duration }} min.) {{ source }}|{{ assignment }}: ({{ duration }}  min.) {{ source }}",
-	"assignmentLcVariations": "{{ source }}: ({{ duration }} min.)|{{ source }}: ({{ duration }} min.) {{ content }}",
+	"assignmentLcVariations": "{{ source }}: ({{ duration }} min.) {{ content }}|{{ source }}: ({{ duration }} min.). {{ content }}|{{ source }} ({{ duration }} min.) {{ content }}",
 	"cbsVariations": "Fianaragne Baiboly Anoe ty Fiangonagne: (30 min.) {{ source }}"
 }
