@@ -11,8 +11,8 @@
 	"octoberVariations": "Oktober",
 	"novemberVariations": "November",
 	"decemberVariations": "Dezember",
-	"tgwTalk10Variations": "{{ title }} (10 Min.)",
-	"tgwBibleReadingVariations": "Bibellesung (4 Min.): {{ source }} (th Lektion {{ study }})",
+	"tgwTalk10Variations": "{{ title }}: (10 Min.)",
+	"tgwBibleReadingVariations": "Bibellesung: (4 Min.) {{ source }} (th Lektion {{ study }})",
 	"initialCallVideoVariations": "Erstes Gespräch (Video)",
 	"returnVisitVideoVariations": "Rückbesuch (Video)",
 	"memorialInvitationVideoVariations": "Einladung zum Gedächtnismahl (Video)",
@@ -21,7 +21,7 @@
 	"bibleStudyVariations": "Bibelstudium",
 	"talkVariations": "Vortrag",
 	"memorialInvitationVariations": "Einladung zum Gedächtnismahl",
-	"assignmentAyfVariations": "{{ assignment }} ({{ duration }} Min.): {{ source }} (th Lektion {{ study }})|{{ assignment }} ({{ duration }} Min.): {{ source }}",
-	"assignmentLcVariations": "{{ source }} ({{ duration }} Min.)|{{ source }} ({{ duration }} Min.): {{ content }}",
-	"cbsVariations": "Versammlungs­bibelstudium (30 Min.): {{ source }}"
+	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} Min.) {{ source }} (th Lektion {{ study }})|{{ assignment }}: ({{ duration }} Min.) {{ source }}",
+	"assignmentLcVariations": "{{ source }}: ({{ duration }} min.)|{{ source }}: ({{ duration }} min.) {{ content }}",
+	"cbsVariations": "Versammlungs­bibelstudium: (30 Min.) {{ source }}"
 }
