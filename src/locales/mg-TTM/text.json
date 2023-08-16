@@ -22,7 +22,7 @@
 	"talkVariations": "Lahateny",
 	"memorialInvitationVariations": "Fanasana Fahatsiarovana",
 	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min.) {{ source }}",
-	"assignmentLcVariations": "{{ source }}: ({{ duration }} min.) {{ content }}",
+	"assignmentLcVariations": "{{ source }}: ({{ duration }} min.)|{{ source }}: ({{ duration }} min.) {{ content }}",
 	"cbsVariations": "Fianarana Baiboly: (30 min.) {{ source }}",
 	"studyArticleDateVariations": "Lahatsoratra Fianarana {{ number }}: {{ date }}"
 }

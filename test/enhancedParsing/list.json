@@ -1,8 +1,10 @@
 [
 	{ "language": "E", "issue": "202309" },
 	{ "language": "F", "issue": "202309" },
+	{ "language": "K", "issue": "202309" },
 	{ "language": "MG", "issue": "202309" },
 	{ "language": "TND", "issue": "202309" },
 	{ "language": "TNK", "issue": "202309" },
-	{ "language": "VZ", "issue": "202309" }
+	{ "language": "VZ", "issue": "202309" },
+	{ "language": "X", "issue": "202309" }
 ]

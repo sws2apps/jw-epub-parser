@@ -22,7 +22,7 @@
   "talkVariations": "Talk",
   "memorialInvitationVariations": "Memorial Invitation",
   "assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min.) {{ source }}",
-  "assignmentLcVariations": "{{ source }}: ({{ duration }} min.) {{ content }}",
+  "assignmentLcVariations": "{{ source }}: ({{ duration }} min.)|{{ source }}: ({{ duration }} min.) {{ content }}",
   "cbsVariations": "Congregation Bible Study: (30 min.) {{ source }}",
   "studyArticleDateVariations": "Study Article {{ number }}: {{ date }}"
 }
