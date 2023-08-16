@@ -48,18 +48,18 @@ By calling the `loadEPUB` function, it will return an array of objects with the 
 
 #### Meeting Workbook Data
 
-| Name                     |       Type        | Description                                                                                                                |
-| ------------------------ | :---------------: | -------------------------------------------------------------------------------------------------------------------------- |
-| mwb_week_date            |      string       | Week date. For enhanced parsing, it is formatted as `mm/dd/yyyy`                                                           |
-| mwb_week_date_locale\*   |      string       | Week date                                                                                                                  |
-| mwb_weekly_bible_reading |      string       | Weekly Bible Reading                                                                                                       |
-| mwb_song_first           |      integer      | First song                                                                                                                 |
-| mwb_tgw_talk             |      string       | 10 min talk title of the Treasures from God’s Word                                                                         |
-| mwb_tgw_bread            |      string       | Bible Reading for student                                                                                                  |
-| mwb_ayf_count            |      integer      | Number of parts in Apply Yourself to the Field Ministry                                                                    |
-| mwb_ayf_part1            |      string       | Part 1 in Apply Yourself to the Field Ministry                                                                             |
-| mwb_ayf_part1_time\*     |      integer      | Timing of Part 1 in Apply Yourself to the Field Ministry                                                                   |
-| mwb_ayf_part1_type\*     |      string       | Type of Part 1 in Apply Yourself to the Field Ministry                                                                     |
+| Name                     |       Type        | Description                                                                                                                     |
+| ------------------------ | :---------------: | ------------------------------------------------------------------------------------------------------------------------------- |
+| mwb_week_date            |      string       | Week date. For enhanced parsing, it is formatted as `mm/dd/yyyy`                                                                |
+| mwb_week_date_locale\*   |      string       | Week date                                                                                                                       |
+| mwb_weekly_bible_reading |      string       | Weekly Bible Reading                                                                                                            |
+| mwb_song_first           |      integer      | First song                                                                                                                      |
+| mwb_tgw_talk             |      string       | 10 min talk title of the Treasures from God’s Word                                                                              |
+| mwb_tgw_bread            |      string       | Bible Reading for student                                                                                                       |
+| mwb_ayf_count            |      integer      | Number of parts in Apply Yourself to the Field Ministry                                                                         |
+| mwb_ayf_part1            |      string       | Part 1 in Apply Yourself to the Field Ministry                                                                                  |
+| mwb_ayf_part1_time\*     |      integer      | Timing of Part 1 in Apply Yourself to the Field Ministry                                                                        |
+| mwb_ayf_part1_type\*     |      string       | Type of Part 1 in Apply Yourself to the Field Ministry                                                                          |
 | mwb_ayf_part2            |      string       | Part 2 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is 1                     |
 | mwb_ayf_part2_time\*     |      integer      | Timing of Part 2 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is 1           |
 | mwb_ayf_part2_type\*     |      string       | Type of Part 2 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is 1             |
@@ -69,16 +69,16 @@ By calling the `loadEPUB` function, it will return an array of objects with the 
 | mwb_ayf_part4            |      string       | Part 4 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is less than 4           |
 | mwb_ayf_part4_time\*     |      integer      | Timing of Part 4 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is less than 4 |
 | mwb_ayf_part4_type\*     |      string       | Type of Part 4 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is less than 4   |
-| mwb_song_middle          |      integer      | Middle song                                                                                                                |
-| mwb_lc_count             |      integer      | Number of parts in Living as Christians                                                                                    |
-| mwb_lc_part1             |      string       | Part 1 in Living as Christians                                                                                             |
-| mwb_lc_part1_time\*      |      integer      | Timing of Part 1 in Living as Christians                                                                                   |
-| mwb_lc_part1_content\*   |      string       | Content of Part 1 in Living as Christians                                                                                  |
+| mwb_song_middle          |      integer      | Middle song                                                                                                                     |
+| mwb_lc_count             |      integer      | Number of parts in Living as Christians                                                                                         |
+| mwb_lc_part1             |      string       | Part 1 in Living as Christians                                                                                                  |
+| mwb_lc_part1_time\*      |      integer      | Timing of Part 1 in Living as Christians                                                                                        |
+| mwb_lc_part1_content\*   |      string       | Content of Part 1 in Living as Christians                                                                                       |
 | mwb_lc_part2             |      string       | Part 2 in Living as Christians. This property will not be available if `mwb_lc_count` is 1                                      |
 | mwb_lc_part2_time\*      |      integer      | Timing of Part 2 in Living as Christians. This property will not be available if `mwb_lc_count` is 1                            |
 | mwb_lc_part2_content\*   |      string       | Content of Part 2 in Living as Christians. This property will not be available if `mwb_lc_count` is 1                           |
-| mwb_lc_cbs               |      string       | Congregation Bible Study source material                                                                                   |
-| mwb_song_conclude        | integer or string | Concluding song. When the song number is out of range, it will be the default text from the Meeting Workbook.              |
+| mwb_lc_cbs               |      string       | Congregation Bible Study source material                                                                                        |
+| mwb_song_conclude        | integer or string | Concluding song. When the song number is out of range, it will be the default text from the Meeting Workbook.                   |
 
 #### Watchtowet Study Data
 
@@ -88,7 +88,7 @@ By calling the `loadEPUB` function, it will return an array of objects with the 
 | w_study_date_locale\*   | string  | Week date                                                        |
 | w_study_title           | string  | Watchtower Study Article Title                                   |
 | w_study_opening_song    | integer | Opening Song for the Watchtower Study                            |
-| w_study_concluding_song | integer  | Concluding Song for the Watchtower Study                         |
+| w_study_concluding_song | integer | Concluding Song for the Watchtower Study                         |
 
 \* These properties are only available when enhanced parsing is available for the language you parse.
 
@@ -97,9 +97,12 @@ Currently, we only support enhanced parsing for the following languages:
 ```bash
 Enlish
 French
+German
 Madagascar Sign Language, Malagasy
+Malagasy
 Portuguese Brazil
 Tandroy, Tankarana
+Ukrainian
 Vezo
 ```
 
