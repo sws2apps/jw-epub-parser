@@ -1,3 +1,10 @@
+# [2.0.0-beta.7](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0-beta.6...v2.0.0-beta.7) (2023-08-16)
+
+
+### Features
+
+* **module:** add support for German and Ukrainian languages [from main] ([3685010](https://github.com/sws2apps/jw-epub-parser/commit/368501084e458a53b8c4d28c03cdd0c71a0ecf65))
+
 # [1.41.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.40.1...v1.41.0) (2023-08-14)
 
 
