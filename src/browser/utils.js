@@ -1,5 +1,6 @@
 import * as path from 'path-browserify';
 
+import E from '../locales/en/text.json';
 import F from '../locales/fr-FR/text.json';
 import K from '../locales/uk-UA/text.json';
 import MG from '../locales/mg-MG/text.json';
