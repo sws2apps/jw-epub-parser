@@ -14,8 +14,6 @@ export const extractMonthName = (src, lang) => {
 	let varDay;
 	let monthIndex;
 
-	src = src.split('–')[0];
-
 	const monthNames = getMonthNames(lang);
 
 	for (const month of monthNames) {
@@ -80,7 +78,7 @@ export const extractTGWBibleReading = (src, lang) => {
 
 	if (result) return result;
 
-	throw new JWEPUBParserError('tgw-bibleReading', 'Parsing failed for Bible Reading part');
+	throw new JWEPUBParserError('tgw-bibleReading', `Parsing failed for Bible Reading part. The input was: ${src}`);
 };
 
 export const extractAYFAssignment = (src, lang) => {
@@ -98,7 +96,10 @@ export const extractAYFAssignment = (src, lang) => {
 
 		let assignmentsList = '(';
 		for (let a = 0; a < assignmentsName.length; a++) {
-			assignmentsList += assignmentsName[a];
+			let tmp = assignmentsName[a];
+			tmp = tmp.replace('(', '\\(');
+			tmp = tmp.replace(')', '\\)');
+			assignmentsList += tmp;
 
 			if (a < assignmentsName.length - 1) {
 				assignmentsList += '|';
@@ -107,9 +108,8 @@ export const extractAYFAssignment = (src, lang) => {
 		assignmentsList += ')';
 
 		let textSearch = find.replace('{{ duration }}', '\\d+');
-		textSearch = textSearch.replace('(', '(\\(');
-		textSearch = textSearch.replace(')', ')\\)');
-		textSearch = textSearch.replace(' :', ' ?:?');
+		textSearch = textSearch.replace('(', '\\(');
+		textSearch = textSearch.replace(')', '\\)');
 		textSearch = textSearch.replace(') ', ') ?');
 		textSearch = textSearch.replace('??', '?');
 		textSearch = textSearch.replace(patternAssignment, assignmentsList);
@@ -118,7 +118,7 @@ export const extractAYFAssignment = (src, lang) => {
 		const array = regex.exec(src);
 
 		if (array !== null) {
-			const partTiming = +array[2].match(/(\d+)/)[0];
+			const partTiming = +array[0].match(/(\d+)/)[0];
 
 			let textSearch = find.replace('{{ assignment }}', '');
 			textSearch = textSearch.replace('{{ duration }}', partTiming);
@@ -171,9 +171,9 @@ export const extractLCAssignment = (src, lang) => {
 		masterSearch = masterSearch.replace(patternContent, '');
 
 		let textSearch = masterSearch.replace('{{ duration }}', '\\d+');
-		textSearch = textSearch.replace('(', '(\\(');
-		textSearch = textSearch.replace(')', ')\\)');
-		textSearch = textSearch.replace(' :', ' ?:?');
+		textSearch = textSearch.replace('(', '\\(');
+		textSearch = textSearch.replace(')', '\\)');
+		textSearch = textSearch.replace(':', ':?');
 		textSearch = textSearch.replace(') ', ') ?');
 		textSearch = textSearch.replace('??', '?');
 
