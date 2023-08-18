@@ -1,20 +1,15 @@
 import { getHTMLWTArticleDoc } from './epub_jszip.js';
-import { HTMLParse } from './html_validation.js';
 import { extractSongNumber } from './parsing_rules.js';
 
-export const getMWBWeekDate = (htmlItem, fromHTML) => {
-	const wdHtml = fromHTML
-		? htmlItem.querySelector('article').querySelector('header').querySelector('h1')
-		: htmlItem.getElementsByTagName('h1').item(0);
+export const getMWBWeekDate = (htmlItem) => {
+	const wdHtml = htmlItem.querySelector('h1');
 	const weekDate = wdHtml.textContent.replaceAll(/\u00A0/g, ' ');
 
 	return weekDate;
 };
 
-export const getMWBWeeklyBibleReading = (htmlItem, fromHTML) => {
-	const wbHtml = fromHTML
-		? htmlItem.querySelector('article').querySelector('header').querySelector('h2')
-		: htmlItem.getElementsByTagName('h2').item(0);
+export const getMWBWeeklyBibleReading = (htmlItem) => {
+	const wbHtml = htmlItem.querySelector('h2');
 	const weeklyBibleReading = wbHtml.textContent.replaceAll(/\u00A0/g, ' ');
 
 	return weeklyBibleReading;
@@ -55,18 +50,9 @@ export const getWStudyDate = (htmlItem) => {
 	return htmlItem.textContent.replaceAll(/\u00A0/g, ' '); // remove non-breaking space;
 };
 
-export const getWSTudySongs = async ({ htmlItem, zip, fromHTML, htmlArticles, index }) => {
-	let article;
+export const getWSTudySongs = async ({ htmlItem, zip }) => {
 	const articleLink = htmlItem.nextElementSibling.querySelector('a').getAttribute('href');
-
-	if (!fromHTML) {
-		article = await getHTMLWTArticleDoc(zip, articleLink);
-	}
-
-	if (fromHTML) {
-		const wtArticle = htmlArticles[index];
-		article = HTMLParse(wtArticle);
-	}
+	const article = await getHTMLWTArticleDoc(zip, articleLink);
 
 	if (article) {
 		const themeScrp = article.querySelector('.themeScrp');

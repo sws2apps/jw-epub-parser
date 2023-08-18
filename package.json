@@ -56,10 +56,11 @@
 	},
 	"dependencies": {
 		"dateformat": "^5.0.3",
-		"global-jsdom": "^9.0.1",
-		"jsdom": "^22.0.0",
+		"global-jsdom": "^9.1.0",
+		"jsdom": "^22.1.0",
 		"jszip": "^3.9.1",
 		"node-fetch": "^3.2.10",
+		"node-html-parser": "^6.1.6",
 		"path-browserify": "^1.0.1"
 	}
 }
