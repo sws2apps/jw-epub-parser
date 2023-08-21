@@ -1,3 +1,10 @@
+# [2.0.0-beta.8](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0-beta.7...v2.0.0-beta.8) (2023-08-18)
+
+
+### Features
+
+* **module:** use node-html-parser to parse html strings ([d8e6609](https://github.com/sws2apps/jw-epub-parser/commit/d8e6609508b925a8d75f507a45cee5b31c4fe6b1))
+
 # [2.0.0-beta.7](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0-beta.6...v2.0.0-beta.7) (2023-08-16)
 
 
