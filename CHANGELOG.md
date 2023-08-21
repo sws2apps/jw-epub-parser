@@ -1,3 +1,10 @@
+# [2.0.0-beta.9](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0-beta.8...v2.0.0-beta.9) (2023-08-21)
+
+
+### Features
+
+* **module:** add functions to parse meeting data from wol ([eb82157](https://github.com/sws2apps/jw-epub-parser/commit/eb821575791e60fb0bc37173829089e0bc98d646))
+
 # [2.0.0-beta.8](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0-beta.7...v2.0.0-beta.8) (2023-08-18)
 
 
