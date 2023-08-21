@@ -88,203 +88,215 @@ export const startParse = async (epubInput) => {
 	const epubLang = getEPUBLanguage(epubInput);
 
 	if (isMWB) {
-		result = await parseMWBEpub({ htmlDocs, epubYear, epubLang, fromHTML: false });
+		result = await parseMWBEpub({ htmlDocs, epubYear, epubLang });
 	}
 
 	if (isW) {
-		result = await parseWEpub({ htmlItem: htmlDocs[0], epubLang, fromHTML: false, epubContents });
+		result = await parseWEpub({ htmlItem: htmlDocs[0], epubLang, epubContents });
 	}
 
 	return result;
 };
 
-const parseMWBEpub = async ({ htmlDocs, epubYear, epubLang, fromHTML }) => {
+export const parseMWBSchedule = (htmlItem, mwbYear, mwbLang) => {
+	const isEnhancedParsing = languages.find((language) => language.code === mwbLang);
+
+	const weekItem = {};
+
+	// get week date
+	const weekDate = getMWBWeekDate(htmlItem);
+
+	if (isEnhancedParsing) {
+		const weekDateEnhanced = getMWBWeekDateEnhanced(weekDate, mwbYear, mwbLang);
+		weekItem.mwb_week_date = weekDateEnhanced;
+		weekItem.mwb_week_date_locale = weekDate;
+	} else {
+		weekItem.mwb_week_date = weekDate;
+	}
+
+	// get weekly Bible Reading
+	weekItem.mwb_weekly_bible_reading = getMWBWeeklyBibleReading(htmlItem);
+
+	// compile all sources
+	const src = getMWBSources(htmlItem);
+	let splits = src.split('|');
+	let tmpSrc = '';
+
+	// First song
+	weekItem.mwb_song_first = extractSongNumber(splits[1]);
+
+	// 10min TGW Source
+	tmpSrc = splits[3].trim();
+	if (isEnhancedParsing) {
+		weekItem.mwb_tgw_talk = getMWBTGWTalkEnhanced(tmpSrc, mwbLang);
+	} else {
+		weekItem.mwb_tgw_talk = tmpSrc;
+	}
+
+	//Bible Reading Source
+	tmpSrc = splits[7].trim();
+	if (isEnhancedParsing) {
+		weekItem.mwb_tgw_bread = getMWBTGWBibleReadingEnhanced(tmpSrc, mwbLang);
+	} else {
+		weekItem.mwb_tgw_bread = tmpSrc;
+	}
+
+	// get number of assignments in Apply Yourself Parts
+	const cnAYF = getMWBAYFCount(htmlItem);
+
+	// AYF Part Count
+	weekItem.mwb_ayf_count = cnAYF;
+
+	//AYF1 Source
+	tmpSrc = splits[8].trim();
+	if (isEnhancedParsing) {
+		const partEnhanced = getMWBAYFEnhanced(tmpSrc, mwbLang);
+		weekItem.mwb_ayf_part1 = partEnhanced.src;
+		weekItem.mwb_ayf_part1_time = partEnhanced.time;
+		weekItem.mwb_ayf_part1_type = partEnhanced.type;
+	} else {
+		weekItem.mwb_ayf_part1 = tmpSrc;
+	}
+
+	//AYF2 Source
+	if (cnAYF > 1) {
+		tmpSrc = splits[9].trim();
+		if (isEnhancedParsing) {
+			const partEnhanced = getMWBAYFEnhanced(tmpSrc, mwbLang);
+			weekItem.mwb_ayf_part2 = partEnhanced.src;
+			weekItem.mwb_ayf_part2_time = partEnhanced.time;
+			weekItem.mwb_ayf_part2_type = partEnhanced.type;
+		} else {
+			weekItem.mwb_ayf_part2 = tmpSrc;
+		}
+	}
+
+	//AYF3 Source
+	if (cnAYF > 2) {
+		tmpSrc = splits[10].trim();
+		if (isEnhancedParsing) {
+			const partEnhanced = getMWBAYFEnhanced(tmpSrc, mwbLang);
+			weekItem.mwb_ayf_part3 = partEnhanced.src;
+			weekItem.mwb_ayf_part3_time = partEnhanced.time;
+			weekItem.mwb_ayf_part3_type = partEnhanced.type;
+		} else {
+			weekItem.mwb_ayf_part3 = tmpSrc;
+		}
+	}
+
+	// AYF4 Source
+	if (cnAYF > 3) {
+		tmpSrc = splits[11].trim();
+		if (isEnhancedParsing) {
+			const partEnhanced = getMWBAYFEnhanced(tmpSrc, mwbLang);
+			weekItem.mwb_ayf_part4 = partEnhanced.src;
+			weekItem.mwb_ayf_part4_time = partEnhanced.time;
+			weekItem.mwb_ayf_part4_type = partEnhanced.type;
+		} else {
+			weekItem.mwb_ayf_part4 = tmpSrc;
+		}
+	}
+
+	// Middle song
+	let nextIndex = cnAYF > 3 ? 12 : cnAYF > 2 ? 11 : cnAYF > 1 ? 10 : 9;
+	weekItem.mwb_song_middle = extractSongNumber(splits[nextIndex]);
+
+	// get number of assignments in Living as Christians Parts
+	const cnLC = getMWBLCCount(htmlItem);
+
+	// LC Part Count
+	weekItem.mwb_lc_count = cnLC;
+
+	// 1st LC part
+	nextIndex++;
+
+	tmpSrc = splits[nextIndex].trim();
+	if (isEnhancedParsing) {
+		const lcEnhanced = getMWBLCEnhanced(tmpSrc, mwbLang);
+		weekItem.mwb_lc_part1 = lcEnhanced.title;
+		weekItem.mwb_lc_part1_time = lcEnhanced.time;
+		if (lcEnhanced.content && lcEnhanced.content !== '') {
+			weekItem.mwb_lc_part1_content = lcEnhanced.content;
+		}
+	} else {
+		weekItem.mwb_lc_part1 = tmpSrc;
+	}
+
+	// 2nd LC part
+	if (cnLC === 2) {
+		nextIndex++;
+		tmpSrc = splits[nextIndex].trim();
+
+		if (isEnhancedParsing) {
+			const lcEnhanced = getMWBLCEnhanced(tmpSrc, mwbLang);
+			weekItem.mwb_lc_part2 = lcEnhanced.title;
+			weekItem.mwb_lc_part2_time = lcEnhanced.time;
+			if (lcEnhanced.content && lcEnhanced.content !== '') {
+				weekItem.mwb_lc_part2_content = lcEnhanced.content;
+			}
+		} else {
+			weekItem.mwb_lc_part2 = tmpSrc;
+		}
+	}
+
+	// CBS Source
+	nextIndex++;
+	tmpSrc = splits[nextIndex].trim();
+
+	if (isEnhancedParsing) {
+		weekItem.mwb_lc_cbs = getMWBCBSEnhanced(tmpSrc, mwbLang);
+	} else {
+		weekItem.mwb_lc_cbs = tmpSrc;
+	}
+
+	// Concluding Song
+	nextIndex++;
+	nextIndex++;
+	tmpSrc = splits[nextIndex].trim();
+	weekItem.mwb_song_conclude = extractLastSong(tmpSrc);
+
+	return weekItem;
+};
+
+export const parseWSchedule = (htmlItem, wLang) => {
+	const isEnhancedParsing = languages.find((language) => language.code === wLang);
+
+	const weekItem = {};
+
+	const studyDate = getWStudyDate(htmlItem);
+
+	if (isEnhancedParsing) {
+		const wStudyEnhanced = getWTStudyDateEnhanced(studyDate, wLang);
+		weekItem.w_study_date = wStudyEnhanced;
+		weekItem.w_study_date_locale = studyDate;
+	} else {
+		weekItem.w_study_date = studyDate;
+	}
+
+	const studyTitle = getWStudyTitle(htmlItem);
+	weekItem.w_study_title = studyTitle;
+
+	return weekItem;
+};
+
+const parseMWBEpub = async ({ htmlDocs, epubYear, epubLang }) => {
 	const weeksData = [];
 
-	const isEnhancedParsing = languages.find((language) => language.code === epubLang);
-
 	for (const htmlItem of htmlDocs) {
-		const weekItem = {};
-
-		// get week date
-		const weekDate = getMWBWeekDate(htmlItem);
-
-		if (isEnhancedParsing) {
-			const weekDateEnhanced = getMWBWeekDateEnhanced(weekDate, epubYear, epubLang);
-			weekItem.mwb_week_date = weekDateEnhanced;
-			weekItem.mwb_week_date_locale = weekDate;
-		} else {
-			weekItem.mwb_week_date = weekDate;
-		}
-
-		// get weekly Bible Reading
-		weekItem.mwb_weekly_bible_reading = getMWBWeeklyBibleReading(htmlItem);
-
-		// compile all sources
-		const src = getMWBSources(htmlItem);
-		let splits = src.split('|');
-		let tmpSrc = '';
-
-		// First song
-		weekItem.mwb_song_first = extractSongNumber(splits[1]);
-
-		// 10min TGW Source
-		tmpSrc = splits[3].trim();
-		if (isEnhancedParsing) {
-			weekItem.mwb_tgw_talk = getMWBTGWTalkEnhanced(tmpSrc, epubLang);
-		} else {
-			weekItem.mwb_tgw_talk = tmpSrc;
-		}
-
-		//Bible Reading Source
-		tmpSrc = splits[7].trim();
-		if (isEnhancedParsing) {
-			weekItem.mwb_tgw_bread = getMWBTGWBibleReadingEnhanced(tmpSrc, epubLang);
-		} else {
-			weekItem.mwb_tgw_bread = tmpSrc;
-		}
-
-		// get number of assignments in Apply Yourself Parts
-		const cnAYF = getMWBAYFCount(htmlItem);
-
-		// AYF Part Count
-		weekItem.mwb_ayf_count = cnAYF;
-
-		//AYF1 Source
-		tmpSrc = splits[8].trim();
-		if (isEnhancedParsing) {
-			const partEnhanced = getMWBAYFEnhanced(tmpSrc, epubLang);
-			weekItem.mwb_ayf_part1 = partEnhanced.src;
-			weekItem.mwb_ayf_part1_time = partEnhanced.time;
-			weekItem.mwb_ayf_part1_type = partEnhanced.type;
-		} else {
-			weekItem.mwb_ayf_part1 = tmpSrc;
-		}
-
-		//AYF2 Source
-		if (cnAYF > 1) {
-			tmpSrc = splits[9].trim();
-			if (isEnhancedParsing) {
-				const partEnhanced = getMWBAYFEnhanced(tmpSrc, epubLang);
-				weekItem.mwb_ayf_part2 = partEnhanced.src;
-				weekItem.mwb_ayf_part2_time = partEnhanced.time;
-				weekItem.mwb_ayf_part2_type = partEnhanced.type;
-			} else {
-				weekItem.mwb_ayf_part2 = tmpSrc;
-			}
-		}
-
-		//AYF3 Source
-		if (cnAYF > 2) {
-			tmpSrc = splits[10].trim();
-			if (isEnhancedParsing) {
-				const partEnhanced = getMWBAYFEnhanced(tmpSrc, epubLang);
-				weekItem.mwb_ayf_part3 = partEnhanced.src;
-				weekItem.mwb_ayf_part3_time = partEnhanced.time;
-				weekItem.mwb_ayf_part3_type = partEnhanced.type;
-			} else {
-				weekItem.mwb_ayf_part3 = tmpSrc;
-			}
-		}
-
-		// AYF4 Source
-		if (cnAYF > 3) {
-			tmpSrc = splits[11].trim();
-			if (isEnhancedParsing) {
-				const partEnhanced = getMWBAYFEnhanced(tmpSrc, epubLang);
-				weekItem.mwb_ayf_part4 = partEnhanced.src;
-				weekItem.mwb_ayf_part4_time = partEnhanced.time;
-				weekItem.mwb_ayf_part4_type = partEnhanced.type;
-			} else {
-				weekItem.mwb_ayf_part4 = tmpSrc;
-			}
-		}
-
-		// Middle song
-		let nextIndex = cnAYF > 3 ? 12 : cnAYF > 2 ? 11 : cnAYF > 1 ? 10 : 9;
-		weekItem.mwb_song_middle = extractSongNumber(splits[nextIndex]);
-
-		// get number of assignments in Living as Christians Parts
-		const cnLC = getMWBLCCount(htmlItem);
-
-		// LC Part Count
-		weekItem.mwb_lc_count = cnLC;
-
-		// 1st LC part
-		nextIndex++;
-
-		tmpSrc = splits[nextIndex].trim();
-		if (isEnhancedParsing) {
-			const lcEnhanced = getMWBLCEnhanced(tmpSrc, epubLang);
-			weekItem.mwb_lc_part1 = lcEnhanced.title;
-			weekItem.mwb_lc_part1_time = lcEnhanced.time;
-			if (lcEnhanced.content && lcEnhanced.content !== '') {
-				weekItem.mwb_lc_part1_content = lcEnhanced.content;
-			}
-		} else {
-			weekItem.mwb_lc_part1 = tmpSrc;
-		}
-
-		// 2nd LC part
-		if (cnLC === 2) {
-			nextIndex++;
-			tmpSrc = splits[nextIndex].trim();
-
-			if (isEnhancedParsing) {
-				const lcEnhanced = getMWBLCEnhanced(tmpSrc, epubLang);
-				weekItem.mwb_lc_part2 = lcEnhanced.title;
-				weekItem.mwb_lc_part2_time = lcEnhanced.time;
-				if (lcEnhanced.content && lcEnhanced.content !== '') {
-					weekItem.mwb_lc_part2_content = lcEnhanced.content;
-				}
-			} else {
-				weekItem.mwb_lc_part2 = tmpSrc;
-			}
-		}
-
-		// CBS Source
-		nextIndex++;
-		tmpSrc = splits[nextIndex].trim();
-
-		if (isEnhancedParsing) {
-			weekItem.mwb_lc_cbs = getMWBCBSEnhanced(tmpSrc, epubLang);
-		} else {
-			weekItem.mwb_lc_cbs = tmpSrc;
-		}
-
-		// Concluding Song
-		nextIndex++;
-		nextIndex++;
-		tmpSrc = splits[nextIndex].trim();
-		weekItem.mwb_song_conclude = extractLastSong(tmpSrc);
-
+		const weekItem = parseMWBSchedule(htmlItem, epubYear, epubLang);
 		weeksData.push(weekItem);
 	}
 
 	return weeksData;
 };
 
-const parseWEpub = async ({ htmlItem, epubLang, fromHTML, epubContents, htmlArticles }) => {
+const parseWEpub = async ({ htmlItem, epubLang, epubContents }) => {
 	const weeksData = [];
-
-	const isEnhancedParsing = languages.find((language) => language.code === epubLang);
 
 	const studyArticles = getWStudyArticles(htmlItem);
 
-	for (const [index, studyArticle] of studyArticles.entries()) {
-		const weekItem = {};
-
-		const studyDate = getWStudyDate(studyArticle);
-		if (isEnhancedParsing) {
-			const wStudyEnhanced = getWTStudyDateEnhanced(studyDate, epubLang);
-			weekItem.w_study_date = wStudyEnhanced;
-			weekItem.w_study_date_locale = studyDate;
-		} else {
-			weekItem.w_study_date = studyDate;
-		}
-
-		const studyTitle = getWStudyTitle(studyArticle);
-		weekItem.w_study_title = studyTitle;
+	for (const [_, studyArticle] of studyArticles.entries()) {
+		const weekItem = parseWSchedule(studyArticle, epubLang);
 
 		const songs = await getWSTudySongs({ zip: epubContents, htmlItem: studyArticle });
 		if (songs) {
