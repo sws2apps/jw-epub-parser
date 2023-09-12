@@ -1,3 +1,16 @@
+# [2.0.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.41.0...v2.0.0) (2023-09-12)
+
+
+### Features
+
+* **deps:** bump @cypress/request and cypress ([c22a63a](https://github.com/sws2apps/jw-epub-parser/commit/c22a63a99a2c562ce7787733dc1977f57ae0def9))
+* **module:** parse meeting data from Watchtower Study epub file ([47f6406](https://github.com/sws2apps/jw-epub-parser/commit/47f64063dd39b38907256806033e3582f724aeb1))
+
+
+### BREAKING CHANGES
+
+* **module:** With this release, the `loadEPUB` function will return an array of objects, containing all the weekly source materials. The property names were all adjusted. Also the, the study point for students parts is no longer a separate property. It is now included with the source part.
+
 # [2.0.0-beta.9](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0-beta.8...v2.0.0-beta.9) (2023-08-21)
 
 
