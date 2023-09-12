@@ -1,3 +1,24 @@
+# [2.0.0-beta.9](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0-beta.8...v2.0.0-beta.9) (2023-08-21)
+
+
+### Features
+
+* **module:** add functions to parse meeting data from wol ([eb82157](https://github.com/sws2apps/jw-epub-parser/commit/eb821575791e60fb0bc37173829089e0bc98d646))
+
+# [2.0.0-beta.8](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0-beta.7...v2.0.0-beta.8) (2023-08-18)
+
+
+### Features
+
+* **module:** use node-html-parser to parse html strings ([d8e6609](https://github.com/sws2apps/jw-epub-parser/commit/d8e6609508b925a8d75f507a45cee5b31c4fe6b1))
+
+# [2.0.0-beta.7](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0-beta.6...v2.0.0-beta.7) (2023-08-16)
+
+
+### Features
+
+* **module:** add support for German and Ukrainian languages [from main] ([3685010](https://github.com/sws2apps/jw-epub-parser/commit/368501084e458a53b8c4d28c03cdd0c71a0ecf65))
+
 # [1.41.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.40.1...v1.41.0) (2023-08-14)
 
 
@@ -7,6 +28,53 @@
 * **deps:** bump node-fetch from 3.3.1 to 3.3.2 ([4e3fb87](https://github.com/sws2apps/jw-epub-parser/commit/4e3fb8707d93cc9c94c93d9ee9e262f7b3a59cf7))
 * **deps:** bump tough-cookie from 4.1.2 to 4.1.3 ([debb7b1](https://github.com/sws2apps/jw-epub-parser/commit/debb7b11f4361122bcb356eeb47417c034e0cb15))
 * **module:** add support for German and Ukrainian languages ([bb15d93](https://github.com/sws2apps/jw-epub-parser/commit/bb15d93fb459a466f267228b741d50a6bfe61a7a))
+
+# [2.0.0-beta.6](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2023-07-12)
+
+
+### Bug Fixes
+
+* **rules:** wrong week date parsed from wt study ([5adbf91](https://github.com/sws2apps/jw-epub-parser/commit/5adbf91b3b844c7207f13ac67d97909f1c15c909))
+
+# [2.0.0-beta.5](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2023-07-05)
+
+
+### Features
+
+* **module:** add support for madagascar sign language ([21b26b9](https://github.com/sws2apps/jw-epub-parser/commit/21b26b919676917dd0a127acf81183c74d1843d7))
+
+# [2.0.0-beta.4](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0-beta.3...v2.0.0-beta.4) (2023-06-24)
+
+
+### Bug Fixes
+
+* **module:** update property names for living parts ([af9318c](https://github.com/sws2apps/jw-epub-parser/commit/af9318cc5b8e926924b8351c3c0025ed28838b2f))
+
+# [2.0.0-beta.3](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2023-06-24)
+
+
+### Bug Fixes
+
+* **browser:** global variables not accessible ([1282e30](https://github.com/sws2apps/jw-epub-parser/commit/1282e300f9e9a33ff2e8cbf49f6a8936d2f59be2))
+
+# [2.0.0-beta.2](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2023-06-23)
+
+
+### Bug Fixes
+
+* force version bump ([271c237](https://github.com/sws2apps/jw-epub-parser/commit/271c237763335d2afec051331b6d7dc90ed34dd5))
+
+# [2.0.0-beta.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.40.1...v2.0.0-beta.1) (2023-06-23)
+
+
+### Features
+
+* **module:** remove study point from students parts and properties change ([dfc2bec](https://github.com/sws2apps/jw-epub-parser/commit/dfc2bec0545a19b82e9665b014d89248a678d246))
+
+
+### BREAKING CHANGES
+
+* **module:** With this release, the `loadEPUB` function will return an array of objects, containing all the weekly source materials. The property names were all adjusted. Also the, the study point for students parts is no longer a separate property. It is now included with the source part.
 
 ## [1.40.1](https://github.com/sws2apps/jw-epub-parser/compare/v1.40.0...v1.40.1) (2023-06-05)
 

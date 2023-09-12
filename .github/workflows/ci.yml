@@ -2,7 +2,7 @@ name: CI
 
 on:
   workflow_dispatch:
-  pull_request:
+  push:
     branches: [main, beta, alpha]
   schedule:
     - cron: '0 3 * * *'
@@ -31,3 +31,17 @@ jobs:
 
       - name: Run Test Units
         run: npm run test
+
+      - name: Browser version testing
+        uses: cypress-io/github-action@d69252d52b9a31bad4f418f05ba2bc83687a02eb
+        with:
+          command-prefix: '--'
+          install: false
+          browser: chrome
+          build: npm run setup:client
+          start: npm run start:client
+          record: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_JW_EPUB_PARSER_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CYPRESS_PROJECT_ID: dvtrvb

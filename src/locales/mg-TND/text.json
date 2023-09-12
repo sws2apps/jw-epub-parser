@@ -8,11 +8,11 @@
 	"julyVariations": "Jolay",
 	"augustVariations": "Aogositra",
 	"septemberVariations": "Septambra",
-	"octoberVariations": "Oktobra",
+	"octoberVariations": "Oktobra|Okotobra",
 	"novemberVariations": "Novambra",
 	"decemberVariations": "Desambra",
 	"tgwTalk10Variations": "{{ title }}: (10 min.)",
-	"tgwBibleReadingVariations": "Famakiagne Baiboly: (4 min.) {{ source }} (th lesogne {{ study }})",
+	"tgwBibleReadingVariations": "Famakiagne Baiboly: (4 min.) {{ source }}",
 	"initialCallVideoVariations": "Fitoriagne Alefa Video",
 	"returnVisitVideoVariations": "Fiheregnagne Mitilike Alefa Video",
 	"memorialInvitationVideoVariations": "Fanasagne amy ty Fahatsiarovagne Alefa Video",
@@ -21,7 +21,8 @@
 	"bibleStudyVariations": "Fampianaragne Baiboly",
 	"talkVariations": "Lahajaka",
 	"memorialInvitationVariations": "Fanasagne amy ty Fahatsiarovagne",
-	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min.) {{ source }} (th lesogne {{ study }})|{{ assignment }}: ({{ duration }} min) {{ source }} (th lesogne {{ study }})|{{ assignment }}: ({{ duration }} min.). {{ source }} (th lesogne {{ study }})|{{ assignment }}: ({{ duration }} min.). {{ source }}|{{ assignment }}: ({{ duration }} min.) {{ source }}|{{ assignment }}: ({{ duration }}  min.) {{ source }}",
+	"assignmentAyfVariations": "{{ assignment }}: ({{ duration }} min.) {{ source }}|{{ assignment }}: ({{ duration }} min) {{ source }}|{{ assignment }}: ({{ duration }} min.). {{ source }}|{{ assignment }}: ({{ duration }}  min.) {{ source }}",
 	"assignmentLcVariations": "{{ source }}: ({{ duration }} min.) {{ content }}|{{ source }}: ({{ duration }} min.). {{ content }}|{{ source }} ({{ duration }} min.) {{ content }}",
-	"cbsVariations": "Fianaragne Baiboly Anoe ty Fiangonagne: (30 min.) {{ source }}"
+	"cbsVariations": "Fianaragne Baiboly Anoe ty Fiangonagne: (30 min.) {{ source }}",
+	"studyArticleDateVariations": "Lahatsoratse Fianaragne {{ number }}: {{ date }}"
 }
