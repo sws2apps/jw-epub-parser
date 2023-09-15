@@ -6,7 +6,7 @@ Please make sure that you have read the [code of conduct](https://github.com/sws
 
 ## Semantic Versioning
 
-SWS Pocket follows semantic versioning. We release patch versions for bugfixes, minor versions for new features or non-essential changes, and major versions for any breaking changes. Every significant change is documented in the [changelog](https://github.com/sws2apps/jw-epub-parser/blob/main/CHANGELOG.md) file.
+JW EPUB Parser follows semantic versioning. We release patch versions for bugfixes, minor versions for new features or non-essential changes, and major versions for any breaking changes. Every significant change is documented in the [changelog](https://github.com/sws2apps/jw-epub-parser/blob/main/CHANGELOG.md) file.
 
 ## Branch Organization
 
