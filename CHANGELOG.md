@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/sws2apps/jw-epub-parser/compare/v2.1.0...v3.0.0) (2023-09-27)
+
+
+### Features
+
+* **deps:** update semantic-release to latest version ([63133a2](https://github.com/sws2apps/jw-epub-parser/commit/63133a2cd74f8edac3691d28b52a552c845bb1f9))
+
+
+### BREAKING CHANGES
+
+* **deps:** The `week_date` value in enhanced parsing is now formatted as `yyyy/mm/dd`
+
 # [2.1.0](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0...v2.1.0) (2023-09-27)
 
 
