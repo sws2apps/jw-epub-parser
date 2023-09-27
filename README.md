@@ -27,6 +27,7 @@ import { loadEPUB } from 'jw-epub-parser';
 // node
 import { loadEPUB } from 'jw-epub-parser/dist/node/index.js';
 
+// sample usage
 const epubJW = await loadEPUB('/path/to/file.epub');
 
 const epubJW = await loadEPUB({ url: epubUrl });
@@ -50,7 +51,7 @@ By calling the `loadEPUB` function, it will return an array of objects with the 
 
 | Name                     |       Type        | Description                                                                                                                     |
 | ------------------------ | :---------------: | ------------------------------------------------------------------------------------------------------------------------------- |
-| mwb_week_date            |      string       | Week date. For enhanced parsing, it is formatted as `mm/dd/yyyy`                                                                |
+| mwb_week_date            |      string       | Week date. For enhanced parsing, it is formatted as `yyyy/mm/dd`                                                                |
 | mwb_week_date_locale\*   |      string       | Week date                                                                                                                       |
 | mwb_weekly_bible_reading |      string       | Weekly Bible Reading                                                                                                            |
 | mwb_song_first           |      integer      | First song                                                                                                                      |
@@ -84,7 +85,7 @@ By calling the `loadEPUB` function, it will return an array of objects with the 
 
 | Name                    |  Type   | Description                                                      |
 | ----------------------- | :-----: | ---------------------------------------------------------------- |
-| w_study_date            | string  | Week date. For enhanced parsing, it is formatted as `mm/dd/yyyy` |
+| w_study_date            | string  | Week date. For enhanced parsing, it is formatted as `yyyy/mm/dd` |
 | w_study_date_locale\*   | string  | Week date                                                        |
 | w_study_title           | string  | Watchtower Study Article Title                                   |
 | w_study_opening_song    | integer | Opening Song for the Watchtower Study                            |
@@ -119,7 +120,7 @@ Here are how the results of this module look like:
 ```js
 [
   {
-    mwb_week_date: '09/04/2023',
+    mwb_week_date: '2023/09/04',
     mwb_week_date_locale: 'September 4-10',
     mwb_weekly_bible_reading: 'ESTHER 1-2',
     mwb_song_first: 137,
@@ -157,7 +158,7 @@ Here are how the results of this module look like:
 ```js
 [
   {
-    w_study_date: '11/06/2023',
+    w_study_date: '2023/11/06',
     w_study_date_locale: 'Study Article 37: November 6-12, 2023',
     w_study_title: 'Rely on Jehovah, as Samson Did',
     w_study_opening_song: 30,

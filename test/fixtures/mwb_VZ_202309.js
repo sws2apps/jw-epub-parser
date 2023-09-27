@@ -1,6 +1,6 @@
 export default [
 	{
-		mwb_week_date: '09/04/2023',
+		mwb_week_date: '2023/09/04',
 		mwb_week_date_locale: '4-10 Septambra',
 		mwb_weekly_bible_reading: 'ESTERA 1-2',
 		mwb_song_first: 137,
@@ -31,7 +31,7 @@ export default [
 		mwb_song_conclude: 101,
 	},
 	{
-		mwb_week_date: '09/11/2023',
+		mwb_week_date: '2023/09/11',
 		mwb_week_date_locale: '11-17 Septambra',
 		mwb_weekly_bible_reading: 'ESTERA 3-5',
 		mwb_song_first: 85,
@@ -61,7 +61,7 @@ export default [
 		mwb_song_conclude: 125,
 	},
 	{
-		mwb_week_date: '09/18/2023',
+		mwb_week_date: '2023/09/18',
 		mwb_week_date_locale: '18-24 Septambra',
 		mwb_weekly_bible_reading: 'ESTERA 6-8',
 		mwb_song_first: 115,
@@ -89,7 +89,7 @@ export default [
 		mwb_song_conclude: 124,
 	},
 	{
-		mwb_week_date: '09/25/2023',
+		mwb_week_date: '2023/09/25',
 		mwb_week_date_locale: '25 Septambra–1 Oktobra',
 		mwb_weekly_bible_reading: 'ESTERA 9-10',
 		mwb_song_first: 102,
@@ -115,7 +115,7 @@ export default [
 		mwb_song_conclude: 55,
 	},
 	{
-		mwb_week_date: '10/02/2023',
+		mwb_week_date: '2023/10/02',
 		mwb_week_date_locale: '2-8 Oktobra',
 		mwb_weekly_bible_reading: 'JOBA 1-3',
 		mwb_song_first: 141,
@@ -147,7 +147,7 @@ export default [
 		mwb_song_conclude: 129,
 	},
 	{
-		mwb_week_date: '10/09/2023',
+		mwb_week_date: '2023/10/09',
 		mwb_week_date_locale: '9-15 Oktobra',
 		mwb_weekly_bible_reading: 'JOBA 4-5',
 		mwb_song_first: 121,
@@ -172,7 +172,7 @@ export default [
 		mwb_song_conclude: 38,
 	},
 	{
-		mwb_week_date: '10/16/2023',
+		mwb_week_date: '2023/10/16',
 		mwb_week_date_locale: '16-22 Oktobra',
 		mwb_weekly_bible_reading: 'JOBA 6-7',
 		mwb_song_first: 33,
@@ -200,7 +200,7 @@ export default [
 		mwb_song_conclude: 143,
 	},
 	{
-		mwb_week_date: '10/23/2023',
+		mwb_week_date: '2023/10/23',
 		mwb_week_date_locale: '23-29 Oktobra',
 		mwb_weekly_bible_reading: 'JOBA 8-10',
 		mwb_song_first: 107,
@@ -229,7 +229,7 @@ export default [
 		mwb_song_conclude: 95,
 	},
 	{
-		mwb_week_date: '10/30/2023',
+		mwb_week_date: '2023/10/30',
 		mwb_week_date_locale: '30 Oktobra–5 Novambra',
 		mwb_weekly_bible_reading: 'JOBA 11-12',
 		mwb_song_first: 87,
