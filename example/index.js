@@ -1,14 +1,14 @@
 import { fetchData } from './sample.js';
 
 const runLiveCommand = async () => {
-	const languageIndex = process.argv.indexOf('--language');
+	const languageIndex = process.argv.indexOf('language');
 	if (languageIndex === -1) {
 		console.error('language missing from arguments');
 		return;
 	}
 
-	const issueIndex = process.argv.indexOf('--issue');
-	const pubIndex = process.argv.indexOf('--pub');
+	const issueIndex = process.argv.indexOf('issue');
+	const pubIndex = process.argv.indexOf('pub');
 
 	if (issueIndex >= 0 && pubIndex === -1) {
 		console.error('issue date was provided but pub type is missing');
