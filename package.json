@@ -53,7 +53,8 @@
 		"cypress": "^13.2.0",
 		"mocha": "^10.0.0",
 		"rimraf": "^5.0.0",
-		"rollup": "^3.0.0"
+		"rollup": "^3.0.0",
+		"semantic-release": "^22.0.5"
 	},
 	"dependencies": {
 		"dateformat": "^5.0.3",
