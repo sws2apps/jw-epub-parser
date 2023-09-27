@@ -1,3 +1,12 @@
+# [2.1.0](https://github.com/sws2apps/jw-epub-parser/compare/v2.0.0...v2.1.0) (2023-09-27)
+
+
+### Features
+
+* **deps:** bump node-html-parser from 6.1.6 to 6.1.9 ([e63d3a5](https://github.com/sws2apps/jw-epub-parser/commit/e63d3a5f8eb9c087a609f0d5698193fb087a1570))
+* **deps:** bump node-html-parser from 6.1.9 to 6.1.10 ([77bc774](https://github.com/sws2apps/jw-epub-parser/commit/77bc7742423978091094fe4a370cbef6eca97d5b))
+* **module:** change week date format to yyyy/mm/dd ([2bf8f5e](https://github.com/sws2apps/jw-epub-parser/commit/2bf8f5eccdc5efd2b886fdcd3325998808867f35))
+
 # [2.0.0](https://github.com/sws2apps/jw-epub-parser/compare/v1.41.0...v2.0.0) (2023-09-12)
 
 
