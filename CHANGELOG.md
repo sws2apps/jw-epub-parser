@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.0.0...v3.0.1) (2023-10-08)
+
+
+### Bug Fixes
+
+* **module:** temporarily block parsing mwb starting issue 202401 ([f5bd2d8](https://github.com/sws2apps/jw-epub-parser/commit/f5bd2d89cb4368948f0af4499edc857dc7056651))
+
 # [3.0.0](https://github.com/sws2apps/jw-epub-parser/compare/v2.1.0...v3.0.0) (2023-09-27)
 
 
