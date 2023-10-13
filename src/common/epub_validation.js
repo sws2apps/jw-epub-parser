@@ -49,6 +49,7 @@ export const isValidEPUBIssue = (input) => {
 	const issue = +epubFilename.split('_')[2].split('.epub')[0];
 
 	if (type === 'mwb' && issue < 202207) valid = false;
+	if (type === 'mwb' && issue >= 202401) valid = false;
 	if (type === 'w' && issue < 202304) valid = false;
 
 	return valid;

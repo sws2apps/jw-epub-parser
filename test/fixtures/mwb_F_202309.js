@@ -1,6 +1,6 @@
 export default [
 	{
-		mwb_week_date: '09/04/2023',
+		mwb_week_date: '2023/09/04',
 		mwb_week_date_locale: '4-10 septembre',
 		mwb_weekly_bible_reading: 'ESTHER 1-2',
 		mwb_song_first: 137,
@@ -31,7 +31,7 @@ export default [
 		mwb_song_conclude: 101,
 	},
 	{
-		mwb_week_date: '09/11/2023',
+		mwb_week_date: '2023/09/11',
 		mwb_week_date_locale: '11-17 septembre',
 		mwb_weekly_bible_reading: 'ESTHER 3-5',
 		mwb_song_first: 85,
@@ -61,7 +61,7 @@ export default [
 		mwb_song_conclude: 125,
 	},
 	{
-		mwb_week_date: '09/18/2023',
+		mwb_week_date: '2023/09/18',
 		mwb_week_date_locale: '18-24 septembre',
 		mwb_weekly_bible_reading: 'ESTHER 6-8',
 		mwb_song_first: 115,
@@ -88,7 +88,7 @@ export default [
 		mwb_song_conclude: 124,
 	},
 	{
-		mwb_week_date: '09/25/2023',
+		mwb_week_date: '2023/09/25',
 		mwb_week_date_locale: '25 septembre – 1er octobre',
 		mwb_weekly_bible_reading: 'ESTHER 9-10',
 		mwb_song_first: 102,
@@ -114,7 +114,7 @@ export default [
 		mwb_song_conclude: 55,
 	},
 	{
-		mwb_week_date: '10/02/2023',
+		mwb_week_date: '2023/10/02',
 		mwb_week_date_locale: '2-8 octobre',
 		mwb_weekly_bible_reading: 'JOB 1-3',
 		mwb_song_first: 141,
@@ -146,7 +146,7 @@ export default [
 		mwb_song_conclude: 129,
 	},
 	{
-		mwb_week_date: '10/09/2023',
+		mwb_week_date: '2023/10/09',
 		mwb_week_date_locale: '9-15 octobre',
 		mwb_weekly_bible_reading: 'JOB 4-5',
 		mwb_song_first: 121,
@@ -171,7 +171,7 @@ export default [
 		mwb_song_conclude: 38,
 	},
 	{
-		mwb_week_date: '10/16/2023',
+		mwb_week_date: '2023/10/16',
 		mwb_week_date_locale: '16-22 octobre',
 		mwb_weekly_bible_reading: 'JOB 6-7',
 		mwb_song_first: 33,
@@ -198,7 +198,7 @@ export default [
 		mwb_song_conclude: 143,
 	},
 	{
-		mwb_week_date: '10/23/2023',
+		mwb_week_date: '2023/10/23',
 		mwb_week_date_locale: '23-29 octobre',
 		mwb_weekly_bible_reading: 'JOB 8-10',
 		mwb_song_first: 107,
@@ -227,7 +227,7 @@ export default [
 		mwb_song_conclude: 64,
 	},
 	{
-		mwb_week_date: '10/30/2023',
+		mwb_week_date: '2023/10/30',
 		mwb_week_date_locale: '30 octobre – 5 novembre',
 		mwb_weekly_bible_reading: 'JOB 11-12',
 		mwb_song_first: 87,

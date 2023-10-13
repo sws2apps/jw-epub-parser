@@ -3,7 +3,7 @@ export default {
 	mwbYear: '2023',
 	weeksData: [
 		{
-			weekDate: '09/04/2023',
+			weekDate: '2023/09/04',
 			weekDateLocale: '4.–10. September',
 			weeklyBibleReading: 'ESTHER 1–2',
 			songFirst: 137,
@@ -36,7 +36,7 @@ export default {
 			songConclude: 101,
 		},
 		{
-			weekDate: '09/11/2023',
+			weekDate: '2023/09/11',
 			weekDateLocale: '11.–17. September',
 			weeklyBibleReading: 'ESTHER 3–5',
 			songFirst: 85,
@@ -69,7 +69,7 @@ export default {
 			songConclude: 125,
 		},
 		{
-			weekDate: '09/18/2023',
+			weekDate: '2023/09/18',
 			weekDateLocale: '18.–24. September',
 			weeklyBibleReading: 'ESTHER 6–8',
 			songFirst: 115,
@@ -99,7 +99,7 @@ export default {
 			songConclude: 124,
 		},
 		{
-			weekDate: '09/25/2023',
+			weekDate: '2023/09/25',
 			weekDateLocale: '25. September – 1. Oktober',
 			weeklyBibleReading: 'ESTHER 9–10',
 			songFirst: 102,
@@ -129,7 +129,7 @@ export default {
 			songConclude: 55,
 		},
 		{
-			weekDate: '10/02/2023',
+			weekDate: '2023/10/02',
 			weekDateLocale: '2.–8. Oktober',
 			weeklyBibleReading: 'HIOB 1–3',
 			songFirst: 141,
@@ -164,7 +164,7 @@ export default {
 			songConclude: 129,
 		},
 		{
-			weekDate: '10/09/2023',
+			weekDate: '2023/10/09',
 			weekDateLocale: '9.–15. Oktober',
 			weeklyBibleReading: 'HIOB 4–5',
 			songFirst: 121,
@@ -193,7 +193,7 @@ export default {
 			songConclude: 38,
 		},
 		{
-			weekDate: '10/16/2023',
+			weekDate: '2023/10/16',
 			weekDateLocale: '16.–22. Oktober',
 			weeklyBibleReading: 'HIOB 6–7',
 			songFirst: 33,
@@ -222,7 +222,7 @@ export default {
 			songConclude: 143,
 		},
 		{
-			weekDate: '10/23/2023',
+			weekDate: '2023/10/23',
 			weekDateLocale: '23.–29. Oktober',
 			weeklyBibleReading: 'HIOB 8–10',
 			songFirst: 107,
@@ -254,7 +254,7 @@ export default {
 			songConclude: 64,
 		},
 		{
-			weekDate: '10/30/2023',
+			weekDate: '2023/10/30',
 			weekDateLocale: '30. Oktober – 5. November',
 			weeklyBibleReading: 'HIOB 11–12',
 			songFirst: 87,
