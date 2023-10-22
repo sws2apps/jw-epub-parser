@@ -55,11 +55,28 @@ export const getWSTudySongs = async ({ htmlItem, zip }) => {
 	const article = await getHTMLWTArticleDoc(zip, articleLink);
 
 	if (article) {
+		let songText;
 		const themeScrp = article.querySelector('.themeScrp');
-		const WTOpeningSong = extractSongNumber(themeScrp.nextElementSibling.textContent);
+		songText = themeScrp.nextElementSibling;
+
+		if (songText === null) {
+			const firstSongContainer = article.querySelector('.du-color--textSubdued');
+			songText = firstSongContainer.querySelector('p');
+		}
+
+		const WTOpeningSong = extractSongNumber(songText.textContent);
 
 		const blockTeach = article.querySelector('.blockTeach');
-		const WTConcludingSong = extractSongNumber(blockTeach.nextElementSibling.textContent);
+		if (blockTeach !== null) {
+			songText = blockTeach.nextElementSibling;
+		}
+
+		if (blockTeach === null) {
+			const artDivs = article.querySelectorAll('.du-color--textSubdued');
+			songText = artDivs.slice(-1)[0].querySelector('p');
+		}
+
+		const WTConcludingSong = extractSongNumber(songText.textContent);
 
 		return { WTOpeningSong, WTConcludingSong };
 	}
