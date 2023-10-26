@@ -1,3 +1,17 @@
+# [3.3.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.2.0...v3.3.0) (2023-10-22)
+
+
+### Features
+
+* **module:** support parsing watchtower epub starting 202401 ([c6e8ba8](https://github.com/sws2apps/jw-epub-parser/commit/c6e8ba892be4854ab71b6f38795d835faeaa07c4))
+
+# [3.2.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.1.0...v3.2.0) (2023-10-14)
+
+
+### Features
+
+* **localize:** updated translation from Crowdin ([f2b5d91](https://github.com/sws2apps/jw-epub-parser/commit/f2b5d91045cf7f6298254af5422b5873d53299e0))
+
 # [3.1.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.0.1...v3.1.0) (2023-10-13)
 
 

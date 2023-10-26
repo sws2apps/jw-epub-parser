@@ -297,7 +297,6 @@ const parseWEpub = async ({ htmlItem, epubLang, epubContents }) => {
 
 	for (const [_, studyArticle] of studyArticles.entries()) {
 		const weekItem = parseWSchedule(studyArticle, epubLang);
-
 		const songs = await getWSTudySongs({ zip: epubContents, htmlItem: studyArticle });
 		if (songs) {
 			weekItem.w_study_opening_song = songs.WTOpeningSong;
