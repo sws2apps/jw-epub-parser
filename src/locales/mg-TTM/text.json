@@ -12,7 +12,7 @@
   "novemberVariations": "Novambra",
   "decemberVariations": "Desambra",
   "tgwTalk10Variations": "{{ title }}: (10 min.)",
-  "tgwBibleReadingVariations": "Famakiana Baiboly: (4 min.) {{ source }}",
+  "tgwBibleReadingVariations": "Famakiana Baiboly: (4 min.) {{ source }}|Famakiana Teny: (4 min.) {{ source }}",
   "initialCallVideoVariations": "Video Fitoriana",
   "returnVisitVideoVariations": "Video Fiverenana Mitsidika",
   "memorialInvitationVideoVariations": "Video Fanasana Fahatsiarovana",
