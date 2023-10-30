@@ -1,3 +1,11 @@
+# [3.4.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.3.0...v3.4.0) (2023-10-30)
+
+
+### Features
+
+* **deps:** bump node-html-parser from 6.1.10 to 6.1.11 ([88dc4c6](https://github.com/sws2apps/jw-epub-parser/commit/88dc4c67d434335904213c5503aca71dd538d74c))
+* **localize:** updated translation from Crowdin ([87cbaff](https://github.com/sws2apps/jw-epub-parser/commit/87cbaff5a0dd59363398a5a2cdb6e9c1b1e05030))
+
 # [3.3.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.2.0...v3.3.0) (2023-10-22)
 
 
