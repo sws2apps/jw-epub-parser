@@ -3,3 +3,5 @@ dist
 sample
 
 .env
+
+*.epub
