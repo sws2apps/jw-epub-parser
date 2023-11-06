@@ -20,10 +20,26 @@ export const getHTMLString = async (zip, filename) => {
 
 export const isValidMWBSchedule = (htmlDoc) => {
 	let valid = false;
+	let isValidTGW = false;
+	let isValidAYF = false;
+	let isValidLC = false;
 
-	const isValidTGW = htmlDoc.querySelector(`[class*=treasures]`) ? true : false;
-	const isValidAYF = htmlDoc.querySelector(`[class*=ministry]`) ? true : false;
-	const isValidLC = htmlDoc.querySelector(`[class*=christianLiving]`) ? true : false;
+	// pre-2024 mwb
+
+	isValidTGW = htmlDoc.querySelector(`[class*=treasures]`) ? true : false;
+	if (isValidTGW) {
+		isValidAYF = htmlDoc.querySelector(`[class*=ministry]`) ? true : false;
+		isValidLC = htmlDoc.querySelector(`[class*=christianLiving]`) ? true : false;
+	}
+
+	// 2024 onward
+	if (!isValidTGW) {
+		isValidTGW = htmlDoc.querySelector('.du-color--teal-700') ? true : false;
+		if (isValidTGW) {
+			isValidAYF = htmlDoc.querySelector('.du-color--gold-700') ? true : false;
+			isValidLC = htmlDoc.querySelector('.du-color--maroon-600') ? true : false;
+		}
+	}
 
 	if (isValidTGW === true && isValidAYF === true && isValidLC === true) {
 		valid = true;
