@@ -1,13 +1,5 @@
 import languages from '../locales/languages.js';
-import {
-	getMWBAYFEnhanced,
-	getMWBCBSEnhanced,
-	getMWBLCEnhanced,
-	getMWBTGWBibleReadingEnhanced,
-	getMWBTGWTalkEnhanced,
-	getMWBWeekDateEnhanced,
-	getWTStudyDateEnhanced,
-} from './enhanced_parse_utils.js';
+import { getMWBWeekDateEnhanced, getWTStudyDateEnhanced } from './enhanced_parse_utils.js';
 import { extractEPUBFiles, getHTMLDocs, validateEPUBContents } from './epub_jszip.js';
 import {
 	getEPUBData,
@@ -30,7 +22,7 @@ import {
 	getWStudyDate,
 	getWStudyTitle,
 } from './html_utils.js';
-import { extractLastSong, extractSongNumber } from './parsing_rules.js';
+import { extractLastSong, extractSongNumber, extractSourceEnhanced } from './parsing_rules.js';
 
 export const startParse = async (epubInput) => {
 	let result = {};
@@ -128,7 +120,7 @@ export const parseMWBSchedule = (htmlItem, mwbYear, mwbLang) => {
 	// 10min TGW Source
 	tmpSrc = splits[3].trim();
 	if (isEnhancedParsing) {
-		weekItem.mwb_tgw_talk = getMWBTGWTalkEnhanced(tmpSrc, mwbLang);
+		weekItem.mwb_tgw_talk = extractSourceEnhanced(tmpSrc, mwbLang).type;
 	} else {
 		weekItem.mwb_tgw_talk = tmpSrc;
 	}
@@ -136,7 +128,7 @@ export const parseMWBSchedule = (htmlItem, mwbYear, mwbLang) => {
 	//Bible Reading Source
 	tmpSrc = splits[7].trim();
 	if (isEnhancedParsing) {
-		weekItem.mwb_tgw_bread = getMWBTGWBibleReadingEnhanced(tmpSrc, mwbLang);
+		weekItem.mwb_tgw_bread = extractSourceEnhanced(tmpSrc, mwbLang).src;
 	} else {
 		weekItem.mwb_tgw_bread = tmpSrc;
 	}
@@ -150,7 +142,7 @@ export const parseMWBSchedule = (htmlItem, mwbYear, mwbLang) => {
 	//AYF1 Source
 	tmpSrc = splits[8].trim();
 	if (isEnhancedParsing) {
-		const partEnhanced = getMWBAYFEnhanced(tmpSrc, mwbLang);
+		const partEnhanced = extractSourceEnhanced(tmpSrc, mwbLang);
 		weekItem.mwb_ayf_part1 = partEnhanced.src;
 		weekItem.mwb_ayf_part1_time = partEnhanced.time;
 		weekItem.mwb_ayf_part1_type = partEnhanced.type;
@@ -162,7 +154,7 @@ export const parseMWBSchedule = (htmlItem, mwbYear, mwbLang) => {
 	if (cnAYF > 1) {
 		tmpSrc = splits[9].trim();
 		if (isEnhancedParsing) {
-			const partEnhanced = getMWBAYFEnhanced(tmpSrc, mwbLang);
+			const partEnhanced = extractSourceEnhanced(tmpSrc, mwbLang);
 			weekItem.mwb_ayf_part2 = partEnhanced.src;
 			weekItem.mwb_ayf_part2_time = partEnhanced.time;
 			weekItem.mwb_ayf_part2_type = partEnhanced.type;
@@ -175,7 +167,7 @@ export const parseMWBSchedule = (htmlItem, mwbYear, mwbLang) => {
 	if (cnAYF > 2) {
 		tmpSrc = splits[10].trim();
 		if (isEnhancedParsing) {
-			const partEnhanced = getMWBAYFEnhanced(tmpSrc, mwbLang);
+			const partEnhanced = extractSourceEnhanced(tmpSrc, mwbLang);
 			weekItem.mwb_ayf_part3 = partEnhanced.src;
 			weekItem.mwb_ayf_part3_time = partEnhanced.time;
 			weekItem.mwb_ayf_part3_type = partEnhanced.type;
@@ -188,7 +180,7 @@ export const parseMWBSchedule = (htmlItem, mwbYear, mwbLang) => {
 	if (cnAYF > 3) {
 		tmpSrc = splits[11].trim();
 		if (isEnhancedParsing) {
-			const partEnhanced = getMWBAYFEnhanced(tmpSrc, mwbLang);
+			const partEnhanced = extractSourceEnhanced(tmpSrc, mwbLang);
 			weekItem.mwb_ayf_part4 = partEnhanced.src;
 			weekItem.mwb_ayf_part4_time = partEnhanced.time;
 			weekItem.mwb_ayf_part4_type = partEnhanced.type;
@@ -212,11 +204,11 @@ export const parseMWBSchedule = (htmlItem, mwbYear, mwbLang) => {
 
 	tmpSrc = splits[nextIndex].trim();
 	if (isEnhancedParsing) {
-		const lcEnhanced = getMWBLCEnhanced(tmpSrc, mwbLang);
-		weekItem.mwb_lc_part1 = lcEnhanced.title;
+		const lcEnhanced = extractSourceEnhanced(tmpSrc, mwbLang);
+		weekItem.mwb_lc_part1 = lcEnhanced.type;
 		weekItem.mwb_lc_part1_time = lcEnhanced.time;
-		if (lcEnhanced.content && lcEnhanced.content !== '') {
-			weekItem.mwb_lc_part1_content = lcEnhanced.content;
+		if (lcEnhanced.src && lcEnhanced.src !== '') {
+			weekItem.mwb_lc_part1_content = lcEnhanced.src;
 		}
 	} else {
 		weekItem.mwb_lc_part1 = tmpSrc;
@@ -228,11 +220,11 @@ export const parseMWBSchedule = (htmlItem, mwbYear, mwbLang) => {
 		tmpSrc = splits[nextIndex].trim();
 
 		if (isEnhancedParsing) {
-			const lcEnhanced = getMWBLCEnhanced(tmpSrc, mwbLang);
-			weekItem.mwb_lc_part2 = lcEnhanced.title;
+			const lcEnhanced = extractSourceEnhanced(tmpSrc, mwbLang);
+			weekItem.mwb_lc_part2 = lcEnhanced.type;
 			weekItem.mwb_lc_part2_time = lcEnhanced.time;
-			if (lcEnhanced.content && lcEnhanced.content !== '') {
-				weekItem.mwb_lc_part2_content = lcEnhanced.content;
+			if (lcEnhanced.src && lcEnhanced.src !== '') {
+				weekItem.mwb_lc_part2_content = lcEnhanced.src;
 			}
 		} else {
 			weekItem.mwb_lc_part2 = tmpSrc;
@@ -244,7 +236,7 @@ export const parseMWBSchedule = (htmlItem, mwbYear, mwbLang) => {
 	tmpSrc = splits[nextIndex].trim();
 
 	if (isEnhancedParsing) {
-		weekItem.mwb_lc_cbs = getMWBCBSEnhanced(tmpSrc, mwbLang);
+		weekItem.mwb_lc_cbs = extractSourceEnhanced(tmpSrc, mwbLang).src;
 	} else {
 		weekItem.mwb_lc_cbs = tmpSrc;
 	}

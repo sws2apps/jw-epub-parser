@@ -204,13 +204,13 @@ export const fetchData = async (language, issue, pub) => {
 
 	if (issue && pub) {
 		const url = JW_CDN + new URLSearchParams({ langwritten: language, pub, output: 'json', issue });
+		
 
 		const res = await fetch(url);
 
 		if (res.status === 200) {
 			const result = await res.json();
 			const hasEPUB = result.files[language].EPUB;
-
 			const issueFetch = { issueDate: issue, currentYear: issue.substring(0, 4), language, hasEPUB: hasEPUB };
 
 			data = await fetchIssueData(issueFetch);
