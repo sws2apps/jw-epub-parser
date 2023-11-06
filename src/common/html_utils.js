@@ -16,26 +16,76 @@ export const getMWBWeeklyBibleReading = (htmlItem) => {
 };
 
 export const getMWBAYFCount = (htmlItem) => {
-	return htmlItem.querySelector('#section3').querySelectorAll('li').length;
+	let count;
+
+	const testSection = htmlItem.querySelector('#section3');
+
+	//  pre-2024 mwb
+	if (testSection) {
+		count = testSection.querySelectorAll('li').length;
+	}
+
+	// 2024 onward
+	if (!testSection) {
+		count = htmlItem.querySelectorAll('.du-color--gold-700').length - 1;
+	}
+
+	return count;
 };
 
 export const getMWBLCCount = (htmlItem) => {
-	const itemsCn = htmlItem.querySelector('#section4').querySelectorAll('li').length;
-	return itemsCn === 6 ? 2 : 1;
+	let count = 0;
+
+	const testSection = htmlItem.querySelector('#section4');
+
+	//  pre-2024 mwb
+	if (testSection) {
+		count = testSection.querySelectorAll('li').length;
+		count = count === 6 ? 2 : 1;
+	}
+
+	// 2024 onward
+	if (testSection === null) {
+		count = htmlItem.querySelectorAll('h3.du-color--maroon-600').length - 1;
+	}
+
+	return count;
 };
 
 export const getMWBSources = (htmlItem) => {
 	let src = '';
 
+	// pre-2024 mwb
 	// get elements with meeting schedule data: pGroup
 	const pGroupData = htmlItem.querySelectorAll('.pGroup');
-	pGroupData.forEach((pGroup) => {
+	for (const pGroup of pGroupData) {
 		const liData = pGroup.querySelectorAll('li');
-		liData.forEach((li) => {
+		for (const li of liData) {
 			const firstP = li.querySelector('p');
 			src += '|' + firstP.textContent;
-		});
-	});
+		}
+	}
+
+	// 2024 onward
+	// get elements with meeting schedule data: h3
+	if (src.length === 0) {
+		const h3Texts = htmlItem.querySelectorAll('h3');
+
+		for (const h3 of h3Texts) {
+			src += '|' + h3.textContent;
+			const nextElement = h3.nextElementSibling;
+			if (nextElement) {
+				const tmp = nextElement.querySelector('.du-color--textSubdued');
+				if (tmp) {
+					const firstP = tmp.querySelector('p');
+					src += ' ' + firstP.textContent;
+				}
+			}
+		}
+
+		const sepBeforeBR = src.split('|', 5).join('|').length;
+		src = src.substring(0, sepBeforeBR) + '|junk|junk' + src.substring(sepBeforeBR);
+	}
 
 	src = src.replaceAll(/\u00A0/g, ' '); // remove non-breaking space
 
