@@ -12,5 +12,5 @@
 	"novemberVariations": "Novambra",
 	"decemberVariations": "Desambra",
 	"studyArticleDateVariations": "Lahatsoratsy Fianara {{ number }}: {{ date }}",
-	"partMinutesSeparatorVariations": "({{ duration }} min.)"
+	"partMinutesSeparatorVariations": "({{ duration }} min.)|({{ duration }} min)"
 }
