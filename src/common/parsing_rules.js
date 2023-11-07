@@ -48,12 +48,12 @@ export const extractSourceEnhanced = (src, lang) => {
 		if (match) {
 			const splits = src.split(regex);
 			const duration = +match[0].match(/\d+/)[0];
-			const regexColumn = /^:|:$/g;
+			const regexColumn = /(?:^:)|(?:$)/g;
 
 			const tmpAssignment = splits[0].trim();
 			const source = splits[1].trim().replace(regexColumn, '').trim();
 
-			const indexSep = /\d+[\.-] /g;
+			const indexSep = /\d+?[\.-] /;
 			const index = tmpAssignment.match(indexSep);
 			const assignmentSplits = tmpAssignment.split(indexSep);
 			let assignment;
