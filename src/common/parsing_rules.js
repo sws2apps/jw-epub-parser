@@ -51,7 +51,7 @@ export const extractSourceEnhanced = (src, lang) => {
 			const regexColumn = /^:|:$/g;
 
 			const tmpAssignment = splits[0].trim();
-			const source = splits[1].replace(regexColumn, '').trim();
+			const source = splits[1].trim().replace(regexColumn, '').trim();
 
 			const indexSep = /\d+[\.-] /g;
 			const index = tmpAssignment.match(indexSep);
