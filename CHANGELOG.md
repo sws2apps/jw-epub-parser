@@ -1,3 +1,17 @@
+# [3.5.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.4.0...v3.5.0) (2023-11-07)
+
+
+### Bug Fixes
+
+* **rules:** check if assignment starts with colon after parsing ([06e54bd](https://github.com/sws2apps/jw-epub-parser/commit/06e54bd6f84c3d753ef0dd467bb149d56584eaf9))
+* **rules:** check if source starts with colon after parsing ([62f5203](https://github.com/sws2apps/jw-epub-parser/commit/62f5203be6924c65307851d5702554eda03b9add))
+
+
+### Features
+
+* **localize:** updated translation from Crowdin ([0ce2c57](https://github.com/sws2apps/jw-epub-parser/commit/0ce2c57fe9f5a8fa28df020b05e5a2b04c59258e))
+* **module:** support parsing mwb starting 202401 ([303ec44](https://github.com/sws2apps/jw-epub-parser/commit/303ec44dc7c85a3767cfeb53e80d53313ea1e6cf))
+
 # [3.4.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.3.0...v3.4.0) (2023-10-30)
 
 
