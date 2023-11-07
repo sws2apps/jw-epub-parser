@@ -63,8 +63,8 @@ export const extractSourceEnhanced = (src, lang) => {
 				assignment = tmpAssignment;
 			}
 
-			const regexColumn = /:$/;
-			assignment = assignment.replace(regexColumn, '');
+			const regexColumn = /^:|:$/g;
+			assignment = assignment.replace(regexColumn, '').trim();
 
 			result = { type: assignment, time: duration, src: source };
 		}
