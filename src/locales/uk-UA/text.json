@@ -12,5 +12,5 @@
 	"novemberVariations": "Листопад|листопад|листопада",
 	"decemberVariations": "Грудень|грудень|грудня",
 	"studyArticleDateVariations": "Стаття для вивчення {{ number }} ({{ date }})",
-	"partMinutesSeparatorVariations": "({{ duration }} min.)"
+	"partMinutesSeparatorVariations": "({{ duration }} хв)"
 }
