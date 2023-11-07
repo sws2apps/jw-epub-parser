@@ -12,5 +12,5 @@
 	"novemberVariations": "de novembro|novembro",
 	"decemberVariations": "de dezembro|dezembro",
 	"studyArticleDateVariations": "Estudo {{ number }} | {{ date }}",
-	"partMinutesSeparatorVariations": "({{ duration }} min.)"
+	"partMinutesSeparatorVariations": "({{ duration }} min)"
 }
