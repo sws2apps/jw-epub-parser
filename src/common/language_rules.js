@@ -1,4 +1,4 @@
-const languages = window.jw_epub_parser.languages;
+const languages = jw_epub_parser.languages;
 
 export const getMonthNames = (lang) => {
 	return [

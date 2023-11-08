@@ -1,15 +1,15 @@
-import dateFormat from 'dateformat';
 import { extractMonthName, extractWTStudyDate } from './parsing_rules.js';
 
 export const getMWBWeekDateEnhanced = (weekDate, mwbYear, lang) => {
 	const { varDay, monthIndex } = extractMonthName(weekDate, lang);
-	const schedDate = new Date(mwbYear, monthIndex, varDay);
+	const result = `${mwbYear}/${String(monthIndex + 1).padStart(2, '0')}/${String(varDay + 1).padStart(2, '0')}`;
 
-	return dateFormat(schedDate, 'yyyy/mm/dd');
+	return result;
 };
 
 export const getWTStudyDateEnhanced = (src, lang) => {
 	const { varDay, monthIndex, varYear } = extractWTStudyDate(src, lang);
-	const schedDate = new Date(varYear, monthIndex, varDay);
-	return dateFormat(schedDate, 'yyyy/mm/dd');
+	const result = `${varYear}/${String(monthIndex + 1).padStart(2, '0')}/${String(varDay + 1).padStart(2, '0')}`;
+
+	return result;
 };

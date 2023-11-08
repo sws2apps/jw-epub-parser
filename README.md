@@ -25,8 +25,11 @@ npm i jw-epub-parser
 // browser
 import { loadEPUB } from 'jw-epub-parser';
 
-// node
+// node esm
 import { loadEPUB } from 'jw-epub-parser/dist/node/index.js';
+
+// node commonjs
+const { loadEPUB } = require('jw-epub-parser/dist/node/index.cjs');
 
 // sample usage
 const epubJW = await loadEPUB('/path/to/file.epub');
