@@ -23,10 +23,10 @@ jobs:
           ref: alpha
           persist-credentials: false
 
-      - name: Use Node.js current version
+      - name: Use Node.js LTS version
         uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65
         with:
-          node-version: current
+          node-version: lts/Iron
 
       - name: Install package dependencies
         run: npm ci
@@ -55,10 +55,10 @@ jobs:
           ref: beta
           persist-credentials: false
 
-      - name: Use Node.js current version
+      - name: Use Node.js LTS version
         uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65
         with:
-          node-version: current
+          node-version: lts/Iron
 
       - name: Install package dependencies
         run: npm ci
@@ -87,10 +87,10 @@ jobs:
           ref: main
           persist-credentials: false
 
-      - name: Use Node.js current version
+      - name: Use Node.js LTS version
         uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65
         with:
-          node-version: current
+          node-version: lts/Iron
 
       - name: Install package dependencies
         run: npm ci
