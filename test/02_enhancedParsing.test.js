@@ -1,6 +1,5 @@
 import fs from 'fs';
 import * as path from 'path';
-import fetch from 'node-fetch';
 import { expect } from 'chai';
 import { loadEPUB } from '../dist/node/index.js';
 
