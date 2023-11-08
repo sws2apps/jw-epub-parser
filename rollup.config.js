@@ -20,7 +20,7 @@ const config = [
 		input: 'src/node/index.js',
 		output: [
 			{
-				sourcemap: true,
+				sourcemap: false,
 				file: 'dist/node/index.cjs',
 				format: 'cjs',
 			},
