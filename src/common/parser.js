@@ -111,7 +111,7 @@ export const parseMWBSchedule = (htmlItem, mwbYear, mwbLang) => {
 
 	// compile all sources
 	const src = getMWBSources(htmlItem);
-	let splits = src.split('|');
+	let splits = src.split('@');
 	let tmpSrc = '';
 
 	// First song

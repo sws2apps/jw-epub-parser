@@ -1,6 +1,7 @@
 export default [
 	{ locale: 'en', code: 'E' },
 	{ locale: 'fr-FR', code: 'F' },
+	{ locale: 'it-IT', code: 'I' },
 	{ locale: 'uk-UA', code: 'K' },
 	{ locale: 'mg-MG', code: 'MG' },
 	{ locale: 'pt-BR', code: 'T' },

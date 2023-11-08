@@ -3,6 +3,7 @@ import { readFile } from 'fs/promises';
 
 import E from '../locales/en/text.json' assert { type: 'json' };
 import F from '../locales/fr-FR/text.json' assert { type: 'json' };
+import I from '../locales/it-IT/text.json' assert { type: 'json' };
 import K from '../locales/uk-UA/text.json' assert { type: 'json' };
 import MG from '../locales/mg-MG/text.json' assert { type: 'json' };
 import T from '../locales/pt-BR/text.json' assert { type: 'json' };
@@ -15,5 +16,5 @@ import X from '../locales/de-DE/text.json' assert { type: 'json' };
 global.path = path;
 global.readFile = readFile;
 global.jw_epub_parser = {
-	languages: { E, F, K, MG, T, TND, TNK, TTM, VZ, X },
+	languages: { E, F, I, K, MG, T, TND, TNK, TTM, VZ, X },
 };

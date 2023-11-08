@@ -108,9 +108,9 @@ export const extractWTStudyDate = (src, lang) => {
 				const monthNames = getMonthNames(lang);
 
 				for (const month of monthNames) {
-					const monthLang = month.name;
+					const monthLang = month.name.toLowerCase();
 					const regex = new RegExp(`(${monthLang})`);
-					const array2 = regex.exec(textSearch);
+					const array2 = regex.exec(textSearch.toLowerCase());
 
 					if (Array.isArray(array2)) {
 						varDay = +textSearch.match(/(\d+)/)[0];

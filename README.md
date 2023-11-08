@@ -102,6 +102,7 @@ Currently, we only support enhanced parsing for the following languages:
 ```bash
 Enlish
 French
+Italian
 German
 Madagascar Sign Language, Malagasy
 Malagasy
