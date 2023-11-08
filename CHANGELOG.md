@@ -1,3 +1,19 @@
+# [3.6.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.5.0...v3.6.0) (2023-11-08)
+
+
+### Bug Fixes
+
+* **module:** update some regular expressions ([48d6dfc](https://github.com/sws2apps/jw-epub-parser/commit/48d6dfca2c866408d4564563557601772fb8c649))
+* **module:** update some regular expressions ([5ac8ef7](https://github.com/sws2apps/jw-epub-parser/commit/5ac8ef7107a71a7c98f767e6a80c539e1a532855))
+* **module:** update some regular expressions ([c7e6033](https://github.com/sws2apps/jw-epub-parser/commit/c7e6033b0dc5d0db5d2b2f821eaafc4d684eda29))
+
+
+### Features
+
+* **localize:** updated translation from Crowdin ([7a47ff9](https://github.com/sws2apps/jw-epub-parser/commit/7a47ff925674fa2f8d2ac52cbfdd4e1f03108ee8))
+* **module:** add enhanced parsing for Italian language ([1209fdb](https://github.com/sws2apps/jw-epub-parser/commit/1209fdb1b04854528a416b425fcc34072e3ff8ac))
+* **module:** generate commonjs output ([3350989](https://github.com/sws2apps/jw-epub-parser/commit/3350989c2038ae6978033eb1d52a08ef8cce5dc0))
+
 # [3.5.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.4.0...v3.5.0) (2023-11-07)
 
 
