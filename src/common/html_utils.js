@@ -62,7 +62,7 @@ export const getMWBSources = (htmlItem) => {
 		const liData = pGroup.querySelectorAll('li');
 		for (const li of liData) {
 			const firstP = li.querySelector('p');
-			src += '|' + firstP.textContent;
+			src += '@' + firstP.textContent;
 		}
 	}
 
@@ -72,7 +72,21 @@ export const getMWBSources = (htmlItem) => {
 		const h3Texts = htmlItem.querySelectorAll('h3');
 
 		for (const h3 of h3Texts) {
-			src += '|' + h3.textContent;
+			let isSong = h3.classList.contains('dc-icon--music');
+
+			if (!isSong) {
+				isSong = h3.querySelector('.dc-icon--music') ? true : false;
+			}
+
+			let data = '';
+
+			data = h3.textContent;
+
+			if (isSong) {
+				data = data.replace('|', '@');
+			}
+
+			src += '@' + data;
 			const nextElement = h3.nextElementSibling;
 			if (nextElement) {
 				const tmp = nextElement.querySelector('.du-color--textSubdued');
@@ -83,8 +97,8 @@ export const getMWBSources = (htmlItem) => {
 			}
 		}
 
-		const sepBeforeBR = src.split('|', 5).join('|').length;
-		src = src.substring(0, sepBeforeBR) + '|junk|junk' + src.substring(sepBeforeBR);
+		const sepBeforeBR = src.split('@', 5).join('@').length;
+		src = src.substring(0, sepBeforeBR) + '@junk@junk' + src.substring(sepBeforeBR);
 	}
 
 	src = src.replaceAll(/\u00A0/g, ' '); // remove non-breaking space
