@@ -1,0 +1,16 @@
+{
+	"januaryVariations": "Gennaio",
+	"februaryVariations": "Febbraio",
+	"marchVariations": "Marzo",
+	"aprilVariations": "Aprile",
+	"mayVariations": "Maggio",
+	"juneVariations": "Giugno",
+	"julyVariations": "Luglio",
+	"augustVariations": "Agosto",
+	"septemberVariations": "Settembre",
+	"octoberVariations": "Ottobre",
+	"novemberVariations": "Novembre",
+	"decemberVariations": "Dicembre",
+	"studyArticleDateVariations": "Articolo di studio {{ number }} ({{ date }})",
+	"partMinutesSeparatorVariations": "({{ duration }} min)"
+}
