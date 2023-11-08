@@ -14,7 +14,7 @@ const config = [
 			},
 		],
 		plugins: [nodeResolve(), commonjs(), json(), terser()],
-		external: ['dateformat', 'jszip', 'path-browserify'],
+		external: ['jszip', 'path-browserify'],
 	},
 	{
 		input: 'src/node/index.js',
@@ -26,7 +26,7 @@ const config = [
 			},
 		],
 		plugins: [commonjs(), json(), terser()],
-		external: ['jszip', 'node-html-parser', 'path', 'node-fetch', 'fs/promises'],
+		external: ['jszip', 'node-html-parser', 'path', 'fs/promises'],
 	},
 	{
 		input: 'src/node/index.js',
@@ -38,7 +38,7 @@ const config = [
 			},
 		],
 		plugins: [commonjs(), json(), terser()],
-		external: ['jszip', 'node-html-parser', 'path', 'node-fetch', 'fs/promises'],
+		external: ['jszip', 'node-html-parser', 'path', 'fs/promises'],
 	},
 ];
 
