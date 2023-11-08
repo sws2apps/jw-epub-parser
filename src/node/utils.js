@@ -1,5 +1,3 @@
-import 'global-jsdom/register';
-import fetch from 'node-fetch';
 import * as path from 'path';
 import { readFile } from 'fs/promises';
 
@@ -14,9 +12,8 @@ import TTM from '../locales/mg-TTM/text.json' assert { type: 'json' };
 import VZ from '../locales/mg-VZ/text.json' assert { type: 'json' };
 import X from '../locales/de-DE/text.json' assert { type: 'json' };
 
-window.path = path;
-window.fetch = fetch;
-window.readFile = readFile;
-window.jw_epub_parser = {
+global.path = path;
+global.readFile = readFile;
+global.jw_epub_parser = {
 	languages: { E, F, K, MG, T, TND, TNK, TTM, VZ, X },
 };

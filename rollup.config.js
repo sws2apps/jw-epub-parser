@@ -21,21 +21,24 @@ const config = [
 		output: [
 			{
 				sourcemap: true,
+				file: 'dist/node/index.cjs',
+				format: 'cjs',
+			},
+		],
+		plugins: [commonjs(), json(), terser()],
+		external: ['jszip', 'node-html-parser', 'path', 'node-fetch', 'fs/promises'],
+	},
+	{
+		input: 'src/node/index.js',
+		output: [
+			{
+				sourcemap: true,
 				file: 'dist/node/index.js',
 				format: 'es',
 			},
 		],
 		plugins: [commonjs(), json(), terser()],
-		external: [
-			'dateformat',
-			'jszip',
-			'global-jsdom/register',
-			'node-html-parser',
-			'path',
-			'fs',
-			'node-fetch',
-			'fs/promises',
-		],
+		external: ['jszip', 'node-html-parser', 'path', 'node-fetch', 'fs/promises'],
 	},
 ];
 

@@ -26,7 +26,7 @@ export const getInputType = (input) => {
 
 export const getEPUBFileName = (input) => {
 	const filename = input.name || input.url || input;
-	return window.path.basename(filename);
+	return path.basename(filename);
 };
 
 export const isValidEPUB = (input) => {
@@ -70,7 +70,7 @@ export const getEPUBData = async (input) => {
 	}
 
 	if (input.url) {
-		const epubRes = await window.fetch(input.url);
+		const epubRes = await fetch(input.url);
 		if (epubRes.status !== 200) {
 			throw new Error('EPUB file could not be downloaded. Check the URL you provided.');
 		}
@@ -80,6 +80,6 @@ export const getEPUBData = async (input) => {
 		return data;
 	}
 
-	const data = await window.readFile(input);
+	const data = await readFile(input);
 	return data;
 };
