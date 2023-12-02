@@ -13,8 +13,12 @@ import TTM from '../locales/mg-TTM/text.json' assert { type: 'json' };
 import VZ from '../locales/mg-VZ/text.json' assert { type: 'json' };
 import X from '../locales/de-DE/text.json' assert { type: 'json' };
 
-global.path = path;
-global.readFile = readFile;
+declare global {
+	var jw_epub_parser: any;
+}
+
 global.jw_epub_parser = {
 	languages: { E, F, I, K, MG, T, TND, TNK, TTM, VZ, X },
+	path: path,
+	readFile: readFile,
 };

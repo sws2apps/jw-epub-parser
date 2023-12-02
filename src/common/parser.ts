@@ -1,3 +1,5 @@
+import JSZip from 'jszip';
+import { HTMLElement } from 'node-html-parser';
 import languages from '../locales/languages.js';
 import { getMWBWeekDateEnhanced, getWTStudyDateEnhanced } from './enhanced_parse_utils.js';
 import { extractEPUBFiles, getHTMLDocs, validateEPUBContents } from './epub_jszip.js';
@@ -23,8 +25,9 @@ import {
 	getWStudyTitle,
 } from './html_utils.js';
 import { extractLastSong, extractSongNumber, extractSourceEnhanced } from './parsing_rules.js';
+import { MWBSchedule, WSchedule } from '../types/index.js';
 
-export const startParse = async (epubInput) => {
+export const startParse = async (epubInput: string | Blob | { url: string }) => {
 	let result = {};
 
 	const isValidName = isValidEPUB(epubInput);
@@ -90,10 +93,10 @@ export const startParse = async (epubInput) => {
 	return result;
 };
 
-export const parseMWBSchedule = (htmlItem, mwbYear, mwbLang) => {
+export const parseMWBSchedule = (htmlItem: HTMLElement, mwbYear: number, mwbLang: string) => {
 	const isEnhancedParsing = languages.find((language) => language.code === mwbLang);
 
-	const weekItem = {};
+	const weekItem = {} as MWBSchedule;
 
 	// get week date
 	const weekDate = getMWBWeekDate(htmlItem);
@@ -250,10 +253,10 @@ export const parseMWBSchedule = (htmlItem, mwbYear, mwbLang) => {
 	return weekItem;
 };
 
-export const parseWSchedule = (htmlItem, wLang) => {
+export const parseWSchedule = (htmlItem: HTMLElement, wLang: string) => {
 	const isEnhancedParsing = languages.find((language) => language.code === wLang);
 
-	const weekItem = {};
+	const weekItem = {} as WSchedule;
 
 	const studyDate = getWStudyDate(htmlItem);
 
@@ -271,7 +274,15 @@ export const parseWSchedule = (htmlItem, wLang) => {
 	return weekItem;
 };
 
-const parseMWBEpub = async ({ htmlDocs, epubYear, epubLang }) => {
+const parseMWBEpub = async ({
+	htmlDocs,
+	epubYear,
+	epubLang,
+}: {
+	htmlDocs: HTMLElement[];
+	epubYear: number;
+	epubLang: string;
+}) => {
 	const weeksData = [];
 
 	for (const htmlItem of htmlDocs) {
@@ -282,7 +293,15 @@ const parseMWBEpub = async ({ htmlDocs, epubYear, epubLang }) => {
 	return weeksData;
 };
 
-const parseWEpub = async ({ htmlItem, epubLang, epubContents }) => {
+const parseWEpub = async ({
+	htmlItem,
+	epubLang,
+	epubContents,
+}: {
+	htmlItem: HTMLElement;
+	epubLang: string;
+	epubContents: JSZip;
+}) => {
 	const weeksData = [];
 
 	const studyArticles = getWStudyArticles(htmlItem);

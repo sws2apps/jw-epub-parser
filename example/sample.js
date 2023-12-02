@@ -1,4 +1,4 @@
-import { loadEPUB } from '../src/node/index.js';
+import { loadEPUB } from '../dist/node/index.js';
 
 const JW_CDN = 'https://app.jw-cdn.org/apis/pub-media/GETPUBMEDIALINKS?';
 const WOL_E = 'https://wol.jw.org/wol/dt/r1/lp-e';
@@ -204,7 +204,6 @@ export const fetchData = async (language, issue, pub) => {
 
 	if (issue && pub) {
 		const url = JW_CDN + new URLSearchParams({ langwritten: language, pub, output: 'json', issue });
-		
 
 		const res = await fetch(url);
 

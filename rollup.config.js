@@ -2,10 +2,11 @@ import commonjs from '@rollup/plugin-commonjs';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import json from '@rollup/plugin-json';
 import terser from '@rollup/plugin-terser';
+import typescript from '@rollup/plugin-typescript';
 
 const config = [
 	{
-		input: 'src/browser/index.js',
+		input: 'src/browser/index.ts',
 		output: [
 			{
 				sourcemap: true,
@@ -13,11 +14,11 @@ const config = [
 				format: 'es',
 			},
 		],
-		plugins: [nodeResolve(), commonjs(), json(), terser()],
+		plugins: [typescript(), nodeResolve(), commonjs(), json(), terser()],
 		external: ['jszip', 'path-browserify'],
 	},
 	{
-		input: 'src/node/index.js',
+		input: 'src/node/index.ts',
 		output: [
 			{
 				sourcemap: false,
@@ -25,11 +26,11 @@ const config = [
 				format: 'cjs',
 			},
 		],
-		plugins: [commonjs(), json(), terser()],
+		plugins: [typescript(), commonjs(), json(), terser()],
 		external: ['jszip', 'node-html-parser', 'path', 'fs/promises'],
 	},
 	{
-		input: 'src/node/index.js',
+		input: 'src/node/index.ts',
 		output: [
 			{
 				sourcemap: true,
@@ -37,7 +38,7 @@ const config = [
 				format: 'es',
 			},
 		],
-		plugins: [commonjs(), json(), terser()],
+		plugins: [typescript(), commonjs(), json(), terser()],
 		external: ['jszip', 'node-html-parser', 'path', 'fs/promises'],
 	},
 ];
