@@ -1,11 +1,12 @@
-import { parse } from 'node-html-parser';
+import JSZip from 'jszip';
+import { HTMLElement, parse } from 'node-html-parser';
 
-export const isValidHTML = (name) => {
+export const isValidHTML = (name: string): boolean => {
 	let valid = false;
 
 	if (name.startsWith('OEBPS') && name.endsWith('.xhtml')) {
 		const fileName = name.split('/')[1].split('.')[0];
-		if (!isNaN(fileName)) {
+		if (!isNaN(parseFloat(fileName))) {
 			valid = true;
 		}
 	}
@@ -13,12 +14,12 @@ export const isValidHTML = (name) => {
 	return valid;
 };
 
-export const getHTMLString = async (zip, filename) => {
-	const content = await zip.file(filename).async('string');
+export const getHTMLString = async (zip: JSZip, filename: string): Promise<string> => {
+	const content = await zip.file(filename)!.async('string');
 	return content;
 };
 
-export const isValidMWBSchedule = (htmlDoc) => {
+export const isValidMWBSchedule = (htmlDoc: HTMLElement): boolean => {
 	let valid = false;
 	let isValidTGW = false;
 	let isValidAYF = false;
@@ -48,13 +49,13 @@ export const isValidMWBSchedule = (htmlDoc) => {
 	return valid;
 };
 
-export const HTMLParse = (htmlString) => {
+export const HTMLParse = (htmlString: string): HTMLElement => {
 	const htmlDoc = parse(htmlString);
 
 	return htmlDoc;
 };
 
-export const isValidWSchedule = (htmlDoc) => {
+export const isValidWSchedule = (htmlDoc: HTMLElement): boolean => {
 	const valid = htmlDoc.querySelector('.groupTOC') ? true : false;
 	return valid;
 };
