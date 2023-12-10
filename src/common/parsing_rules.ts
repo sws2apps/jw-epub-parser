@@ -103,7 +103,7 @@ export const extractWTStudyDate = (src: string, lang: string) => {
 			if (dateStartIndex > 0) {
 				const dateValue = src.substring(dateStartIndex);
 
-				textSearch = dateValue.trim().split('–')[0];
+				textSearch = dateValue.trim();
 
 				const monthNames = getMonthNames(lang);
 

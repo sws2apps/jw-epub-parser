@@ -18,23 +18,24 @@ export const parseMWB = (htmlString: string, mwbYear: number, mwbLang: string) =
 	try {
 		// convert string to html
 		const htmlItem = HTMLParse(htmlString);
+		const article = htmlItem.querySelector('article')!;
 
 		// Step: Start Parsing
-		const data = parseMWBSchedule(htmlItem, mwbYear, mwbLang);
+		const data = parseMWBSchedule(article, mwbYear, mwbLang);
 		return data;
 	} catch (err) {
 		console.error(err);
 	}
 };
 
-export const parseW = (htmlString: string, wLang: string) => {
+export const parseW = (articleString: string, contentString: string, wLang: string) => {
 	try {
 		// convert string to html
-		const htmlItem = HTMLParse(htmlString).querySelector('.groupTOC')!;
-		const article = htmlItem.querySelector('h3')!;
+		const article = HTMLParse(articleString);
+		const content = HTMLParse(contentString);
 
 		// Step: Start Parsing
-		const data = parseWSchedule(article, wLang);
+		const data = parseWSchedule(article, content, wLang);
 		return data;
 	} catch (err) {
 		console.error(err);
