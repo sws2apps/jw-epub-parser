@@ -113,7 +113,19 @@ export const getWStudyArticles = (htmlItem: HTMLElement) => {
 };
 
 export const getWStudyDate = (htmlItem: HTMLElement) => {
-	return htmlItem.textContent.replace(/\u00A0/g, ' '); // remove non-breaking space;
+	let result: string;
+
+	const p = htmlItem.querySelector('.desc');
+
+	if (p === null) {
+		result = htmlItem.textContent.replace(/\u00A0/g, ' '); // remove non-breaking space;
+	}
+
+	if (p !== null) {
+		result = p.textContent.replace(/\u00A0/g, ' '); // remove non-breaking space;
+	}
+
+	return result!;
 };
 
 export const getWSTudySongs = async ({ htmlItem, zip }: { htmlItem: HTMLElement; zip: JSZip }) => {
@@ -149,8 +161,18 @@ export const getWSTudySongs = async ({ htmlItem, zip }: { htmlItem: HTMLElement;
 };
 
 export const getWStudyTitle = (htmlItem: HTMLElement) => {
-	const articleLink = htmlItem.nextElementSibling.querySelector('a')!;
-	const studyTitle = articleLink.textContent.replace(/\u00A0/g, ' '); // remove non-breaking space;;
+	let result: string;
 
-	return studyTitle;
+	const h2 = htmlItem.querySelector('h2');
+
+	if (h2 === null) {
+		const articleLink = htmlItem.nextElementSibling.querySelector('a')!;
+		result = articleLink.textContent.replace(/\u00A0/g, ' '); // remove non-breaking space;;
+	}
+
+	if (h2 !== null) {
+		result = h2.textContent.trim().replace(/\u00A0/g, ' '); // remove non-breaking space;
+	}
+
+	return result!;
 };

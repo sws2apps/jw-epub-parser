@@ -1,4 +1,5 @@
 import JSZip from 'jszip';
+import { HTMLElement } from 'node-html-parser';
 import { HTMLParse, getHTMLString, isValidHTML, isValidMWBSchedule, isValidWSchedule } from './html_validation.js';
 
 export const extractEPUBFiles = async (data: string | ArrayBuffer | Buffer | Blob) => {
@@ -67,8 +68,8 @@ export const getHTMLDocs = async (zip: JSZip, isMWB: boolean, isW: boolean) => {
 	return files;
 };
 
-export const getHTMLWTArticleDoc = async (zip: JSZip, articleFilename: string) => {
-	let article;
+export const getHTMLWTArticleDoc = async (zip: JSZip, articleFilename: string): Promise<HTMLElement> => {
+	let article: HTMLElement;
 
 	for (let [filename] of Object.entries(zip.files)) {
 		const shortName = jw_epub_parser.path.basename(filename);
@@ -81,5 +82,5 @@ export const getHTMLWTArticleDoc = async (zip: JSZip, articleFilename: string) =
 		}
 	}
 
-	return article;
+	return article!;
 };

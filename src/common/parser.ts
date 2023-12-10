@@ -2,7 +2,7 @@ import JSZip from 'jszip';
 import { HTMLElement } from 'node-html-parser';
 import languages from '../locales/languages.js';
 import { getMWBWeekDateEnhanced, getWTStudyDateEnhanced } from './enhanced_parse_utils.js';
-import { extractEPUBFiles, getHTMLDocs, validateEPUBContents } from './epub_jszip.js';
+import { extractEPUBFiles, getHTMLDocs, getHTMLWTArticleDoc, validateEPUBContents } from './epub_jszip.js';
 import {
 	getEPUBData,
 	getEPUBFileName,
@@ -253,12 +253,12 @@ export const parseMWBSchedule = (htmlItem: HTMLElement, mwbYear: number, mwbLang
 	return weekItem;
 };
 
-export const parseWSchedule = (htmlItem: HTMLElement, wLang: string) => {
+export const parseWSchedule = (article: HTMLElement, content: HTMLElement, wLang: string) => {
 	const isEnhancedParsing = languages.find((language) => language.code === wLang);
 
 	const weekItem = {} as WSchedule;
 
-	const studyDate = getWStudyDate(htmlItem);
+	const studyDate = getWStudyDate(article);
 
 	if (isEnhancedParsing) {
 		const wStudyEnhanced = getWTStudyDateEnhanced(studyDate, wLang);
@@ -268,8 +268,31 @@ export const parseWSchedule = (htmlItem: HTMLElement, wLang: string) => {
 		weekItem.w_study_date = studyDate;
 	}
 
-	const studyTitle = getWStudyTitle(htmlItem);
+	const studyTitle = getWStudyTitle(article);
 	weekItem.w_study_title = studyTitle;
+
+	let songText;
+	const themeScrp = content.querySelector('.themeScrp')!;
+	songText = themeScrp.nextElementSibling;
+
+	if (songText === null) {
+		const firstSongContainer = content.querySelector('.du-color--textSubdued')!;
+		songText = firstSongContainer.querySelector('p');
+	}
+
+	weekItem.w_study_opening_song = extractSongNumber(songText!.textContent);
+
+	const blockTeach = content.querySelector('.blockTeach');
+	if (blockTeach !== null) {
+		songText = blockTeach.nextElementSibling;
+	}
+
+	if (blockTeach === null) {
+		const artDivs = content.querySelectorAll('.du-color--textSubdued');
+		songText = artDivs.slice(-1)[0].querySelector('p');
+	}
+
+	weekItem.w_study_concluding_song = extractSongNumber(songText!.textContent);
 
 	return weekItem;
 };
@@ -307,13 +330,10 @@ const parseWEpub = async ({
 	const studyArticles = getWStudyArticles(htmlItem);
 
 	for (const [_, studyArticle] of studyArticles.entries()) {
-		const weekItem = parseWSchedule(studyArticle, epubLang);
-		const songs = await getWSTudySongs({ zip: epubContents, htmlItem: studyArticle });
-		if (songs) {
-			weekItem.w_study_opening_song = songs.WTOpeningSong;
-			weekItem.w_study_concluding_song = songs.WTConcludingSong;
-		}
+		const articleLink = studyArticle.nextElementSibling.querySelector('a')!.getAttribute('href') as string;
+		const content = await getHTMLWTArticleDoc(epubContents, articleLink);
 
+		const weekItem = parseWSchedule(studyArticle, content, epubLang);
 		weeksData.push(weekItem);
 	}
 
