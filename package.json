@@ -45,18 +45,21 @@
 		"@rollup/plugin-json": "^6.0.0",
 		"@rollup/plugin-node-resolve": "^15.0.0",
 		"@rollup/plugin-terser": "^0.4.3",
+		"@rollup/plugin-typescript": "^11.1.5",
 		"@semantic-release/changelog": "^6.0.1",
 		"@semantic-release/exec": "^6.0.3",
 		"@semantic-release/git": "^10.0.1",
+		"@types/node": "^20.9.4",
+		"@types/path-browserify": "^1.0.2",
 		"chai": "^4.3.6",
 		"cypress": "^13.2.0",
 		"mocha": "^10.0.0",
 		"rimraf": "^5.0.0",
 		"rollup": "^4.0.0",
-		"semantic-release": "^22.0.5"
+		"semantic-release": "^22.0.5",
+		"typescript": "^5.2.2"
 	},
 	"dependencies": {
-		"dateformat": "^5.0.3",
 		"jszip": "^3.9.1",
 		"node-html-parser": "^6.1.6",
 		"path-browserify": "^1.0.1"

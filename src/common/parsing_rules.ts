@@ -1,7 +1,7 @@
 import { JWEPUBParserError } from '../classes/error.js';
 import { getMonthNames, getPartMinutesSeparatorVariations, getStudyArticleDateVariations } from './language_rules.js';
 
-export const extractMonthName = (src, lang) => {
+export const extractMonthName = (src: string, lang: string) => {
 	let varDay;
 	let monthIndex;
 
@@ -13,7 +13,7 @@ export const extractMonthName = (src, lang) => {
 		const array = regex.exec(src.toLowerCase());
 
 		if (Array.isArray(array)) {
-			varDay = +src.match(/(\d+)/)[0];
+			varDay = +src.match(/(\d+)/)![0];
 			monthIndex = month.index;
 			break;
 		}
@@ -26,11 +26,11 @@ export const extractMonthName = (src, lang) => {
 	throw new JWEPUBParserError('week-date', `Parsing failed when extracting the week date. The input was: ${src}`);
 };
 
-export const extractSongNumber = (src) => {
-	return +src.match(/(\d+)/)[0];
+export const extractSongNumber = (src: string) => {
+	return +src.match(/(\d+)/)![0];
 };
 
-export const extractSourceEnhanced = (src, lang) => {
+export const extractSourceEnhanced = (src: string, lang: string) => {
 	const variations = getPartMinutesSeparatorVariations(lang).split('|');
 
 	let result;
@@ -47,7 +47,7 @@ export const extractSourceEnhanced = (src, lang) => {
 
 		if (match) {
 			const splits = src.split(regex);
-			const duration = +match[0].match(/\d+/)[0];
+			const duration = +match[0].match(/\d+/)![0];
 			const regexStartColumn = /^:/;
 			const regexEndColumn = /:$/;
 
@@ -76,12 +76,12 @@ export const extractSourceEnhanced = (src, lang) => {
 	throw new JWEPUBParserError('jw-epub-parser', `Parsing failed. The input was: ${src}`);
 };
 
-export const extractLastSong = (src) => {
+export const extractLastSong = (src: string) => {
 	const temp = extractSongNumber(src);
 	return temp > 151 ? src : temp;
 };
 
-export const extractWTStudyDate = (src, lang) => {
+export const extractWTStudyDate = (src: string, lang: string) => {
 	const variations = getStudyArticleDateVariations(lang).split('|');
 
 	const patternNumber = '{{ number }}';
@@ -103,7 +103,7 @@ export const extractWTStudyDate = (src, lang) => {
 			if (dateStartIndex > 0) {
 				const dateValue = src.substring(dateStartIndex);
 
-				textSearch = dateValue.trim().split('–')[0];
+				textSearch = dateValue.trim();
 
 				const monthNames = getMonthNames(lang);
 
@@ -113,7 +113,7 @@ export const extractWTStudyDate = (src, lang) => {
 					const array2 = regex.exec(textSearch.toLowerCase());
 
 					if (Array.isArray(array2)) {
-						varDay = +textSearch.match(/(\d+)/)[0];
+						varDay = +textSearch.match(/(\d+)/)![0];
 						monthIndex = month.index;
 
 						const findYear = /\b\d{4}\b/;

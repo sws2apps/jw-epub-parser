@@ -1,6 +1,8 @@
-const languages = jw_epub_parser.languages;
+import { Language } from '../types/index.js';
 
-export const getMonthNames = (lang) => {
+const languages: Language = jw_epub_parser.languages;
+
+export const getMonthNames = (lang: string) => {
 	return [
 		{ index: 0, name: languages[lang].januaryVariations },
 		{ index: 1, name: languages[lang].februaryVariations },
@@ -17,8 +19,6 @@ export const getMonthNames = (lang) => {
 	];
 };
 
-export const getConcludingSongFormat = (lang) => languages[lang].concludingSongVariations;
+export const getStudyArticleDateVariations = (lang: string) => languages[lang].studyArticleDateVariations;
 
-export const getStudyArticleDateVariations = (lang) => languages[lang].studyArticleDateVariations;
-
-export const getPartMinutesSeparatorVariations = (lang) => languages[lang].partMinutesSeparatorVariations;
+export const getPartMinutesSeparatorVariations = (lang: string) => languages[lang].partMinutesSeparatorVariations;

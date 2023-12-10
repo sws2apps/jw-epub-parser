@@ -1,22 +1,24 @@
+import JSZip from 'jszip';
+import { HTMLElement } from 'node-html-parser';
 import { getHTMLWTArticleDoc } from './epub_jszip.js';
 import { extractSongNumber } from './parsing_rules.js';
 
-export const getMWBWeekDate = (htmlItem) => {
-	const wdHtml = htmlItem.querySelector('h1');
-	const weekDate = wdHtml.textContent.replaceAll(/\u00A0/g, ' ');
+export const getMWBWeekDate = (htmlItem: HTMLElement) => {
+	const wdHtml = htmlItem.querySelector('h1')!;
+	const weekDate = wdHtml.textContent.replace(/\u00A0/g, ' ');
 
 	return weekDate;
 };
 
-export const getMWBWeeklyBibleReading = (htmlItem) => {
-	const wbHtml = htmlItem.querySelector('h2');
-	const weeklyBibleReading = wbHtml.textContent.replaceAll(/\u00A0/g, ' ');
+export const getMWBWeeklyBibleReading = (htmlItem: HTMLElement) => {
+	const wbHtml = htmlItem.querySelector('h2')!;
+	const weeklyBibleReading = wbHtml.textContent.replace(/\u00A0/g, ' ');
 
 	return weeklyBibleReading;
 };
 
-export const getMWBAYFCount = (htmlItem) => {
-	let count;
+export const getMWBAYFCount = (htmlItem: HTMLElement) => {
+	let count: number = 1;
 
 	const testSection = htmlItem.querySelector('#section3');
 
@@ -33,8 +35,8 @@ export const getMWBAYFCount = (htmlItem) => {
 	return count;
 };
 
-export const getMWBLCCount = (htmlItem) => {
-	let count = 0;
+export const getMWBLCCount = (htmlItem: HTMLElement) => {
+	let count = 1;
 
 	const testSection = htmlItem.querySelector('#section4');
 
@@ -52,7 +54,7 @@ export const getMWBLCCount = (htmlItem) => {
 	return count;
 };
 
-export const getMWBSources = (htmlItem) => {
+export const getMWBSources = (htmlItem: HTMLElement) => {
 	let src = '';
 
 	// pre-2024 mwb
@@ -61,7 +63,7 @@ export const getMWBSources = (htmlItem) => {
 	for (const pGroup of pGroupData) {
 		const liData = pGroup.querySelectorAll('li');
 		for (const li of liData) {
-			const firstP = li.querySelector('p');
+			const firstP = li.querySelector('p')!;
 			src += '@' + firstP.textContent;
 		}
 	}
@@ -91,7 +93,7 @@ export const getMWBSources = (htmlItem) => {
 			if (nextElement) {
 				const tmp = nextElement.querySelector('.du-color--textSubdued');
 				if (tmp) {
-					const firstP = tmp.querySelector('p');
+					const firstP = tmp.querySelector('p')!;
 					src += ' ' + firstP.textContent;
 				}
 			}
@@ -101,34 +103,46 @@ export const getMWBSources = (htmlItem) => {
 		src = src.substring(0, sepBeforeBR) + '@junk@junk' + src.substring(sepBeforeBR);
 	}
 
-	src = src.replaceAll(/\u00A0/g, ' '); // remove non-breaking space
+	src = src.replace(/\u00A0/g, ' '); // remove non-breaking space
 
 	return src;
 };
 
-export const getWStudyArticles = (htmlItem) => {
+export const getWStudyArticles = (htmlItem: HTMLElement) => {
 	return htmlItem.querySelectorAll('h3');
 };
 
-export const getWStudyDate = (htmlItem) => {
-	return htmlItem.textContent.replaceAll(/\u00A0/g, ' '); // remove non-breaking space;
+export const getWStudyDate = (htmlItem: HTMLElement) => {
+	let result: string;
+
+	const p = htmlItem.querySelector('.desc');
+
+	if (p === null) {
+		result = htmlItem.textContent.replace(/\u00A0/g, ' '); // remove non-breaking space;
+	}
+
+	if (p !== null) {
+		result = p.textContent.replace(/\u00A0/g, ' '); // remove non-breaking space;
+	}
+
+	return result!;
 };
 
-export const getWSTudySongs = async ({ htmlItem, zip }) => {
-	const articleLink = htmlItem.nextElementSibling.querySelector('a').getAttribute('href');
+export const getWSTudySongs = async ({ htmlItem, zip }: { htmlItem: HTMLElement; zip: JSZip }) => {
+	const articleLink = htmlItem.nextElementSibling.querySelector('a')!.getAttribute('href') as string;
 	const article = await getHTMLWTArticleDoc(zip, articleLink);
 
 	if (article) {
 		let songText;
-		const themeScrp = article.querySelector('.themeScrp');
+		const themeScrp = article.querySelector('.themeScrp')!;
 		songText = themeScrp.nextElementSibling;
 
 		if (songText === null) {
-			const firstSongContainer = article.querySelector('.du-color--textSubdued');
+			const firstSongContainer = article.querySelector('.du-color--textSubdued')!;
 			songText = firstSongContainer.querySelector('p');
 		}
 
-		const WTOpeningSong = extractSongNumber(songText.textContent);
+		const WTOpeningSong = extractSongNumber(songText!.textContent);
 
 		const blockTeach = article.querySelector('.blockTeach');
 		if (blockTeach !== null) {
@@ -140,15 +154,25 @@ export const getWSTudySongs = async ({ htmlItem, zip }) => {
 			songText = artDivs.slice(-1)[0].querySelector('p');
 		}
 
-		const WTConcludingSong = extractSongNumber(songText.textContent);
+		const WTConcludingSong = extractSongNumber(songText!.textContent);
 
 		return { WTOpeningSong, WTConcludingSong };
 	}
 };
 
-export const getWStudyTitle = (htmlItem) => {
-	const articleLink = htmlItem.nextElementSibling.querySelector('a');
-	const studyTitle = articleLink.textContent.replaceAll(/\u00A0/g, ' '); // remove non-breaking space;;
+export const getWStudyTitle = (htmlItem: HTMLElement) => {
+	let result: string;
 
-	return studyTitle;
+	const h2 = htmlItem.querySelector('h2');
+
+	if (h2 === null) {
+		const articleLink = htmlItem.nextElementSibling.querySelector('a')!;
+		result = articleLink.textContent.replace(/\u00A0/g, ' '); // remove non-breaking space;;
+	}
+
+	if (h2 !== null) {
+		result = h2.textContent.trim().replace(/\u00A0/g, ' '); // remove non-breaking space;
+	}
+
+	return result!;
 };

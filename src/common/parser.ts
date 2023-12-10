@@ -1,6 +1,8 @@
+import JSZip from 'jszip';
+import { HTMLElement } from 'node-html-parser';
 import languages from '../locales/languages.js';
 import { getMWBWeekDateEnhanced, getWTStudyDateEnhanced } from './enhanced_parse_utils.js';
-import { extractEPUBFiles, getHTMLDocs, validateEPUBContents } from './epub_jszip.js';
+import { extractEPUBFiles, getHTMLDocs, getHTMLWTArticleDoc, validateEPUBContents } from './epub_jszip.js';
 import {
 	getEPUBData,
 	getEPUBFileName,
@@ -23,8 +25,9 @@ import {
 	getWStudyTitle,
 } from './html_utils.js';
 import { extractLastSong, extractSongNumber, extractSourceEnhanced } from './parsing_rules.js';
+import { MWBSchedule, WSchedule } from '../types/index.js';
 
-export const startParse = async (epubInput) => {
+export const startParse = async (epubInput: string | Blob | { url: string }) => {
 	let result = {};
 
 	const isValidName = isValidEPUB(epubInput);
@@ -90,10 +93,10 @@ export const startParse = async (epubInput) => {
 	return result;
 };
 
-export const parseMWBSchedule = (htmlItem, mwbYear, mwbLang) => {
+export const parseMWBSchedule = (htmlItem: HTMLElement, mwbYear: number, mwbLang: string) => {
 	const isEnhancedParsing = languages.find((language) => language.code === mwbLang);
 
-	const weekItem = {};
+	const weekItem = {} as MWBSchedule;
 
 	// get week date
 	const weekDate = getMWBWeekDate(htmlItem);
@@ -250,12 +253,12 @@ export const parseMWBSchedule = (htmlItem, mwbYear, mwbLang) => {
 	return weekItem;
 };
 
-export const parseWSchedule = (htmlItem, wLang) => {
+export const parseWSchedule = (article: HTMLElement, content: HTMLElement, wLang: string) => {
 	const isEnhancedParsing = languages.find((language) => language.code === wLang);
 
-	const weekItem = {};
+	const weekItem = {} as WSchedule;
 
-	const studyDate = getWStudyDate(htmlItem);
+	const studyDate = getWStudyDate(article);
 
 	if (isEnhancedParsing) {
 		const wStudyEnhanced = getWTStudyDateEnhanced(studyDate, wLang);
@@ -265,13 +268,44 @@ export const parseWSchedule = (htmlItem, wLang) => {
 		weekItem.w_study_date = studyDate;
 	}
 
-	const studyTitle = getWStudyTitle(htmlItem);
+	const studyTitle = getWStudyTitle(article);
 	weekItem.w_study_title = studyTitle;
+
+	let songText;
+	const themeScrp = content.querySelector('.themeScrp')!;
+	songText = themeScrp.nextElementSibling;
+
+	if (songText === null) {
+		const firstSongContainer = content.querySelector('.du-color--textSubdued')!;
+		songText = firstSongContainer.querySelector('p');
+	}
+
+	weekItem.w_study_opening_song = extractSongNumber(songText!.textContent);
+
+	const blockTeach = content.querySelector('.blockTeach');
+	if (blockTeach !== null) {
+		songText = blockTeach.nextElementSibling;
+	}
+
+	if (blockTeach === null) {
+		const artDivs = content.querySelectorAll('.du-color--textSubdued');
+		songText = artDivs.slice(-1)[0].querySelector('p');
+	}
+
+	weekItem.w_study_concluding_song = extractSongNumber(songText!.textContent);
 
 	return weekItem;
 };
 
-const parseMWBEpub = async ({ htmlDocs, epubYear, epubLang }) => {
+const parseMWBEpub = async ({
+	htmlDocs,
+	epubYear,
+	epubLang,
+}: {
+	htmlDocs: HTMLElement[];
+	epubYear: number;
+	epubLang: string;
+}) => {
 	const weeksData = [];
 
 	for (const htmlItem of htmlDocs) {
@@ -282,19 +316,24 @@ const parseMWBEpub = async ({ htmlDocs, epubYear, epubLang }) => {
 	return weeksData;
 };
 
-const parseWEpub = async ({ htmlItem, epubLang, epubContents }) => {
+const parseWEpub = async ({
+	htmlItem,
+	epubLang,
+	epubContents,
+}: {
+	htmlItem: HTMLElement;
+	epubLang: string;
+	epubContents: JSZip;
+}) => {
 	const weeksData = [];
 
 	const studyArticles = getWStudyArticles(htmlItem);
 
 	for (const [_, studyArticle] of studyArticles.entries()) {
-		const weekItem = parseWSchedule(studyArticle, epubLang);
-		const songs = await getWSTudySongs({ zip: epubContents, htmlItem: studyArticle });
-		if (songs) {
-			weekItem.w_study_opening_song = songs.WTOpeningSong;
-			weekItem.w_study_concluding_song = songs.WTConcludingSong;
-		}
+		const articleLink = studyArticle.nextElementSibling.querySelector('a')!.getAttribute('href') as string;
+		const content = await getHTMLWTArticleDoc(epubContents, articleLink);
 
+		const weekItem = parseWSchedule(studyArticle, content, epubLang);
 		weeksData.push(weekItem);
 	}
 
