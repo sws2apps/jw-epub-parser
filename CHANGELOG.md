@@ -1,3 +1,12 @@
+# [3.7.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.6.0...v3.7.0) (2023-12-10)
+
+
+### Features
+
+* **localize:** updated translation from Crowdin ([125bb93](https://github.com/sws2apps/jw-epub-parser/commit/125bb93103f86919841c1c497319c01617a976ba))
+* **localize:** updated translation from Crowdin ([9839904](https://github.com/sws2apps/jw-epub-parser/commit/98399042f4b98ad11353a3660031d3f0aebf7f6a))
+* **module:** add internal parsing method ([d26a57a](https://github.com/sws2apps/jw-epub-parser/commit/d26a57ae68f76c661c412f43465466b857dd0440))
+
 # [3.6.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.5.0...v3.6.0) (2023-11-08)
 
 
