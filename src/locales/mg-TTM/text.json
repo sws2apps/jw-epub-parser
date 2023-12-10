@@ -11,6 +11,6 @@
 	"octoberVariations": "Oktobra",
 	"novemberVariations": "Novambra",
 	"decemberVariations": "Desambra",
-	"studyArticleDateVariations": "Lahatsoratra Fianarana {{ number }}: {{ date }}",
+	"studyArticleDateVariations": "Hianarana ny herinandron’ny {{ date }}",
 	"partMinutesSeparatorVariations": "({{ duration }} min.)"
 }
