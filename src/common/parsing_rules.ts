@@ -48,7 +48,7 @@ export const extractSourceEnhanced = (src: string, lang: string) => {
 		if (match) {
 			const splits = src.split(regex);
 			const duration = +match[0].match(/\d+/)![0];
-			const regexStartColumn = /^:/;
+			const regexStartColumn = /^[:.]/;
 			const regexEndColumn = /:$/;
 
 			const tmpAssignment = splits[0].trim();
