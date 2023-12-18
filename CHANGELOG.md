@@ -1,3 +1,10 @@
+## [3.7.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.7.0...v3.7.1) (2023-12-13)
+
+
+### Bug Fixes
+
+* **common:** update parsing rule to remove dot at the beginning of sources ([c8a1a37](https://github.com/sws2apps/jw-epub-parser/commit/c8a1a372ecce4a7ef949f0310afd579a1e678f35))
+
 # [3.7.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.6.0...v3.7.0) (2023-12-10)
 
 
