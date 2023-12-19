@@ -260,12 +260,14 @@ export const parseWSchedule = (article: HTMLElement, content: HTMLElement, wLang
 
 	const studyDate = getWStudyDate(article);
 
-	if (isEnhancedParsing) {
-		const wStudyEnhanced = getWTStudyDateEnhanced(studyDate, wLang);
-		weekItem.w_study_date = wStudyEnhanced;
-		weekItem.w_study_date_locale = studyDate;
-	} else {
-		weekItem.w_study_date = studyDate;
+	if (studyDate.length > 0) {
+		if (isEnhancedParsing) {
+			const wStudyEnhanced = getWTStudyDateEnhanced(studyDate, wLang);
+			weekItem.w_study_date = wStudyEnhanced;
+			weekItem.w_study_date_locale = studyDate;
+		} else {
+			weekItem.w_study_date = studyDate;
+		}
 	}
 
 	const studyTitle = getWStudyTitle(article);
