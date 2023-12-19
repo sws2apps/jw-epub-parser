@@ -1,3 +1,15 @@
+# [3.8.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.7.1...v3.8.0) (2023-12-19)
+
+
+### Bug Fixes
+
+* **api:** update logic to check schedule week date ([2ad9482](https://github.com/sws2apps/jw-epub-parser/commit/2ad9482f17dfcf70fb1d8858da84b406b42ba7ff))
+
+
+### Features
+
+* **localize:** updated translation from Crowdin ([0175463](https://github.com/sws2apps/jw-epub-parser/commit/0175463b8e23a8b0a235b5aa7a807324b5561b9a))
+
 ## [3.7.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.7.0...v3.7.1) (2023-12-13)
 
 
