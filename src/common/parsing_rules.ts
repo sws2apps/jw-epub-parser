@@ -5,17 +5,22 @@ export const extractMonthName = (src: string, lang: string) => {
 	let varDay;
 	let monthIndex;
 
+	const text = src.toLowerCase();
+	const split = text.split(/[–-—]/);
 	const monthNames = getMonthNames(lang);
 
-	for (const month of monthNames) {
-		const monthLang = month.name;
-		const regex = new RegExp(`(${monthLang.toLowerCase()})`);
-		const array = regex.exec(src.toLowerCase());
+	outerLoop: for (const splitted of split) {
+		for (const month of monthNames) {
+			const monthLang = month.name.toLowerCase();
+			const regex = new RegExp(`(${monthLang})`);
 
-		if (Array.isArray(array)) {
-			varDay = +src.match(/(\d+)/)![0];
-			monthIndex = month.index;
-			break;
+			const array = regex.exec(splitted);
+
+			if (Array.isArray(array)) {
+				varDay = +text.match(/(\d+)/)![0];
+				monthIndex = month.index;
+				break outerLoop;
+			}
 		}
 	}
 

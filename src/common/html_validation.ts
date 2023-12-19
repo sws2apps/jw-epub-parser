@@ -4,7 +4,7 @@ import { HTMLElement, parse } from 'node-html-parser';
 export const isValidHTML = (name: string): boolean => {
 	let valid = false;
 
-	if (name.startsWith('OEBPS') && name.endsWith('.xhtml')) {
+	if (name.startsWith('OEBPS') && name.endsWith('.xhtml') && name.indexOf('-extracted') === -1) {
 		const fileName = name.split('/')[1].split('.')[0];
 		if (!isNaN(parseFloat(fileName))) {
 			valid = true;
