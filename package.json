@@ -1,6 +1,6 @@
 {
 	"name": "jw-epub-parser",
-	"version": "3.8.0",
+	"version": "3.8.1",
 	"type": "module",
 	"description": "This tool will help you to parse and extract the needed source materials from Meeting Workbook EPUB file. Support for parsing Watchtower Study will be added in future release.",
 	"keywords": [
@@ -32,7 +32,7 @@
 	"scripts": {
 		"test": "mocha",
 		"build": "npx rimraf dist && npx rollup -c",
-		"parse": "node example/index.js",
+		"parse": "tsx example/index.ts",
 		"setup:client": "cd client && npm install",
 		"start:client": "cd client && npm run dev",
 		"cypress:open": "cypress open",
@@ -57,6 +57,7 @@
 		"rimraf": "^5.0.0",
 		"rollup": "^4.0.0",
 		"semantic-release": "^22.0.5",
+		"tsx": "^4.7.0",
 		"typescript": "^5.2.2"
 	},
 	"dependencies": {

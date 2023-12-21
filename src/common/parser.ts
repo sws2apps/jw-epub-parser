@@ -273,28 +273,13 @@ export const parseWSchedule = (article: HTMLElement, content: HTMLElement, wLang
 	const studyTitle = getWStudyTitle(article);
 	weekItem.w_study_title = studyTitle;
 
-	let songText;
-	const themeScrp = content.querySelector('.themeScrp')!;
-	songText = themeScrp.nextElementSibling;
+	const pubRefs = content.querySelectorAll('.pubRefs');
 
-	if (songText === null) {
-		const firstSongContainer = content.querySelector('.du-color--textSubdued')!;
-		songText = firstSongContainer.querySelector('p');
-	}
+	const openingSongText = pubRefs.at(0)!;
+	weekItem.w_study_opening_song = extractSongNumber(openingSongText.textContent);
 
-	weekItem.w_study_opening_song = extractSongNumber(songText!.textContent);
-
-	const blockTeach = content.querySelector('.blockTeach');
-	if (blockTeach !== null) {
-		songText = blockTeach.nextElementSibling;
-	}
-
-	if (blockTeach === null) {
-		const artDivs = content.querySelectorAll('.du-color--textSubdued');
-		songText = artDivs.slice(-1)[0].querySelector('p');
-	}
-
-	weekItem.w_study_concluding_song = extractSongNumber(songText!.textContent);
+	const concludingSongText = pubRefs.at(-1)!;
+	weekItem.w_study_concluding_song = extractSongNumber(concludingSongText.textContent);
 
 	return weekItem;
 };
