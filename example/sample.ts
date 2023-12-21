@@ -1,4 +1,4 @@
-import { loadEPUB } from '../dist/node/index.js';
+import { loadEPUB } from '../src/node/index.js';
 
 const JW_CDN = 'https://app.jw-cdn.org/apis/pub-media/GETPUBMEDIALINKS?';
 const WOL_E = 'https://wol.jw.org/wol/dt/r1/lp-e';
@@ -18,7 +18,14 @@ const months = [
 	'December',
 ];
 
-const fetchIssueData = async (issue) => {
+type issue = {
+	issueDate: string;
+	currentYear: number;
+	language: string;
+	hasEPUB: any;
+};
+
+const fetchIssueData = async (issue: issue): Promise<any> => {
 	try {
 		if (issue.hasEPUB) {
 			const epubFile = issue.hasEPUB[0].file;
@@ -31,12 +38,12 @@ const fetchIssueData = async (issue) => {
 		if (!issue.hasEPUB) {
 			return [];
 		}
-	} catch (err) {
+	} catch (err: any) {
 		throw new Error(err);
 	}
 };
 
-export const fetchData = async (language, issue, pub) => {
+export const fetchData = async (language: string, issue: string | undefined, pub: string | undefined) => {
 	let data = [];
 
 	if (!issue && !pub) {
@@ -102,19 +109,19 @@ export const fetchData = async (language, issue, pub) => {
 				const res = await fetch(url);
 				const data = await res.json();
 
-				const wData = data.items.find((item) => item.classification === 68);
+				const wData = data.items.find((item: any) => item.classification === 68);
 				const publicationTitle = wData.publicationTitle;
 
 				const findYear = /\b\d{4}\b/;
 				const array = findYear.exec(publicationTitle);
-				let currentYear = +array[0];
+				let currentYear = +array![0];
 
 				const monthsRegex = `(${months.join('|')})`;
 
 				const regex = new RegExp(monthsRegex);
 				const array2 = regex.exec(publicationTitle);
 
-				let monthW = months.findIndex((month) => month === array2[0]) + 1;
+				let monthW = months.findIndex((month) => month === array2![0]) + 1;
 
 				do {
 					const issueDate = currentYear + String(monthW).padStart(2, '0');
@@ -169,7 +176,7 @@ export const fetchData = async (language, issue, pub) => {
 				]);
 
 				for (let z = 0; z < allData.length; z++) {
-					const tempObj = allData[z];
+					const tempObj: any = allData[z];
 					if (tempObj.length > 0) {
 						for (const src of tempObj) {
 							const date = src.mwb_week_date || src.w_study_date;
@@ -210,7 +217,7 @@ export const fetchData = async (language, issue, pub) => {
 		if (res.status === 200) {
 			const result = await res.json();
 			const hasEPUB = result.files[language].EPUB;
-			const issueFetch = { issueDate: issue, currentYear: issue.substring(0, 4), language, hasEPUB: hasEPUB };
+			const issueFetch = { issueDate: issue, currentYear: +issue.substring(0, 4), language, hasEPUB: hasEPUB };
 
 			data = await fetchIssueData(issueFetch);
 		}
