@@ -1,0 +1,16 @@
+{
+	"januaryVariations": "Enero",
+	"februaryVariations": "Pebrero",
+	"marchVariations": "Marso",
+	"aprilVariations": "Abril",
+	"mayVariations": "Mayo",
+	"juneVariations": "Hunyo",
+	"julyVariations": "Hulyo",
+	"augustVariations": "Agosto",
+	"septemberVariations": "Setyembre",
+	"octoberVariations": "Oktubre",
+	"novemberVariations": "Nobyembre",
+	"decemberVariations": "Disyembre",
+	"studyArticleDateVariations": "Araling artikulo {{ number }}: {{ date }}",
+	"partMinutesSeparatorVariations": "({{ duration }} min.)"
+}
