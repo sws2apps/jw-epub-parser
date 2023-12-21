@@ -3,6 +3,7 @@ import * as path from 'path-browserify';
 import E from '../locales/en/text.json';
 import F from '../locales/fr-FR/text.json';
 import I from '../locales/it-IT/text.json';
+import J from '../locales/ja-JP/text.json';
 import K from '../locales/uk-UA/text.json';
 import MG from '../locales/mg-MG/text.json';
 import T from '../locales/pt-BR/text.json';
@@ -19,6 +20,6 @@ declare global {
 }
 
 window.jw_epub_parser = {
-	languages: { E, F, I, K, MG, T, TND, TNK, TTM, VZ, X },
+	languages: { E, F, I, J, K, MG, T, TND, TNK, TTM, VZ, X },
 	path: path,
 };
