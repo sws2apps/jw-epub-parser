@@ -1,3 +1,10 @@
+## [3.8.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.8.0...v3.8.1) (2023-12-21)
+
+
+### Bug Fixes
+
+* **module:** update logic to get watchtower study songs ([c87d033](https://github.com/sws2apps/jw-epub-parser/commit/c87d03396ae74cc7e44f79cc096cdf3323bc6d9f))
+
 # [3.8.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.7.1...v3.8.0) (2023-12-19)
 
 
