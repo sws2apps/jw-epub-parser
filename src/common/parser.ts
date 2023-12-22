@@ -278,8 +278,14 @@ export const parseWSchedule = (article: HTMLElement, content: HTMLElement, wLang
 	const openingSongText = pubRefs.at(0)!;
 	weekItem.w_study_opening_song = extractSongNumber(openingSongText.textContent);
 
-	const concludingSongText = pubRefs.at(-1)!;
-	weekItem.w_study_concluding_song = extractSongNumber(concludingSongText.textContent);
+	let concludingSongText = pubRefs.at(-1);
+
+	if (pubRefs.length === 2) {
+		const blockTeach = content.querySelector('.blockTeach');
+		concludingSongText = blockTeach!.nextElementSibling;
+	}
+
+	weekItem.w_study_concluding_song = extractSongNumber(concludingSongText!.textContent);
 
 	return weekItem;
 };
