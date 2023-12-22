@@ -10,6 +10,7 @@ import MG from '../locales/mg-MG/text.json' assert { type: 'json' };
 import P from '../locales/pl-PL/text.json' assert { type: 'json' };
 import S from '../locales/es-ES/text.json' assert { type: 'json' };
 import T from '../locales/pt-BR/text.json' assert { type: 'json' };
+import TG from '../locales/tl-PH/text.json' assert { type: 'json' };
 import TND from '../locales/mg-TND/text.json' assert { type: 'json' };
 import TNK from '../locales/mg-TNK/text.json' assert { type: 'json' };
 import TTM from '../locales/mg-TTM/text.json' assert { type: 'json' };
@@ -22,7 +23,7 @@ declare global {
 }
 
 global.jw_epub_parser = {
-	languages: { E, F, I, J, K, MG, P, S, T, TND, TNK, TTM, U, VZ, X },
+	languages: { E, F, I, J, K, MG, P, S, T, TG, TND, TNK, TTM, U, VZ, X },
 	path: path,
 	readFile: readFile,
 };

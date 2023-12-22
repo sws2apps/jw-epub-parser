@@ -8,6 +8,7 @@ export default [
 	{ locale: 'pl-PL', code: 'P' },
 	{ locale: 'es-ES', code: 'S' },
 	{ locale: 'pt-BR', code: 'T' },
+	{ locale: 'tl-PH', code: 'TG' },
 	{ locale: 'mg-TND', code: 'TND' },
 	{ locale: 'mg-TNK', code: 'TNK' },
 	{ locale: 'mg-TTM', code: 'TTM' },
