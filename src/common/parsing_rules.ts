@@ -128,7 +128,7 @@ export const extractWTStudyDate = (src: string, lang: string) => {
 				textSearch = dateValue.trim();
 
 				const text = textSearch.toLowerCase();
-				const separators = ['bis', '–', '-', '—'];
+				const separators = ['bis', '–', '-', '—', 'do'];
 				const regex = new RegExp(separators.join('|'), 'gi');
 				const split = text.split(regex);
 				const monthNames = getMonthNames(lang);

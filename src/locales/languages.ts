@@ -5,6 +5,7 @@ export default [
 	{ locale: 'ja-JP', code: 'J' },
 	{ locale: 'uk-UA', code: 'K' },
 	{ locale: 'mg-MG', code: 'MG' },
+	{ locale: 'pl-PL', code: 'P' },
 	{ locale: 'pt-BR', code: 'T' },
 	{ locale: 'mg-TND', code: 'TND' },
 	{ locale: 'mg-TNK', code: 'TNK' },

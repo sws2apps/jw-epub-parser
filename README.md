@@ -107,7 +107,7 @@ Italian
 Japanese
 Madagascar Sign Language, Malagasy
 Malagasy
-Portuguese Brazil
+Polish, Portuguese Brazil
 Tandroy, Tankarana
 Ukrainian
 Vezo
