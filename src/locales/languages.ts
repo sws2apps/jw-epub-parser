@@ -10,6 +10,7 @@ export default [
 	{ locale: 'mg-TND', code: 'TND' },
 	{ locale: 'mg-TNK', code: 'TNK' },
 	{ locale: 'mg-TTM', code: 'TTM' },
+	{ locale: 'uk-UA', code: 'U' },
 	{ locale: 'mg-VZ', code: 'VZ' },
 	{ locale: 'de-DE', code: 'X' },
 ];
