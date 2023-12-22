@@ -113,8 +113,10 @@ export const extractWTStudyDate = (src: string, lang: string) => {
 	const patternNumber = '{{ number }}';
 	const patternDate = '{{ date }}';
 
+	src = src.toLowerCase();
+
 	outerLoop: for (const variation of variations) {
-		let textSearch = variation.replace(patternDate, '');
+		let textSearch = variation.toLowerCase().replace(patternDate, '');
 		textSearch = textSearch.replace(patternNumber, '\\d+');
 
 		const regex = new RegExp(textSearch.trim());

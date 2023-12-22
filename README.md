@@ -110,7 +110,7 @@ Malagasy
 Polish, Portuguese Brazil
 Russian
 Spanish
-Tandroy, Tankarana
+Tagalog, Tandroy, Tankarana
 Ukrainian
 Vezo
 ```
