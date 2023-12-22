@@ -1,3 +1,19 @@
+# [3.9.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.8.1...v3.9.0) (2023-12-22)
+
+
+### Features
+
+* **localize:** updated translation from Crowdin ([0787a21](https://github.com/sws2apps/jw-epub-parser/commit/0787a21afefec4cecfd5a7b47d26ea5ca111aaca))
+* **localize:** updated translation from Crowdin ([7cc65e0](https://github.com/sws2apps/jw-epub-parser/commit/7cc65e0ebcc560be6e4987a4d77cac20744e26c1))
+* **localize:** updated translation from Crowdin ([fa093f3](https://github.com/sws2apps/jw-epub-parser/commit/fa093f3ddaed9a30e2ecd11358aa6f55d5e6701f))
+* **localize:** updated translation from Crowdin ([6d675d7](https://github.com/sws2apps/jw-epub-parser/commit/6d675d7577da898d1e7fb17401abe63f330f29ce))
+* **localize:** updated translation from Crowdin ([9e53842](https://github.com/sws2apps/jw-epub-parser/commit/9e53842fc22756645d9b80e0f29a2e1caa8f7cd8))
+* **module:** add support for Japanese language ([647b5e0](https://github.com/sws2apps/jw-epub-parser/commit/647b5e0ccf0a57e96b1e06d730539b9b5a7d8e40))
+* **module:** add support for Polish language ([e805c19](https://github.com/sws2apps/jw-epub-parser/commit/e805c1967cfed20e9c695bd2354205c6d7733e28))
+* **module:** add support for Russian language ([182c6f7](https://github.com/sws2apps/jw-epub-parser/commit/182c6f77ae7c3061480c4b98ea1c5afebbe2a973))
+* **module:** add support for Spanish language ([0c5339a](https://github.com/sws2apps/jw-epub-parser/commit/0c5339a9347b9d4f051c004c0308bb0f42f00bcd))
+* **module:** add support for Tagalog language ([ec10d00](https://github.com/sws2apps/jw-epub-parser/commit/ec10d0084d8e55cecae54920ecb59a4ea6122fd5))
+
 ## [3.8.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.8.0...v3.8.1) (2023-12-21)
 
 
