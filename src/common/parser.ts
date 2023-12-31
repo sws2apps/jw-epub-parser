@@ -278,14 +278,14 @@ export const parseWSchedule = (article: HTMLElement, content: HTMLElement, wLang
 	const openingSongText = pubRefs.at(0)!;
 	weekItem.w_study_opening_song = extractSongNumber(openingSongText.textContent);
 
-	let concludingSongText = pubRefs.at(-1);
+	let concludingSongText = <HTMLElement>pubRefs.at(-1);
 
 	if (pubRefs.length === 2) {
 		const blockTeach = content.querySelector('.blockTeach');
 		concludingSongText = blockTeach!.nextElementSibling;
 	}
 
-	weekItem.w_study_concluding_song = extractSongNumber(concludingSongText!.textContent);
+	weekItem.w_study_concluding_song = extractSongNumber(concludingSongText.textContent);
 
 	return weekItem;
 };
@@ -323,7 +323,7 @@ const parseWEpub = async ({
 	const studyArticles = getWStudyArticles(htmlItem);
 
 	for (const [_, studyArticle] of studyArticles.entries()) {
-		const articleLink = studyArticle.nextElementSibling.querySelector('a')!.getAttribute('href') as string;
+		const articleLink = studyArticle.nextElementSibling!.querySelector('a')!.getAttribute('href') as string;
 		const content = await getHTMLWTArticleDoc(epubContents, articleLink);
 
 		const weekItem = parseWSchedule(studyArticle, content, epubLang);
