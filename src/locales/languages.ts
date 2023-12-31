@@ -10,6 +10,7 @@ export default [
 	{ locale: 'es-ES', code: 'S' },
 	{ locale: 'pt-BR', code: 'T' },
 	{ locale: 'tl-PH', code: 'TG' },
+	{ locale: 'tr-TR', code: 'TK' },
 	{ locale: 'mg-TND', code: 'TND' },
 	{ locale: 'mg-TNK', code: 'TNK' },
 	{ locale: 'mg-TTM', code: 'TTM' },
