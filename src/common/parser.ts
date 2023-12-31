@@ -282,7 +282,7 @@ export const parseWSchedule = (article: HTMLElement, content: HTMLElement, wLang
 
 	if (pubRefs.length === 2) {
 		const blockTeach = content.querySelector('.blockTeach');
-		concludingSongText = blockTeach!.nextElementSibling;
+		concludingSongText = blockTeach!.nextElementSibling!;
 	}
 
 	weekItem.w_study_concluding_song = extractSongNumber(concludingSongText.textContent);
