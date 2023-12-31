@@ -12,5 +12,5 @@
 	"novemberVariations": "Kasım",
 	"decemberVariations": "Aralık",
 	"studyArticleDateVariations": "{{ number }}. İnceleme Makalesi: {{ date }}",
-	"partMinutesSeparatorVariations": "({{ duration }} dk.)"
+	"partMinutesSeparatorVariations": "({{ duration }} dk.)|({{ duration }} min)"
 }
