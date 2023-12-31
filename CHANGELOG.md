@@ -1,3 +1,13 @@
+# [3.10.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.9.0...v3.10.0) (2023-12-31)
+
+
+### Features
+
+* **deps:** bump node-html-parser from 6.1.11 to 6.1.12 ([fcf7716](https://github.com/sws2apps/jw-epub-parser/commit/fcf77166e4d42679b4a82b6ee9427e4f052d2dcf))
+* **module:** add support for Romanian language ([4c37d2e](https://github.com/sws2apps/jw-epub-parser/commit/4c37d2eeb0ae947423c397d8467e61cfa80923aa))
+* **module:** add support for Turkish language ([f5491d1](https://github.com/sws2apps/jw-epub-parser/commit/f5491d1f2b18494cd9bd92f5280beefc18fa7486))
+* **module:** add support for Twin language ([f4910a4](https://github.com/sws2apps/jw-epub-parser/commit/f4910a4d58d3120a1e864fadb9ace7f16f39fd46))
+
 # [3.9.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.8.1...v3.9.0) (2023-12-22)
 
 
