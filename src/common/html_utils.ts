@@ -129,7 +129,7 @@ export const getWStudyDate = (htmlItem: HTMLElement) => {
 };
 
 export const getWSTudySongs = async ({ htmlItem, zip }: { htmlItem: HTMLElement; zip: JSZip }) => {
-	const articleLink = htmlItem.nextElementSibling.querySelector('a')!.getAttribute('href') as string;
+	const articleLink = htmlItem.nextElementSibling!.querySelector('a')!.getAttribute('href') as string;
 	const article = await getHTMLWTArticleDoc(zip, articleLink);
 
 	if (article) {
@@ -166,7 +166,7 @@ export const getWStudyTitle = (htmlItem: HTMLElement) => {
 	const h2 = htmlItem.querySelector('h2');
 
 	if (h2 === null) {
-		const articleLink = htmlItem.nextElementSibling.querySelector('a')!;
+		const articleLink = htmlItem.nextElementSibling!.querySelector('a')!;
 		result = articleLink.textContent.replace(/\u00A0/g, ' '); // remove non-breaking space;;
 	}
 
