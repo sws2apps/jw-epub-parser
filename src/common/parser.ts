@@ -24,7 +24,7 @@ import {
 	getWStudyDate,
 	getWStudyTitle,
 } from './html_utils.js';
-import { extractLastSong, extractSongNumber, extractSourceEnhanced } from './parsing_rules.js';
+import { extractSongNumber, extractSourceEnhanced } from './parsing_rules.js';
 import { MWBSchedule, WSchedule } from '../types/index.js';
 
 export const startParse = async (epubInput: string | Blob | { url: string }) => {
@@ -118,7 +118,7 @@ export const parseMWBSchedule = (htmlItem: HTMLElement, mwbYear: number, mwbLang
 	let tmpSrc = '';
 
 	// First song
-	weekItem.mwb_song_first = extractSongNumber(splits[1]);
+	weekItem.mwb_song_first = extractSongNumber(splits[1]) as number;
 
 	// 10min TGW Source
 	tmpSrc = splits[3].trim();
@@ -248,7 +248,7 @@ export const parseMWBSchedule = (htmlItem: HTMLElement, mwbYear: number, mwbLang
 	nextIndex++;
 	nextIndex++;
 	tmpSrc = splits[nextIndex].trim();
-	weekItem.mwb_song_conclude = extractLastSong(tmpSrc);
+	weekItem.mwb_song_conclude = extractSongNumber(tmpSrc);
 
 	return weekItem;
 };
@@ -276,7 +276,7 @@ export const parseWSchedule = (article: HTMLElement, content: HTMLElement, wLang
 	const pubRefs = content.querySelectorAll('.pubRefs');
 
 	const openingSongText = pubRefs.at(0)!;
-	weekItem.w_study_opening_song = extractSongNumber(openingSongText.textContent);
+	weekItem.w_study_opening_song = extractSongNumber(openingSongText.textContent) as number;
 
 	let concludingSongText = <HTMLElement>pubRefs.at(-1);
 
@@ -285,7 +285,7 @@ export const parseWSchedule = (article: HTMLElement, content: HTMLElement, wLang
 		concludingSongText = blockTeach!.nextElementSibling!;
 	}
 
-	weekItem.w_study_concluding_song = extractSongNumber(concludingSongText.textContent);
+	weekItem.w_study_concluding_song = extractSongNumber(concludingSongText.textContent) as number;
 
 	return weekItem;
 };

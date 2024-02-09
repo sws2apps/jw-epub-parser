@@ -18,7 +18,7 @@ export type MWBSchedule = {
 	mwb_ayf_part4?: string;
 	mwb_ayf_part4_time?: number;
 	mwb_ayf_part4_type?: string;
-	mwb_song_middle: number;
+	mwb_song_middle: number | string;
 	mwb_lc_count: number;
 	mwb_lc_part1: string;
 	mwb_lc_part1_time?: number;

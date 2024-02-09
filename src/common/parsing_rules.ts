@@ -49,7 +49,13 @@ export const extractMonthName = (src: string, lang: string) => {
 };
 
 export const extractSongNumber = (src: string) => {
-	return +src.match(/(\d+)/)![0];
+	const parseNum = src.match(/(\d+)/);
+
+	if (parseNum && parseNum.length > 0) {
+		return +parseNum![0];
+	}
+
+	return src;
 };
 
 export const extractSourceEnhanced = (src: string, lang: string) => {
@@ -96,11 +102,6 @@ export const extractSourceEnhanced = (src: string, lang: string) => {
 	if (result) return result;
 
 	throw new JWEPUBParserError('jw-epub-parser', `Parsing failed. The input was: ${src}`);
-};
-
-export const extractLastSong = (src: string) => {
-	const temp = extractSongNumber(src);
-	return temp > 151 ? src : temp;
 };
 
 export const extractWTStudyDate = (src: string, lang: string) => {
