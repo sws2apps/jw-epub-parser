@@ -1,3 +1,10 @@
+## [3.11.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.11.0...v3.11.1) (2024-02-09)
+
+
+### Bug Fixes
+
+* **module:** allow string type for middle song in mwb ([b1e0cc5](https://github.com/sws2apps/jw-epub-parser/commit/b1e0cc5adc688cc1d4b8ed99f59520a802cf7d3b))
+
 # [3.11.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.10.0...v3.11.0) (2023-12-31)
 
 
