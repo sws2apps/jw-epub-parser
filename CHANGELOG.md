@@ -1,3 +1,10 @@
+## [3.12.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.12.0...v3.12.1) (2024-02-09)
+
+
+### Bug Fixes
+
+* **localize:** add june month variations in Turkish ([802dbfb](https://github.com/sws2apps/jw-epub-parser/commit/802dbfbd78b5a3e73c93663e47626c7da99dcaae))
+
 # [3.12.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.11.1...v3.12.0) (2024-02-09)
 
 
