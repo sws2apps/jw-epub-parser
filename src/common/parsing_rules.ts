@@ -52,7 +52,11 @@ export const extractSongNumber = (src: string) => {
 	const parseNum = src.match(/(\d+)/);
 
 	if (parseNum && parseNum.length > 0) {
-		return +parseNum![0];
+		const firstNumber = parseNum[0];
+
+		if (!isNaN(firstNumber) && firstNumber <= 158) {
+			return +firstNumber;
+		}
 	}
 
 	return src;
