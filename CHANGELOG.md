@@ -1,3 +1,19 @@
+# [3.13.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.12.1...v3.13.0) (2024-04-11)
+
+
+### Bug Fixes
+
+* **parsing:** update return value of song number extraction ([f5d9b5e](https://github.com/sws2apps/jw-epub-parser/commit/f5d9b5ed906af507f8c791e94395d052b4f21061))
+* **parsing:** update variable type in song extraction ([b022b57](https://github.com/sws2apps/jw-epub-parser/commit/b022b578fafb106cde1cc193a99a33ea476c77a9))
+
+
+### Features
+
+* **deps:** bump node-html-parser from 6.1.12 to 6.1.13 ([e629b35](https://github.com/sws2apps/jw-epub-parser/commit/e629b357b343d10bb81a91bac0cdd090ecb2c36a))
+* **localize:** updated translation from Crowdin ([546dffb](https://github.com/sws2apps/jw-epub-parser/commit/546dffb477d02073bf0c07a59e5d594101b82d5d))
+* **localize:** updated translation from Crowdin ([c4654dc](https://github.com/sws2apps/jw-epub-parser/commit/c4654dc6e3e442751d29be56799ea55355261b3f))
+* **localize:** updated translation from Crowdin ([#645](https://github.com/sws2apps/jw-epub-parser/issues/645)) ([5877dac](https://github.com/sws2apps/jw-epub-parser/commit/5877dac9c856311e2f1fd8c35a1ed7b36d7c06d4))
+
 ## [3.12.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.12.0...v3.12.1) (2024-02-09)
 
 
