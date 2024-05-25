@@ -128,36 +128,25 @@ export const getWStudyDate = (htmlItem: HTMLElement) => {
 	return result!;
 };
 
-export const getWSTudySongs = async ({ htmlItem, zip }: { htmlItem: HTMLElement; zip: JSZip }) => {
-	const articleLink = htmlItem.nextElementSibling!.querySelector('a')!.getAttribute('href') as string;
-	const article = await getHTMLWTArticleDoc(zip, articleLink);
+export const getWSTudySongs = (content: HTMLElement) => {
+	const pubRefs = content.querySelectorAll('.pubRefs');
 
-	if (article) {
-		let songText;
-		const themeScrp = article.querySelector('.themeScrp')!;
-		songText = themeScrp.nextElementSibling;
+	const openingSongText = pubRefs.at(0)!;
+	const w_study_opening_song = extractSongNumber(openingSongText.textContent) as number;
 
-		if (songText === null) {
-			const firstSongContainer = article.querySelector('.du-color--textSubdued')!;
-			songText = firstSongContainer.querySelector('p');
-		}
+	let concludingSongText = <HTMLElement>pubRefs.at(-1);
 
-		const WTOpeningSong = extractSongNumber(songText!.textContent);
-
-		const blockTeach = article.querySelector('.blockTeach');
-		if (blockTeach !== null) {
-			songText = blockTeach.nextElementSibling;
-		}
-
-		if (blockTeach === null) {
-			const artDivs = article.querySelectorAll('.du-color--textSubdued');
-			songText = artDivs.slice(-1)[0].querySelector('p');
-		}
-
-		const WTConcludingSong = extractSongNumber(songText!.textContent);
-
-		return { WTOpeningSong, WTConcludingSong };
+	if (pubRefs.length === 2) {
+		const blockTeach = content.querySelector('.blockTeach');
+		concludingSongText = blockTeach!.nextElementSibling!;
 	}
+
+	const w_study_concluding_song = extractSongNumber(concludingSongText.textContent) as number;
+
+	return {
+		w_study_opening_song,
+		w_study_concluding_song,
+	};
 };
 
 export const getWStudyTitle = (htmlItem: HTMLElement) => {

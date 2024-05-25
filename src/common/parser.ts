@@ -123,7 +123,9 @@ export const parseMWBSchedule = (htmlItem: HTMLElement, mwbYear: number, mwbLang
 	// 10min TGW Source
 	tmpSrc = splits[3].trim();
 	if (isEnhancedParsing) {
-		weekItem.mwb_tgw_talk = extractSourceEnhanced(tmpSrc, mwbLang).type;
+		const enhanced = extractSourceEnhanced(tmpSrc, mwbLang);
+		weekItem.mwb_tgw_talk = enhanced.type;
+		weekItem.mwb_tgw_talk_title = enhanced.fulltitle;
 	} else {
 		weekItem.mwb_tgw_talk = tmpSrc;
 	}
@@ -131,7 +133,9 @@ export const parseMWBSchedule = (htmlItem: HTMLElement, mwbYear: number, mwbLang
 	//Bible Reading Source
 	tmpSrc = splits[7].trim();
 	if (isEnhancedParsing) {
-		weekItem.mwb_tgw_bread = extractSourceEnhanced(tmpSrc, mwbLang).src;
+		const enhanced = extractSourceEnhanced(tmpSrc, mwbLang);
+		weekItem.mwb_tgw_bread = enhanced.src;
+		weekItem.mwb_tgw_bread_title = enhanced.fulltitle;
 	} else {
 		weekItem.mwb_tgw_bread = tmpSrc;
 	}
@@ -149,6 +153,7 @@ export const parseMWBSchedule = (htmlItem: HTMLElement, mwbYear: number, mwbLang
 		weekItem.mwb_ayf_part1 = partEnhanced.src;
 		weekItem.mwb_ayf_part1_time = partEnhanced.time;
 		weekItem.mwb_ayf_part1_type = partEnhanced.type;
+		weekItem.mwb_ayf_part1_title = partEnhanced.fulltitle;
 	} else {
 		weekItem.mwb_ayf_part1 = tmpSrc;
 	}
@@ -161,6 +166,7 @@ export const parseMWBSchedule = (htmlItem: HTMLElement, mwbYear: number, mwbLang
 			weekItem.mwb_ayf_part2 = partEnhanced.src;
 			weekItem.mwb_ayf_part2_time = partEnhanced.time;
 			weekItem.mwb_ayf_part2_type = partEnhanced.type;
+			weekItem.mwb_ayf_part2_title = partEnhanced.fulltitle;
 		} else {
 			weekItem.mwb_ayf_part2 = tmpSrc;
 		}
@@ -174,6 +180,7 @@ export const parseMWBSchedule = (htmlItem: HTMLElement, mwbYear: number, mwbLang
 			weekItem.mwb_ayf_part3 = partEnhanced.src;
 			weekItem.mwb_ayf_part3_time = partEnhanced.time;
 			weekItem.mwb_ayf_part3_type = partEnhanced.type;
+			weekItem.mwb_ayf_part3_title = partEnhanced.fulltitle;
 		} else {
 			weekItem.mwb_ayf_part3 = tmpSrc;
 		}
@@ -187,6 +194,7 @@ export const parseMWBSchedule = (htmlItem: HTMLElement, mwbYear: number, mwbLang
 			weekItem.mwb_ayf_part4 = partEnhanced.src;
 			weekItem.mwb_ayf_part4_time = partEnhanced.time;
 			weekItem.mwb_ayf_part4_type = partEnhanced.type;
+			weekItem.mwb_ayf_part4_title = partEnhanced.fulltitle;
 		} else {
 			weekItem.mwb_ayf_part4 = tmpSrc;
 		}
@@ -210,6 +218,7 @@ export const parseMWBSchedule = (htmlItem: HTMLElement, mwbYear: number, mwbLang
 		const lcEnhanced = extractSourceEnhanced(tmpSrc, mwbLang);
 		weekItem.mwb_lc_part1 = lcEnhanced.type;
 		weekItem.mwb_lc_part1_time = lcEnhanced.time;
+		weekItem.mwb_lc_part1_title = lcEnhanced.fulltitle;
 		if (lcEnhanced.src && lcEnhanced.src !== '') {
 			weekItem.mwb_lc_part1_content = lcEnhanced.src;
 		}
@@ -226,6 +235,7 @@ export const parseMWBSchedule = (htmlItem: HTMLElement, mwbYear: number, mwbLang
 			const lcEnhanced = extractSourceEnhanced(tmpSrc, mwbLang);
 			weekItem.mwb_lc_part2 = lcEnhanced.type;
 			weekItem.mwb_lc_part2_time = lcEnhanced.time;
+			weekItem.mwb_lc_part2_title = lcEnhanced.fulltitle;
 			if (lcEnhanced.src && lcEnhanced.src !== '') {
 				weekItem.mwb_lc_part2_content = lcEnhanced.src;
 			}
@@ -239,7 +249,9 @@ export const parseMWBSchedule = (htmlItem: HTMLElement, mwbYear: number, mwbLang
 	tmpSrc = splits[nextIndex].trim();
 
 	if (isEnhancedParsing) {
-		weekItem.mwb_lc_cbs = extractSourceEnhanced(tmpSrc, mwbLang).src;
+		const enhanced = extractSourceEnhanced(tmpSrc, mwbLang);
+		weekItem.mwb_lc_cbs = enhanced.src;
+		weekItem.mwb_lc_cbs_title = enhanced.fulltitle;
 	} else {
 		weekItem.mwb_lc_cbs = tmpSrc;
 	}
@@ -273,19 +285,10 @@ export const parseWSchedule = (article: HTMLElement, content: HTMLElement, wLang
 	const studyTitle = getWStudyTitle(article);
 	weekItem.w_study_title = studyTitle;
 
-	const pubRefs = content.querySelectorAll('.pubRefs');
+	const songs = getWSTudySongs(content);
 
-	const openingSongText = pubRefs.at(0)!;
-	weekItem.w_study_opening_song = extractSongNumber(openingSongText.textContent) as number;
-
-	let concludingSongText = <HTMLElement>pubRefs.at(-1);
-
-	if (pubRefs.length === 2) {
-		const blockTeach = content.querySelector('.blockTeach');
-		concludingSongText = blockTeach!.nextElementSibling!;
-	}
-
-	weekItem.w_study_concluding_song = extractSongNumber(concludingSongText.textContent) as number;
+	weekItem.w_study_opening_song = songs.w_study_opening_song;
+	weekItem.w_study_concluding_song = songs.w_study_concluding_song;
 
 	return weekItem;
 };
