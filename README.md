@@ -1,4 +1,5 @@
 # JW EPUB Parser
+
 [![CI](https://github.com/sws2apps/jw-epub-parser/actions/workflows/ci.yml/badge.svg)](https://github.com/sws2apps/jw-epub-parser/actions/workflows/ci.yml)
 [![CD](https://github.com/sws2apps/jw-epub-parser/actions/workflows/deploy.yml/badge.svg)](https://github.com/sws2apps/jw-epub-parser/actions/workflows/deploy.yml)
 [![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
@@ -11,6 +12,7 @@
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=sws2apps_jw-epub-parser&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=sws2apps_jw-epub-parser)
 
 ![epub-badge@3x](https://github.com/sws2apps/jw-epub-parser/assets/80993061/c7d7c280-f838-4ff3-a021-d669de4e195c)
+
 #### An EPUB Parser to extract the needed source materials from Meeting Workbook and Watchtower Study EPUB files.
 
 ## Install
@@ -60,29 +62,38 @@ By calling the `loadEPUB` function, it will return an array of objects with the 
 | mwb_weekly_bible_reading |      string       | Weekly Bible Reading                                                                                                            |
 | mwb_song_first           |      integer      | First song                                                                                                                      |
 | mwb_tgw_talk             |      string       | 10 min talk title of the Treasures from God’s Word                                                                              |
+| mwb_tgw_talk_title\*     |      string       | 10 min talk full title of the Treasures from God’s Word                                                                         |
 | mwb_tgw_bread            |      string       | Bible Reading for student                                                                                                       |
+| mwb_tgw_bread_title\*    |      string       | Bible Reading assignment full title for student                                                                                 |
 | mwb_ayf_count            |      integer      | Number of parts in Apply Yourself to the Field Ministry                                                                         |
 | mwb_ayf_part1            |      string       | Part 1 in Apply Yourself to the Field Ministry                                                                                  |
 | mwb_ayf_part1_time\*     |      integer      | Timing of Part 1 in Apply Yourself to the Field Ministry                                                                        |
 | mwb_ayf_part1_type\*     |      string       | Type of Part 1 in Apply Yourself to the Field Ministry                                                                          |
+| mwb_ayf_part1_title\*    |      string       | Assignment full title of Part 1 in Apply Yourself to the Field Ministry                                                         |
 | mwb_ayf_part2            |      string       | Part 2 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is 1                     |
 | mwb_ayf_part2_time\*     |      integer      | Timing of Part 2 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is 1           |
 | mwb_ayf_part2_type\*     |      string       | Type of Part 2 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is 1             |
+| mwb_ayf_part2_title\*    |      string       | Assignment full title of Part 2 in Apply Yourself to the Field Ministry                                                         |
 | mwb_ayf_part3            |      string       | Part 3 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is less than 3           |
 | mwb_ayf_part3_time\*     |      integer      | Timing of Part 3 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is less than 3 |
 | mwb_ayf_part3_type\*     |      string       | Type of Part 3 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is less than 3   |
+| mwb_ayf_part3_title\*    |      string       | Assignment full title of Part 3 in Apply Yourself to the Field Ministry                                                         |
 | mwb_ayf_part4            |      string       | Part 4 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is less than 4           |
 | mwb_ayf_part4_time\*     |      integer      | Timing of Part 4 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is less than 4 |
 | mwb_ayf_part4_type\*     |      string       | Type of Part 4 in Apply Yourself to the Field Ministry. This property will not be available if `mwb_ayf_count` is less than 4   |
+| mwb_ayf_part4_title\*    |      string       | Assignment full title of Part 4 in Apply Yourself to the Field Ministry                                                         |
 | mwb_song_middle          |      integer      | Middle song                                                                                                                     |
 | mwb_lc_count             |      integer      | Number of parts in Living as Christians                                                                                         |
 | mwb_lc_part1             |      string       | Part 1 in Living as Christians                                                                                                  |
 | mwb_lc_part1_time\*      |      integer      | Timing of Part 1 in Living as Christians                                                                                        |
 | mwb_lc_part1_content\*   |      string       | Content of Part 1 in Living as Christians                                                                                       |
+| mwb_lc_part1_title\*     |      string       | Full title of Part 1 in Living as Christians                                                                                    |
 | mwb_lc_part2             |      string       | Part 2 in Living as Christians. This property will not be available if `mwb_lc_count` is 1                                      |
 | mwb_lc_part2_time\*      |      integer      | Timing of Part 2 in Living as Christians. This property will not be available if `mwb_lc_count` is 1                            |
 | mwb_lc_part2_content\*   |      string       | Content of Part 2 in Living as Christians. This property will not be available if `mwb_lc_count` is 1                           |
+| mwb_lc_part2_title\*     |      string       | Full title of Part 2 in Living as Christians                                                                                    |
 | mwb_lc_cbs               |      string       | Congregation Bible Study source material                                                                                        |
+| mwb_lc_cbs_title\*       |      string       | Congregation Bible Study assignment full title                                                                                  |
 | mwb_song_conclude        | integer or string | Concluding song. When the song number is out of range, it will be the default text from the Meeting Workbook.                   |
 
 #### Watchtowet Study Data
@@ -127,34 +138,31 @@ Here are how the results of this module look like:
 ```js
 [
   {
-    mwb_week_date: '2023/09/04',
-    mwb_week_date_locale: 'September 4-10',
-    mwb_weekly_bible_reading: 'ESTHER 1-2',
-    mwb_song_first: 137,
-    mwb_tgw_talk: '“Strive to Be Modest Like Esther”',
-    mwb_tgw_bread: 'Es 1:13-22 (th study 10)',
-    mwb_ayf_count: 3,
-    mwb_ayf_part1:
-      'Discussion. Play the video Initial Call: Kingdom​—Mt 6:9, 10. Stop the video at each pause, and ask the audience the questions that appear in the video.',
-    mwb_ayf_part1_time: 5,
-    mwb_ayf_part1_type: 'Initial Call Video',
-    mwb_ayf_part2: 'Begin with the sample conversation topic. Offer the Enjoy Life Forever! brochure. (th study 1)',
-    mwb_ayf_part2_time: 3,
-    mwb_ayf_part2_type: 'Initial Call',
-    mwb_ayf_part3: 'w20.11 12-14 ¶3-7​—Theme: Help From Jesus and the Angels. (th study 14)',
-    mwb_ayf_part3_time: 5,
-    mwb_ayf_part3_type: 'Talk',
-    mwb_song_middle: 106,
-    mwb_lc_count: 2,
-    mwb_lc_part1: 'What Your Peers Say​—Body Image',
-    mwb_lc_part1_time: 5,
-    mwb_lc_part1_content:
-      'Discussion. Play the video. Then ask the audience: Why can it be difficult to have a balanced view of our appearance?',
-    mwb_lc_part2: 'Organizational Accomplishments',
-    mwb_lc_part2_time: 10,
-    mwb_lc_part2_content: 'Play the Organizational Accomplishments video for September.',
-    mwb_lc_cbs: 'lff lesson 56 and endnotes 6 and 7',
-    mwb_song_conclude: 101,
+    mwb_week_date: '2024/07/01',
+    mwb_week_date_locale: 'JULY 1-7',
+    mwb_weekly_bible_reading: 'PSALMS 57-59',
+    mwb_song_first: 148,
+    mwb_tgw_talk: 'Jehovah Frustrates Those Who Oppose His People',
+    mwb_tgw_talk_title: '1. Jehovah Frustrates Those Who Oppose His People',
+    mwb_tgw_bread: 'Ps 59:1-17 (th study 12)',
+    mwb_tgw_bread_title: '3. Bible Reading',
+    mwb_ayf_count: 2,
+    mwb_ayf_part1: 'Discussion. Play the VIDEO, and then discuss lmd lesson 7 points 1-2.',
+    mwb_ayf_part1_time: 7,
+    mwb_ayf_part1_type: 'Perseverance​—What Paul Did',
+    mwb_ayf_part1_title: '4. Perseverance​—What Paul Did',
+    mwb_ayf_part2: 'Discussion based on lmd lesson 7 points 3-5 and “See Also.”',
+    mwb_ayf_part2_time: 8,
+    mwb_ayf_part2_type: 'Perseverance​—Imitate Paul',
+    mwb_ayf_part2_title: '5. Perseverance​—Imitate Paul',
+    mwb_song_middle: 65,
+    mwb_lc_count: 1,
+    mwb_lc_part1: 'Local Needs',
+    mwb_lc_part1_time: 15,
+    mwb_lc_part1_title: '6. Local Needs',
+    mwb_lc_cbs: 'bt chap. 12 ¶1-6, box on p. 96',
+    mwb_lc_cbs_title: '7. Congregation Bible Study',
+    mwb_song_conclude: 78
   },
 	...
 ]
@@ -165,11 +173,11 @@ Here are how the results of this module look like:
 ```js
 [
   {
-    w_study_date: '2023/11/06',
-    w_study_date_locale: 'Study Article 37: November 6-12, 2023',
-    w_study_title: 'Rely on Jehovah, as Samson Did',
-    w_study_opening_song: 30,
-    w_study_concluding_song: 3,
+    w_study_date: '2024/09/09',
+    w_study_date_locale: 'Study Article 27: September 9-15, 2024',
+    w_study_title: 'Be Courageous Like Zadok',
+    w_study_opening_song: 73,
+    w_study_concluding_song: 126
   },
 	...
 ]
@@ -182,25 +190,19 @@ Here are how the results of this module look like:
 ```js
 [
   {
-    mwb_week_date: '4-10 de septiembre',
-    mwb_weekly_bible_reading: 'ESTER 1, 2',
-    mwb_song_first: 137,
-    mwb_tgw_talk: '“Esfuércese por ser modesto como Ester” (10 mins.)',
-    mwb_tgw_bread: 'Lectura de la Biblia (4 mins.): Est 1:13-22 (th lec. 10).',
-    mwb_ayf_count: 3,
-    mwb_ayf_part1:
-      'Video de la primera conversación (5 mins.): Análisis con el auditorio. Ponga el video Primera conversación: El Reino (Mt 6:9, 10). Detenga el video en cada pausa y haga las preguntas que aparecen en él.',
-    mwb_ayf_part2:
-      'Primera conversación (3 mins.): Use el tema de las ideas para conversar. Luego ofrezca el folleto Disfrute de la vida (th lec. 1).',
-    mwb_ayf_part3: 'Discurso (5 mins.): w20.11 12-14 párrs. 3-7. Título: Jesús y los ángeles nos ayudan (th lec. 14).',
-    mwb_song_middle: 106,
-    mwb_lc_count: 2,
-    mwb_lc_part1:
-      'Lo que opinan otros jóvenes: La apariencia (5 mins.): Análisis con el auditorio. Ponga el video. Luego pregunte: ¿por qué puede ser difícil mantener una actitud equilibrada sobre nuestra apariencia física?',
-    mwb_lc_part2:
-      'Logros de la organización (10 mins.): Ponga el video Logros de la organización para el mes de septiembre.',
-    mwb_lc_cbs: 'Estudio bíblico de la congregación (30 mins.): lff lección 56 y notas 6 y 7.',
-    mwb_song_conclude: 101,
+    mwb_week_date: '7月1-7日',
+    mwb_weekly_bible_reading: '诗篇57－59篇',
+    mwb_song_first: 148,
+    mwb_tgw_talk: '1．耶和华不会让反对我们的人得逞 （10分钟）',
+    mwb_tgw_bread: '3．经文朗读 （4分钟）诗59:1-17（《教导》第12课）',
+    mwb_ayf_count: 2,
+    mwb_ayf_part1: '4．坚持不懈——保罗怎么做 （7分钟）节目包括讨论。先观看短片，然后讨论《爱心》第7课1-2点。',
+    mwb_ayf_part2: '5．坚持不懈——向保罗学习 （8分钟）讨论《爱心》第7课3-5点以及“请看”。',
+    mwb_song_middle: 65,
+    mwb_lc_count: 1,
+    mwb_lc_part1: '6．本地需要 （15分钟）',
+    mwb_lc_cbs: '7．会众研经班 （30分钟）《作见证》第12章1-6段以及96页的附栏',
+    mwb_song_conclude: 78
   },
 	...
 ]
@@ -211,10 +213,10 @@ Here are how the results of this module look like:
 ```js
 [
   {
-    w_study_date: 'Artículo de estudio 37 (del 6 al 12 de noviembre de 2023)',
-    w_study_title: 'Apóyese en Jehová, tal como lo hizo Sansón',
-    w_study_opening_song: 30,
-    w_study_concluding_song: 3,
+    w_study_date: '研究班课文27：2024年9月9-15日',
+    w_study_title: '效法撒督，显出勇气',
+    w_study_opening_song: 73,
+    w_study_concluding_song: 126
   },
 	...
 ]

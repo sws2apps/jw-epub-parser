@@ -99,7 +99,7 @@ export const extractSourceEnhanced = (src: string, lang: string) => {
 
 			assignment = assignment.replace(regexStartColumn, '').replace(regexEndColumn, '').trim();
 
-			result = { type: assignment, time: duration, src: source };
+			result = { type: assignment, time: duration, src: source, fulltitle: tmpAssignment };
 		}
 	}
 
