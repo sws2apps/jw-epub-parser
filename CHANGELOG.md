@@ -1,3 +1,10 @@
+# [3.15.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.14.0...v3.15.0) (2024-05-25)
+
+
+### Features
+
+* **library:** add new property `_title` for sources data ([8e5dc5d](https://github.com/sws2apps/jw-epub-parser/commit/8e5dc5dec1de8c537b64f24f481f6afb72b56c57))
+
 # [3.14.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.13.0...v3.14.0) (2024-05-10)
 
 
