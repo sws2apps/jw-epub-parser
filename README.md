@@ -25,16 +25,16 @@ npm i jw-epub-parser
 
 ```js
 // browser
-import { loadEPUB } from 'jw-epub-parser';
+import { loadEPUB } from "jw-epub-parser";
 
 // node esm
-import { loadEPUB } from 'jw-epub-parser/dist/node/index.js';
+import { loadEPUB } from "jw-epub-parser/dist/node/index.js";
 
 // node commonjs
-const { loadEPUB } = require('jw-epub-parser/dist/node/index.cjs');
+const { loadEPUB } = require("jw-epub-parser/dist/node/index.cjs");
 
 // sample usage
-const epubJW = await loadEPUB('/path/to/file.epub');
+const epubJW = await loadEPUB("/path/to/file.epub");
 
 const epubJW = await loadEPUB({ url: epubUrl });
 ```
@@ -63,6 +63,7 @@ By calling the `loadEPUB` function, it will return an array of objects with the 
 | mwb_song_first           |      integer      | First song                                                                                                                      |
 | mwb_tgw_talk             |      string       | 10 min talk title of the Treasures from God’s Word                                                                              |
 | mwb_tgw_talk_title\*     |      string       | 10 min talk full title of the Treasures from God’s Word                                                                         |
+| mwb_tgw_gems_title       |      string       | Spiritual gems full title of the Treasures from God’s Word                                                                      |
 | mwb_tgw_bread            |      string       | Bible Reading for student                                                                                                       |
 | mwb_tgw_bread_title\*    |      string       | Bible Reading assignment full title for student                                                                                 |
 | mwb_ayf_count            |      integer      | Number of parts in Apply Yourself to the Field Ministry                                                                         |
@@ -144,6 +145,7 @@ Here are how the results of this module look like:
     mwb_song_first: 148,
     mwb_tgw_talk: 'Jehovah Frustrates Those Who Oppose His People',
     mwb_tgw_talk_title: '1. Jehovah Frustrates Those Who Oppose His People',
+    mwb_tgw_gems_title: '2. Spiritual Gems',
     mwb_tgw_bread: 'Ps 59:1-17 (th study 12)',
     mwb_tgw_bread_title: '3. Bible Reading',
     mwb_ayf_count: 2,
@@ -194,6 +196,7 @@ Here are how the results of this module look like:
     mwb_weekly_bible_reading: '诗篇57－59篇',
     mwb_song_first: 148,
     mwb_tgw_talk: '1．耶和华不会让反对我们的人得逞 （10分钟）',
+    mwb_tgw_gems_title: '2．经文宝石 （10分钟）',
     mwb_tgw_bread: '3．经文朗读 （4分钟）诗59:1-17（《教导》第12课）',
     mwb_ayf_count: 2,
     mwb_ayf_part1: '4．坚持不懈——保罗怎么做 （7分钟）节目包括讨论。先观看短片，然后讨论《爱心》第7课1-2点。',

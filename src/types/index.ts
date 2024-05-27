@@ -5,6 +5,7 @@ export type MWBSchedule = {
 	mwb_song_first: number;
 	mwb_tgw_talk: string;
 	mwb_tgw_talk_title?: string;
+	mwb_tgw_gems_title?: string;
 	mwb_tgw_bread: string;
 	mwb_tgw_bread_title?: string;
 	mwb_ayf_count: number;
