@@ -1,3 +1,10 @@
+# [3.16.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.15.0...v3.16.0) (2024-05-27)
+
+
+### Features
+
+* **library:** include spiritual gems vernacular title ([0211797](https://github.com/sws2apps/jw-epub-parser/commit/021179700a02541189f78926f459a028db42a1b4))
+
 # [3.15.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.14.0...v3.15.0) (2024-05-25)
 
 
