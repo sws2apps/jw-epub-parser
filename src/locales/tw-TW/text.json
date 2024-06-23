@@ -12,5 +12,5 @@
 	"novemberVariations": "November",
 	"decemberVariations": "December",
 	"studyArticleDateVariations": "Yebesua no {{ date }}",
-	"partMinutesSeparatorVariations": "(Simma {{ duration }})"
+	"partMinutesSeparatorVariations": "(Simma  {{ duration }})|(Simma {{ duration }})"
 }
