@@ -1,3 +1,10 @@
+## [3.16.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.16.0...v3.16.1) (2024-06-23)
+
+
+### Bug Fixes
+
+* **library:** update parser to handle september issue of mwb 2024 ([797e688](https://github.com/sws2apps/jw-epub-parser/commit/797e68800777bd53e5d694762bd3d1f0563e6a13))
+
 # [3.16.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.15.0...v3.16.0) (2024-05-27)
 
 
