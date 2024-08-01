@@ -1,3 +1,10 @@
+# [3.19.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.18.0...v3.19.0) (2024-08-01)
+
+
+### Features
+
+* **localize:** updated translation from Crowdin ([#824](https://github.com/sws2apps/jw-epub-parser/issues/824)) ([f8505a5](https://github.com/sws2apps/jw-epub-parser/commit/f8505a532140f2ddc26f00cb9858fd631199169c))
+
 # [3.18.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.17.0...v3.18.0) (2024-06-23)
 
 
