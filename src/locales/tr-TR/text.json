@@ -10,7 +10,7 @@
 	"septemberVariations": "Eylül",
 	"octoberVariations": "Ekim|EKİM",
 	"novemberVariations": "Kasım|KASIM",
-	"decemberVariations": "Aralık",
+	"decemberVariations": "Aralık|ARALIK",
 	"studyArticleDateVariations": "{{ number }}. İnceleme Makalesi: {{ date }}",
 	"partMinutesSeparatorVariations": "({{ duration }} dk.)|({{ duration }} dk)"
 }
