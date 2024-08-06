@@ -1,3 +1,15 @@
+# [3.22.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.21.0...v3.22.0) (2024-08-06)
+
+
+### Bug Fixes
+
+* **rules:** update separator symbol for wt study article date ([cf3ea4e](https://github.com/sws2apps/jw-epub-parser/commit/cf3ea4e5069c1aa1a56ce2c4fe8160bb9a395f00))
+
+
+### Features
+
+* **localize:** updated translation from Crowdin ([#835](https://github.com/sws2apps/jw-epub-parser/issues/835)) ([9f8f5ab](https://github.com/sws2apps/jw-epub-parser/commit/9f8f5ab18cb146d95c84833b698ff71b5c7c81e8))
+
 # [3.21.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.20.0...v3.21.0) (2024-08-06)
 
 
