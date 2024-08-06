@@ -9,6 +9,7 @@ export default [
 	{ locale: 'pl-PL', code: 'P' },
 	{ locale: 'es-ES', code: 'S' },
 	{ locale: 'pt-BR', code: 'T' },
+	{ locale: 'pt-PT', code: 'TPO'},
 	{ locale: 'tl-PH', code: 'TG' },
 	{ locale: 'tr-TR', code: 'TK' },
 	{ locale: 'mg-TND', code: 'TND' },
