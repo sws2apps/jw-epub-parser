@@ -113,7 +113,7 @@ export const extractWTStudyDate = (src: string, lang: string) => {
   let monthIndex;
   let varYear;
 
-  const variations = getStudyArticleDateVariations(lang).split('|');
+  const variations = getStudyArticleDateVariations(lang).split('%');
 
   const patternNumber = '{{ number }}';
   const patternDate = '{{ date }}';
