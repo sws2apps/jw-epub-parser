@@ -1,3 +1,16 @@
+# [3.21.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.20.0...v3.21.0) (2024-08-06)
+
+
+### Bug Fixes
+
+* **rules:** update month extraction rule ([c34604c](https://github.com/sws2apps/jw-epub-parser/commit/c34604cb63552dbab8ebf3a76f7f9e94f65920e0))
+
+
+### Features
+
+* **locales:** add Portuguese (Portugal) language ([a35c6b2](https://github.com/sws2apps/jw-epub-parser/commit/a35c6b2873680007ac7f66f473f3ff8bb6247910))
+* **localize:** updated translation from Crowdin ([#833](https://github.com/sws2apps/jw-epub-parser/issues/833)) ([f7cdd1a](https://github.com/sws2apps/jw-epub-parser/commit/f7cdd1a55ba9459ce80adf05f00fb4fea4119d37))
+
 # [3.20.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.19.0...v3.20.0) (2024-08-05)
 
 
