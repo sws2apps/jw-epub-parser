@@ -14,6 +14,7 @@ import TG from '../locales/tl-PH/text.json';
 import TK from '../locales/tr-TR/text.json';
 import TND from '../locales/mg-TND/text.json';
 import TNK from '../locales/mg-TNK/text.json';
+import TPO from '../locales/pt-PT/text.json';
 import TTM from '../locales/mg-TTM/text.json';
 import TW from '../locales/tw-TW/text.json';
 import U from '../locales/ru-RU/text.json';
@@ -21,12 +22,12 @@ import VZ from '../locales/mg-VZ/text.json';
 import X from '../locales/de-DE/text.json';
 
 declare global {
-	interface Window {
-		jw_epub_parser: any;
-	}
+  interface Window {
+    jw_epub_parser: any;
+  }
 }
 
 window.jw_epub_parser = {
-	languages: { E, F, I, J, K, M, MG, P, S, T, TG, TK, TND, TNK, TTM, TW, U, VZ, X },
-	path: path,
+  languages: { E, F, I, J, K, M, MG, P, S, T, TG, TK, TND, TNK, TPO, TTM, TW, U, VZ, X },
+  path: path,
 };
