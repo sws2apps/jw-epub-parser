@@ -1,3 +1,10 @@
+## [3.23.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.23.0...v3.23.1) (2024-08-08)
+
+
+### Bug Fixes
+
+* **rules:** update week date extraction for watchtower ([42a5ad4](https://github.com/sws2apps/jw-epub-parser/commit/42a5ad4d8444cde951483a3015e140db3ce5acc5))
+
 # [3.23.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.22.0...v3.23.0) (2024-08-08)
 
 
