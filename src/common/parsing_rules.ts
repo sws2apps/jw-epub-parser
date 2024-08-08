@@ -141,7 +141,14 @@ export const extractWTStudyDate = (src: string, lang: string) => {
         const monthNames = getMonthNames(lang);
 
         for (const splitted of split) {
+          const results = <{ month: number; index: number }[]>[];
+
           for (const month of monthNames) {
+            const obj = {
+              month: month.index,
+              index: -1,
+            };
+
             const monthLang = month.name.toLowerCase();
             let searchKey = `(${monthLang})`;
 
@@ -153,29 +160,37 @@ export const extractWTStudyDate = (src: string, lang: string) => {
             const array2 = regex.exec(splitted);
 
             if (Array.isArray(array2)) {
-              if (array2.index < 29) {
-                const regex = /\d+/g;
-                const match = textSearch.match(regex);
-
-                if (lang === 'J') {
-                  varDay = +match![2];
-                }
-
-                if (lang !== 'J') {
-                  varDay = +match![0];
-                }
-
-                monthIndex = month.index;
-
-                const findYear = /\b\d{4}\b/;
-                const array3 = findYear.exec(dateValue);
-                if (array3 !== null) {
-                  varYear = +array3[0];
-                }
-
-                break outerLoop;
-              }
+              obj.index = array2.index;
             }
+
+            results.push(obj);
+          }
+
+          const monthsParsed = results.filter((item) => item.index !== -1).sort((a, b) => a.index - b.index);
+
+          if (monthsParsed.length > 0) {
+            const firstMonth = monthsParsed.at(0);
+
+            const regex = /\d+/g;
+            const match = textSearch.match(regex);
+
+            if (lang === 'J') {
+              varDay = +match![2];
+            }
+
+            if (lang !== 'J') {
+              varDay = +match![0];
+            }
+
+            monthIndex = firstMonth?.month;
+
+            const findYear = /\b\d{4}\b/;
+            const array3 = findYear.exec(dateValue);
+            if (array3 !== null) {
+              varYear = +array3[0];
+            }
+
+            break outerLoop;
           }
         }
       }
