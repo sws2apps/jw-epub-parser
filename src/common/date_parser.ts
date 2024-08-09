@@ -70,6 +70,7 @@ const mwbDatePatterns: DatePatterns = {
   P: new RegExp(mwbDatePatternP, 'giu'),
   S: new RegExp(mwbDatePatternS, 'giu'),
   T: new RegExp(mwbDatePatternT, 'giu'),
+  TG: new RegExp(mwbDatePatternE, 'giu'),
   TPO: new RegExp(mwbDatePatternTPO, 'giu'),
   TW: new RegExp(mwbDatePatternE, 'giu'),
   X: new RegExp(mwbDatePatternX, 'giu'),
@@ -116,8 +117,8 @@ const mwbDateParsing: MWBDateParsing = {
   common: mwbParsingCommon,
   E: mwbParsingE,
   J: mwbParsingE,
-  TW: mwbParsingE,
   TG: mwbParsingE,
+  TW: mwbParsingE,
 };
 
 // #endregion
