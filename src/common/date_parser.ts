@@ -117,6 +117,7 @@ const mwbDateParsing: MWBDateParsing = {
   E: mwbParsingE,
   J: mwbParsingE,
   TW: mwbParsingE,
+  TG: mwbParsingE,
 };
 
 // #endregion
