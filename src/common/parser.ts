@@ -1,7 +1,6 @@
 import JSZip from 'jszip';
 import { HTMLElement } from 'node-html-parser';
 import languages from '../locales/languages.js';
-import { getMWBWeekDateEnhanced, getWTStudyDateEnhanced } from './enhanced_parse_utils.js';
 import { extractEPUBFiles, getHTMLDocs, getHTMLWTArticleDoc, validateEPUBContents } from './epub_jszip.js';
 import {
   getEPUBData,
@@ -26,6 +25,7 @@ import {
 } from './html_utils.js';
 import { extractSongNumber, extractSourceEnhanced } from './parsing_rules.js';
 import { MWBSchedule, WSchedule } from '../types/index.js';
+import { extractMWBDate, extractWTStudyDate } from './date_parser.js';
 
 export const startParse = async (epubInput: string | Blob | { url: string }) => {
   let result = {};
@@ -106,7 +106,7 @@ export const parseMWBSchedule = (htmlItem: HTMLElement, mwbYear: number, mwbLang
   const weekDate = getMWBWeekDate(htmlItem);
 
   if (isEnhancedParsing) {
-    const weekDateEnhanced = getMWBWeekDateEnhanced(weekDate, mwbYear, mwbLang);
+    const weekDateEnhanced = extractMWBDate(weekDate, mwbYear, mwbLang);
     weekItem.mwb_week_date = weekDateEnhanced;
     weekItem.mwb_week_date_locale = weekDate;
   } else {
@@ -288,7 +288,7 @@ export const parseWSchedule = (article: HTMLElement, content: HTMLElement, wLang
 
   if (studyDate.length > 0) {
     if (isEnhancedParsing) {
-      const wStudyEnhanced = getWTStudyDateEnhanced(studyDate, wLang);
+      const wStudyEnhanced = extractWTStudyDate(studyDate, wLang);
       weekItem.w_study_date = wStudyEnhanced;
       weekItem.w_study_date_locale = studyDate;
     } else {
