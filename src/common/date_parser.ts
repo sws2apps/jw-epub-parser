@@ -17,7 +17,7 @@ let option1: string, option2: string, option3: string;
 
 // date like 1) 23-29 décembre; or 2) 25 novembre–1 décembre; or 3) 30 décembre 2024-5 janvier 2025
 option1 = `(\\d{1,2})(?:${dateRangeSeparator})(?:\\d{1,2}) (\\p{L}+|\\p{L}+\\p{M}*)`;
-option2 = `(\\d{1,2}) (\\p{L}+|\\p{L}+\\p{M}*)(?:${dateRangeSeparator})(?:\\d{1,2}) (?:\\p{L}+|\\p{L}+\\p{M}*)`;
+option2 = `(\\d{1,2}) (\\p{L}+|\\p{L}+\\p{M}*)(?:${dateRangeSeparator})(?:\\d{1,2})(?:er)? (?:\\p{L}+|\\p{L}+\\p{M}*)`;
 option3 = `(\\d{1,2}) (\\p{L}+|\\p{L}+\\p{M}*) (\\d{4})`;
 const mwbDatePatternCommon = `${option1}|${option2}|${option3}`;
 
