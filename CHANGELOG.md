@@ -1,3 +1,10 @@
+## [3.23.2](https://github.com/sws2apps/jw-epub-parser/compare/v3.23.1...v3.23.2) (2024-08-09)
+
+
+### Bug Fixes
+
+* **rules:** update week date extraction ([9e88c0d](https://github.com/sws2apps/jw-epub-parser/commit/9e88c0dd964196de2bb3a38b4e90f37cd8a8293e))
+
 ## [3.23.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.23.0...v3.23.1) (2024-08-08)
 
 
