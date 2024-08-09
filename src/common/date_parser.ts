@@ -9,6 +9,7 @@ import {
 import { getMonthNames } from './language_rules.js';
 
 const dateRangeSeparator = `\\s? bis |[-–—]| do | — | – \\s?`;
+const wordWithDiacritics = `\\p{L}+|\\p{L}+\\p{M}*`;
 let option1: string, option2: string, option3: string;
 
 // #region MEETING WORKBOOK
@@ -16,15 +17,15 @@ let option1: string, option2: string, option3: string;
 // #region date patterns: add your language regular expression date pattern if it is different than common
 
 // date like 1) 23-29 décembre; or 2) 25 novembre–1 décembre; or 3) 30 décembre 2024-5 janvier 2025
-option1 = `(\\d{1,2})(?:${dateRangeSeparator})(?:\\d{1,2}) (\\p{L}+|\\p{L}+\\p{M}*)`;
-option2 = `(\\d{1,2}) (\\p{L}+|\\p{L}+\\p{M}*)(?:${dateRangeSeparator})(?:\\d{1,2})(?:er|º)? (?:\\p{L}+|\\p{L}+\\p{M}*)`;
-option3 = `(\\d{1,2}) (\\p{L}+|\\p{L}+\\p{M}*) (\\d{4})`;
+option1 = `(\\d{1,2})(?:${dateRangeSeparator})(?:\\d{1,2}) (${wordWithDiacritics})`;
+option2 = `(\\d{1,2}) (${wordWithDiacritics})(?:${dateRangeSeparator})(?:\\d{1,2})(?:er|º)? (?:${wordWithDiacritics})`;
+option3 = `(\\d{1,2}) (${wordWithDiacritics}) (\\d{4})`;
 const mwbDatePatternCommon = `${option1}|${option2}|${option3}`;
 
 // date like 1) DECEMBER 23-29; or 2) NOVEMBER 25–DECEMBER 1; or 3) DECEMBER 30, 2024-JANUARY 5,2025
-option1 = `(\\p{L}+|\\p{L}+\\p{M}*) (\\d{1,2})[-–](?:\\d{1,2})`;
-option2 = `(\\p{L}+|\\p{L}+\\p{M}*) (\\d{1,2})[-–](?:\\p{L}+|\\p{L}+\\p{M}*) (?:\\d{1,2})`;
-option3 = `(\\p{L}+|\\p{L}+\\p{M}*) (\\d{1,2}), (\\d{4})`;
+option1 = `(${wordWithDiacritics}) (\\d{1,2})[-–](?:\\d{1,2})`;
+option2 = `(${wordWithDiacritics}) (\\d{1,2})[-–](?:${wordWithDiacritics}) (?:\\d{1,2})`;
+option3 = `(${wordWithDiacritics}) (\\d{1,2}), (\\d{4})`;
 const mwbDatePatternE = `${option1}|${option2}|${option3}`;
 
 // date like 1-) 12月23-29日; or 2) 11月25日-12月1日; or 3) 2024年12月30日-2025年1月5日
@@ -34,33 +35,33 @@ option3 = `(?:\\d{4})年(\\d{1,2})月(\\d{1,2})日`;
 const mwbDatePatternJ = `${option1}|${option2}|${option3}`;
 
 // date like 1-) 4-10 listopada; or 2) 25 listopada do 1 grudnia; or 3) 30 grudnia 2024 do 5 stycznia 2025
-option1 = `(\\d{1,2})[-–](?:\\d{1,2}) (\\p{L}+|\\p{L}+\\p{M}*)`;
-option2 = `(\\d{1,2}) (\\p{L}+|\\p{L}+\\p{M}*) do (?:\\d{1,2}) (?:\\p{L}+|\\p{L}+\\p{M}*)`;
-option3 = `(\\d{1,2}) (\\p{L}+|\\p{L}+\\p{M}*) (\\d{4})`;
+option1 = `(\\d{1,2})[-–](?:\\d{1,2}) (${wordWithDiacritics})`;
+option2 = `(\\d{1,2}) (${wordWithDiacritics}) do (?:\\d{1,2}) (?:${wordWithDiacritics})`;
+option3 = `(\\d{1,2}) (${wordWithDiacritics}) (\\d{4})`;
 const mwbDatePatternP = `${option1}|${option2}|${option3}`;
 
 // date like 1-) 4-10 de noviembre; or 2) 25 de noviembre a 1 de diciembre; or 3) 30 de diciembre de 2024 a 5 de enero de 2025
-option1 = `(\\d{1,2})[-–](?:\\d{1,2}) de (\\p{L}+|\\p{L}+\\p{M}*)`;
-option2 = `(\\d{1,2}) de (\\p{L}+|\\p{L}+\\p{M}*) a (?:\\d{1,2}) de (?:\\p{L}+|\\p{L}+\\p{M}*)`;
-option3 = `(\\d{1,2}) de (\\p{L}+|\\p{L}+\\p{M}*) de (\\d{4})`;
+option1 = `(\\d{1,2})[-–](?:\\d{1,2}) de (${wordWithDiacritics})`;
+option2 = `(\\d{1,2}) de (${wordWithDiacritics}) a (?:\\d{1,2}) de (?:${wordWithDiacritics})`;
+option3 = `(\\d{1,2}) de (${wordWithDiacritics}) de (\\d{4})`;
 const mwbDatePatternS = `${option1}|${option2}|${option3}`;
 
 // date like 1-) 4-10 de novembro; or 2) 25 de novembro–1.º de dezembro; or 3) 30 de dezembro de 2024–5 de janeiro de 2025
-option1 = `(\\d{1,2})[-–](?:\\d{1,2}) de (\\p{L}+|\\p{L}+\\p{M}*)`;
-option2 = `(\\d{1,2}) de (\\p{L}+|\\p{L}+\\p{M}*)[-–](?:\\d{1,2})(?:.º)? de (?:\\p{L}+|\\p{L}+\\p{M}*)`;
-option3 = `(\\d{1,2}) de (\\p{L}+|\\p{L}+\\p{M}*) de (\\d{4})`;
+option1 = `(\\d{1,2})[-–](?:\\d{1,2}) de (${wordWithDiacritics})`;
+option2 = `(\\d{1,2}) de (${wordWithDiacritics})[-–](?:\\d{1,2})(?:.º)? de (?:${wordWithDiacritics})`;
+option3 = `(\\d{1,2}) de (${wordWithDiacritics}) de (\\d{4})`;
 const mwbDatePatternT = `${option1}|${option2}|${option3}`;
 
 // date like 1-) 4-10 de noviembre; or 2) 25 de noviembre a 1 de diciembre; or 3) 30 de diciembre de 2024 a 5 de enero de 2025
-option1 = `(\\d{1,2}) a (?:\\d{1,2}) de (\\p{L}+|\\p{L}+\\p{M}*)`;
-option2 = `(\\d{1,2}) de (\\p{L}+|\\p{L}+\\p{M}*) a (?:\\d{1,2}) de (?:\\p{L}+|\\p{L}+\\p{M}*)`;
-option3 = `(\\d{1,2}) de (\\p{L}+|\\p{L}+\\p{M}*) de (\\d{4})`;
+option1 = `(\\d{1,2}) a (?:\\d{1,2}) de (${wordWithDiacritics})`;
+option2 = `(\\d{1,2}) de (${wordWithDiacritics}) a (?:\\d{1,2}) de (?:${wordWithDiacritics})`;
+option3 = `(\\d{1,2}) de (${wordWithDiacritics}) de (\\d{4})`;
 const mwbDatePatternTPO = `${option1}|${option2}|${option3}`;
 
 // date like 1-) 4-10 de noviembre; or 2) 25 de noviembre a 1 de diciembre; or 3) 30 de diciembre de 2024 a 5 de enero de 2025
-option1 = `(\\d{1,2}).[-–](?:\\d{1,2}). (\\p{L}+|\\p{L}+\\p{M}*)`;
-option2 = `(\\d{1,2}). (\\p{L}+|\\p{L}+\\p{M}*) [-–] (?:\\d{1,2}). (?:\\p{L}+|\\p{L}+\\p{M}*)`;
-option3 = `(\\d{1,2}). (\\p{L}+|\\p{L}+\\p{M}*) (\\d{4})`;
+option1 = `(\\d{1,2}).[-–](?:\\d{1,2}). (${wordWithDiacritics})`;
+option2 = `(\\d{1,2}). (${wordWithDiacritics}) [-–] (?:\\d{1,2}). (?:${wordWithDiacritics})`;
+option3 = `(\\d{1,2}). (${wordWithDiacritics}) (\\d{4})`;
 const mwbDatePatternX = `${option1}|${option2}|${option3}`;
 
 const mwbDatePatterns: DatePatterns = {
@@ -159,13 +160,13 @@ export const extractMWBDate = (src: string, year: number, lang: string) => {
 // #region date patterns: add your language regular expression date pattern if it is different than common
 
 // date like 1-) 16-22 December 2024; or 2) 30 December 2024-5 January 2024
-option1 = `(\\d{1,2})(?:${dateRangeSeparator})(?:\\d{1,2})? (\\p{L}+|\\p{L}+\\p{M}*) (\\d{4})`;
-option2 = `(\\d{1,2}) (\\p{L}+|\\p{L}+\\p{M}*) (\\d{4})`;
+option1 = `(\\d{1,2})(?:${dateRangeSeparator})(?:\\d{1,2})? (${wordWithDiacritics}) (\\d{4})`;
+option2 = `(\\d{1,2}) (${wordWithDiacritics}) (\\d{4})`;
 const wDatePatternCommon = `${option1}|${option2}`;
 
 // date like 1-) December 16-22, 2024; or 2) December 30, 2024-January 5, 2024
-option1 = `(\\p{L}+|\\p{L}+\\p{M}*) (\\d{1,2})[-–](?:\\d{1,2})?, (\\d{4})`;
-option2 = `(\\p{L}+|\\p{L}+\\p{M}*) (\\d{1,2}), (\\d{4})`;
+option1 = `(${wordWithDiacritics}) (\\d{1,2})[-–](?:\\d{1,2})?, (\\d{4})`;
+option2 = `(${wordWithDiacritics}) (\\d{1,2}), (\\d{4})`;
 const wDatePatternE = `${option1}|${option2}`;
 
 // date like 1-) 2024年12月16-22日; or 2) 2024年12月30日-2025年1月5日
@@ -174,42 +175,42 @@ option2 = `(\\d{4})年(\\d{1,2})月(\\d{1,2})日`;
 const wDatePatternJ = `${option1}|${option2}`;
 
 // date like 1-) Artykuł do studium w tygodniu od 14 do 20 października 2024 roku; or 2) Artykuł do studium w tygodniu od 28 października do 3 listopada 2024 roku; or 3) Artykuł do studium w tygodniu od 30 grudnia 2024 roku do 5 stycznia 2025 roku.
-option1 = `(\\d{1,2}) do (?:\\d{1,2})? (\\p{L}+|\\p{L}+\\p{M}*) (\\d{4})`;
-option2 = `(\\d{1,2}) (\\p{L}+|\\p{L}+\\p{M}*) do (?:\\d{1,2}) (?:\\p{L}+|\\p{L}+\\p{M}*) (\\d{4})`;
-option3 = `(\\d{1,2}) (\\p{L}+|\\p{L}+\\p{M}*) (\\d{4})`;
+option1 = `(\\d{1,2}) do (?:\\d{1,2})? (${wordWithDiacritics}) (\\d{4})`;
+option2 = `(\\d{1,2}) (${wordWithDiacritics}) do (?:\\d{1,2}) (?:${wordWithDiacritics}) (\\d{4})`;
+option3 = `(\\d{1,2}) (${wordWithDiacritics}) (\\d{4})`;
 const wDatePatternP = `${option1}|${option2}|${option3}`;
 
 // date like 1-) 16 al 22 de december de 2024; or 2) 30 de december de 2024 al 5 de january de 2025
-option1 = `(\\d{1,2}) al (?:\\d{1,2})? de (\\p{L}+|\\p{L}+\\p{M}*) de (\\d{4})`;
-option2 = `(\\d{1,2}) de (\\p{L}+|\\p{L}+\\p{M}*) de (\\d{4})`;
+option1 = `(\\d{1,2}) al (?:\\d{1,2})? de (${wordWithDiacritics}) de (\\d{4})`;
+option2 = `(\\d{1,2}) de (${wordWithDiacritics}) de (\\d{4})`;
 const wDatePatternS = `${option1}|${option2}`;
 
 // date like 1-) 16-22 de december de 2024; or 2) Estudo para a semana de 28 de outubro-3 de novembro de 2024; or 3) 30 de december de 2024-5 de january de 2025
-option1 = `(\\d{1,2})[-](?:\\d{1,2})? de (\\p{L}+|\\p{L}+\\p{M}*) de (\\d{4})`;
-option2 = `(\\d{1,2}) de (\\p{L}+|\\p{L}+\\p{M}*)[-](?:\\d{1,2})? de (?:\\p{L}+|\\p{L}+\\p{M}*) de (\\d{4})`;
-option3 = `(\\d{1,2}) de (\\p{L}+|\\p{L}+\\p{M}*) de (\\d{4})`;
+option1 = `(\\d{1,2})[-](?:\\d{1,2})? de (${wordWithDiacritics}) de (\\d{4})`;
+option2 = `(\\d{1,2}) de (${wordWithDiacritics})[-](?:\\d{1,2})? de (?:${wordWithDiacritics}) de (\\d{4})`;
+option3 = `(\\d{1,2}) de (${wordWithDiacritics}) de (\\d{4})`;
 const wDatePatternT = `${option1}|${option2}|${option3}`;
 
 // date like 1-) 16 a 22 de december de 2024; or 2) 30 de december de 2024 a 5 de january de 2025
-option1 = `(\\d{1,2}) a (?:\\d{1,2})? de (\\p{L}+|\\p{L}+\\p{M}*) de (\\d{4})`;
-option2 = `(\\d{1,2}) de (\\p{L}+|\\p{L}+\\p{M}*) de (\\d{4})`;
+option1 = `(\\d{1,2}) a (?:\\d{1,2})? de (${wordWithDiacritics}) de (\\d{4})`;
+option2 = `(\\d{1,2}) de (${wordWithDiacritics}) de (\\d{4})`;
 const wDatePatternTPO = `${option1}|${option2}`;
 
 // date like 1-) Hianarana ny herinandron’ny 9 ka hatramin’ny 15 Desambra 2024.; or 2) Hianarana ny herinandron’ny 30 Desambra 2024 ka hatramin’ny 5 Janoary 2025
-option1 = `(\\d{1,2}) ka hatramin’ny (?:\\d{1,2})? (\\p{L}+|\\p{L}+\\p{M}*) (\\d{4})`;
-option2 = `(\\d{1,2}) (\\p{L}+|\\p{L}+\\p{M}*) ka hatramin’ny (?:\\d{1,2}) (?:\\p{L}+|\\p{L}+\\p{M}*) (\\d{4})`;
-option3 = `(\\d{1,2}) (\\p{L}+|\\p{L}+\\p{M}*) (\\d{4})`;
+option1 = `(\\d{1,2}) ka hatramin’ny (?:\\d{1,2})? (${wordWithDiacritics}) (\\d{4})`;
+option2 = `(\\d{1,2}) (${wordWithDiacritics}) ka hatramin’ny (?:\\d{1,2}) (?:${wordWithDiacritics}) (\\d{4})`;
+option3 = `(\\d{1,2}) (${wordWithDiacritics}) (\\d{4})`;
 const wDatePatternTTM = `${option1}|${option2}|${option3}`;
 
 // date like 1-) Yebesua no October 21-27, 2024.; or 2) Yebesua no October 28–​November 3, 2024 ; or 3) Yebesua no December 30, 2024–​January 5, 2025
-option1 = `(\\p{L}+|\\p{L}+\\p{M}*) (\\d{1,2})[-–](?:\\d{1,2})?, (\\d{4})`;
-option2 = `(\\p{L}+|\\p{L}+\\p{M}*) (\\d{1,2})[-–](?:\\p{L}+|\\p{L}+\\p{M}*) (?:\\d{1,2}), (\\d{4})`;
-option3 = `(\\p{L}+|\\p{L}+\\p{M}*) (\\d{1,2}), (\\d{4})`;
+option1 = `(${wordWithDiacritics}) (\\d{1,2})[-–](?:\\d{1,2})?, (\\d{4})`;
+option2 = `(${wordWithDiacritics}) (\\d{1,2})[-–](?:${wordWithDiacritics}) (?:\\d{1,2}), (\\d{4})`;
+option3 = `(${wordWithDiacritics}) (\\d{1,2}), (\\d{4})`;
 const wDatePatternTW = `${option1}|${option2}|${option3}`;
 
 // date like 1-) 40. Studienartikel: 9. bis 15. Dezember 2024; or 2) 43. Studienartikel: 30. Dezember 2024 bis 5. Januar 2025
-option1 = `(\\d{1,2}). bis (?:\\d{1,2}).? (\\p{L}+|\\p{L}+\\p{M}*) (\\d{4})`;
-option2 = `(\\d{1,2}). (\\p{L}+|\\p{L}+\\p{M}*) (\\d{4})`;
+option1 = `(\\d{1,2}). bis (?:\\d{1,2}).? (${wordWithDiacritics}) (\\d{4})`;
+option2 = `(\\d{1,2}). (${wordWithDiacritics}) (\\d{4})`;
 const wDatePatternX = `${option1}|${option2}`;
 
 const wDatePatterns: DatePatterns = {
