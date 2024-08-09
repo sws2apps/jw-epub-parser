@@ -1,3 +1,10 @@
+## [3.23.3](https://github.com/sws2apps/jw-epub-parser/compare/v3.23.2...v3.23.3) (2024-08-09)
+
+
+### Bug Fixes
+
+* **rules:** update date parsing for F and I ([6e8811b](https://github.com/sws2apps/jw-epub-parser/commit/6e8811b39f746964055d5105f8e14d2519c0922a))
+
 ## [3.23.2](https://github.com/sws2apps/jw-epub-parser/compare/v3.23.1...v3.23.2) (2024-08-09)
 
 
