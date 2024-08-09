@@ -62,7 +62,6 @@ export interface Language {
     octoberVariations: string;
     novemberVariations: string;
     decemberVariations: string;
-    studyArticleDateVariations: string;
     partMinutesSeparatorVariations: string;
   };
 }
