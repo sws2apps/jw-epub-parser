@@ -125,7 +125,12 @@ const mwbDateParsing: MWBDateParsing = {
 // #endregion
 
 export const extractMWBDate = (src: string, year: number, lang: string) => {
-  const srcClean = src.trim().replace('  ', ' ').replace('​', '').replace('⁠', '');
+  const srcClean = src
+    .trim()
+    .replace('  ', ' ')
+    .replace('​', '')
+    .replace('⁠', '')
+    .replace(/\u200F/g, '');
 
   const datePattern = mwbDatePatterns[lang] || mwbDatePatterns.common;
 
@@ -332,7 +337,12 @@ const wDateParsing: WDateParsing = {
 // #endregion
 
 export const extractWTStudyDate = (src: string, lang: string) => {
-  const srcClean = src.trim().replace('  ', ' ').replace('​', '');
+  const srcClean = src
+    .trim()
+    .replace('  ', ' ')
+    .replace('​', '')
+    .replace('⁠', '')
+    .replace(/\u200F/g, '');
 
   const datePattern = wDatePatterns[lang] || wDatePatterns.common;
 
