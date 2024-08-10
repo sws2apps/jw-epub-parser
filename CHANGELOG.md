@@ -1,3 +1,11 @@
+## [3.23.4](https://github.com/sws2apps/jw-epub-parser/compare/v3.23.3...v3.23.4) (2024-08-10)
+
+
+### Bug Fixes
+
+* **rules:** ignore unwanted space when parsing date ([b50d880](https://github.com/sws2apps/jw-epub-parser/commit/b50d8802d8c4549b24aca91aa36d954355e2e6c6))
+* **rules:** remove glue space when parsing date ([66b9b71](https://github.com/sws2apps/jw-epub-parser/commit/66b9b71631eacd279d6df7696913087cb09edbd6))
+
 ## [3.23.3](https://github.com/sws2apps/jw-epub-parser/compare/v3.23.2...v3.23.3) (2024-08-09)
 
 
