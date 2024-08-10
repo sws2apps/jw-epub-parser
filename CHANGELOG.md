@@ -1,3 +1,10 @@
+## [3.23.5](https://github.com/sws2apps/jw-epub-parser/compare/v3.23.4...v3.23.5) (2024-08-10)
+
+
+### Bug Fixes
+
+* **rules:** handle some unwanted characters in date ([3a63880](https://github.com/sws2apps/jw-epub-parser/commit/3a6388086707142314d87bdc607d809e9abd01d1))
+
 ## [3.23.4](https://github.com/sws2apps/jw-epub-parser/compare/v3.23.3...v3.23.4) (2024-08-10)
 
 
