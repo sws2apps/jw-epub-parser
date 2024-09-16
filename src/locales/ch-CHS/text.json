@@ -11,6 +11,5 @@
 	"octoberVariations": "十月",
 	"novemberVariations": "十一月",
 	"decemberVariations": "十二月",
-	"studyArticleDateVariations": "学习文章 {{ number }}：{{ date }}",
 	"partMinutesSeparatorVariations": "分钟"
 }
