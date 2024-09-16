@@ -11,6 +11,5 @@
 	"octoberVariations": "Октябрь|октября",
 	"novemberVariations": "Ноябрь|ноября",
 	"decemberVariations": "Декабрь|декабря",
-	"studyArticleDateVariations": "Статья для изучения {{ number }} ({{ date }})",
 	"partMinutesSeparatorVariations": "мин."
 }

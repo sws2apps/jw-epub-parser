@@ -11,6 +11,5 @@
 	"octoberVariations": "października|Październik",
 	"novemberVariations": "listopada|Listopad",
 	"decemberVariations": "Grudzień|grudnia",
-	"studyArticleDateVariations": "Artykuł do studium od {{ date }}$Artykuł do studium w tygodniu od {{ date }}",
 	"partMinutesSeparatorVariations": "min|min."
 }
