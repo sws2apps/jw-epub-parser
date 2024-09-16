@@ -11,6 +11,5 @@
 	"octoberVariations": "Oktobra|Okotobra",
 	"novemberVariations": "Novambra",
 	"decemberVariations": "Desambra",
-	"studyArticleDateVariations": "Lahatsoratse Fianaragne {{ number }}: {{ date }}",
-	"partMinutesSeparatorVariations": "({{ duration }} min.)|({{ duration }} min)"
+	"partMinutesSeparatorVariations": "min."
 }
