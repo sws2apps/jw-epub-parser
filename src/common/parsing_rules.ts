@@ -1,4 +1,5 @@
 import { JWEPUBParserError } from '../classes/error.js';
+import { LangRegExp } from '../types/index.js';
 import { getPartMinutesSeparatorVariations } from './language_rules.js';
 
 export const extractSongNumber = (src: string) => {
@@ -16,47 +17,45 @@ export const extractSongNumber = (src: string) => {
 };
 
 export const extractSourceEnhanced = (src: string, lang: string) => {
-  const variations = getPartMinutesSeparatorVariations(lang).split('|');
+  const variations = getPartMinutesSeparatorVariations(lang);
 
-  let result;
+  // separate minutes from title
+  const firstPatternCommon = new RegExp(
+    `(.+?)(?:: )?[（(](\\d+)(?: |  )?(?:${variations})[）)](?: : | |. )?(.+?)?$`,
+    'giu'
+  );
+  const firstPatternTW = new RegExp(`(.+?)(?: )?\\(${variations}(?: )?(\\d+)\\)(?: )?(.+?)?$`, 'giu');
 
-  for (const variation of variations) {
-    let textSearch = variation.replace('{{ duration }}', '\\d+');
-    textSearch = textSearch.replace('(', '\\(');
-    textSearch = textSearch.replace(')', '\\)');
-    textSearch = textSearch.replace(') ', ') ?');
-    textSearch = textSearch.replace('??', '?');
+  const firstPattern: LangRegExp = {
+    common: firstPatternCommon,
+    TW: firstPatternTW,
+  };
 
-    const regex = new RegExp(textSearch.trim());
-    const match = src.match(regex);
+  const langPattern = firstPattern[lang] || firstPattern.common;
 
-    if (match) {
-      const splits = src.split(regex);
-      const duration = +match[0].match(/\d+/)![0];
-      const regexStartColumn = /^[:.「]/;
-      const regexEndColumn = /[:」]$/;
+  const matchFirstPattern = src.match(langPattern);
 
-      const tmpAssignment = splits[0].trim();
-      const source = splits[1].trim().replace(regexStartColumn, '').replace(regexEndColumn, '').trim();
-
-      const indexSep = /\d{1,2}[-.] /g;
-      const index = tmpAssignment.match(indexSep);
-      const assignmentSplits = tmpAssignment.split(indexSep);
-      let assignment;
-
-      if (index) {
-        assignment = assignmentSplits[1].trim();
-      } else {
-        assignment = tmpAssignment;
-      }
-
-      assignment = assignment.replace(regexStartColumn, '').replace(regexEndColumn, '').trim();
-
-      result = { type: assignment, time: duration, src: source, fulltitle: tmpAssignment };
-    }
+  if (!matchFirstPattern) {
+    throw new JWEPUBParserError('jw-epub-parser', `Parsing failed. The input was: ${src}`);
   }
 
-  if (result) return result;
+  const groupsFirstPattern = Array.from(langPattern.exec(src)!);
 
-  throw new JWEPUBParserError('jw-epub-parser', `Parsing failed. The input was: ${src}`);
+  const fulltitle = groupsFirstPattern.at(1)!.trim();
+  const time = +groupsFirstPattern.at(2)!.trim();
+  const source = groupsFirstPattern.at(3)?.trim();
+
+  // separate index from title
+  const nextPattern = /^(:?\d+)(?:．|.\s)(.+?)$/giu;
+
+  const matchNextPattern = fulltitle.match(nextPattern);
+
+  let type = fulltitle;
+
+  if (matchNextPattern) {
+    const groupsNextPattern = Array.from(nextPattern.exec(fulltitle)!);
+    type = groupsNextPattern.at(2)!.trim();
+  }
+
+  return { type, src: source, time, fulltitle };
 };

@@ -148,7 +148,7 @@ export const parseMWBSchedule = (htmlItem: HTMLElement, mwbYear: number, mwbLang
   tmpSrc = splits[7].trim();
   if (isEnhancedParsing) {
     const enhanced = extractSourceEnhanced(tmpSrc, mwbLang);
-    weekItem.mwb_tgw_bread = enhanced.src;
+    weekItem.mwb_tgw_bread = enhanced.src!;
     weekItem.mwb_tgw_bread_title = enhanced.fulltitle;
   } else {
     weekItem.mwb_tgw_bread = tmpSrc;
@@ -164,7 +164,7 @@ export const parseMWBSchedule = (htmlItem: HTMLElement, mwbYear: number, mwbLang
   tmpSrc = splits[8].trim();
   if (isEnhancedParsing) {
     const partEnhanced = extractSourceEnhanced(tmpSrc, mwbLang);
-    weekItem.mwb_ayf_part1 = partEnhanced.src;
+    weekItem.mwb_ayf_part1 = partEnhanced.src!;
     weekItem.mwb_ayf_part1_time = partEnhanced.time;
     weekItem.mwb_ayf_part1_type = partEnhanced.type;
     weekItem.mwb_ayf_part1_title = partEnhanced.fulltitle;
@@ -177,7 +177,7 @@ export const parseMWBSchedule = (htmlItem: HTMLElement, mwbYear: number, mwbLang
     tmpSrc = splits[9].trim();
     if (isEnhancedParsing) {
       const partEnhanced = extractSourceEnhanced(tmpSrc, mwbLang);
-      weekItem.mwb_ayf_part2 = partEnhanced.src;
+      weekItem.mwb_ayf_part2 = partEnhanced.src!;
       weekItem.mwb_ayf_part2_time = partEnhanced.time;
       weekItem.mwb_ayf_part2_type = partEnhanced.type;
       weekItem.mwb_ayf_part2_title = partEnhanced.fulltitle;
@@ -191,7 +191,7 @@ export const parseMWBSchedule = (htmlItem: HTMLElement, mwbYear: number, mwbLang
     tmpSrc = splits[10].trim();
     if (isEnhancedParsing) {
       const partEnhanced = extractSourceEnhanced(tmpSrc, mwbLang);
-      weekItem.mwb_ayf_part3 = partEnhanced.src;
+      weekItem.mwb_ayf_part3 = partEnhanced.src!;
       weekItem.mwb_ayf_part3_time = partEnhanced.time;
       weekItem.mwb_ayf_part3_type = partEnhanced.type;
       weekItem.mwb_ayf_part3_title = partEnhanced.fulltitle;
@@ -264,7 +264,7 @@ export const parseMWBSchedule = (htmlItem: HTMLElement, mwbYear: number, mwbLang
 
   if (isEnhancedParsing) {
     const enhanced = extractSourceEnhanced(tmpSrc, mwbLang);
-    weekItem.mwb_lc_cbs = enhanced.src;
+    weekItem.mwb_lc_cbs = enhanced.src!;
     weekItem.mwb_lc_cbs_title = enhanced.fulltitle;
   } else {
     weekItem.mwb_lc_cbs = tmpSrc;
