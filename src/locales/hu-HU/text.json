@@ -11,6 +11,5 @@
 	"octoberVariations": "October",
 	"novemberVariations": "November",
 	"decemberVariations": "December",
-	"studyArticleDateVariations": "Study Article {{ number }}: {{ date }}",
 	"partMinutesSeparatorVariations": "min."
 }
