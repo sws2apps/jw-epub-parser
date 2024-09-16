@@ -20,7 +20,7 @@ const runLiveCommand = async () => {
 		return;
 	}
 
-	const language = process.argv[languageIndex + 1];
+	const language = process.argv[languageIndex + 1].toUpperCase();
 	const issue = issueIndex >= 0 ? process.argv[issueIndex + 1] : undefined;
 	const pub = pubIndex >= 0 ? process.argv[pubIndex + 1] : undefined;
 

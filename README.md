@@ -112,6 +112,7 @@ By calling the `loadEPUB` function, it will return an array of objects with the 
 Currently, we only support enhanced parsing for the following languages:
 
 ```bash
+Chinese Mandarin (Simplified), Chinese Mandarin (Traditional)
 Enlish
 French
 German
@@ -139,32 +140,41 @@ Here are how the results of this module look like:
 ```js
 [
   {
-    mwb_week_date: '2024/07/01',
-    mwb_week_date_locale: 'JULY 1-7',
-    mwb_weekly_bible_reading: 'PSALMS 57-59',
-    mwb_song_first: 148,
-    mwb_tgw_talk: 'Jehovah Frustrates Those Who Oppose His People',
-    mwb_tgw_talk_title: '1. Jehovah Frustrates Those Who Oppose His People',
+    mwb_week_date: '2024/11/04',
+    mwb_week_date_locale: 'NOVEMBER 4-10',
+    mwb_weekly_bible_reading: 'PSALM 105',
+    mwb_song_first: 3,
+    mwb_tgw_talk: '“He Remembers His Covenant Forever”',
+    mwb_tgw_talk_title: '1. “He Remembers His Covenant Forever”',
     mwb_tgw_gems_title: '2. Spiritual Gems',
-    mwb_tgw_bread: 'Ps 59:1-17 (th study 12)',
+    mwb_tgw_bread: 'Ps 105:24-45 (th study 5)',
     mwb_tgw_bread_title: '3. Bible Reading',
-    mwb_ayf_count: 2,
-    mwb_ayf_part1: 'Discussion. Play the VIDEO, and then discuss lmd lesson 7 points 1-2.',
-    mwb_ayf_part1_time: 7,
-    mwb_ayf_part1_type: 'Perseverance​—What Paul Did',
-    mwb_ayf_part1_title: '4. Perseverance​—What Paul Did',
-    mwb_ayf_part2: 'Discussion based on lmd lesson 7 points 3-5 and “See Also.”',
-    mwb_ayf_part2_time: 8,
-    mwb_ayf_part2_type: 'Perseverance​—Imitate Paul',
-    mwb_ayf_part2_title: '5. Perseverance​—Imitate Paul',
-    mwb_song_middle: 65,
+    mwb_ayf_count: 4,
+    mwb_ayf_part1: 'HOUSE TO HOUSE. The householder is busy. (lmd lesson 2 point 5)',
+    mwb_ayf_part1_time: 1,
+    mwb_ayf_part1_type: 'Starting a Conversation',
+    mwb_ayf_part1_title: '4. Starting a Conversation',
+    mwb_ayf_part2: 'HOUSE TO HOUSE. End the conversation on a positive note when the person begins to argue. (lmd lesson 4 point 5)',
+    mwb_ayf_part2_time: 2,
+    mwb_ayf_part2_type: 'Starting a Conversation',
+    mwb_ayf_part2_title: '5. Starting a Conversation',
+    mwb_ayf_part3: 'HOUSE TO HOUSE. Offer a magazine on a topic that the person previously showed interest in. (lmd lesson 8 point 3)',
+    mwb_ayf_part3_time: 4,
+    mwb_ayf_part3_type: 'Following Up',
+    mwb_ayf_part3_title: '6. Following Up',
+    mwb_ayf_part4: 'INFORMAL WITNESSING. Tell the person about the JW Library® app, and help him download it. (lmd lesson 9 point 5)',
+    mwb_ayf_part4_time: 4,
+    mwb_ayf_part4_type: 'Following Up',
+    mwb_ayf_part4_title: '7. Following Up',
+    mwb_song_middle: 84,
     mwb_lc_count: 1,
-    mwb_lc_part1: 'Local Needs',
+    mwb_lc_part1: 'Expressions of Your Love',
     mwb_lc_part1_time: 15,
-    mwb_lc_part1_title: '6. Local Needs',
-    mwb_lc_cbs: 'bt chap. 12 ¶1-6, box on p. 96',
-    mwb_lc_cbs_title: '7. Congregation Bible Study',
-    mwb_song_conclude: 78
+    mwb_lc_part1_title: '8. Expressions of Your Love',
+    mwb_lc_part1_content: 'Discussion.',
+    mwb_lc_cbs: 'bt chap. 17 ¶13-19',
+    mwb_lc_cbs_title: '9. Congregation Bible Study',
+    mwb_song_conclude: 97,
   },
 	...
 ]
@@ -175,11 +185,11 @@ Here are how the results of this module look like:
 ```js
 [
   {
-    w_study_date: '2024/09/09',
-    w_study_date_locale: 'Study Article 27: September 9-15, 2024',
-    w_study_title: 'Be Courageous Like Zadok',
-    w_study_opening_song: 73,
-    w_study_concluding_song: 126
+    w_study_date: '2025/01/06',
+	  w_study_date_locale: 'Study Article 44: January 6-12, 2025',
+	  w_study_title: 'How to Cope With Injustice',
+	  w_study_opening_song: 33,
+	  w_study_concluding_song: 38
   },
 	...
 ]
@@ -192,20 +202,22 @@ Here are how the results of this module look like:
 ```js
 [
   {
-    mwb_week_date: '7月1-7日',
-    mwb_weekly_bible_reading: '诗篇57－59篇',
-    mwb_song_first: 148,
-    mwb_tgw_talk: '1．耶和华不会让反对我们的人得逞 （10分钟）',
-    mwb_tgw_gems_title: '2．经文宝石 （10分钟）',
-    mwb_tgw_bread: '3．经文朗读 （4分钟）诗59:1-17（《教导》第12课）',
-    mwb_ayf_count: 2,
-    mwb_ayf_part1: '4．坚持不懈——保罗怎么做 （7分钟）节目包括讨论。先观看短片，然后讨论《爱心》第7课1-2点。',
-    mwb_ayf_part2: '5．坚持不懈——向保罗学习 （8分钟）讨论《爱心》第7课3-5点以及“请看”。',
-    mwb_song_middle: 65,
+    mwb_week_date: '4.-10. NOVEMBER',
+    mwb_weekly_bible_reading: 'SALME 105',
+    mwb_song_first: 3,
+    mwb_tgw_talk: '1. “Han husker for evigt sin pagt” (10 min.)',
+    mwb_tgw_gems_title: '2. Åndelige perler (10 min.)',
+    mwb_tgw_bread: '3. Oplæsning fra Bibelen (4 min.) Sl 105:24-45 (th arbejdspunkt 5)',
+    mwb_ayf_count: 4,
+    mwb_ayf_part1: '4. Start en samtale (1 min.) FRA HUS TIL HUS. Den besøgte har travlt. (lmd lektion 2 punkt 5)',
+    mwb_ayf_part2: '5. Start en samtale (2 min.) FRA HUS TIL HUS. Du afslutter samtalen på en venlig måde da den besøgte vil diskutere. (lmd lektion 4 punkt 5)',
+    mwb_ayf_part3: '6. Følg op på interessen (4 min.) FRA HUS TIL HUS. Tilbyd et blad om noget som den besøgte tidligere har udtrykt interesse for. (lmd lektion 8 punkt 3)',
+    mwb_ayf_part4: '7. Følg op på interessen (4 min.) UFORMEL FORKYNDELSE. Fortæl personen om JW Library®-appen, og hjælp ham eller hende med at downloade den. (lmd lektion 9 punkt 5)',
+    mwb_song_middle: 84,
     mwb_lc_count: 1,
-    mwb_lc_part1: '6．本地需要 （15分钟）',
-    mwb_lc_cbs: '7．会众研经班 （30分钟）《作见证》第12章1-6段以及96页的附栏',
-    mwb_song_conclude: 78
+    mwb_lc_part1: '8. Hvordan vi kan vise vores kærlighed (15 min.) Drøftelse.',
+    mwb_lc_cbs: '9. Menighedsbibelstudiet (30 min.) bt kap. 17 § 13-19',
+    mwb_song_conclude: 97,
   },
 	...
 ]
@@ -216,10 +228,10 @@ Here are how the results of this module look like:
 ```js
 [
   {
-    w_study_date: '研究班课文27：2024年9月9-15日',
-    w_study_title: '效法撒督，显出勇气',
-    w_study_opening_song: 73,
-    w_study_concluding_song: 126
+    w_study_date: 'Studieartikel 44, 6.-12. januar 2025',
+    w_study_title: 'Hvordan du kan tackle uretfærdighed',
+    w_study_opening_song: 33,
+    w_study_concluding_song: 38
   },
 	...
 ]

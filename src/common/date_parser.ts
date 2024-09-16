@@ -2,7 +2,7 @@ import { JWEPUBParserError } from '../classes/error.js';
 import {
   WDateParsing,
   WDateParsingResult,
-  DatePatterns,
+  LangRegExp,
   MWBDateParsingResult,
   MWBDateParsing,
 } from '../types/index.js';
@@ -64,8 +64,10 @@ option2 = `(\\d{1,2}). (${wordWithDiacritics}) [-–] (?:\\d{1,2}). (?:${wordWit
 option3 = `(\\d{1,2}). (${wordWithDiacritics}) (\\d{4})`;
 const mwbDatePatternX = `${option1}|${option2}|${option3}`;
 
-const mwbDatePatterns: DatePatterns = {
+const mwbDatePatterns: LangRegExp = {
   common: new RegExp(mwbDatePatternCommon, 'giu'),
+  CH: new RegExp(mwbDatePatternJ, 'giu'),
+  CHS: new RegExp(mwbDatePatternJ, 'giu'),
   E: new RegExp(mwbDatePatternE, 'giu'),
   J: new RegExp(mwbDatePatternJ, 'giu'),
   P: new RegExp(mwbDatePatternP, 'giu'),
@@ -116,6 +118,8 @@ const mwbParsingE = (groups: string[]): MWBDateParsingResult => {
 
 const mwbDateParsing: MWBDateParsing = {
   common: mwbParsingCommon,
+  CH: mwbParsingE,
+  CHS: mwbParsingE,
   E: mwbParsingE,
   J: mwbParsingE,
   TG: mwbParsingE,
@@ -165,8 +169,8 @@ export const extractMWBDate = (src: string, year: number, lang: string) => {
 // #region date patterns: add your language regular expression date pattern if it is different than common
 
 // date like 1-) 16-22 December 2024; or 2) 30 December 2024-5 January 2024
-option1 = `(\\d{1,2})(?:${dateRangeSeparator})(?:\\d{1,2})? (${wordWithDiacritics}) (\\d{4})`;
-option2 = `(\\d{1,2}) (${wordWithDiacritics}) (\\d{4})`;
+option1 = `(\\d{1,2})(?:${dateRangeSeparator})(?:\\d{1,2})? (${wordWithDiacritics})(?:,)? (\\d{4})`;
+option2 = `(\\d{1,2}) (${wordWithDiacritics})(?:,)? (\\d{4})`;
 const wDatePatternCommon = `${option1}|${option2}`;
 
 // date like 1-) December 16-22, 2024; or 2) December 30, 2024-January 5, 2024
@@ -218,8 +222,10 @@ option1 = `(\\d{1,2}). bis (?:\\d{1,2}).? (${wordWithDiacritics}) (\\d{4})`;
 option2 = `(\\d{1,2}). (${wordWithDiacritics}) (\\d{4})`;
 const wDatePatternX = `${option1}|${option2}`;
 
-const wDatePatterns: DatePatterns = {
+const wDatePatterns: LangRegExp = {
   common: new RegExp(wDatePatternCommon, 'giu'),
+  CH: new RegExp(wDatePatternJ, 'giu'),
+  CHS: new RegExp(wDatePatternJ, 'giu'),
   E: new RegExp(wDatePatternE, 'giu'),
   J: new RegExp(wDatePatternJ, 'giu'),
   P: new RegExp(wDatePatternP, 'giu'),
@@ -325,6 +331,8 @@ const wParsingTW = (groups: string[]): WDateParsingResult => {
 
 const wDateParsing: WDateParsing = {
   common: wParsingCommon,
+  CH: wParsingJ,
+  CHS: wParsingJ,
   E: wParsingE,
   J: wParsingJ,
   P: wParsingP,

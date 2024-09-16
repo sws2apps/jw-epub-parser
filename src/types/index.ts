@@ -66,7 +66,7 @@ export interface Language {
   };
 }
 
-export type DatePatterns = {
+export type LangRegExp = {
   [lang: string]: RegExp;
 };
 

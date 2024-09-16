@@ -1,5 +1,7 @@
 import * as path from 'path-browserify';
 
+import CH from '../locales/cmn-Hant/text.json';
+import CHS from '../locales/cmn-Hant/text.json';
 import E from '../locales/en/text.json';
 import F from '../locales/fr-FR/text.json';
 import I from '../locales/it-IT/text.json';
@@ -28,6 +30,6 @@ declare global {
 }
 
 window.jw_epub_parser = {
-  languages: { E, F, I, J, K, M, MG, P, S, T, TG, TK, TND, TNK, TPO, TTM, TW, U, VZ, X },
+  languages: { CH, CHS, E, F, I, J, K, M, MG, P, S, T, TG, TK, TND, TNK, TPO, TTM, TW, U, VZ, X },
   path: path,
 };

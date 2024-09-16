@@ -1,6 +1,8 @@
 import * as path from 'path';
 import { readFile } from 'fs/promises';
 
+import CH from '../locales/cmn-Hant/text.json' assert { type: 'json' };
+import CHS from '../locales/ch-CHS/text.json' assert { type: 'json' };
 import E from '../locales/en/text.json' assert { type: 'json' };
 import F from '../locales/fr-FR/text.json' assert { type: 'json' };
 import I from '../locales/it-IT/text.json' assert { type: 'json' };
@@ -27,7 +29,7 @@ declare global {
 }
 
 global.jw_epub_parser = {
-  languages: { E, F, I, J, K, M, MG, P, S, T, TG, TK, TND, TNK, TPO, TTM, TW, U, VZ, X },
+  languages: { CH, CHS, E, F, I, J, K, M, MG, P, S, T, TG, TK, TND, TNK, TPO, TTM, TW, U, VZ, X },
   path: path,
   readFile: readFile,
 };

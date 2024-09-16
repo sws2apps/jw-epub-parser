@@ -19,4 +19,6 @@ export default [
 	{ locale: 'uk-UA', code: 'U' },
 	{ locale: 'mg-VZ', code: 'VZ' },
 	{ locale: 'de-DE', code: 'X' },
+	{ locale: 'cmn-Hant', code: 'CH' },
+	{ locale: 'ch-CHS', code: 'CHS' },
 ];

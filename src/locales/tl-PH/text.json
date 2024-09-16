@@ -12,5 +12,5 @@
 	"novemberVariations": "Nobyembre",
 	"decemberVariations": "Disyembre",
 	"studyArticleDateVariations": "Araling artikulo {{ number }}: {{ date }}",
-	"partMinutesSeparatorVariations": "({{ duration }} min.)"
+	"partMinutesSeparatorVariations": "min."
 }
