@@ -1,3 +1,12 @@
+# [3.24.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.23.5...v3.24.0) (2024-09-16)
+
+
+### Features
+
+* **localize:** updated translation from Crowdin ([#854](https://github.com/sws2apps/jw-epub-parser/issues/854)) ([a00d306](https://github.com/sws2apps/jw-epub-parser/commit/a00d30679af1dd206d1a867a86f6ce6d8d3a3b00))
+* **localize:** updated translation from Crowdin ([#879](https://github.com/sws2apps/jw-epub-parser/issues/879)) ([cef2101](https://github.com/sws2apps/jw-epub-parser/commit/cef21018420fb263bed3ac27a359908eb1d51da5))
+* **module:** support chinese mandarin simplified and traditional ([#890](https://github.com/sws2apps/jw-epub-parser/issues/890)) ([3f34044](https://github.com/sws2apps/jw-epub-parser/commit/3f340448b6e4ed937c497dd0ea37ceccb7fb2f21))
+
 ## [3.23.5](https://github.com/sws2apps/jw-epub-parser/compare/v3.23.4...v3.23.5) (2024-08-10)
 
 
