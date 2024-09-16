@@ -1,7 +1,7 @@
 import * as path from 'path-browserify';
 
 import CH from '../locales/cmn-Hant/text.json';
-import CHS from '../locales/cmn-Hant/text.json';
+import CHS from '../locales/ch-CHS/text.json';
 import E from '../locales/en/text.json';
 import F from '../locales/fr-FR/text.json';
 import I from '../locales/it-IT/text.json';
