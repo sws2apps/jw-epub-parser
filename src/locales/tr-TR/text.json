@@ -1,0 +1,15 @@
+{
+	"januaryVariations": "Ocak",
+	"februaryVariations": "Şubat",
+	"marchVariations": "Mart",
+	"aprilVariations": "Nisan|NİSAN",
+	"mayVariations": "MAYIS|Mayıs",
+	"juneVariations": "HAZİRAN|Haziran",
+	"julyVariations": "Temmuz",
+	"augustVariations": "Ağustos",
+	"septemberVariations": "Eylül",
+	"octoberVariations": "Ekim|EKİM",
+	"novemberVariations": "Kasım|KASIM",
+	"decemberVariations": "Aralık|ARALIK",
+	"partMinutesSeparatorVariations": "min."
+}
