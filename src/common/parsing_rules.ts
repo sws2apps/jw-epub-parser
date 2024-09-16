@@ -17,42 +17,45 @@ export const extractSongNumber = (src: string) => {
 };
 
 export const extractSourceEnhanced = (src: string, lang: string) => {
-  const variations = getPartMinutesSeparatorVariations(lang)
+  const variations = getPartMinutesSeparatorVariations(lang);
 
   // separate minutes from title
-  const firstPatternCommon = new RegExp(`(.+?)[（(](\\d+)(?: |  )?(?:${variations})[）)](?: |. )?(.+?)?$`,'giu')
-  const firstPatternTW = new RegExp(`(.+?)(?: )?\\(${variations}(?: )?(\\d+)\\)(?: )?(.+?)?$`,'giu')
+  const firstPatternCommon = new RegExp(
+    `(.+?)(?:: )?[（(](\\d+)(?: |  )?(?:${variations})[）)](?: : | |. )?(.+?)?$`,
+    'giu'
+  );
+  const firstPatternTW = new RegExp(`(.+?)(?: )?\\(${variations}(?: )?(\\d+)\\)(?: )?(.+?)?$`, 'giu');
 
   const firstPattern: LangRegExp = {
     common: firstPatternCommon,
-    TW: firstPatternTW
-  }
+    TW: firstPatternTW,
+  };
 
   const langPattern = firstPattern[lang] || firstPattern.common;
 
   const matchFirstPattern = src.match(langPattern);
 
   if (!matchFirstPattern) {
-    throw new  JWEPUBParserError('jw-epub-parser', `Parsing failed. The input was: ${src}`);
+    throw new JWEPUBParserError('jw-epub-parser', `Parsing failed. The input was: ${src}`);
   }
 
   const groupsFirstPattern = Array.from(langPattern.exec(src)!);
 
-  const fulltitle = groupsFirstPattern.at(1)!.trim()
-  const time = +groupsFirstPattern.at(2)!.trim()
-  const source = groupsFirstPattern.at(3)?.trim()
+  const fulltitle = groupsFirstPattern.at(1)!.trim();
+  const time = +groupsFirstPattern.at(2)!.trim();
+  const source = groupsFirstPattern.at(3)?.trim();
 
   // separate index from title
-  const nextPattern =  /^(:?\d+)(?:．|.\s)(.+?)$/giu
+  const nextPattern = /^(:?\d+)(?:．|.\s)(.+?)$/giu;
 
   const matchNextPattern = fulltitle.match(nextPattern);
 
-  if (!matchNextPattern) {
-    throw new  JWEPUBParserError('jw-epub-parser', `Parsing failed. The input was: ${src}`);
+  let type = fulltitle;
+
+  if (matchNextPattern) {
+    const groupsNextPattern = Array.from(nextPattern.exec(fulltitle)!);
+    type = groupsNextPattern.at(2)!.trim();
   }
 
-  const groupsNextPattern = Array.from(nextPattern.exec(fulltitle)!);
-  const type = groupsNextPattern.at(2)!.trim()
-  
-  return {type, src: source, time, fulltitle}
+  return { type, src: source, time, fulltitle };
 };
