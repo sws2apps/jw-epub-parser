@@ -11,6 +11,5 @@
 	"octoberVariations": "10月",
 	"novemberVariations": "11月",
 	"decemberVariations": "12月",
-	"studyArticleDateVariations": "研究記事{{ number }}: {{ date }}",
 	"partMinutesSeparatorVariations": "分"
 }
