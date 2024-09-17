@@ -1,3 +1,11 @@
+## [3.24.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.24.0...v3.24.1) (2024-09-17)
+
+
+### Bug Fixes
+
+* **locales:** add variations months for vezo ([8126242](https://github.com/sws2apps/jw-epub-parser/commit/8126242796990b9b1d5f720cac9715c6d6112d51))
+* **parser:** date parser issue for chinese in older w issues ([6ded852](https://github.com/sws2apps/jw-epub-parser/commit/6ded852bce09b939dcf0b3218bf3a726de7a526b))
+
 # [3.24.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.23.5...v3.24.0) (2024-09-16)
 
 
