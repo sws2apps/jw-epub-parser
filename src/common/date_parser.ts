@@ -173,8 +173,8 @@ option2 = `(${wordWithDiacritics}) (\\d{1,2}), (\\d{4})`;
 const wDatePatternE = `${option1}|${option2}`;
 
 // date like 1-) 2024年12月16-22日; or 2) 2024年12月30日-2025年1月5日
-option1 = `(\\d{4})年(\\d{1,2})月(\\d{1,2})[-–～](\\d{1,2})日`;
-option2 = `(\\d{4})年(\\d{1,2})月(\\d{1,2})日`;
+option1 = `(\\d{4})年(?:nián)?(\\d{1,2})月(?:yuè)?(\\d{1,2})[-–～](\\d{1,2})日`;
+option2 = `(\\d{4})年(?:nián)?(\\d{1,2})月(?:yuè)?(\\d{1,2})日`;
 const wDatePatternJ = `${option1}|${option2}`;
 
 // date like 1-) Artykuł do studium w tygodniu od 14 do 20 października 2024 roku; or 2) Artykuł do studium w tygodniu od 28 października do 3 listopada 2024 roku; or 3) Artykuł do studium w tygodniu od 30 grudnia 2024 roku do 5 stycznia 2025 roku.

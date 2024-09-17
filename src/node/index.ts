@@ -10,5 +10,7 @@ export const loadEPUB = async (epubInput: string | Blob | { url: string }) => {
     return data;
   } catch (err) {
     console.error(err);
+
+    throw new Error((err as Error)?.message);
   }
 };
