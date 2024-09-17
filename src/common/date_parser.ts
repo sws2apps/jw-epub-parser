@@ -1,11 +1,5 @@
 import { JWEPUBParserError } from '../classes/error.js';
-import {
-  WDateParsing,
-  WDateParsingResult,
-  LangRegExp,
-  MWBDateParsingResult,
-  MWBDateParsing,
-} from '../types/index.js';
+import { WDateParsing, WDateParsingResult, LangRegExp, MWBDateParsingResult, MWBDateParsing } from '../types/index.js';
 import { getMonthNames } from './language_rules.js';
 
 const dateRangeSeparator = `\\s? bis |[-–—]| do | — | – \\s?`;
@@ -179,7 +173,7 @@ option2 = `(${wordWithDiacritics}) (\\d{1,2}), (\\d{4})`;
 const wDatePatternE = `${option1}|${option2}`;
 
 // date like 1-) 2024年12月16-22日; or 2) 2024年12月30日-2025年1月5日
-option1 = `(\\d{4})年(\\d{1,2})月(\\d{1,2})[-–](\\d{1,2})日`;
+option1 = `(\\d{4})年(\\d{1,2})月(\\d{1,2})[-–～](\\d{1,2})日`;
 option2 = `(\\d{4})年(\\d{1,2})月(\\d{1,2})日`;
 const wDatePatternJ = `${option1}|${option2}`;
 
