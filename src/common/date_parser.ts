@@ -162,10 +162,11 @@ export const extractMWBDate = (src: string, year: number, lang: string) => {
 
 // #region date patterns: add your language regular expression date pattern if it is different than common
 
-// date like 1-) 16-22 December 2024; or 2) 30 December 2024-5 January 2024
+// date like 1-) 16-22 December 2024; or 2) 26 June–2 July 2023 ; or 3) 30 December 2024-5 January 2025
 option1 = `(\\d{1,2})(?:${dateRangeSeparator})(?:\\d{1,2})? (${wordWithDiacritics})(?:,)? (\\d{4})`;
-option2 = `(\\d{1,2}) (${wordWithDiacritics})(?:,)? (\\d{4})`;
-const wDatePatternCommon = `${option1}|${option2}`;
+option2 = `(\\d{1,2}) (${wordWithDiacritics})(?:${dateRangeSeparator})(?:\\d{1,2}) (?:${wordWithDiacritics}) (\\d{4})`;
+option3 = `(\\d{1,2}) (${wordWithDiacritics})(?:,)? (\\d{4})`;
+const wDatePatternCommon = `${option1}|${option2}|${option3}`;
 
 // date like 1-) December 16-22, 2024; or 2) December 30, 2024-January 5, 2024
 option1 = `(${wordWithDiacritics}) (\\d{1,2})[-–](?:\\d{1,2})?, (\\d{4})`;
@@ -242,10 +243,14 @@ const wParsingCommon = (groups: string[]): WDateParsingResult => {
     date = groups[1];
     month = groups[2];
     year = groups[3];
-  } else {
+  } else if (groups[4]) {
     date = groups[4];
     month = groups[5];
     year = groups[6];
+  } else {
+    date = groups[7];
+    month = groups[8];
+    year = groups[9];
   }
 
   return [year, month, date];
@@ -283,26 +288,6 @@ const wParsingJ = (groups: string[]): WDateParsingResult => {
   return [year, month, date];
 };
 
-const wParsingP = (groups: string[]): WDateParsingResult => {
-  let date: string, month: string, year: string;
-
-  if (groups[1]) {
-    date = groups[1];
-    month = groups[2];
-    year = groups[3];
-  } else if (groups[4]) {
-    date = groups[4];
-    month = groups[5];
-    year = groups[6];
-  } else {
-    month = groups[7];
-    date = groups[8];
-    year = groups[9];
-  }
-
-  return [year, month, date];
-};
-
 const wParsingTW = (groups: string[]): WDateParsingResult => {
   let date: string, month: string, year: string;
 
@@ -329,10 +314,7 @@ const wDateParsing: WDateParsing = {
   CHS: wParsingJ,
   E: wParsingE,
   J: wParsingJ,
-  P: wParsingP,
-  T: wParsingP,
   TG: wParsingE,
-  TTM: wParsingP,
   TW: wParsingTW,
 };
 
