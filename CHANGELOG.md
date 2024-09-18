@@ -1,3 +1,10 @@
+## [3.24.2](https://github.com/sws2apps/jw-epub-parser/compare/v3.24.1...v3.24.2) (2024-09-18)
+
+
+### Bug Fixes
+
+* **parser:** missing watchtower date variant for common ([8f983e8](https://github.com/sws2apps/jw-epub-parser/commit/8f983e8fbce8246817e42dae671f973928705efd))
+
 ## [3.24.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.24.0...v3.24.1) (2024-09-17)
 
 
