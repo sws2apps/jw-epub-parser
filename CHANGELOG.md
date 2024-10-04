@@ -1,3 +1,10 @@
+# [3.25.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.24.2...v3.25.0) (2024-10-04)
+
+
+### Features
+
+* **module:** add support for korean language ([a007c88](https://github.com/sws2apps/jw-epub-parser/commit/a007c8846d4b770f8ec78c8cf3862725ac4f83e9))
+
 ## [3.24.2](https://github.com/sws2apps/jw-epub-parser/compare/v3.24.1...v3.24.2) (2024-09-18)
 
 
