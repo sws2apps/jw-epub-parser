@@ -7,6 +7,7 @@ import F from '../locales/fr-FR/text.json';
 import I from '../locales/it-IT/text.json';
 import J from '../locales/ja-JP/text.json';
 import K from '../locales/uk-UA/text.json';
+import KO from '../locales/ko-KR/text.json';
 import M from '../locales/ro-RO/text.json';
 import MG from '../locales/mg-MG/text.json';
 import P from '../locales/pl-PL/text.json';
@@ -30,6 +31,6 @@ declare global {
 }
 
 window.jw_epub_parser = {
-  languages: { CH, CHS, E, F, I, J, K, M, MG, P, S, T, TG, TK, TND, TNK, TPO, TTM, TW, U, VZ, X },
+  languages: { CH, CHS, E, F, I, J, K, KO, M, MG, P, S, T, TG, TK, TND, TNK, TPO, TTM, TW, U, VZ, X },
   path: path,
 };

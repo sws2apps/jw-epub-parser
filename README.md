@@ -118,7 +118,8 @@ French
 German
 Italian
 Japanese
-Madagascar Sign Language, Malagasy
+Korean
+Malagasy
 Polish, Portuguese Brazil
 Romanian, Russian
 Spanish
