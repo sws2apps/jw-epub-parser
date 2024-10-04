@@ -28,6 +28,12 @@ option2 = `(\\d{1,2})月(\\d{1,2})日`;
 option3 = `(?:\\d{4})年(\\d{1,2})月(\\d{1,2})日`;
 const mwbDatePatternJ = `${option1}|${option2}|${option3}`;
 
+// date like 1-) 11월 4-10일; or 2) 11월 25일–12월 1일; or 3) 2024년 12월 30일–2025년 1월 5일
+option1 = `(\\d{1,2})월 (\\d{1,2})[-–](?:\\d{1,2})일`;
+option2 = `(\\d{1,2})월 (\\d{1,2})일`;
+option3 = `(?:\\d{4})년 (\\d{1,2})월 (\\d{1,2})일`;
+const mwbDatePatternKO = `${option1}|${option2}|${option3}`;
+
 // date like 1-) 4-10 listopada; or 2) 25 listopada do 1 grudnia; or 3) 30 grudnia 2024 do 5 stycznia 2025
 option1 = `(\\d{1,2})[-–](?:\\d{1,2}) (${wordWithDiacritics})`;
 option2 = `(\\d{1,2}) (${wordWithDiacritics}) do (?:\\d{1,2}) (?:${wordWithDiacritics})`;
@@ -64,6 +70,7 @@ const mwbDatePatterns: LangRegExp = {
   CHS: new RegExp(mwbDatePatternJ, 'giu'),
   E: new RegExp(mwbDatePatternE, 'giu'),
   J: new RegExp(mwbDatePatternJ, 'giu'),
+  KO: new RegExp(mwbDatePatternKO, 'giu'),
   P: new RegExp(mwbDatePatternP, 'giu'),
   S: new RegExp(mwbDatePatternS, 'giu'),
   T: new RegExp(mwbDatePatternT, 'giu'),
@@ -116,6 +123,7 @@ const mwbDateParsing: MWBDateParsing = {
   CHS: mwbParsingE,
   E: mwbParsingE,
   J: mwbParsingE,
+  KO: mwbParsingE,
   TG: mwbParsingE,
   TW: mwbParsingE,
 };
@@ -178,6 +186,11 @@ option1 = `(\\d{4})年(?:nián)?(\\d{1,2})月(?:yuè)?(\\d{1,2})[-–～](\\d{1,
 option2 = `(\\d{4})年(?:nián)?(\\d{1,2})月(?:yuè)?(\\d{1,2})日`;
 const wDatePatternJ = `${option1}|${option2}`;
 
+// date like 1-) 2024년 10월 7-13일; or 2) 2024년 10월 28일–2024년 11월 3일
+option1 = `(\\d{4})년 (\\d{1,2})월 (\\d{1,2})[-–](\\d{1,2})일`;
+option2 = `(\\d{4})년 (\\d{1,2})월 (\\d{1,2})일`;
+const wDatePatternKO = `${option1}|${option2}`;
+
 // date like 1-) Artykuł do studium w tygodniu od 14 do 20 października 2024 roku; or 2) Artykuł do studium w tygodniu od 28 października do 3 listopada 2024 roku; or 3) Artykuł do studium w tygodniu od 30 grudnia 2024 roku do 5 stycznia 2025 roku.
 option1 = `(\\d{1,2}) do (?:\\d{1,2})? (${wordWithDiacritics}) (\\d{4})`;
 option2 = `(\\d{1,2}) (${wordWithDiacritics}) do (?:\\d{1,2}) (?:${wordWithDiacritics}) (\\d{4})`;
@@ -223,6 +236,7 @@ const wDatePatterns: LangRegExp = {
   CHS: new RegExp(wDatePatternJ, 'giu'),
   E: new RegExp(wDatePatternE, 'giu'),
   J: new RegExp(wDatePatternJ, 'giu'),
+  KO: new RegExp(wDatePatternKO, 'giu'),
   P: new RegExp(wDatePatternP, 'giu'),
   S: new RegExp(wDatePatternS, 'giu'),
   T: new RegExp(wDatePatternT, 'giu'),
@@ -314,6 +328,7 @@ const wDateParsing: WDateParsing = {
   CHS: wParsingJ,
   E: wParsingE,
   J: wParsingJ,
+  KO: wParsingJ,
   TG: wParsingE,
   TW: wParsingTW,
 };

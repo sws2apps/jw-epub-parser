@@ -4,6 +4,7 @@ export default [
 	{ locale: 'it-IT', code: 'I' },
 	{ locale: 'ja-JP', code: 'J' },
 	{ locale: 'uk-UA', code: 'K' },
+	{ locale: 'ko-KR', code: 'KO' },
 	{ locale: 'ro-RO', code: 'M' },
 	{ locale: 'mg-MG', code: 'MG' },
 	{ locale: 'pl-PL', code: 'P' },
