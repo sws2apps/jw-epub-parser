@@ -1,0 +1,15 @@
+{
+	"januaryVariations": "tammikuuta",
+	"februaryVariations": "helmikuuta",
+	"marchVariations": "maaliskuuta",
+	"aprilVariations": "huhtikuuta",
+	"mayVariations": "toukokuuta",
+	"juneVariations": "kesäkuuta",
+	"julyVariations": "heinäkuuta",
+	"augustVariations": "elokuuta",
+	"septemberVariations": "syyskuuta",
+	"octoberVariations": "lokakuuta",
+	"novemberVariations": "marraskuuta",
+	"decemberVariations": "joulukuuta",
+	"partMinutesSeparatorVariations": "min"
+}
