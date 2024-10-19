@@ -4,6 +4,7 @@ import CH from '../locales/cmn-Hant/text.json';
 import CHS from '../locales/ch-CHS/text.json';
 import E from '../locales/en/text.json';
 import F from '../locales/fr-FR/text.json';
+import FI from '../locales/fi-FI/text.json';
 import I from '../locales/it-IT/text.json';
 import J from '../locales/ja-JP/text.json';
 import K from '../locales/uk-UA/text.json';
@@ -31,6 +32,6 @@ declare global {
 }
 
 window.jw_epub_parser = {
-  languages: { CH, CHS, E, F, I, J, K, KO, M, MG, P, S, T, TG, TK, TND, TNK, TPO, TTM, TW, U, VZ, X },
+  languages: { CH, CHS, E, F, FI, I, J, K, KO, M, MG, P, S, T, TG, TK, TND, TNK, TPO, TTM, TW, U, VZ, X },
   path: path,
 };
