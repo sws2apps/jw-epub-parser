@@ -122,7 +122,7 @@ Korean
 Malagasy
 Polish, Portuguese Brazil
 Romanian, Russian
-Spanish
+Spanish, Swedish
 Tagalog, Tandroy, Tankarana, Turkish, Twin
 Ukrainian
 Vezo
