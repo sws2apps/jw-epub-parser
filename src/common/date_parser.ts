@@ -69,6 +69,7 @@ const mwbDatePatterns: LangRegExp = {
   CH: new RegExp(mwbDatePatternJ, 'giu'),
   CHS: new RegExp(mwbDatePatternJ, 'giu'),
   E: new RegExp(mwbDatePatternE, 'giu'),
+  FI: new RegExp(mwbDatePatternX, 'giu'),
   J: new RegExp(mwbDatePatternJ, 'giu'),
   KO: new RegExp(mwbDatePatternKO, 'giu'),
   P: new RegExp(mwbDatePatternP, 'giu'),
@@ -230,11 +231,18 @@ option1 = `(\\d{1,2}). bis (?:\\d{1,2}).? (${wordWithDiacritics}) (\\d{4})`;
 option2 = `(\\d{1,2}). (${wordWithDiacritics}) (\\d{4})`;
 const wDatePatternX = `${option1}|${option2}`;
 
+// date like 1-) Tutkitaan 3.–9.2.2025 ; or 2) Tutkitaan 24.2.–2.3.2025. ; or 3) Tutkitaan 30.12.2024–5.1.2025.
+option1 = '(\\d{1,2}).[–](?:\\d{1,2}).(\\d{1,2}).(\\d{4})';
+option2 = '(\\d{1,2}).(\\d{1,2}).[–](?:\\d{1,2}).(?:\\d{1,2}).(\\d{4})';
+option3 = '(\\d{1,2}).(\\d{1,2}).(\\d{4})';
+const wDatePatternFI = `${option1}|${option2}|${option3}`;
+
 const wDatePatterns: LangRegExp = {
   common: new RegExp(wDatePatternCommon, 'giu'),
   CH: new RegExp(wDatePatternJ, 'giu'),
   CHS: new RegExp(wDatePatternJ, 'giu'),
   E: new RegExp(wDatePatternE, 'giu'),
+  FI: new RegExp(wDatePatternFI, 'giu'),
   J: new RegExp(wDatePatternJ, 'giu'),
   KO: new RegExp(wDatePatternKO, 'giu'),
   P: new RegExp(wDatePatternP, 'giu'),
