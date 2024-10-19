@@ -25,13 +25,14 @@ import TW from '../locales/tw-TW/text.json' assert { type: 'json' };
 import U from '../locales/ru-RU/text.json' assert { type: 'json' };
 import VZ from '../locales/mg-VZ/text.json' assert { type: 'json' };
 import X from '../locales/de-DE/text.json' assert { type: 'json' };
+import Z from '../locales/sv-SE/text.json' assert { type: 'json' };
 
 declare global {
   var jw_epub_parser: any;
 }
 
 global.jw_epub_parser = {
-  languages: { CH, CHS, E, F, FI, I, J, K, KO, M, MG, P, S, T, TG, TK, TND, TNK, TPO, TTM, TW, U, VZ, X },
+  languages: { CH, CHS, E, F, FI, I, J, K, KO, M, MG, P, S, T, TG, TK, TND, TNK, TPO, TTM, TW, U, VZ, X, Z },
   path: path,
   readFile: readFile,
 };
