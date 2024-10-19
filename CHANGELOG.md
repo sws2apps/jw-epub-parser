@@ -1,3 +1,11 @@
+# [3.26.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.25.0...v3.26.0) (2024-10-19)
+
+
+### Features
+
+* **locales:** add finnish language ([da6de97](https://github.com/sws2apps/jw-epub-parser/commit/da6de9770251e18b656f48239f09637a2f85ca81))
+* **locales:** add swedish language ([8b81285](https://github.com/sws2apps/jw-epub-parser/commit/8b8128509159cdc2990e8b7e8515aca28d784caa))
+
 # [3.25.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.24.2...v3.25.0) (2024-10-04)
 
 
