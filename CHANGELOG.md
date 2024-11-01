@@ -1,3 +1,10 @@
+# [3.27.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.26.0...v3.27.0) (2024-11-01)
+
+
+### Features
+
+* **locales:** add dutch language ([19e772f](https://github.com/sws2apps/jw-epub-parser/commit/19e772faf9f7c516e8f233a1d0eb0085ee39116b))
+
 # [3.26.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.25.0...v3.26.0) (2024-10-19)
 
 
