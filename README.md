@@ -113,6 +113,7 @@ Currently, we only support enhanced parsing for the following languages:
 
 ```bash
 Chinese Mandarin (Simplified), Chinese Mandarin (Traditional)
+Dutch
 Enlish
 French
 German
