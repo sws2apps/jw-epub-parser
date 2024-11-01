@@ -24,4 +24,5 @@ export default [
   { locale: 'ch-CHS', code: 'CHS' },
   { locale: 'fi-FI', code: 'FI' },
   { locale: 'sv-SE', code: 'Z' },
+  { locale: 'nl-NL', code: 'O' },
 ];
