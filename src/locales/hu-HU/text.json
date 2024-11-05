@@ -1,15 +1,15 @@
 {
-	"januaryVariations": "January",
-	"februaryVariations": "February",
-	"marchVariations": "March",
-	"aprilVariations": "April",
-	"mayVariations": "May",
-	"juneVariations": "June",
-	"julyVariations": "July",
-	"augustVariations": "August",
-	"septemberVariations": "September",
-	"octoberVariations": "October",
+	"januaryVariations": "Január",
+	"februaryVariations": "Február",
+	"marchVariations": "Március",
+	"aprilVariations": "Április",
+	"mayVariations": "Május",
+	"juneVariations": "Június",
+	"julyVariations": "Július",
+	"augustVariations": "Augusztus",
+	"septemberVariations": "Szeptember",
+	"octoberVariations": "Október",
 	"novemberVariations": "November",
 	"decemberVariations": "December",
-	"partMinutesSeparatorVariations": "min."
+	"partMinutesSeparatorVariations": "perc"
 }
