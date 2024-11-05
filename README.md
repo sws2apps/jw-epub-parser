@@ -121,7 +121,7 @@ Italian
 Japanese
 Korean
 Malagasy
-Polish, Portuguese Brazil
+Pidgin (West Africa), Polish, Portuguese Brazil
 Romanian, Russian
 Spanish, Swedish
 Tagalog, Tandroy, Tankarana, Turkish, Twin
