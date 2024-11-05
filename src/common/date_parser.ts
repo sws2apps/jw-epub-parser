@@ -73,6 +73,7 @@ const mwbDatePatterns: LangRegExp = {
   J: new RegExp(mwbDatePatternJ, 'giu'),
   KO: new RegExp(mwbDatePatternKO, 'giu'),
   P: new RegExp(mwbDatePatternP, 'giu'),
+  PGW: new RegExp(mwbDatePatternE, 'giu'),
   S: new RegExp(mwbDatePatternS, 'giu'),
   T: new RegExp(mwbDatePatternT, 'giu'),
   TG: new RegExp(mwbDatePatternE, 'giu'),
@@ -125,6 +126,7 @@ const mwbDateParsing: MWBDateParsing = {
   E: mwbParsingE,
   J: mwbParsingE,
   KO: mwbParsingE,
+  PGW: mwbParsingE,
   TG: mwbParsingE,
   TW: mwbParsingE,
 };
@@ -177,7 +179,7 @@ option2 = `(\\d{1,2}) (${wordWithDiacritics})(?:${dateRangeSeparator})(?:\\d{1,2
 option3 = `(\\d{1,2}) (${wordWithDiacritics})(?:,)? (\\d{4})`;
 const wDatePatternCommon = `${option1}|${option2}|${option3}`;
 
-// date like 1-) December 16-22, 2024; or 2) December 30, 2024-January 5, 2024
+// date like 1-) December 16-22, 2024; or 2) December 30, 2024-January 5, 2025
 option1 = `(${wordWithDiacritics}) (\\d{1,2})[-–](?:\\d{1,2})?, (\\d{4})`;
 option2 = `(${wordWithDiacritics}) (\\d{1,2}), (\\d{4})`;
 const wDatePatternE = `${option1}|${option2}`;
@@ -246,6 +248,7 @@ const wDatePatterns: LangRegExp = {
   J: new RegExp(wDatePatternJ, 'giu'),
   KO: new RegExp(wDatePatternKO, 'giu'),
   P: new RegExp(wDatePatternP, 'giu'),
+  PGW: new RegExp(wDatePatternE, 'giu'),
   S: new RegExp(wDatePatternS, 'giu'),
   T: new RegExp(wDatePatternT, 'giu'),
   TPO: new RegExp(wDatePatternTPO, 'giu'),
@@ -337,6 +340,7 @@ const wDateParsing: WDateParsing = {
   E: wParsingE,
   J: wParsingJ,
   KO: wParsingJ,
+  PGW: wParsingE,
   TG: wParsingE,
   TW: wParsingTW,
 };

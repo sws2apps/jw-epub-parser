@@ -25,4 +25,5 @@ export default [
   { locale: 'fi-FI', code: 'FI' },
   { locale: 'sv-SE', code: 'Z' },
   { locale: 'nl-NL', code: 'O' },
+  { locale: 'wes-PGW', code: 'PGW' },
 ];
