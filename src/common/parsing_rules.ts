@@ -21,6 +21,11 @@ export const extractSourceEnhanced = (src: string, lang: string) => {
 
   // separate minutes from title
   const firstPatternCommon = new RegExp(
+    `(.+?)(?:: )?[（(](\\d+)(?: |  )?(?:${variations})[）)](?: : | |. )?(.+?)?$`,
+    'giu'
+  );
+
+  const firstPatternCommonPGW = new RegExp(
     `(.+?)(?:: )?[（(](\\d+)(?: |  )?(?:${variations})[）)]?(?: : | |. )?(.+?)?$`,
     'giu'
   );
@@ -29,6 +34,7 @@ export const extractSourceEnhanced = (src: string, lang: string) => {
 
   const firstPattern: LangRegExp = {
     common: firstPatternCommon,
+    PGW: firstPatternCommonPGW,
     SW: firstPatternTW,
     TW: firstPatternTW,
   };
