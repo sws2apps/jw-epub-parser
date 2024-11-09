@@ -15,6 +15,8 @@ import O from '../locales/nl-NL/text.json';
 import P from '../locales/pl-PL/text.json';
 import PGW from '../locales/wes-PGW/text.json';
 import S from '../locales/es-ES/text.json';
+import SV from '../locales/sl-SI/text.json';
+import SW from '../locales/sw-KE/text.json';
 import T from '../locales/pt-BR/text.json';
 import TG from '../locales/tl-PH/text.json';
 import TK from '../locales/tr-TR/text.json';
@@ -35,6 +37,36 @@ declare global {
 }
 
 window.jw_epub_parser = {
-  languages: { CH, CHS, E, F, FI, I, J, K, KO, M, MG, O, P, PGW, S, T, TG, TK, TND, TNK, TPO, TTM, TW, U, VZ, X, Z },
+  languages: {
+    CH,
+    CHS,
+    E,
+    F,
+    FI,
+    I,
+    J,
+    K,
+    KO,
+    M,
+    MG,
+    O,
+    P,
+    PGW,
+    S,
+    SV,
+    SW,
+    T,
+    TG,
+    TK,
+    TND,
+    TNK,
+    TPO,
+    TTM,
+    TW,
+    U,
+    VZ,
+    X,
+    Z,
+  },
   path: path,
 };

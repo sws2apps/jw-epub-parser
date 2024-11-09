@@ -29,6 +29,7 @@ export const extractSourceEnhanced = (src: string, lang: string) => {
 
   const firstPattern: LangRegExp = {
     common: firstPatternCommon,
+    SW: firstPatternTW,
     TW: firstPatternTW,
   };
 

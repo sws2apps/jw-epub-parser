@@ -26,4 +26,6 @@ export default [
   { locale: 'sv-SE', code: 'Z' },
   { locale: 'nl-NL', code: 'O' },
   { locale: 'wes-PGW', code: 'PGW' },
+  { locale: 'sl-SI', code: 'SV' },
+  { locale: 'sw-KE', code: 'SW' },
 ];
