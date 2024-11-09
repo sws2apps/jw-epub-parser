@@ -123,7 +123,7 @@ Korean
 Malagasy
 Pidgin (West Africa), Polish, Portuguese Brazil
 Romanian, Russian
-Spanish, Swedish
+Slovenian, Spanish, Swahili, Swedish
 Tagalog, Tandroy, Tankarana, Turkish, Twin
 Ukrainian
 Vezo
