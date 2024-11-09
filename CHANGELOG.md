@@ -1,3 +1,12 @@
+# [3.28.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.27.0...v3.28.0) (2024-11-09)
+
+
+### Features
+
+* **locales:** add pidgin (west africa) language ([6416171](https://github.com/sws2apps/jw-epub-parser/commit/6416171121e4559f219432a48379dd52abaf7148))
+* **locales:** add slovenian language ([b86d1dd](https://github.com/sws2apps/jw-epub-parser/commit/b86d1dd8b25c0d2b569459fdf22d9e8582c12f65))
+* **locales:** add swahili language ([e6aad9f](https://github.com/sws2apps/jw-epub-parser/commit/e6aad9f80d839049f02c50adac112e6f3fda3fda))
+
 # [3.27.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.26.0...v3.27.0) (2024-11-01)
 
 
