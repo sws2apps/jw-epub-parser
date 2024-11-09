@@ -324,26 +324,6 @@ const wParsingJ = (groups: string[]): WDateParsingResult => {
   return [year, month, date];
 };
 
-const wParsingTW = (groups: string[]): WDateParsingResult => {
-  let date: string, month: string, year: string;
-
-  if (groups[1]) {
-    month = groups[1];
-    date = groups[2];
-    year = groups[3];
-  } else if (groups[4]) {
-    month = groups[4];
-    date = groups[5];
-    year = groups[6];
-  } else {
-    month = groups[7];
-    date = groups[8];
-    year = groups[9];
-  }
-
-  return [year, month, date];
-};
-
 const wDateParsing: WDateParsing = {
   common: wParsingCommon,
   CH: wParsingJ,
@@ -354,7 +334,7 @@ const wDateParsing: WDateParsing = {
   PGW: wParsingE,
   SW: wParsingE,
   TG: wParsingE,
-  TW: wParsingTW,
+  TW: wParsingE,
 };
 
 // #endregion
