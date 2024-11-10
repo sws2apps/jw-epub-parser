@@ -1,3 +1,10 @@
+## [3.28.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.28.0...v3.28.1) (2024-11-10)
+
+
+### Bug Fixes
+
+* **parser:** update parser rule for some languages ([2c2b9d0](https://github.com/sws2apps/jw-epub-parser/commit/2c2b9d0ff61dad1ffdfcd553727e12aca94ad535))
+
 # [3.28.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.27.0...v3.28.0) (2024-11-09)
 
 
