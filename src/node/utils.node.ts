@@ -14,7 +14,10 @@ import M from '../locales/ro-RO/text.json' assert { type: 'json' };
 import MG from '../locales/mg-MG/text.json' assert { type: 'json' };
 import O from '../locales/nl-NL/text.json' assert { type: 'json' };
 import P from '../locales/pl-PL/text.json' assert { type: 'json' };
+import PGW from '../locales/wes-PGW/text.json' assert { type: 'json' };
 import S from '../locales/es-ES/text.json' assert { type: 'json' };
+import SV from '../locales/sl-SI/text.json' assert { type: 'json' };
+import SW from '../locales/sw-KE/text.json' assert { type: 'json' };
 import T from '../locales/pt-BR/text.json' assert { type: 'json' };
 import TG from '../locales/tl-PH/text.json' assert { type: 'json' };
 import TK from '../locales/tr-TR/text.json' assert { type: 'json' };
@@ -33,7 +36,37 @@ declare global {
 }
 
 global.jw_epub_parser = {
-  languages: { CH, CHS, E, F, FI, I, J, K, KO, M, MG, O, P, S, T, TG, TK, TND, TNK, TPO, TTM, TW, U, VZ, X, Z },
+  languages: {
+    CH,
+    CHS,
+    E,
+    F,
+    FI,
+    I,
+    J,
+    K,
+    KO,
+    M,
+    MG,
+    O,
+    P,
+    PGW,
+    S,
+    SV,
+    SW,
+    T,
+    TG,
+    TK,
+    TND,
+    TNK,
+    TPO,
+    TTM,
+    TW,
+    U,
+    VZ,
+    X,
+    Z,
+  },
   path: path,
   readFile: readFile,
 };

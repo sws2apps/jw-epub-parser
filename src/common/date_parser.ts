@@ -58,9 +58,9 @@ option2 = `(\\d{1,2}) de (${wordWithDiacritics}) a (?:\\d{1,2}) de (?:${wordWith
 option3 = `(\\d{1,2}) de (${wordWithDiacritics}) de (\\d{4})`;
 const mwbDatePatternTPO = `${option1}|${option2}|${option3}`;
 
-// date like 1-) 4-10 de noviembre; or 2) 25 de noviembre a 1 de diciembre; or 3) 30 de diciembre de 2024 a 5 de enero de 2025
+// date like 1-) 4.-10. de noviembre; or 2) 25. noviembre - 1. de diciembre; or 3) 30. diciembre 2024-5. enero 2025
 option1 = `(\\d{1,2}).[-–](?:\\d{1,2}). (${wordWithDiacritics})`;
-option2 = `(\\d{1,2}). (${wordWithDiacritics}) [-–] (?:\\d{1,2}). (?:${wordWithDiacritics})`;
+option2 = `(\\d{1,2}). (${wordWithDiacritics}) ?[-–] ?(?:\\d{1,2}). (?:${wordWithDiacritics})`;
 option3 = `(\\d{1,2}). (${wordWithDiacritics}) (\\d{4})`;
 const mwbDatePatternX = `${option1}|${option2}|${option3}`;
 
@@ -73,7 +73,10 @@ const mwbDatePatterns: LangRegExp = {
   J: new RegExp(mwbDatePatternJ, 'giu'),
   KO: new RegExp(mwbDatePatternKO, 'giu'),
   P: new RegExp(mwbDatePatternP, 'giu'),
+  PGW: new RegExp(mwbDatePatternE, 'giu'),
   S: new RegExp(mwbDatePatternS, 'giu'),
+  SV: new RegExp(mwbDatePatternX, 'giu'),
+  SW: new RegExp(mwbDatePatternE, 'giu'),
   T: new RegExp(mwbDatePatternT, 'giu'),
   TG: new RegExp(mwbDatePatternE, 'giu'),
   TPO: new RegExp(mwbDatePatternTPO, 'giu'),
@@ -125,6 +128,8 @@ const mwbDateParsing: MWBDateParsing = {
   E: mwbParsingE,
   J: mwbParsingE,
   KO: mwbParsingE,
+  PGW: mwbParsingE,
+  SW: mwbParsingE,
   TG: mwbParsingE,
   TW: mwbParsingE,
 };
@@ -177,10 +182,11 @@ option2 = `(\\d{1,2}) (${wordWithDiacritics})(?:${dateRangeSeparator})(?:\\d{1,2
 option3 = `(\\d{1,2}) (${wordWithDiacritics})(?:,)? (\\d{4})`;
 const wDatePatternCommon = `${option1}|${option2}|${option3}`;
 
-// date like 1-) December 16-22, 2024; or 2) December 30, 2024-January 5, 2024
+// date like 1-) December 16-22, 2024; or 2) December 30, 2024-January 5, 2025
 option1 = `(${wordWithDiacritics}) (\\d{1,2})[-–](?:\\d{1,2})?, (\\d{4})`;
-option2 = `(${wordWithDiacritics}) (\\d{1,2}), (\\d{4})`;
-const wDatePatternE = `${option1}|${option2}`;
+option2 = `(${wordWithDiacritics}) (\\d{1,2})[-–](?:${wordWithDiacritics}) (?:\\d{1,2}), (\\d{4})`;
+option3 = `(${wordWithDiacritics}) (\\d{1,2}), (\\d{4})`;
+const wDatePatternE = `${option1}|${option2}|${option3}`;
 
 // date like 1-) 2024年12月16-22日; or 2) 2024年12月30日-2025年1月5日
 option1 = `(\\d{4})年(?:nián)?(\\d{1,2})月(?:yuè)?(\\d{1,2})[-–～](\\d{1,2})日`;
@@ -227,9 +233,10 @@ option3 = `(${wordWithDiacritics}) (\\d{1,2}), (\\d{4})`;
 const wDatePatternTW = `${option1}|${option2}|${option3}`;
 
 // date like 1-) 40. Studienartikel: 9. bis 15. Dezember 2024; or 2) 43. Studienartikel: 30. Dezember 2024 bis 5. Januar 2025
-option1 = `(\\d{1,2}). bis (?:\\d{1,2}).? (${wordWithDiacritics}) (\\d{4})`;
-option2 = `(\\d{1,2}). (${wordWithDiacritics}) (\\d{4})`;
-const wDatePatternX = `${option1}|${option2}`;
+option1 = `(\\d{1,2}).(?:${dateRangeSeparator})(?:\\d{1,2}).? (${wordWithDiacritics}) (\\d{4})`;
+option2 = `(\\d{1,2}). (${wordWithDiacritics})(?:${dateRangeSeparator})(?:\\d{1,2}).? (?:${wordWithDiacritics}) (\\d{4})`;
+option3 = `(\\d{1,2}). (${wordWithDiacritics}) (\\d{4})`;
+const wDatePatternX = `${option1}|${option2}|${option3}`;
 
 // date like 1-) Tutkitaan 3.–9.2.2025 ; or 2) Tutkitaan 24.2.–2.3.2025. ; or 3) Tutkitaan 30.12.2024–5.1.2025.
 option1 = '(\\d{1,2}).[–](?:\\d{1,2}).(\\d{1,2}).(\\d{4})';
@@ -246,7 +253,10 @@ const wDatePatterns: LangRegExp = {
   J: new RegExp(wDatePatternJ, 'giu'),
   KO: new RegExp(wDatePatternKO, 'giu'),
   P: new RegExp(wDatePatternP, 'giu'),
+  PGW: new RegExp(wDatePatternE, 'giu'),
   S: new RegExp(wDatePatternS, 'giu'),
+  SV: new RegExp(wDatePatternX, 'giu'),
+  SW: new RegExp(wDatePatternE, 'giu'),
   T: new RegExp(wDatePatternT, 'giu'),
   TPO: new RegExp(wDatePatternTPO, 'giu'),
   TG: new RegExp(wDatePatternE, 'giu'),
@@ -285,10 +295,14 @@ const wParsingE = (groups: string[]): WDateParsingResult => {
     month = groups[1];
     date = groups[2];
     year = groups[3];
-  } else {
+  } else if (groups[4]) {
     month = groups[4];
     date = groups[5];
     year = groups[6];
+  } else {
+    month = groups[7];
+    date = groups[8];
+    year = groups[9];
   }
 
   return [year, month, date];
@@ -310,26 +324,6 @@ const wParsingJ = (groups: string[]): WDateParsingResult => {
   return [year, month, date];
 };
 
-const wParsingTW = (groups: string[]): WDateParsingResult => {
-  let date: string, month: string, year: string;
-
-  if (groups[1]) {
-    month = groups[1];
-    date = groups[2];
-    year = groups[3];
-  } else if (groups[4]) {
-    month = groups[4];
-    date = groups[5];
-    year = groups[6];
-  } else {
-    month = groups[7];
-    date = groups[8];
-    year = groups[9];
-  }
-
-  return [year, month, date];
-};
-
 const wDateParsing: WDateParsing = {
   common: wParsingCommon,
   CH: wParsingJ,
@@ -337,8 +331,10 @@ const wDateParsing: WDateParsing = {
   E: wParsingE,
   J: wParsingJ,
   KO: wParsingJ,
+  PGW: wParsingE,
+  SW: wParsingE,
   TG: wParsingE,
-  TW: wParsingTW,
+  TW: wParsingE,
 };
 
 // #endregion

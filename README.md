@@ -121,9 +121,9 @@ Italian
 Japanese
 Korean
 Malagasy
-Polish, Portuguese Brazil
+Pidgin (West Africa), Polish, Portuguese Brazil
 Romanian, Russian
-Spanish, Swedish
+Slovenian, Spanish, Swahili, Swedish
 Tagalog, Tandroy, Tankarana, Turkish, Twin
 Ukrainian
 Vezo

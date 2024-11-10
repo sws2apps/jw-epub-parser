@@ -24,10 +24,18 @@ export const extractSourceEnhanced = (src: string, lang: string) => {
     `(.+?)(?:: )?[（(](\\d+)(?: |  )?(?:${variations})[）)](?: : | |. )?(.+?)?$`,
     'giu'
   );
+
+  const firstPatternCommonPGW = new RegExp(
+    `(.+?)(?:: )?[（(](\\d+)(?: |  )?(?:${variations})[）)]?(?: : | |. )?(.+?)?$`,
+    'giu'
+  );
+
   const firstPatternTW = new RegExp(`(.+?)(?: )?\\(${variations}(?: )?(\\d+)\\)(?: )?(.+?)?$`, 'giu');
 
   const firstPattern: LangRegExp = {
     common: firstPatternCommon,
+    PGW: firstPatternCommonPGW,
+    SW: firstPatternTW,
     TW: firstPatternTW,
   };
 
