@@ -19,6 +19,10 @@ export const extractSongNumber = (src: string) => {
 export const extractSourceEnhanced = (src: string, lang: string) => {
   const variations = getPartMinutesSeparatorVariations(lang);
 
+  if (src === 'Fine-Fine Things Wey You See for Bible' && lang === 'PGW') {
+    src = 'Fine-Fine Things Wey You See for Bible: (10 min.)';
+  }
+
   // separate minutes from title
   const firstPatternCommon = new RegExp(
     `(.+?)(?:: )?[（(](\\d+)(?: |  )?(?:${variations})[）)](?: : | |. )?(.+?)?$`,
@@ -30,7 +34,7 @@ export const extractSourceEnhanced = (src: string, lang: string) => {
     'giu'
   );
 
-  const firstPatternTW = new RegExp(`(.+?)(?: )?\\(${variations}(?: )?(\\d+)\\)(?: )?(.+?)?$`, 'giu');
+  const firstPatternTW = new RegExp(`(.+?)(?: )?\\(${variations}(?: )?(\\d+).?\\)(?: |.)?(.+?)?$`, 'giu');
 
   const firstPattern: LangRegExp = {
     common: firstPatternCommon,
