@@ -1,15 +1,15 @@
 {
-  "januaryVariations": "januar|januarja",
-  "februaryVariations": "februar|februarja",
-  "marchVariations": "marec|marca",
-  "aprilVariations": "april|aprila",
-  "mayVariations": "maj|maja",
-  "juneVariations": "junij|junija",
-  "julyVariations": "julij|julija",
-  "augustVariations": "avgust|avgusta",
-  "septemberVariations": "september|septembra",
-  "octoberVariations": "oktober|oktobra",
-  "novemberVariations": "november|novembra",
-  "decemberVariations": "december|decembra",
-  "partMinutesSeparatorVariations": "min."
+	"januaryVariations": "januar|januarja",
+	"februaryVariations": "februar|februarja",
+	"marchVariations": "marec|marca",
+	"aprilVariations": "april|aprila",
+	"mayVariations": "maj|maja",
+	"juneVariations": "junij|junija",
+	"julyVariations": "julij|julija",
+	"augustVariations": "avgust|avgusta",
+	"septemberVariations": "september|septembra",
+	"octoberVariations": "oktober|oktobra",
+	"novemberVariations": "november|novembra",
+	"decemberVariations": "december|decembra",
+	"partMinutesSeparatorVariations": "min."
 }
