@@ -117,6 +117,7 @@ Dutch
 English
 French
 German
+Haitian Creole
 Italian
 Japanese
 Korean
