@@ -1,3 +1,11 @@
+## [3.29.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.29.0...v3.29.1) (2024-11-30)
+
+
+### Bug Fixes
+
+* **override:** add entry for sw ([528b829](https://github.com/sws2apps/jw-epub-parser/commit/528b8296d8c65cd8a99f680b1f002d6e3ef62d90))
+* **parser:** update w date parser for t ([91e9674](https://github.com/sws2apps/jw-epub-parser/commit/91e967432ac1eb16bf3f33060bcd514bd468c6b3))
+
 # [3.29.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.28.1...v3.29.0) (2024-11-30)
 
 
