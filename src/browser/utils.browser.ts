@@ -2,6 +2,7 @@ import * as path from 'path-browserify';
 
 import CH from '../locales/cmn-Hant/text.json';
 import CHS from '../locales/ch-CHS/text.json';
+import CR from '../locales/ht-HT/text.json';
 import E from '../locales/en/text.json';
 import F from '../locales/fr-FR/text.json';
 import FI from '../locales/fi-FI/text.json';
@@ -41,6 +42,7 @@ window.jw_epub_parser = {
   languages: {
     CH,
     CHS,
+    CR,
     E,
     F,
     FI,

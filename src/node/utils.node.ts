@@ -3,6 +3,7 @@ import { readFile } from 'fs/promises';
 
 import CH from '../locales/cmn-Hant/text.json' assert { type: 'json' };
 import CHS from '../locales/ch-CHS/text.json' assert { type: 'json' };
+import CR from '../locales/ht-HT/text.json' assert { type: 'json' };
 import E from '../locales/en/text.json' assert { type: 'json' };
 import F from '../locales/fr-FR/text.json' assert { type: 'json' };
 import FI from '../locales/fi-FI/text.json' assert { type: 'json' };
@@ -40,6 +41,7 @@ global.jw_epub_parser = {
   languages: {
     CH,
     CHS,
+    CR,
     E,
     F,
     FI,
