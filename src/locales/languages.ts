@@ -28,4 +28,5 @@ export default [
   { locale: 'wes-PGW', code: 'PGW' },
   { locale: 'sl-SI', code: 'SV' },
   { locale: 'sw-KE', code: 'SW' },
+  { locale: 'et-EE', code: 'ST' },
 ];
