@@ -1,6 +1,7 @@
 import { JWEPUBParserError } from '../classes/error.js';
 import { LangRegExp } from '../types/index.js';
 import { getPartMinutesSeparatorVariations } from './language_rules.js';
+import overrides from './override.js';
 
 export const extractSongNumber = (src: string) => {
   const parseNum = src.match(/(\d+)/);
@@ -19,8 +20,16 @@ export const extractSongNumber = (src: string) => {
 export const extractSourceEnhanced = (src: string, lang: string) => {
   const variations = getPartMinutesSeparatorVariations(lang);
 
-  if (src === 'Fine-Fine Things Wey You See for Bible' && lang === 'PGW') {
-    src = 'Fine-Fine Things Wey You See for Bible: (10 min.)';
+  let finalSrc = src;
+
+  const overrideLang = overrides[lang];
+
+  if (overrideLang) {
+    const overrideSrc = overrideLang[src];
+
+    if (overrideSrc) {
+      finalSrc = overrideSrc;
+    }
   }
 
   // separate minutes from title
@@ -45,13 +54,13 @@ export const extractSourceEnhanced = (src: string, lang: string) => {
 
   const langPattern = firstPattern[lang] || firstPattern.common;
 
-  const matchFirstPattern = src.match(langPattern);
+  const matchFirstPattern = finalSrc.match(langPattern);
 
   if (!matchFirstPattern) {
-    throw new JWEPUBParserError('jw-epub-parser', `Parsing failed. The input was: ${src}`);
+    throw new JWEPUBParserError('jw-epub-parser', `Parsing failed. The input was: ${finalSrc}`);
   }
 
-  const groupsFirstPattern = Array.from(langPattern.exec(src)!);
+  const groupsFirstPattern = Array.from(langPattern.exec(finalSrc)!);
 
   const fulltitle = groupsFirstPattern.at(1)!.trim();
   const time = +groupsFirstPattern.at(2)!.trim();
