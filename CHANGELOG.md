@@ -1,3 +1,10 @@
+# [3.29.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.28.1...v3.29.0) (2024-11-30)
+
+
+### Features
+
+* **locales:** support haitian creole ([2468ae9](https://github.com/sws2apps/jw-epub-parser/commit/2468ae9fcbf93ea5f2d4658498daf6a267b2d743))
+
 ## [3.28.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.28.0...v3.28.1) (2024-11-10)
 
 
