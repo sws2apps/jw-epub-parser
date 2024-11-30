@@ -16,6 +16,7 @@ import O from '../locales/nl-NL/text.json' assert { type: 'json' };
 import P from '../locales/pl-PL/text.json' assert { type: 'json' };
 import PGW from '../locales/wes-PGW/text.json' assert { type: 'json' };
 import S from '../locales/es-ES/text.json' assert { type: 'json' };
+import ST from '../locales/et-EE/text.json' assert { type: 'json' };
 import SV from '../locales/sl-SI/text.json' assert { type: 'json' };
 import SW from '../locales/sw-KE/text.json' assert { type: 'json' };
 import T from '../locales/pt-BR/text.json' assert { type: 'json' };
@@ -52,6 +53,7 @@ global.jw_epub_parser = {
     P,
     PGW,
     S,
+    ST,
     SV,
     SW,
     T,

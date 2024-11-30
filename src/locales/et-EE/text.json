@@ -1,15 +1,15 @@
 {
-	"januaryVariations": "Jaanuar|jaanuarini|jaanuarist",
-	"februaryVariations": "Veebruar|veebruarini|veebruarist",
-	"marchVariations": "Märts|märtsini|märtsist",
-	"aprilVariations": "Aprill|aprillini|aprillist",
-	"mayVariations": "Mai|maini|maist",
-	"juneVariations": "Juuni|juunini",
-	"julyVariations": "Juuli|juulini|juulist",
-	"augustVariations": "August|augustini|augustist",
-	"septemberVariations": "September|septembrini|septembrist",
-	"octoberVariations": "Oktoober|oktoobrini|oktoobrist",
-	"novemberVariations": "November|novembrini|novembrist",
-	"decemberVariations": "Detsember|detsembrini|detsembrist",
-	"partMinutesSeparatorVariations": "min"
+  "januaryVariations": "Jaanuar|jaanuarini|jaanuarist",
+  "februaryVariations": "Veebruar|veebruarini|veebruarist",
+  "marchVariations": "Märts|märtsini|märtsist",
+  "aprilVariations": "Aprill|aprillini|aprillist",
+  "mayVariations": "Mai|maini|maist",
+  "juneVariations": "Juuni|juunini",
+  "julyVariations": "Juuli|juulini|juulist",
+  "augustVariations": "August|augustini|augustist",
+  "septemberVariations": "September|septembrini|septembrist",
+  "octoberVariations": "Oktoober|oktoobrini|oktoobrist",
+  "novemberVariations": "November|novembrini|novembrist",
+  "decemberVariations": "Detsember|detsembrini|detsembrist",
+  "partMinutesSeparatorVariations": "min"
 }

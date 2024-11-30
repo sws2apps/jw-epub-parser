@@ -15,6 +15,7 @@ import O from '../locales/nl-NL/text.json';
 import P from '../locales/pl-PL/text.json';
 import PGW from '../locales/wes-PGW/text.json';
 import S from '../locales/es-ES/text.json';
+import ST from '../locales/et-EE/text.json';
 import SV from '../locales/sl-SI/text.json';
 import SW from '../locales/sw-KE/text.json';
 import T from '../locales/pt-BR/text.json';
@@ -53,6 +54,7 @@ window.jw_epub_parser = {
     P,
     PGW,
     S,
+    ST,
     SV,
     SW,
     T,
