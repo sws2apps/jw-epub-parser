@@ -213,7 +213,7 @@ const wDatePatternS = `${option1}|${option2}`;
 
 // date like 1-) 16-22 de december de 2024; or 2) Estudo para a semana de 28 de outubro-3 de novembro de 2024; or 3) 30 de december de 2024-5 de january de 2025
 option1 = `(\\d{1,2})[-](?:\\d{1,2})? de (${wordWithDiacritics}) de (\\d{4})`;
-option2 = `(\\d{1,2}) de (${wordWithDiacritics})[-](?:\\d{1,2})? de (?:${wordWithDiacritics}) de (\\d{4})`;
+option2 = `(\\d{1,2}) de (${wordWithDiacritics})[-](?:\\d{1,2})?(?:.º)? de (?:${wordWithDiacritics}) de (\\d{4})`;
 option3 = `(\\d{1,2}) de (${wordWithDiacritics}) de (\\d{4})`;
 const wDatePatternT = `${option1}|${option2}|${option3}`;
 
