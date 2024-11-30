@@ -81,3 +81,9 @@ export type MWBDateParsingResult = [month: string, date: string];
 export type MWBDateParsing = {
   [lang: string]: (groups: string[]) => MWBDateParsingResult;
 };
+
+export type Override = {
+  [language: string]: {
+    [src: string]: string;
+  };
+};

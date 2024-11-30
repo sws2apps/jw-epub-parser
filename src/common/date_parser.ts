@@ -1,6 +1,7 @@
 import { JWEPUBParserError } from '../classes/error.js';
 import { WDateParsing, WDateParsingResult, LangRegExp, MWBDateParsingResult, MWBDateParsing } from '../types/index.js';
 import { getMonthNames } from './language_rules.js';
+import overrides from './override.js';
 
 const dateRangeSeparator = `\\s? bis |[-–—]| do | — | – \\s?`;
 const wordWithDiacritics = `\\p{L}+|\\p{L}+\\p{M}*`;
@@ -342,22 +343,34 @@ const wDateParsing: WDateParsing = {
 // #endregion
 
 export const extractWTStudyDate = (src: string, lang: string) => {
-  const srcClean = src
+  src = src
     .trim()
     .replace('  ', ' ')
     .replace('​', '')
     .replace('⁠', '')
     .replace(/\u200F/g, '');
 
-  const datePattern = wDatePatterns[lang] || wDatePatterns.common;
+  let finalSrc = src;
 
-  const match = srcClean.match(datePattern);
+  const overrideLang = overrides[lang];
 
-  if (!match) {
-    throw new JWEPUBParserError('wtstudy', `Parsing failed for Watchtower Study Date. The input was: ${src}`);
+  if (overrideLang) {
+    const overrideSrc = overrideLang[src];
+
+    if (overrideSrc) {
+      finalSrc = overrideSrc;
+    }
   }
 
-  const groups = Array.from(datePattern.exec(srcClean)!);
+  const datePattern = wDatePatterns[lang] || wDatePatterns.common;
+
+  const match = finalSrc.match(datePattern);
+
+  if (!match) {
+    throw new JWEPUBParserError('wtstudy', `Parsing failed for Watchtower Study Date. The input was: ${finalSrc}`);
+  }
+
+  const groups = Array.from(datePattern.exec(finalSrc)!);
 
   const parseDataFunc = wDateParsing[lang] || wDateParsing.common;
 
