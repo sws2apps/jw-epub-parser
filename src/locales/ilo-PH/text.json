@@ -9,7 +9,7 @@
 	"augustVariations": "Agosto",
 	"septemberVariations": "Septiembre",
 	"octoberVariations": "Oktubre",
-	"novemberVariations": "Nobyembre",
+	"novemberVariations": "Nobyembre|Nobiembre",
 	"decemberVariations": "Disiembre",
 	"partMinutesSeparatorVariations": "min."
 }
