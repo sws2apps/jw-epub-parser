@@ -1,3 +1,10 @@
+# [3.30.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.29.1...v3.30.0) (2024-12-20)
+
+
+### Features
+
+* **locales:** support Iloko language ([4de6215](https://github.com/sws2apps/jw-epub-parser/commit/4de6215d8a95b9f101b06f0a1a48dae6279c50c1))
+
 ## [3.29.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.29.0...v3.29.1) (2024-11-30)
 
 
