@@ -8,6 +8,7 @@ import E from '../locales/en/text.json' assert { type: 'json' };
 import F from '../locales/fr-FR/text.json' assert { type: 'json' };
 import FI from '../locales/fi-FI/text.json' assert { type: 'json' };
 import I from '../locales/it-IT/text.json' assert { type: 'json' };
+import IL from '../locales/ilo-PH/text.json' assert { type: 'json' };
 import J from '../locales/ja-JP/text.json' assert { type: 'json' };
 import K from '../locales/uk-UA/text.json' assert { type: 'json' };
 import KO from '../locales/ko-KR/text.json' assert { type: 'json' };
@@ -46,6 +47,7 @@ global.jw_epub_parser = {
     F,
     FI,
     I,
+    IL,
     J,
     K,
     KO,

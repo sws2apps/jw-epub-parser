@@ -7,6 +7,7 @@ import E from '../locales/en/text.json';
 import F from '../locales/fr-FR/text.json';
 import FI from '../locales/fi-FI/text.json';
 import I from '../locales/it-IT/text.json';
+import IL from '../locales/ilo-PH/text.json';
 import J from '../locales/ja-JP/text.json';
 import K from '../locales/uk-UA/text.json';
 import KO from '../locales/ko-KR/text.json';
@@ -47,6 +48,7 @@ window.jw_epub_parser = {
     F,
     FI,
     I,
+    IL,
     J,
     K,
     KO,
