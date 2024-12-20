@@ -118,7 +118,7 @@ English
 French
 German
 Haitian Creole
-Italian
+Iloko, Italian
 Japanese
 Korean
 Malagasy

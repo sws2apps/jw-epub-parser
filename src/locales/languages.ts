@@ -30,4 +30,5 @@ export default [
   { locale: 'sw-KE', code: 'SW' },
   { locale: 'et-EE', code: 'ST' },
   { locale: 'ht-HT', code: 'CR' },
+  { locale: 'ilo-PH', code: 'IL' },
 ];
