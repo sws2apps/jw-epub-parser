@@ -62,7 +62,7 @@
 	},
 	"dependencies": {
 		"jszip": "^3.9.1",
-		"node-html-parser": "^6.1.6",
+		"node-html-parser": "^7.0.1",
 		"path-browserify": "^1.0.1"
 	}
 }
