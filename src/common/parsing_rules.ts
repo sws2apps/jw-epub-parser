@@ -34,7 +34,7 @@ export const extractSourceEnhanced = (src: string, lang: string) => {
 
   // separate minutes from title
   const firstPatternCommon = new RegExp(
-    `(.+?)(?:: )?[（(](\\d+)(?: |  )?(?:${variations})[）)](?: : | |. )?(.+?)?$`,
+    `(.+?)(?:: )?[（(](\\d+)(?: |  | )?(?:${variations})[）)](?: : | |. )?(.+?)?$`,
     'giu'
   );
 
