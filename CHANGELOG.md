@@ -1,3 +1,15 @@
+# [3.31.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.30.0...v3.31.0) (2025-01-17)
+
+
+### Bug Fixes
+
+* **parser:** update source extraction ([936da85](https://github.com/sws2apps/jw-epub-parser/commit/936da855c7ab836bdf7d837a179740011fcf169e))
+
+
+### Features
+
+* **deps:** bump node-html-parser from 6.1.13 to 7.0.1 ([f590f9d](https://github.com/sws2apps/jw-epub-parser/commit/f590f9d3c7242f63575cc888c118f4a132f7afd7))
+
 # [3.30.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.29.1...v3.30.0) (2024-12-20)
 
 
