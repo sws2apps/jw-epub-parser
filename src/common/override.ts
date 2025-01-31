@@ -1,6 +1,9 @@
 import { Override } from '../types';
 
 const overrides: Override = {
+  ELI: {
+    'Study Article 23: July 31–August 6 20': 'Study Article 23: July 31, 2023–August 6, 2023',
+  },
   PGW: {
     'Fine-Fine Things Wey You See for Bible': 'Fine-Fine Things Wey You See for Bible: (10 min.)',
   },
