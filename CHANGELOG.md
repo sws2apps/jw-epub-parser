@@ -1,3 +1,10 @@
+# [3.32.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.31.0...v3.32.0) (2025-01-31)
+
+
+### Features
+
+* **locales:** add support for liberian english ([38090d1](https://github.com/sws2apps/jw-epub-parser/commit/38090d1e9f6bb7147791f8e61421c9f4d74fef75))
+
 # [3.31.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.30.0...v3.31.0) (2025-01-17)
 
 
