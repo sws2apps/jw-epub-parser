@@ -121,6 +121,7 @@ Haitian Creole
 Iloko, Italian
 Japanese
 Korean
+Liberian English
 Malagasy
 Pidgin (West Africa), Polish, Portuguese Brazil
 Romanian, Russian
