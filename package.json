@@ -47,7 +47,7 @@
 		"@rollup/plugin-terser": "^0.4.3",
 		"@rollup/plugin-typescript": "^12.1.0",
 		"@semantic-release/changelog": "^6.0.1",
-		"@semantic-release/exec": "^6.0.3",
+		"@semantic-release/exec": "^7.0.2",
 		"@semantic-release/git": "^10.0.1",
 		"@types/node": "^22.0.0",
 		"@types/path-browserify": "^1.0.2",
