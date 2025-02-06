@@ -1,3 +1,11 @@
+## [3.33.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.33.0...v3.33.1) (2025-02-06)
+
+
+### Bug Fixes
+
+* **parser:** support minutes variation for some languages ([253575e](https://github.com/sws2apps/jw-epub-parser/commit/253575e8a07a25381a4c4046e4db7ca0e9181f90))
+* **parser:** update part minutes separation handler ([4d575cf](https://github.com/sws2apps/jw-epub-parser/commit/4d575cf0c10bf8c17c208e434ec5bdc85a1a275e))
+
 # [3.33.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.32.0...v3.33.0) (2025-02-06)
 
 
