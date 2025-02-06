@@ -32,6 +32,7 @@ import TW from '../locales/tw-TW/text.json';
 import U from '../locales/ru-RU/text.json';
 import VZ from '../locales/mg-VZ/text.json';
 import X from '../locales/de-DE/text.json';
+import YW from '../locales/rw-RW/text.json';
 import Z from '../locales/sv-SE/text.json';
 
 declare global {
@@ -74,6 +75,7 @@ window.jw_epub_parser = {
     U,
     VZ,
     X,
+    YW,
     Z,
   },
   path: path,
