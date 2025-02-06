@@ -1,3 +1,15 @@
+# [3.33.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.32.0...v3.33.0) (2025-02-06)
+
+
+### Bug Fixes
+
+* **override:** add entry for liberian english ([e41e21b](https://github.com/sws2apps/jw-epub-parser/commit/e41e21b4cfd32147e983bc2fcc813467e6afcf06))
+
+
+### Features
+
+* **locales:** add kinyarwanda language ([5283908](https://github.com/sws2apps/jw-epub-parser/commit/52839088124e118cfef19c77c1440bfffb733692))
+
 # [3.32.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.31.0...v3.32.0) (2025-01-31)
 
 
