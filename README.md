@@ -120,7 +120,7 @@ German
 Haitian Creole
 Iloko, Italian
 Japanese
-Korean
+Kinyarwanda, Korean
 Liberian English
 Malagasy
 Pidgin (West Africa), Polish, Portuguese Brazil

@@ -33,6 +33,7 @@ import TW from '../locales/tw-TW/text.json' assert { type: 'json' };
 import U from '../locales/ru-RU/text.json' assert { type: 'json' };
 import VZ from '../locales/mg-VZ/text.json' assert { type: 'json' };
 import X from '../locales/de-DE/text.json' assert { type: 'json' };
+import YW from '../locales/rw-RW/text.json' assert { type: 'json' };
 import Z from '../locales/sv-SE/text.json' assert { type: 'json' };
 
 declare global {
@@ -73,6 +74,7 @@ global.jw_epub_parser = {
     U,
     VZ,
     X,
+    YW,
     Z,
   },
   path: path,
