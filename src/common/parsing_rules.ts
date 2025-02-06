@@ -43,7 +43,7 @@ export const extractSourceEnhanced = (src: string, lang: string) => {
     'giu'
   );
 
-  const firstPatternTW = new RegExp(`(.+?)(?: )?\\((${variations})(?: |  )?(\\d+).?\\)(?: |.)?(.+?)?$`, 'giu');
+  const firstPatternTW = new RegExp(`(.+?)(?: )?\\((?:${variations})(?: |  )?(\\d+).?\\)(?: |.)?(.+?)?$`, 'giu');
 
   const firstPattern: LangRegExp = {
     common: firstPatternCommon,
