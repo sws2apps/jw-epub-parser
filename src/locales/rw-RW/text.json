@@ -1,15 +1,15 @@
 {
-	"januaryVariations": "January",
-	"februaryVariations": "February",
-	"marchVariations": "March",
-	"aprilVariations": "April",
-	"mayVariations": "May",
-	"juneVariations": "June",
-	"julyVariations": "July",
-	"augustVariations": "August",
-	"septemberVariations": "September",
-	"octoberVariations": "October",
-	"novemberVariations": "November",
-	"decemberVariations": "December",
-	"partMinutesSeparatorVariations": "min."
+	"januaryVariations": "Mutarama",
+	"februaryVariations": "Gashyantare",
+	"marchVariations": "Werurwe",
+	"aprilVariations": "Mata",
+	"mayVariations": "Gicurasi",
+	"juneVariations": "Kamena",
+	"julyVariations": "Nyakanga",
+	"augustVariations": "Kanama",
+	"septemberVariations": "Nzeri",
+	"octoberVariations": "Ukwakira",
+	"novemberVariations": "Ugushyingo",
+	"decemberVariations": "Ukuboza",
+	"partMinutesSeparatorVariations": "Imin."
 }
