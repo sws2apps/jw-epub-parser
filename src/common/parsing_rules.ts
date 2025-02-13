@@ -9,7 +9,7 @@ export const extractSongNumber = (src: string) => {
   if (parseNum && parseNum.length > 0) {
     const firstNumber = +parseNum[0];
 
-    if (firstNumber <= 158) {
+    if (firstNumber <= 160) {
       return firstNumber;
     }
   }
