@@ -189,7 +189,7 @@ export default [
     mwb_ayf_part3_time: 5,
     mwb_ayf_part3_type: 'Disikuru',
     mwb_ayf_part3_title: '6. Disikuru',
-    mwb_song_middle: 'Indirimbo ya 159',
+    mwb_song_middle: 159,
     mwb_lc_count: 1,
     mwb_lc_part1: 'Raporo y’umwaka w’umurimo',
     mwb_lc_part1_time: 15,
