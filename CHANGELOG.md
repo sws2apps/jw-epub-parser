@@ -1,3 +1,12 @@
+## [3.33.2](https://github.com/sws2apps/jw-epub-parser/compare/v3.33.1...v3.33.2) (2025-02-13)
+
+
+### Bug Fixes
+
+* **locales:** update portuguese locales ([6a87780](https://github.com/sws2apps/jw-epub-parser/commit/6a87780086715d35f5c0c6d2b7f8a86dec1184f0))
+* **locales:** update translation paths for portuguese ([8825614](https://github.com/sws2apps/jw-epub-parser/commit/882561499a9434ff4842d2ad381bd0f7f03fc464))
+* **parser:** increase song range to 160 ([64d0f1f](https://github.com/sws2apps/jw-epub-parser/commit/64d0f1fac0b01318288b09def1b55edadefe5f46))
+
 ## [3.33.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.33.0...v3.33.1) (2025-02-06)
 
 
