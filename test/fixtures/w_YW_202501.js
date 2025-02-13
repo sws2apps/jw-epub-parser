@@ -4,7 +4,7 @@ export default [
     w_study_date_locale: 'Igice cyo kwigwa cya 1: Itariki ya 3-9 Werurwe 2025',
     w_study_title: 'Duhe Yehova icyubahiro kimukwiriye',
     w_study_opening_song: 2,
-    w_study_concluding_song: 12
+    w_study_concluding_song: 159
   },
   {
     w_study_date: '2025/03/10',
