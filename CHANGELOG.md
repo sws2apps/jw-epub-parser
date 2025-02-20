@@ -1,3 +1,10 @@
+## [3.34.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.34.0...v3.34.1) (2025-02-20)
+
+
+### Bug Fixes
+
+* **parser:** undefined date for vietnamese ([2a1a670](https://github.com/sws2apps/jw-epub-parser/commit/2a1a6701ac0ce9e2d798f791ef705518c4976f30))
+
 # [3.34.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.33.2...v3.34.0) (2025-02-20)
 
 
