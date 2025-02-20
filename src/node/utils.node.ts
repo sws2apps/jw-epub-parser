@@ -31,6 +31,7 @@ import TPO from '../locales/pt-TPO/text.json' assert { type: 'json' };
 import TTM from '../locales/mg-TTM/text.json' assert { type: 'json' };
 import TW from '../locales/tw-TW/text.json' assert { type: 'json' };
 import U from '../locales/ru-RU/text.json' assert { type: 'json' };
+import VT from '../locales/vi-VN/text.json' assert { type: 'json' };
 import VZ from '../locales/mg-VZ/text.json' assert { type: 'json' };
 import X from '../locales/de-DE/text.json' assert { type: 'json' };
 import YW from '../locales/rw-RW/text.json' assert { type: 'json' };
@@ -72,6 +73,7 @@ global.jw_epub_parser = {
     TTM,
     TW,
     U,
+    VT,
     VZ,
     X,
     YW,

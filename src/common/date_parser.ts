@@ -4,7 +4,7 @@ import { getMonthNames } from './language_rules.js';
 import overrides from './override.js';
 
 const dateRangeSeparator = `\\s? bis |[-–—]| do | — | – \\s?`;
-const wordWithDiacritics = `\\p{L}+|\\p{L}+\\p{M}*`;
+const wordWithDiacritics = `\\p{L}+\\p{M}*`;
 let option1: string, option2: string, option3: string;
 
 // #region MEETING WORKBOOK
@@ -59,6 +59,12 @@ option2 = `(\\d{1,2}) de (${wordWithDiacritics}) a (?:\\d{1,2}) de (?:${wordWith
 option3 = `(\\d{1,2}) de (${wordWithDiacritics}) de (\\d{4})`;
 const mwbDatePatternTPO = `${option1}|${option2}|${option3}`;
 
+// date like 1) Ngày 3-9 tháng 3; or 2) Ngày 31 tháng 3–ngày 6 tháng 4; or 3) Ngày 30 tháng 12 năm 2024–ngày 5 tháng 1 năm 2025
+option1 = `(\\d{1,2})[-](?:\\d{1,2}) (\\p{L}+\\p{M}*\\s\\d{1,2})`;
+option2 = `(\\d{1,2}) (\\p{L}+\\p{M}*\\s\\d{1,2})[–]NGÀY (?:\\d{1,2}) (\\p{L}+\\p{M}*\\s\\d{1,2})`;
+option3 = `(\\d{1,2}) (\\p{L}+\\p{M}*\\s\\d{1,2}) năm (\\d{4})`;
+const mwbDatePatternVT = `${option1}|${option2}|${option3}`;
+
 // date like 1-) 4.-10. de noviembre; or 2) 25. noviembre - 1. de diciembre; or 3) 30. diciembre 2024-5. enero 2025
 option1 = `(\\d{1,2}).[-–](?:\\d{1,2}). (${wordWithDiacritics})`;
 option2 = `(\\d{1,2}). (${wordWithDiacritics}) ?[-–] ?(?:\\d{1,2}). (?:${wordWithDiacritics})`;
@@ -85,6 +91,7 @@ const mwbDatePatterns: LangRegExp = {
   TG: new RegExp(mwbDatePatternE, 'giu'),
   TPO: new RegExp(mwbDatePatternTPO, 'giu'),
   TW: new RegExp(mwbDatePatternE, 'giu'),
+  VT: new RegExp(mwbDatePatternVT, 'giu'),
   X: new RegExp(mwbDatePatternX, 'giu'),
 };
 
@@ -238,6 +245,11 @@ option2 = `(${wordWithDiacritics}) (\\d{1,2})[-–](?:${wordWithDiacritics}) (?:
 option3 = `(${wordWithDiacritics}) (\\d{1,2}), (\\d{4})`;
 const wDatePatternTW = `${option1}|${option2}|${option3}`;
 
+// date like 1-) Ngày 14-20 tháng 7 năm 2025; or 2) Ngày 30 tháng 12 năm 2024–ngày 5 tháng 1 năm 2025
+option1 = `(\\d{1,2})[-](?:\\d{1,2})? (\\p{L}+\\p{M}*\\s\\d{1,2}) năm (\\d{4})`;
+option2 = `(\\d{1,2}) (\\p{L}+\\p{M}*\\s\\d{1,2}) năm (\\d{4})`;
+const wDatePatternVT = `${option1}|${option2}`;
+
 // date like 1-) 40. Studienartikel: 9. bis 15. Dezember 2024; or 2) 43. Studienartikel: 30. Dezember 2024 bis 5. Januar 2025
 option1 = `(\\d{1,2}).(?:${dateRangeSeparator})(?:\\d{1,2}).? (${wordWithDiacritics}) (\\d{4})`;
 option2 = `(\\d{1,2}). (${wordWithDiacritics})(?:${dateRangeSeparator})(?:\\d{1,2}).? (?:${wordWithDiacritics}) (\\d{4})`;
@@ -271,6 +283,7 @@ const wDatePatterns: LangRegExp = {
   TG: new RegExp(wDatePatternE, 'giu'),
   TTM: new RegExp(wDatePatternTTM, 'giu'),
   TW: new RegExp(wDatePatternTW, 'giu'),
+  VT: new RegExp(wDatePatternVT, 'giu'),
   X: new RegExp(wDatePatternX, 'giu'),
 };
 
