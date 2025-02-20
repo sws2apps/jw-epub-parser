@@ -1,3 +1,10 @@
+# [3.34.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.33.2...v3.34.0) (2025-02-20)
+
+
+### Features
+
+* **locales:** support vietnamese language ([2490aab](https://github.com/sws2apps/jw-epub-parser/commit/2490aabcd6a8e6527525ec2a3c11e2de01bf2fc0))
+
 ## [3.33.2](https://github.com/sws2apps/jw-epub-parser/compare/v3.33.1...v3.33.2) (2025-02-13)
 
 
