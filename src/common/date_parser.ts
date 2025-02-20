@@ -61,7 +61,7 @@ const mwbDatePatternTPO = `${option1}|${option2}|${option3}`;
 
 // date like 1) Ngày 3-9 tháng 3; or 2) Ngày 31 tháng 3–ngày 6 tháng 4; or 3) Ngày 30 tháng 12 năm 2024–ngày 5 tháng 1 năm 2025
 option1 = `(\\d{1,2})[-](?:\\d{1,2}) (\\p{L}+\\p{M}*\\s\\d{1,2})`;
-option2 = `(\\d{1,2}) (\\p{L}+\\p{M}*\\s\\d{1,2})[–]NGÀY (?:\\d{1,2}) (\\p{L}+\\p{M}*\\s\\d{1,2})`;
+option2 = `(\\d{1,2}) (\\p{L}+\\p{M}*\\s\\d{1,2})[–]NGÀY (?:\\d{1,2}) (?:\\p{L}+\\p{M}*\\s\\d{1,2})`;
 option3 = `(\\d{1,2}) (\\p{L}+\\p{M}*\\s\\d{1,2}) năm (\\d{4})`;
 const mwbDatePatternVT = `${option1}|${option2}|${option3}`;
 
