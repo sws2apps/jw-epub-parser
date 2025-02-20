@@ -30,6 +30,7 @@ import TPO from '../locales/pt-TPO/text.json';
 import TTM from '../locales/mg-TTM/text.json';
 import TW from '../locales/tw-TW/text.json';
 import U from '../locales/ru-RU/text.json';
+import VT from '../locales/vi-VN/text.json';
 import VZ from '../locales/mg-VZ/text.json';
 import X from '../locales/de-DE/text.json';
 import YW from '../locales/rw-RW/text.json';
@@ -73,6 +74,7 @@ window.jw_epub_parser = {
     TTM,
     TW,
     U,
+    VT,
     VZ,
     X,
     YW,

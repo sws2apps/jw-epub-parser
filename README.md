@@ -128,7 +128,7 @@ Romanian, Russian
 Slovenian, Spanish, Swahili, Swedish
 Tagalog, Tandroy, Tankarana, Turkish, Twin
 Ukrainian
-Vezo
+Vietnamese, Vezo
 ```
 
 For the other languages, you may use your own method to convert these outputs according to your needs to get the needed informations. If you want to contribute and add your language in the enhanced parsing list, or edit your language rules, please follow [this guide](./TRANSLATION.md).

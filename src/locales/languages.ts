@@ -33,4 +33,5 @@ export default [
   { locale: 'ilo-PH', code: 'IL' },
   { locale: 'en-LR', code: 'ELI' },
   { locale: 'rw-RW', code: 'YW' },
+  { locale: 'vi-VN', code: 'VT' },
 ];
