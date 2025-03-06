@@ -1,3 +1,10 @@
+# [3.35.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.34.1...v3.35.0) (2025-03-06)
+
+
+### Features
+
+* **module:** ship package with types ([8acdbf8](https://github.com/sws2apps/jw-epub-parser/commit/8acdbf82f9499673221a4cb3d6202e38a986d58d))
+
 ## [3.34.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.34.0...v3.34.1) (2025-02-20)
 
 
