@@ -1,3 +1,10 @@
+## [3.35.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.35.0...v3.35.1) (2025-03-06)
+
+
+### Bug Fixes
+
+* **module:** import path for node project ([b64246d](https://github.com/sws2apps/jw-epub-parser/commit/b64246da58c68af6e79d6116c0837c70f0bf2fca))
+
 # [3.35.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.34.1...v3.35.0) (2025-03-06)
 
 
