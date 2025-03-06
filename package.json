@@ -1,68 +1,77 @@
 {
-	"name": "jw-epub-parser",
-	"version": "3.34.1",
-	"type": "module",
-	"description": "This tool will help you to parse and extract the needed source materials from Meeting Workbook EPUB file. Support for parsing Watchtower Study will be added in future release.",
-	"keywords": [
-		"epub parse",
-		"jw",
-		"jw.org",
-		"epub"
-	],
-	"main": "./dist/index.js",
-	"module": "./dist/index.js",
-	"files": [
-		"dist/*"
-	],
-	"homepage": "https://github.com/sws2apps/jw-epub-parser#readme",
-	"author": "Scheduling Workbox System <sws2apps.notification@gmail.com>",
-	"bugs": {
-		"url": "https://github.com/sws2apps/jw-epub-parser/issues",
-		"email": "sws2apps.notification@gmail.com"
-	},
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/sws2apps/jw-epub-parser.git"
-	},
-	"funding": {
-		"type": "buymeacoffee",
-		"url": "https://www.buymeacoffee.com/sws2apps"
-	},
-	"scripts": {
-		"test": "mocha",
-		"build": "npx rimraf dist && npx rollup -c",
-		"parse": "tsx example/index.ts",
-		"setup:client": "cd client && npm install",
-		"start:client": "cd client && npm run dev",
-		"cypress:open": "cypress open",
-		"cypress:run": "cypress run --browser chrome"
-	},
-	"devDependencies": {
-		"@babel/preset-env": "^7.16.11",
-		"@rollup/plugin-babel": "^6.0.0",
-		"@rollup/plugin-commonjs": "^28.0.0",
-		"@rollup/plugin-json": "^6.0.0",
-		"@rollup/plugin-node-resolve": "^16.0.0",
-		"@rollup/plugin-terser": "^0.4.3",
-		"@rollup/plugin-typescript": "^12.1.0",
-		"@semantic-release/changelog": "^6.0.1",
-		"@semantic-release/exec": "^7.0.2",
-		"@semantic-release/git": "^10.0.1",
-		"@types/node": "^22.0.0",
-		"@types/path-browserify": "^1.0.2",
-		"chai": "^5.0.0",
-		"cypress": "^14.0.0",
-		"mocha": "^11.0.1",
-		"rimraf": "^6.0.0",
-		"rollup": "^4.0.0",
-		"semantic-release": "^24.0.0",
-		"tsx": "^4.7.0",
-		"typescript": "^5.2.2"
-	},
-	"dependencies": {
-		"jszip": "^3.9.1",
-		"node-html-parser": "^7.0.1",
-		"path-browserify": "^1.0.1"
-	}
+  "name": "jw-epub-parser",
+  "version": "3.34.1",
+  "type": "module",
+  "description": "This tool will help you to parse and extract the needed source materials from Meeting Workbook EPUB file. Support for parsing Watchtower Study will be added in future release.",
+  "keywords": [
+    "epub parse",
+    "jw",
+    "jw.org",
+    "epub"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "exports": {
+    "types": {
+      "import": "./dist/index.d.ts",
+      "require": "./dist/node/index.d.ts"
+    },
+    "import": "./dist/index.js",
+    "require": "./dist/node/index.cjs"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "homepage": "https://github.com/sws2apps/jw-epub-parser#readme",
+  "author": "Scheduling Workbox System <sws2apps.notification@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/sws2apps/jw-epub-parser/issues",
+    "email": "sws2apps.notification@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sws2apps/jw-epub-parser.git"
+  },
+  "funding": {
+    "type": "buymeacoffee",
+    "url": "https://www.buymeacoffee.com/sws2apps"
+  },
+  "scripts": {
+    "test": "mocha",
+    "build": "npx rimraf dist && npx rollup -c && npx tsup",
+    "parse": "tsx example/index.ts",
+    "setup:client": "cd client && npm install",
+    "start:client": "cd client && npm run dev",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run --browser chrome"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "@rollup/plugin-babel": "^6.0.0",
+    "@rollup/plugin-commonjs": "^28.0.0",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@rollup/plugin-typescript": "^12.1.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/exec": "^7.0.2",
+    "@semantic-release/git": "^10.0.1",
+    "@types/node": "^22.0.0",
+    "@types/path-browserify": "^1.0.2",
+    "chai": "^5.0.0",
+    "cypress": "^14.0.0",
+    "mocha": "^11.0.1",
+    "rimraf": "^6.0.0",
+    "rollup": "^4.0.0",
+    "semantic-release": "^24.0.0",
+    "tsup": "^8.4.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "jszip": "^3.9.1",
+    "node-html-parser": "^7.0.1",
+    "path-browserify": "^1.0.1"
+  }
 }
