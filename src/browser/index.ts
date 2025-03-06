@@ -1,8 +1,11 @@
 import '../browser/utils.browser.js';
 import { getInputType, validateInput } from '../common/epub_validation.js';
 import { startParse } from '../common/parser.js';
+import { MWBSchedule, WSchedule } from '../types/index.js';
 
-export const loadEPUB = async (epubInput: string | Blob | { url: string }) => {
+export type { MWBSchedule, WSchedule }
+
+export const loadEPUB = async (epubInput: File | Blob | { url: string }) => {
   try {
     validateInput(epubInput);
 
@@ -16,7 +19,7 @@ export const loadEPUB = async (epubInput: string | Blob | { url: string }) => {
 
     // Step: Start Parsing
     const data = await startParse(epubInput);
-    return data;
+    return data as any
   } catch (err) {
     console.error(err);
 

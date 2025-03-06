@@ -8,13 +8,13 @@ export const isWEpub = (name: string) => {
 	return regex.test(name);
 };
 
-export const validateInput = (input: string | { url: string } | Blob) => {
+export const validateInput = (input: string | { url: string } | Blob | File) => {
 	if (!input) {
 		throw new Error('You did not pass anything to the loadEPUB function.');
 	}
 };
 
-export const getInputType = (input: string | { url: string } | Blob) => {
+export const getInputType = (input: string | { url: string } | Blob | File) => {
 	const result = { browser: false, node: true };
 
 	if (typeof input === 'object' && 'url' in input) {
