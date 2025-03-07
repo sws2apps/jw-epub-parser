@@ -1,3 +1,10 @@
+## [3.35.2](https://github.com/sws2apps/jw-epub-parser/compare/v3.35.1...v3.35.2) (2025-03-07)
+
+
+### Bug Fixes
+
+* **module:** revert changes in export paths ([f6e106d](https://github.com/sws2apps/jw-epub-parser/commit/f6e106d3479a05027cc88cc2a143288632bad9aa))
+
 ## [3.35.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.35.0...v3.35.1) (2025-03-06)
 
 
