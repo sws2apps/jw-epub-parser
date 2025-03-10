@@ -1,3 +1,10 @@
+# [3.36.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.35.2...v3.36.0) (2025-03-10)
+
+
+### Features
+
+* **locales:** support malay language ([55486c8](https://github.com/sws2apps/jw-epub-parser/commit/55486c880df8396ff6c117bde15b416ca450cf7d))
+
 ## [3.35.2](https://github.com/sws2apps/jw-epub-parser/compare/v3.35.1...v3.35.2) (2025-03-07)
 
 
