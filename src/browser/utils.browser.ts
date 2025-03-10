@@ -14,6 +14,7 @@ import K from '../locales/uk-UA/text.json';
 import KO from '../locales/ko-KR/text.json';
 import M from '../locales/ro-RO/text.json';
 import MG from '../locales/mg-MG/text.json';
+import ML from '../locales/ms-MY/text.json';
 import O from '../locales/nl-NL/text.json';
 import P from '../locales/pl-PL/text.json';
 import PGW from '../locales/wes-PGW/text.json';
@@ -58,6 +59,7 @@ window.jw_epub_parser = {
     KO,
     M,
     MG,
+    ML,
     O,
     P,
     PGW,
