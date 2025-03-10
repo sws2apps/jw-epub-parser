@@ -122,7 +122,7 @@ Iloko, Italian
 Japanese
 Kinyarwanda, Korean
 Liberian English
-Malagasy
+Malagasy, Malay
 Pidgin (West Africa), Polish, Portuguese Brazil
 Romanian, Russian
 Slovenian, Spanish, Swahili, Swedish
