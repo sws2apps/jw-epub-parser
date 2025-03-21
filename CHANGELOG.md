@@ -1,3 +1,10 @@
+# [3.37.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.36.0...v3.37.0) (2025-03-21)
+
+
+### Features
+
+* **rules:** increase songs range to 161 ([53cfd12](https://github.com/sws2apps/jw-epub-parser/commit/53cfd129903ef1c614253ea6a3ec899d4a8815ac))
+
 # [3.36.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.35.2...v3.36.0) (2025-03-10)
 
 
