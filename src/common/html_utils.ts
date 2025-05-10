@@ -88,12 +88,18 @@ export const getMWBSources = (htmlItem: HTMLElement) => {
   if (src.length === 0) {
     const h3Texts = htmlItem.querySelectorAll('h3');
 
+    let songIndex = 0;
+
     for (const h3 of h3Texts) {
       let isSong = h3.classList.contains('dc-icon--music');
       const part = h3.parentNode.classList.contains('boxContent') === false;
 
       if (!isSong) {
         isSong = h3.querySelector('.dc-icon--music') ? true : false;
+      }
+
+      if (isSong) {
+        songIndex++;
       }
 
       if (isSong || part) {
@@ -106,9 +112,28 @@ export const getMWBSources = (htmlItem: HTMLElement) => {
         }
 
         src += '@' + data;
-        const nextElement = h3.nextElementSibling?.querySelector('p');
-        if (nextElement) {
-          src += ' ' + nextElement.textContent;
+
+        const nextSibling = h3.nextElementSibling;
+
+        if (nextSibling) {
+          const nextElement = nextSibling.querySelector('p');
+
+          if (nextElement) {
+            // handle element exception in mwb25.09
+            if (isSong && songIndex === 2 && nextSibling.tagName === 'DIV') {
+              src += '@' + nextElement.textContent;
+
+              const tmpSibling = nextSibling.nextElementSibling?.querySelector('p');
+
+              if (tmpSibling) {
+                src += ' ' + tmpSibling.textContent;
+              }
+
+              continue;
+            }
+
+            src += ' ' + nextElement.textContent;
+          }
         }
       }
     }
