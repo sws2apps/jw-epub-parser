@@ -1,3 +1,10 @@
+## [3.37.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.37.0...v3.37.1) (2025-05-10)
+
+
+### Bug Fixes
+
+* **utils:** handle title exception in mwb25.09 ([7d179e7](https://github.com/sws2apps/jw-epub-parser/commit/7d179e7e41e812ac61edf4989e90539d9f8f98b2))
+
 # [3.37.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.36.0...v3.37.0) (2025-03-21)
 
 
