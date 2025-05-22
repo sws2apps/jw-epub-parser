@@ -1,3 +1,10 @@
+## [3.37.2](https://github.com/sws2apps/jw-epub-parser/compare/v3.37.1...v3.37.2) (2025-05-22)
+
+
+### Bug Fixes
+
+* **utils:** invalid count of living parts ([42db984](https://github.com/sws2apps/jw-epub-parser/commit/42db984161057638eb90d3814ea15a029408a035))
+
 ## [3.37.1](https://github.com/sws2apps/jw-epub-parser/compare/v3.37.0...v3.37.1) (2025-05-10)
 
 
