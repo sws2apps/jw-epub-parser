@@ -48,22 +48,7 @@ export const getMWBLCCount = (htmlItem: HTMLElement) => {
 
   // 2024 onward
   if (testSection === null) {
-    const lcSection = htmlItem.querySelector('h2.du-color--maroon-600')!;
-    const parent = lcSection.parentNode;
-
-    let nextElement = parent.nextElementSibling;
-
-    while (nextElement) {
-      const h3 = nextElement.tagName === 'H3' ? nextElement : nextElement.querySelector('h3');
-
-      if (h3 && h3.parentNode.classList.contains('boxContent') === false) {
-        count++;
-      }
-
-      nextElement = nextElement.nextElementSibling;
-    }
-
-    count = count - 4;
+    count = htmlItem.querySelectorAll('.du-color--maroon-600.du-margin-top--8.du-margin-bottom--0').length - 1;
   }
 
   return count;
