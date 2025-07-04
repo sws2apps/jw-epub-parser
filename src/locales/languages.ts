@@ -35,4 +35,5 @@ export default [
   { locale: 'rw-RW', code: 'YW' },
   { locale: 'vi-VN', code: 'VT' },
   { locale: 'ms-MY', code: 'ML' },
+  { locale: 'el-GR', code: 'G' },
 ];
