@@ -1,3 +1,10 @@
+# [3.38.0](https://github.com/sws2apps/jw-epub-parser/compare/v3.37.2...v3.38.0) (2025-07-04)
+
+
+### Features
+
+* **locales:** add support for greek language ([b11ffb8](https://github.com/sws2apps/jw-epub-parser/commit/b11ffb8ee20e6cdd9bf7fa0b05eee6e31e996486))
+
 ## [3.37.2](https://github.com/sws2apps/jw-epub-parser/compare/v3.37.1...v3.37.2) (2025-05-22)
 
 
