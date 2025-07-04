@@ -8,6 +8,7 @@ import E from '../locales/en/text.json' with { type: 'json' };
 import ELI from '../locales/en-LR/text.json' with { type: 'json' };
 import F from '../locales/fr-FR/text.json' with { type: 'json' };
 import FI from '../locales/fi-FI/text.json' with { type: 'json' };
+import G from '../locales/el-GR/text.json' with { type: 'json' };
 import I from '../locales/it-IT/text.json' with { type: 'json' };
 import IL from '../locales/ilo-PH/text.json' with { type: 'json' };
 import J from '../locales/ja-JP/text.json' with { type: 'json' };
@@ -51,6 +52,7 @@ global.jw_epub_parser = {
     ELI,
     F,
     FI,
+    G,
     I,
     IL,
     J,
