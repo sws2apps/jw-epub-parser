@@ -31,7 +31,7 @@ import { loadEPUB } from 'jw-epub-parser';
 import { loadEPUB } from 'jw-epub-parser/dist/node/index.js';
 
 // node commonjs
-const { loadEPUB } = require('jw-epub-parser/node/index.cjs');
+const { loadEPUB } = require('jw-epub-parser/dist/node/index.cjs');
 
 // sample usage
 const epubJW = await loadEPUB('/path/to/file.epub');
