@@ -1,15 +1,15 @@
 {
-	"januaryVariations": "Ιανουάριος",
-	"februaryVariations": "Φεβρουάριος",
-	"marchVariations": "Μάρτιος",
-	"aprilVariations": "Απρίλιος",
-	"mayVariations": "Μάιος",
-	"juneVariations": "Ιούνιος",
-	"julyVariations": "Ιούλιος",
-	"augustVariations": "Αύγουστος",
-	"septemberVariations": "Σεπτέμβριος",
-	"octoberVariations": "Οκτώβριος",
-	"novemberVariations": "Νοέμβριος",
-	"decemberVariations": "Δεκέμβριος",
-	"partMinutesSeparatorVariations": "λεπτά"
+	"januaryVariations": "ΙΑΝΟΥΑΡΙΟΥ|Ιανουαρίου|Ιανουάριος",
+	"februaryVariations": "ΦΕΒΡΟΥΑΡΙΟΥ|Φεβρουαρίου|Φεβρουάριος",
+	"marchVariations": "ΜΑΡΤΙΟΥ|Μαρτίου|Μάρτιος",
+	"aprilVariations": "ΑΠΡΙΛΙΟΥ|Απριλίου|Απρίλιος",
+	"mayVariations": "ΜΑΪΟΥ|Μαΐου|Μάιος",
+	"juneVariations": "ΙΟΥΝΙΟΥ|Ιουνίου|ούνιος",
+	"julyVariations": "ΙΟΥΛΙΟΥ|Ιουλίου|Ιούλιος",
+	"augustVariations": "ΑΥΓΟΥΣΤΟΥ|Αυγούστου|Αύγουστος",
+	"septemberVariations": "ΣΕΠΤΕΜΒΡΙΟΥ|Σεπτεμβρίου|Σεπτέμβριος",
+	"octoberVariations": "ΟΚΤΩΒΡΙΟΥ|Οκτωβρίου|Οκτώβριος",
+	"novemberVariations": "ΝΟΕΜΒΡΙΟΥ|Νοεμβρίου|Νοέμβριος",
+	"decemberVariations": "ΔΕΚΕΜΒΡΙΟΥ|Δεκεμβρίου|Δεκέμβριος",
+	"partMinutesSeparatorVariations": "λεπτό|λεπτά"
 }
