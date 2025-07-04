@@ -1,15 +1,15 @@
 {
-	"januaryVariations": "January",
-	"februaryVariations": "February",
-	"marchVariations": "March",
-	"aprilVariations": "April",
-	"mayVariations": "May",
-	"juneVariations": "June",
-	"julyVariations": "July",
-	"augustVariations": "August",
-	"septemberVariations": "September",
-	"octoberVariations": "October",
-	"novemberVariations": "November",
-	"decemberVariations": "December",
-	"partMinutesSeparatorVariations": "min."
+	"januaryVariations": "Ιανουάριος",
+	"februaryVariations": "Φεβρουάριος",
+	"marchVariations": "Μάρτιος",
+	"aprilVariations": "Απρίλιος",
+	"mayVariations": "Μάιος",
+	"juneVariations": "Ιούνιος",
+	"julyVariations": "Ιούλιος",
+	"augustVariations": "Αύγουστος",
+	"septemberVariations": "Σεπτέμβριος",
+	"octoberVariations": "Οκτώβριος",
+	"novemberVariations": "Νοέμβριος",
+	"decemberVariations": "Δεκέμβριος",
+	"partMinutesSeparatorVariations": "λεπτά"
 }
